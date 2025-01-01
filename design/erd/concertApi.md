@@ -12,22 +12,23 @@ erDiagram
     }
     Seat {
         int id PK
-        string concertDetail
+        string ConcertSchedule
         string status "reserved (default), reservable"
         int number
         decimal price
         datetime createAt
         datetime updateAt
+        datetime expiredAt
     }
     Reservation {
         int id PK
         int userId FK
-        int concertDetailID FK
+        int ConcertScheduleId FK
         string status "reserved (default), cancel, purchase"
         datetime createAt
         datetime updateAt
     }
-    Token {
+    QueueToken {
         int id PK
         int userId FK
         string status "wait (default), active, delete"
@@ -42,7 +43,7 @@ erDiagram
         string performer        
     }
 
-    ConcertDetail {
+    ConcertSchedule {
         int id PK
         int concertId FK
         datetime showTime "Performance start time"
@@ -52,9 +53,9 @@ erDiagram
     }
 
     User ||--o{ Reservation : "has"
-    User ||--o{ Token            : "has"
-    Reservation ||--|| ConcertDetail : "references"
-    Concert ||--o{ ConcertDetail : "has"
-    ConcertDetail ||--o{ Seat : "has"
+    User ||--o{ QueueToken  : "has"
+    Reservation ||--|| ConcertSchedule : "references"
+    Concert ||--o{ ConcertSchedule : "has"
+    ConcertSchedule ||--o{ Seat : "has"
         
 ```
