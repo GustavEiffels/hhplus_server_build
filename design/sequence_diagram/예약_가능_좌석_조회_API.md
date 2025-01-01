@@ -32,7 +32,7 @@ sequenceDiagram
 
     else 존재하지 않는 유저 
     
-        sch-->>cl :  Error Response ("User Not Found")
+        sch-->>cl :  Error Response ("Not Found User ")
     end 
                    
 ```
