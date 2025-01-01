@@ -11,7 +11,7 @@ sequenceDiagram
 
     
     cl->>re : Request ( userId, tokenId, reservationId ) : 예약 좌석 결제 요청 
-
+    activate re
     
     re->>qu : isAvailableToken ( tokenId, userId ) : 유저와 연결된 토큰인지 확인하고, 활성화된 상태의 토큰인지 검증
 
@@ -19,8 +19,16 @@ sequenceDiagram
         re->>re : isExistReservation ( reservationId ) : 존재하는 예약인지 확인 
         
         alt 존재하는 예약
-            re->> se : findSeatById ( Reservation.seatId ) : 예약된 좌석 정보 가져오기
-            re->> us : findUserById ( userId ) : 사용자 정보 가져오기 
+
+            re->> se  : findSeatById ( Reservation.seatId ) : 예약된 좌석 정보 가져오기
+            activate se
+            se-->> re : Seat : 예약된 좌석 반환 
+            deactivate se
+
+            re->> us  : findUserById ( userId ) : 사용자 정보 가져오기 
+            activate us
+            us-->> re  : User : 사용자 정보 반환 
+            deactivate us
 
             opt 좌석 점유 시간이 만료된 경우 
                 re->> se : updateSeatStatus ( Reservation.seatId ) : 예약된 좌석 점유 상태 해제 및  상태 "reserable" 변경 
@@ -45,6 +53,7 @@ sequenceDiagram
         re-->>cl : Error Response ("This Token is not Valid")
     end
 
+    deactivate re
 
 
                    
