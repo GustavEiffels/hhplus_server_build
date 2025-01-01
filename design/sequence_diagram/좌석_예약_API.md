@@ -7,6 +7,7 @@ sequenceDiagram
     participant se as SeatService
     participant qu as QueueTokenService
     participant re as ReservationService
+    participant s  as ConcertScheduleService
 
 
     c->> se : Request  : 좌석 예약 요청 
@@ -24,10 +25,12 @@ sequenceDiagram
                 se-->>c : Error Response ("This Seat is already Reserved")
             end 
 
-            se->>se : updateState : [Seat] "occupied" 로 상태 변환
-            
+            se->>se : updateState       : [Seat] "occupied" 로 상태 변환
+            se->>s  : updateLeftTicket  : [ConcertSchedule] 남은 티켓 수 수정 
+
             se->>re : createReservation : [Reservation] 을 생성 
             activate re
+            
             re-->>se : [Reservation] 반환 
             deactivate re
 

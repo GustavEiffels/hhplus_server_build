@@ -8,6 +8,7 @@ sequenceDiagram
     participant qu as QueueTokenService
     participant se as SeatService 
     participant us as UserService 
+    participant cs as ConcertScheduleService
 
     
     cl->>re : Request : 예약 좌석 결제 요청 
@@ -33,6 +34,7 @@ sequenceDiagram
 
             opt 좌석 점유 시간 만료
                 re->> se : updateSeatStatus : 예약된 좌석 점유 상태해제 : {status : "reservable"} 
+                re->> cs : updateLeftTicket : [ConcertSchedule] 의 남은 티켓 수 수정 
                 re->> re : updateReservationStatus : 예약 상태 변경 : {status : "cancel"}
                 re->>cl  : Error Response ("The reservation time has expired.")
             end 
