@@ -1,6 +1,6 @@
 ```mermaid
 ---
-title: 잔액 충전 
+title: 포인트 충전 
 ---
 sequenceDiagram
     Actor cl as Client

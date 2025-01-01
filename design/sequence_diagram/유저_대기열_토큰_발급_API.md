@@ -16,7 +16,4 @@ sequenceDiagram
     else 존재하지 않은 사용자 
         t-->>c: Error Response ("This User doesn't exist.")
     end
-
-
-
 ```
