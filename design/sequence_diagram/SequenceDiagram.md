@@ -163,6 +163,7 @@ sequenceDiagram
     participant se as SeatService
     participant qu as QueueTokenService
     participant re as ReservationService
+    participant s  as ConcertScheduleService
 
 
     c->> se : Request  : 좌석 예약 요청 
@@ -180,10 +181,12 @@ sequenceDiagram
                 se-->>c : Error Response ("This Seat is already Reserved")
             end 
 
-            se->>se : updateState : [Seat] "occupied" 로 상태 변환
-            
+            se->>se : updateState       : [Seat] "occupied" 로 상태 변환
+            se->>s  : updateLeftTicket  : [ConcertSchedule] 남은 티켓 수 수정 
+
             se->>re : createReservation : [Reservation] 을 생성 
             activate re
+            
             re-->>se : [Reservation] 반환 
             deactivate re
 
@@ -210,6 +213,7 @@ sequenceDiagram
     participant qu as QueueTokenService
     participant se as SeatService 
     participant us as UserService 
+    participant cs as ConcertScheduleService
 
     
     cl->>re : Request : 예약 좌석 결제 요청 
@@ -235,6 +239,7 @@ sequenceDiagram
 
             opt 좌석 점유 시간 만료
                 re->> se : updateSeatStatus : 예약된 좌석 점유 상태해제 : {status : "reservable"} 
+                re->> cs : updateLeftTicket : [ConcertSchedule] 의 남은 티켓 수 수정 
                 re->> re : updateReservationStatus : 예약 상태 변경 : {status : "cancel"}
                 re->>cl  : Error Response ("The reservation time has expired.")
             end 
@@ -255,4 +260,7 @@ sequenceDiagram
     end
 
     deactivate re
+
+
+                   
 ```
