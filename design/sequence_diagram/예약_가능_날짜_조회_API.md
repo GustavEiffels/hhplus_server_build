@@ -17,8 +17,8 @@ sequenceDiagram
         concert->>token: isAvailableToken ( tokenId, userId ) : 유저와 연결된 토큰인지 확인하고, 활성화된 상태의 토큰인지 검증
         
         alt 검증된 토큰
-            token-->>concert: true
-            concert->>schedule: findAvailableSchedule ( concertId )
+            token-->>concert: true 
+            concert->>schedule: findAvailableSchedule ( concertId ) : 예약 가능한 콘서트 스케줄 요청
             schedule-->>concert: List<ConcertSchedule>
             concert-->>client: Response ( 예약 가능한 스케줄 리스트 )
         else 검증되지 않은 토큰
@@ -30,6 +30,4 @@ sequenceDiagram
         user-->>concert: Error ("User Not Found")
         concert-->>client: Error Response ("User Not Found")
     end
-
-
 ```
