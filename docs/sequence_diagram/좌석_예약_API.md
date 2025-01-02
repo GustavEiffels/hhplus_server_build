@@ -46,6 +46,4 @@ sequenceDiagram
     
     deactivate se
 
-
-
 ```

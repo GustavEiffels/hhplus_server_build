@@ -51,7 +51,4 @@ sequenceDiagram
     end
 
     deactivate pa
-
-
-                   
 ```

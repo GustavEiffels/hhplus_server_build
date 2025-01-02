@@ -42,6 +42,7 @@ sequenceDiagram
         s->>t : 만료된 토큰들의 상태를 "delete" 로 변환 ( SOFT DELETE )
     end
 ```
+
 ---
 ## 3. 예약 가능 날짜 조회 
 ```mermaid
@@ -75,6 +76,8 @@ sequenceDiagram
     
     deactivate co
 ```
+
+
 ---
 ## 4. 예약 가능 좌석 조회 
 ```mermaid
@@ -108,6 +111,7 @@ sequenceDiagram
 
     deactivate cs
 ```
+
 ---
 ## 5. 잔액 조회 
 ```mermaid
@@ -118,7 +122,7 @@ sequenceDiagram
     Actor cl as Client
     participant us as UserService
     
-    cl->> us : Request : 잔액 충전 요청 
+    cl->> us : Request : 잔액 조회 요청
     us->> us : isExistUser : 존재하는 사용자인지 확인 
 
     alt 존재하는 사용자
@@ -128,11 +132,12 @@ sequenceDiagram
         us-->>cl : Error Response ("This User doesn't exist")
     end 
 ```
+
 ---
-## 6. 포인트 충전 
+## 6. 잔액 충전 
 ```mermaid
 ---
-title: 포인트 충전 
+title: 잔액 충전 
 ---
 sequenceDiagram
     Actor cl as Client
@@ -143,8 +148,8 @@ sequenceDiagram
     us->> us : isExistUser : 존재하는 사용자인지 확인 
 
     alt 존재하는 사용자
-        us->>us : charge : 포인트 충전 
-        us-->>cl : Response ( "충전된 포인트" )
+        us->>us : charge : 잔액 충전 
+        us-->>cl : Response ( "충전된 잔액" )
 
     else 존재하지 않는 사용자
         us-->>cl : Error Response ("This User doesn't exist")
@@ -152,6 +157,7 @@ sequenceDiagram
 
     deactivate us
 ```
+
 ---
 ## 7. 좌석 예약
 ```mermaid
@@ -202,6 +208,8 @@ sequenceDiagram
     
     deactivate se
 ```
+
+
 ## 8. 결제
 ```mermaid
 ---
@@ -256,6 +264,4 @@ sequenceDiagram
     end
 
     deactivate pa
-                   
-```
-                   
+```                   
