@@ -209,58 +209,53 @@ title: 결제 API
 ---
 sequenceDiagram
     Actor cl as Client
+    participant pa as PaymentService
     participant re as ResevationService
-    participant qu as QueueTokenService
-    participant se as SeatService 
     participant us as UserService 
-    participant cs as ConcertScheduleService
+    participant se as SeatService
+    participant qu as QueueTokenService
 
+
+    cl->>pa : Request : 예약 좌석 결제 요청 
+    activate pa
     
-    cl->>re : Request : 예약 좌석 결제 요청 
-    activate re
-    
-    re->>qu : isAvailableToken: 유효한 토큰인지 검증  
+    pa->>qu : isAvailableToken: 유효한 토큰인지 검증  
 
     alt 검증된 토큰 
-        critical TRANSACTIONAL
-            re->> re  : findReservationById : 예약 정보 [Reservation] 조회
+            pa->>re: isValidReservation : [Reservation] 들이 전부 예약이 가능한지 
+            
+            alt 모든 [Reservation] 이 예약 가능 
+                critical TRANSACTIONAL 
+                    pa->>pa : createPayment : [Payment] 생성
 
-            re->> se  : findSeatById  : 예약된 좌석 정보 가져오기
-            activate se
+                    pa->>us  : findUserById : [User] 를 조회
+                    activate us 
+                    us-->>pa : [User] 를 반환 
+                    deactivate us 
 
-            se-->> re : [Seat] : 예약된 좌석 반환 
-            deactivate se
 
-            re->> us  : findUserById  : 사용자 정보 가져오기 
-            activate us
+                    opt 잔여포인트가 결제 금액 보다 적은 경우 
+                        pa-->>cl : Error Response ("Not Enough Balance.")
+                    end 
 
-            us-->> re  : [User] : 사용자 정보 반환 
-            deactivate us
+                    pa->>se  : purchase  : [Reservation] 에 연관된 모든 [Seat] Status "reserved" 로 변경 
+                    pa->>us  : purchase  : 결제 금액만큼 [User.point] 차감 
+                    pa->>re  : purchase  : 모든 [Reservation] 의 Status "purchase" 로 변경
+                    
 
-            opt 좌석 점유 시간 만료
-                re->> se : updateSeatStatus : 예약된 좌석 점유 상태해제 : {status : "reservable"} 
-                re->> cs : updateLeftTicket : [ConcertSchedule] 의 남은 티켓 수 수정 
-                re->> re : updateReservationStatus : 예약 상태 변경 : {status : "cancel"}
-                re->>cl  : Error Response ("The reservation time has expired.")
-            end 
 
-                opt 좌석 가격 > 사용자 잔여 포인트 
-                    re->>cl : Error Response ("Not Enough Balance")
-                end
+                end 
 
-                re->> us : purchase  : 좌석 가격만큼 사용자의 포인트 차감 
-                re->> se : updateStatus : 예약된 좌석 점유 상태해제 : {status : "reserved"}
-                re->> re : updateStatus : 예약 상태 "complete" 으로 변경  
+            else 예약 불가능한 [Reservation] 이 존재하는 경우 
+                pa-->>cl: Error Response ("A Reservation is Expired.")
+            end
 
-                re->> cl : Response : 예약 완료
-        end
     
     else 검증되지 않은 토큰
-        re-->>cl : Error Response ("This Token is not Valid")
+        pa-->>cl : Error Response ("This Token is not Valid")
     end
 
-    deactivate re
-
-
+    deactivate pa
                    
 ```
+                   
