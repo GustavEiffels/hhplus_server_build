@@ -30,6 +30,10 @@ dependencyManagement {
 }
 
 dependencies {
+
+	// validation-api : 2025-01-04
+	implementation("jakarta.validation:jakarta.validation-api:3.0.2")
+
     // Spring
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -49,6 +53,7 @@ dependencies {
 	// Lombok
 	compileOnly("org.projectlombok:lombok:1.18.24") // Lombok 의존성 추가
 	annotationProcessor("org.projectlombok:lombok:1.18.24") // Lombok 애노테이션 프로세서 추가
+
 
 }
 

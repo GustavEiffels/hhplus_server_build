@@ -5,7 +5,6 @@ import lombok.Getter;
 
 public interface TokenApiDto {
     @Getter
-    @Builder
     class GenerateTokenRes{
         private String message;
         private Long   tokenId;
