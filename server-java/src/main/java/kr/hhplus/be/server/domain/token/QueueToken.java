@@ -1,4 +1,34 @@
 package kr.hhplus.be.server.domain.token;
 
-public class QueueToken {
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import kr.hhplus.be.server.common.BaseEntity;
+import kr.hhplus.be.server.domain.user.User;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class QueueToken extends BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "queue_id")
+    private Long id;
+
+    @NotNull
+    private QueueTokenStatus status = QueueTokenStatus.Wait;
+
+    private LocalDateTime expireAt;
+
+    @ManyToOne
+    @JoinColumn(
+            name = "user_id",
+            nullable = false,
+            foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    private User user;
 }
