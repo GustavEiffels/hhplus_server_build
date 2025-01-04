@@ -29,6 +29,14 @@
 
 <br>
 
+### REQUEST
+```json
+{
+    "userId":1,
+    "tokenId":1,
+    "reservation_list":[2,3,4,5]
+}
+```
 
 ### RESPONSE
 
@@ -57,7 +65,7 @@
   ]
 }
 ```
-
+---
 **STATUS : 404 : NOT FOUND USER**
 ```json
 {
