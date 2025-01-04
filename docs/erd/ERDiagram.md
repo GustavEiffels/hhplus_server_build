@@ -3,23 +3,20 @@
 title: Concert API
 ---
 erDiagram
-    User {
-        long id PK           
-        string name         "사용자 이름"
-        int point           "잔여 포인트"
-        datetime createAt   "생성 시간"
-        datetime updateAt   "최근 수정 시간"
-    }
+
+
     Seat {
         long id PK
         int scheduleId    FK    "[콘서트 스케줄] 테이블 외래키" 
         string status           "좌석 상태 : reserved (default), occupied, reservable"
         int number              "좌석 번호"
         decimal price           "좌석 가격"
+        int userId FK           "[사용자] 테이블 외래키 (nullable)" 
         datetime expiredAt      "점유 만료 시간"
         datetime createAt       "생성 시간"
         datetime updateAt       "최근 수정 시간"
     }
+
     Reservation {
         long id PK               
         int userId FK           "[사용자] 테이블 외래키"           
@@ -29,6 +26,7 @@ erDiagram
         datetime createAt       "생성 시간"
         datetime updateAt       "최근 수정 시간"
     }
+
     QueueToken {
         long id PK               
         int userId FK       "[사용자] 테이블 외래키" 
@@ -37,6 +35,7 @@ erDiagram
         datetime createAt   "생성 시간"
         datetime updateAt   "최근 수정 시간"
     }
+
     Payment {
         long id PK
         int userId FK       "[사용자] 테이블 외래키"
@@ -44,6 +43,15 @@ erDiagram
         decimal amount      "총 결제 금액"
         datetime createAt   "생성 시간"
         datetime updateAt   "최근 수정 시간"
+    }
+
+    PointHistory {
+        long id PK
+        int userId FK       "[사용자] 테이블 외래키"
+        int paymentId FK    "[결제] 테이블 외래키 (nullable)"
+        int amount          "포인트 변경량 (+ 충전, - 사용)"
+        string description  "변경 내역 설명 (e.g., 충전, 티켓 구매)"
+        datetime createAt   "생성 시간"
     }
 
     Concert {
@@ -62,11 +70,21 @@ erDiagram
         datetime createAt           "생성 시간"
         datetime updateAt           "최근 수정 시간"
     }
+        User {
+        long id PK           
+        string name         "사용자 이름"
+        int point           "잔여 포인트"
+        datetime createAt   "생성 시간"
+        datetime updateAt   "최근 수정 시간"
+    }
 
-    User ||--o{ Reservation : "User:Reservation = 1:N"
-    User ||--o{ QueueToken  : "User:QueueToken = 1:N"
     Seat ||--o{ Reservation : "Seat:Reservation = 1:N"
     Payment ||--o{ Reservation : "Payment:Reservation = 1:N"
+    Payment ||--o{ PointHistory : "Payment:PointHistory = 1:N"
     Concert ||--o{ ConcertSchedule : "Concert:ConcertSchedule = 1:N"
     ConcertSchedule ||--o{ Seat : "ConcertSchedule:Seat = 1:N"
+    User ||--o{ Reservation : "User:Reservation = 1:N"
+    User ||--o{ PointHistory : "User:PointHistory = 1:N"
+    User ||--o{ QueueToken  : "User:QueueToken = 1:N"
+
 ```
