@@ -1,13 +1,19 @@
-package kr.hhplus.be.server.infrastructure;
+package kr.hhplus.be.server.persentation.controller;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 @Getter
 public class ApiResponse<T> {
 
+    @Schema(description = "상태 코드",example = "200")
     private int code;
+
+    @Schema(description = "Http 상태",example = "OK")
     private HttpStatus status;
+
+    @Schema(description = "결과에 대한 메세지",example = "Success")
     private String message;
     private T data;
 

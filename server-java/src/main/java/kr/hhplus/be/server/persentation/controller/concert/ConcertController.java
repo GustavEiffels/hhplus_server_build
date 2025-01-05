@@ -1,6 +1,9 @@
 
 package kr.hhplus.be.server.persentation.controller.concert;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import kr.hhplus.be.server.persentation.controller.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,58 +11,56 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
+@Tag(name = "2. 예약 가능 날짜 / 좌석 API",description = "예약 가능한 날짜/좌석을 조회하기 위한 컨트롤러")
 @RestController
 @RequestMapping("/concerts")
 public class ConcertController {
 
     @PostMapping("/schedules/available-seats")
-    public ResponseEntity<ConcertApiDto.LeftSeatRes> findLeftSeat(@RequestBody ConcertApiDto.LeftSeatReq request){
+    @Operation(summary = "예약 가능 좌석 API",description = "날짜 정보를 입력받아 예약가능한 좌석정보를 조회")
+    public ResponseEntity<ApiResponse<ConcertApiDto.LeftSeatRes>> findLeftSeat(@RequestBody ConcertApiDto.LeftSeatReq request){
         ConcertApiDto.LeftSeatRes.SeatInfo seat = ConcertApiDto.LeftSeatRes.SeatInfo.builder()
                 .seat_num("10")
                 .seat_id(1)
                 .build();
 
-        ConcertApiDto.LeftSeatRes.ScheduleInfo scheduleInfo = ConcertApiDto.LeftSeatRes.ScheduleInfo.builder()
-                .date("2025-03-01T18:00:00")
-                .reservation_start("2025-02-01T12:00:00")
-                .reservation_end("2025-02-02T12:00:00")
-                .build();
-
         ConcertApiDto.LeftSeatRes response = ConcertApiDto.LeftSeatRes.builder()
-                .message("Load All Avaialble Seats")
                 .cnt(1)
-                .schedule_info(scheduleInfo)
+                .date(LocalDateTime.now().plusDays(10))
+                .reservation_start(LocalDateTime.now().plusDays(1))
+                .reservation_end(LocalDateTime.now().plusDays(2))
                 .seat_list(Arrays.asList(seat))
                 .build();
 
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(ApiResponse.ok(response), HttpStatus.OK);
     }
 
 
     @PostMapping("schedules")
-    public ResponseEntity<ConcertApiDto.AvailableDateRes> findAvailableScheduleDate(@RequestBody ConcertApiDto.AvailableDateReq request) {
+    @Operation(summary = "예약 가능 날짜",description = "예약 가능한 날짜 목록을 조회")
+    public ResponseEntity<ApiResponse<ConcertApiDto.AvailableDateRes>> findAvailableScheduleDate(@RequestBody ConcertApiDto.AvailableDateReq request) {
         List<ConcertApiDto.AvailableDateRes.ScheduleInfo> scheduleList = Arrays.asList(
                 ConcertApiDto.AvailableDateRes.ScheduleInfo.builder()
                         .schedule_id(1)
-                        .date("2025-03-01T18:00:00")
-                        .reservation_start("2025-02-01T12:00:00")
-                        .reservation_end("2025-02-02T12:00:00")
+                        .date(LocalDateTime.now().plusDays(10))
+                        .reservation_start(LocalDateTime.now().plusDays(1))
+                        .reservation_end(LocalDateTime.now().plusDays(2))
                         .leftTicket(10)
                         .build(),
                 ConcertApiDto.AvailableDateRes.ScheduleInfo.builder()
                         .schedule_id(2)
-                        .date("2025-03-10T18:00:00")
-                        .reservation_start("2025-02-10T12:00:00")
-                        .reservation_end("2025-02-12T12:00:00")
+                        .date(LocalDateTime.now().plusDays(10))
+                        .reservation_start(LocalDateTime.now().plusDays(1))
+                        .reservation_end(LocalDateTime.now().plusDays(2))
                         .leftTicket(30)
                         .build()
         );
 
         ConcertApiDto.AvailableDateRes response = ConcertApiDto.AvailableDateRes.builder()
-                .message("Load All Schedule")
                 .cnt(2)
                 .concert_info(ConcertApiDto.AvailableDateRes.ConcertInfoDto.builder()
                         .name("서커스!")
@@ -68,7 +69,7 @@ public class ConcertController {
                 .schedule_list(scheduleList)
                 .build();
 
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(ApiResponse.ok(response), HttpStatus.OK);
     }
 
 
