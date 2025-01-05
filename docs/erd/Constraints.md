@@ -11,11 +11,14 @@
 > 제약 조건은 아니고 QueueToken Active 하는 스케줄만 작성하려고 함 
 
 ### Payment 
+- [x]
 > quantity 는 0 보다 반드시 커야한다 
 
 ### ConcertSchedule 
+- [x]
 > Show Time 은 현재 보다 과거 여야 한다 
 > reservationStart < reservationEnd 필수 
 
 ### User
+- [x]
 > point 의 최소 값은 0 이며 최대 값은 100_000_000 이다. 

@@ -3,8 +3,6 @@
 title: Concert API
 ---
 erDiagram
-
-
     Seat {
         long id PK
 
