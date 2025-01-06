@@ -10,7 +10,7 @@ erDiagram
         int scheduleId    FK    "[콘서트 스케줄] 테이블 외래키" 
         int userId        FK    "[사용자] 테이블 외래키 (nullable)" 
 
-        string   status           "좌석 상태 : reserved (default), occupied, reservable"
+        string   status           "좌석 상태 : reservable (default), occupied, reserved"
         int      seatNo              "좌석 번호"
         decimal  price           "좌석 가격"
         datetime updateAt       "최근 수정 시간"
@@ -94,5 +94,6 @@ erDiagram
     User ||--o{ Reservation : "User:Reservation = 1:N"
     User ||--o{ PointHistory : "User:PointHistory = 1:N"
     User ||--o{ QueueToken  : "User:QueueToken = 1:N"
+    User ||--o{ Payment  : "User:Payment = 1:N"
 
 ```
