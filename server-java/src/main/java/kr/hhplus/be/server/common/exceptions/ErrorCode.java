@@ -1,7 +1,8 @@
 package kr.hhplus.be.server.common.exceptions;
 
 public enum ErrorCode {
-    Entity("Data Setting Error","[ 테이블 정책에 어긋나는 값이 감지 되었습니다. ]");
+    Entity("Data Setting Error","[ 테이블 정책에 어긋나는 값이 감지 되었습니다. ]"),
+    Repository("Search Data Error","[ 데이터를 찾는 과정에서 예외 상황이 감지 되었습니다. ]");
 
 
     private final String status;

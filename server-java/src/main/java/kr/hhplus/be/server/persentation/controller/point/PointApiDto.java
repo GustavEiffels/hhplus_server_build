@@ -1,12 +1,10 @@
-package kr.hhplus.be.server.persentation.controller.user;
+package kr.hhplus.be.server.persentation.controller.point;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 
-import javax.print.DocPrintJob;
-
-public interface UserApiDto {
+public interface PointApiDto {
 
     @Getter
     @Builder
