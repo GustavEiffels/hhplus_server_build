@@ -17,7 +17,7 @@ import java.util.List;
 
 @Tag(name = "3. 좌석 예약 요청 API",description = "좌석 예약을 위한 API")
 @RestController
-@RequestMapping("/reservation")
+@RequestMapping("/reservations")
 public class ReservationController {
 
 

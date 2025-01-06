@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jdk.jfr.Name;
 import kr.hhplus.be.server.common.BaseEntity;
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
@@ -52,32 +51,14 @@ public class ConcertSchedule extends BaseEntity {
             LocalDateTime reserveStartTime,
             LocalDateTime reserveEndTime,
             Concert concert){
-        setTime(showTime,reserveStartTime,reserveEndTime);
         if(concert == null){
             throw new BusinessException(ErrorCode.Entity,"[콘서트] 정보는 필수적으로 입력 되어야합니다.");
         }
+        reschedule(showTime,reserveStartTime,reserveEndTime);
         this.concert = concert;
     }
 
-    public void updateTime(
-            LocalDateTime showTime,
-            LocalDateTime reserveStartTime,
-            LocalDateTime reserveEndTime){
-        if(showTime == null){
-            showTime = this.showTime;
-        }
-        if(reserveStartTime == null) {
-            reserveStartTime = this.reservation_start;
-        }
-        if(reserveEndTime == null) {
-            reserveEndTime = this.reservation_end;
-        }
-
-        setTime(showTime,reserveStartTime,reserveEndTime);
-    }
-
-
-    public void setTime(
+    public void reschedule(
             LocalDateTime showTime,
             LocalDateTime reserveStartTime,
             LocalDateTime reserveEndTime){
@@ -98,7 +79,7 @@ public class ConcertSchedule extends BaseEntity {
             throw new BusinessException(ErrorCode.Entity,"[공연] 시간은 [예약 종료] 시간보다 늦어야 합니다.");
         }
 
-        this.showTime = showTime;
+        this.showTime          = showTime;
         this.reservation_start = reserveStartTime;
         this.reservation_end   = reserveEndTime;
     }

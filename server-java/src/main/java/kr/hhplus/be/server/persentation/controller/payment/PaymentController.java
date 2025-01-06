@@ -19,11 +19,11 @@ import java.util.List;
 public class PaymentController {
 
 
-    @PostMapping("/purchase")
+    @PostMapping("")
     @Operation(summary = "결제 API",description = "결제 처리하고 결제 내역을 생성하는 API")
     @ApiResponses(value = {
             @io.swagger.v3.oas.annotations.responses.ApiResponse(
-            responseCode = "200",description = "success")})
+            responseCode = "201",description = "success")})
     public ResponseEntity<ApiResponse<PaymentApiDto.PurchaseRes>> purchase(
             @RequestBody PaymentApiDto.PurchaseReq request){
 
@@ -50,7 +50,7 @@ public class PaymentController {
                 ))
                 .build();
 
-        return new ResponseEntity<>(ApiResponse.ok(response), HttpStatus.OK);
+        return new ResponseEntity<>(ApiResponse.ok(response), HttpStatus.CREATED);
     }
 
 }

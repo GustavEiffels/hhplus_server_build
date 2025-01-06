@@ -4,6 +4,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 
+import javax.print.DocPrintJob;
+
 public interface UserApiDto {
 
     @Getter
@@ -13,7 +15,6 @@ public interface UserApiDto {
         private int point;
     }
     class FindBalanceReq{
-
     }
 
     @Getter
@@ -21,7 +22,11 @@ public interface UserApiDto {
     class BalanceChargeReq{
         @Schema(description = "충전할 금액",example = "100000")
         private int point;
+
+        @Schema(description = "사용자 id",example = "1")
+        private Long userId;
     }
+
     @Getter
     @Builder
     class BalanceChargeRes{

@@ -6,10 +6,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import kr.hhplus.be.server.persentation.controller.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -20,9 +17,9 @@ import java.util.List;
 @RequestMapping("/concerts")
 public class ConcertController {
 
-    @PostMapping("/schedules/available-seats")
-    @Operation(summary = "예약 가능 좌석 API",description = "날짜 정보를 입력받아 예약가능한 좌석정보를 조회")
-    public ResponseEntity<ApiResponse<ConcertApiDto.LeftSeatRes>> findLeftSeat(@RequestBody ConcertApiDto.LeftSeatReq request){
+    @GetMapping("/{schedules}/available-seat")
+    @Operation( summary = "예약 가능 좌석 API", description = "날짜 정보를 입력받아 예약가능한 좌석정보를 조회" )
+    public ResponseEntity<ApiResponse<ConcertApiDto.LeftSeatRes>> findLeftSeat(@PathVariable("schedules") Long schedules ){
         ConcertApiDto.LeftSeatRes.SeatInfo seat = ConcertApiDto.LeftSeatRes.SeatInfo.builder()
                 .seat_num("10")
                 .seat_id(1)
@@ -40,9 +37,9 @@ public class ConcertController {
     }
 
 
-    @PostMapping("schedules")
+    @GetMapping("/{concertId}")
     @Operation(summary = "예약 가능 날짜",description = "예약 가능한 날짜 목록을 조회")
-    public ResponseEntity<ApiResponse<ConcertApiDto.AvailableDateRes>> findAvailableScheduleDate(@RequestBody ConcertApiDto.AvailableDateReq request) {
+    public ResponseEntity<ApiResponse<ConcertApiDto.AvailableDateRes>> findAvailableScheduleDate(@PathVariable("concertId") Long concertId) {
         List<ConcertApiDto.AvailableDateRes.ScheduleInfo> scheduleList = Arrays.asList(
                 ConcertApiDto.AvailableDateRes.ScheduleInfo.builder()
                         .schedule_id(1)

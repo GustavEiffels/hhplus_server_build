@@ -8,7 +8,6 @@ erDiagram
 
 
         int scheduleId    FK    "[콘서트 스케줄] 테이블 외래키" 
-        int userId        FK    "[사용자] 테이블 외래키 (nullable)" 
 
         string   status           "좌석 상태 : reservable (default), occupied, reserved"
         int      seatNo              "좌석 번호"
