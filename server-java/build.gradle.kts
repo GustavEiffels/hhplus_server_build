@@ -31,6 +31,12 @@ dependencyManagement {
 
 dependencies {
 
+	// querydsl : 2025-01-06
+	implementation ("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+	annotationProcessor ("com.querydsl:querydsl-apt:${dependencyManagement.importedProperties["querydsl.version"]}:jakarta")
+	annotationProcessor ("jakarta.annotation:jakarta.annotation-api")
+	annotationProcessor ("jakarta.persistence:jakarta.persistence-api")
+
 	// swagger : 2025-01-05
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2")
 
