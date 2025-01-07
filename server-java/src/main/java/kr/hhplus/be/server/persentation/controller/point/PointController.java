@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class PointController {
 
+    @GetMapping("/point")
+    public String test(){
+        return null;
+    }
+
     @GetMapping("/point/{userId}")
     @Operation(summary = "조회 API",description = "사용자의 잔액을 조회하는 API")
     public ResponseEntity<ApiResponse<PointApiDto.FindBalanceRes>> findBalance(

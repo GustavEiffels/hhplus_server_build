@@ -33,6 +33,12 @@ public class QueueTokenFacade {
         return ApiResponse.ok(TokenApiDto.GenerateTokenRes.builder().tokenId(newQueueToken.getId()).build());
     }
 
+    /**
+     * 인터셉터
+     * @param queueTokenId
+     * @param userId
+     * @return
+     */
     public Boolean isValidToken(Long queueTokenId,Long userId){
         // 1. find user
         userService.find(userId);

@@ -17,7 +17,6 @@ import java.util.Optional;
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {
 
-
     @Mock
     private UserRepository repository;
 

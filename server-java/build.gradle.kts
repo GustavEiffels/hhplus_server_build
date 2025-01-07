@@ -31,6 +31,9 @@ dependencyManagement {
 
 dependencies {
 
+	// web client : 2025-01-08
+
+
 	// querydsl : 2025-01-06
 	implementation ("com.querydsl:querydsl-jpa:5.0.0:jakarta")
 	annotationProcessor ("com.querydsl:querydsl-apt:${dependencyManagement.importedProperties["querydsl.version"]}:jakarta")
@@ -48,6 +51,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 
+
     // DB
 	runtimeOnly("com.mysql:mysql-connector-j")
 
@@ -61,6 +65,8 @@ dependencies {
 	// Lombok
 	compileOnly("org.projectlombok:lombok:1.18.24") // Lombok 의존성 추가
 	annotationProcessor("org.projectlombok:lombok:1.18.24") // Lombok 애노테이션 프로세서 추가
+
+
 }
 
 tasks.withType<Test> {

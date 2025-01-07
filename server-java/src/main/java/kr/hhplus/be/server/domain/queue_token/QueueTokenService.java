@@ -24,7 +24,6 @@ public class QueueTokenService {
         return repository.create(queueToken);
     }
 
-
     /**
      * 대기열 토큰이 유효하며, active 된 토큰인지 확인
      */
@@ -37,7 +36,7 @@ public class QueueTokenService {
             throw new BusinessException(ErrorCode.Repository,"사용자가 대기열 토큰와 매칭되지 않습니다.");
         }
 
-        if( queueToken.getExpireAt().isAfter(LocalDateTime.now()) ){
+        if( queueToken.getExpireAt().isBefore(LocalDateTime.now()) ){
             throw new BusinessException(ErrorCode.Repository,"대기열이 만료된 토큰 입니다.");
         }
 
