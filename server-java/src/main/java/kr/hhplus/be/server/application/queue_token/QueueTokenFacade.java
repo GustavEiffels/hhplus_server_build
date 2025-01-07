@@ -22,7 +22,7 @@ public class QueueTokenFacade {
      * @param request
      * @return
      */
-    ApiResponse<TokenApiDto.GenerateTokenRes> create(TokenApiDto.GenerateTokenReq request){
+    public ApiResponse<TokenApiDto.GenerateTokenRes> create(TokenApiDto.GenerateTokenReq request){
         // 1. find user
         User user = userService.find(request.getUserId());
 
@@ -32,4 +32,14 @@ public class QueueTokenFacade {
 
         return ApiResponse.ok(TokenApiDto.GenerateTokenRes.builder().tokenId(newQueueToken.getId()).build());
     }
+
+    public Boolean isValidToken(Long queueTokenId,Long userId){
+        // 1. find user
+        userService.find(userId);
+
+        // 2. isValid Token
+        return queueTokenService.isValidAndActive(queueTokenId,userId);
+    }
+
+
 }

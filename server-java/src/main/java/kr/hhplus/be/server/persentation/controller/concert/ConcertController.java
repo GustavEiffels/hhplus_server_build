@@ -17,6 +17,12 @@ import java.util.List;
 @RequestMapping("/concerts")
 public class ConcertController {
 
+    // 임시 테스트
+    @GetMapping("")
+    public String test(){
+        return null;
+    }
+
     @GetMapping("/{schedules}/available-seat")
     @Operation( summary = "예약 가능 좌석 API", description = "날짜 정보를 입력받아 예약가능한 좌석정보를 조회" )
     public ResponseEntity<ApiResponse<ConcertApiDto.LeftSeatRes>> findLeftSeat(@PathVariable("schedules") Long schedules ){
