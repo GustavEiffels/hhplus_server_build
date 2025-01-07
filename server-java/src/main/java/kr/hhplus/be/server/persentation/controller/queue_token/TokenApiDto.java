@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.persentation.controller.token;
+package kr.hhplus.be.server.persentation.controller.queue_token;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;

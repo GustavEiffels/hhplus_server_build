@@ -31,9 +31,7 @@ class SeatTest {
         int price  = 9_000;
 
         // when
-        BusinessException businessException = Assertions.assertThrows(BusinessException.class,()->{
-            Seat.builder().seatNo(seatNo).price(price).build();
-        });
+        BusinessException businessException = Assertions.assertThrows(BusinessException.class,()->Seat.builder().seatNo(seatNo).price(price).build());
 
         // then
         assertEquals(ErrorCode.Entity,businessException.getErrorStatus());

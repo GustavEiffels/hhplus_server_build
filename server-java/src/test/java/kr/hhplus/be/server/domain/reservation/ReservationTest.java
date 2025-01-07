@@ -60,7 +60,7 @@ class ReservationTest {
 
         // when
         BusinessException be = assertThrows(
-                BusinessException.class,()->{
+                BusinessException.class,() -> {
                     Reservation re = Reservation.builder()
                             .user(user)
                             .build();

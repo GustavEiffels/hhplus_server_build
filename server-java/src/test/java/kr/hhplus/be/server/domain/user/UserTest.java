@@ -14,12 +14,12 @@ class UserTest {
         User testUser = User.builder().name("김연습").build();
 
         // when : 포인트 트랜잭션을 수행하면
-        BusinessException exception = Assertions.assertThrows(BusinessException.class,()->{
-            testUser.pointTransaction(transactionPoint);
-        });
+        BusinessException exception = Assertions.assertThrows(BusinessException.class,()-> testUser.pointTransaction(transactionPoint));
 
         // then : ErrorCode 의 Status 가 "Entity" 인 에러가 발생한다.
         Assertions.assertEquals(ErrorCode.Entity,exception.getErrorStatus());
     }
+
+
 
 }

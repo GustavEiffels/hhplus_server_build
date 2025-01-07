@@ -31,12 +31,11 @@ class UserServiceTest {
         Mockito.when(repository.findByUserId(userId)).thenReturn(Optional.empty());
 
         // when
-        BusinessException exception = Assertions.assertThrows(BusinessException.class, () -> {
-            userService.find(userId);
-        });
+        BusinessException exception = Assertions.assertThrows(BusinessException.class, () -> userService.find(userId));
 
         // then
         Assertions.assertEquals(ErrorCode.Repository,exception.getErrorStatus());
     }
+
 
 }

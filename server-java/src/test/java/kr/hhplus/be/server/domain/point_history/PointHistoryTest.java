@@ -20,10 +20,8 @@ class PointHistoryTest {
         User user = User.builder().name("김연습").build();
 
         // when
-        BusinessException be = assertThrows(
-                BusinessException.class,()->{
-                    PointHistory.createUse(amount,user,null);
-                });
+        BusinessException be = assertThrows( BusinessException.class,()->PointHistory.createUse(amount,user,null) );
+
         // then
         assertEquals(ErrorCode.Entity,be.getErrorStatus());
     }

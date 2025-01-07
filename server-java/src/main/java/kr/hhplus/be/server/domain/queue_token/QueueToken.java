@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.domain.token;
+package kr.hhplus.be.server.domain.queue_token;
 
 
 import jakarta.persistence.*;

@@ -32,9 +32,7 @@ class ConcertTest {
 
         // when
         BusinessException be = assertThrows(
-                BusinessException.class,()->{
-                    Concert.builder().title(title).performer(performer).build();
-                });
+                BusinessException.class, () -> Concert.builder().title(title).performer(performer).build() );
 
         // then
         assertEquals(ErrorCode.Entity,be.getErrorStatus());

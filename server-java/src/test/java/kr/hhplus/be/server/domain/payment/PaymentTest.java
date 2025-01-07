@@ -18,12 +18,12 @@ class PaymentTest {
         User user = User.builder().name("김연습").build();
 
         // when
-        BusinessException exception = assertThrows(BusinessException.class,()->{
+        BusinessException exception = assertThrows(BusinessException.class,()->
             Payment.builder()
                     .amount(amount)
                     .user(user)
-                    .quantity(quantity).build();
-        });
+                    .quantity(quantity).build()
+        );
 
         // then
         assertEquals(ErrorCode.Entity,exception.getErrorStatus());

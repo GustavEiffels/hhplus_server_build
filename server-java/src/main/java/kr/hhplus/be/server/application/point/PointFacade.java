@@ -15,16 +15,28 @@ public class PointFacade {
 
     private final UserService userService;
 
-
+    /**
+     * USECASE 4. 잔액 조회 API
+     * @param userId
+     * @return
+     */
     public ApiResponse<PointApiDto.FindBalanceRes> findUserBalance(Long userId){
+        // 1.사용자 조회
         User user = userService.find(userId);
         return ApiResponse.ok(PointApiDto.FindBalanceRes.builder().point(user.getPoint()).build());
     }
 
+    /**
+     * USECASE 4. 잔액 충전 API
+     * @param request
+     * @return
+     */
     @Transactional
     public ApiResponse<PointApiDto.BalanceChargeRes> pointCharge(PointApiDto.BalanceChargeReq request){
+        // 1. 사용자 조회
         User user = userService.find(request.getUserId());
 
+        // 2. 사용자 포인트 거래
         user.pointTransaction(request.getPoint());
 
         return  ApiResponse.ok(PointApiDto.BalanceChargeRes
