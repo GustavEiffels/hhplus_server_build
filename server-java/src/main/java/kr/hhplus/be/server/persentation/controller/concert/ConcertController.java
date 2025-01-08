@@ -43,9 +43,10 @@ public class ConcertController {
     }
 
 
-    @GetMapping("/{concertId}")
+    @GetMapping("/{concertId}/{page}")
     @Operation(summary = "예약 가능 날짜",description = "예약 가능한 날짜 목록을 조회")
-    public ResponseEntity<ApiResponse<ConcertApiDto.AvailableDateRes>> findAvailableScheduleDate(@PathVariable("concertId") Long concertId) {
+    public ResponseEntity<ApiResponse<ConcertApiDto.AvailableDateRes>> findAvailableScheduleDate(
+            @PathVariable("concertId") Long concertId, @PathVariable("page") int page) {
         List<ConcertApiDto.AvailableDateRes.ScheduleInfo> scheduleList = Arrays.asList(
                 ConcertApiDto.AvailableDateRes.ScheduleInfo.builder()
                         .schedule_id(1)

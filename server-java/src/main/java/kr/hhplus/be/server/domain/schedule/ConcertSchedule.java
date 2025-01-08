@@ -36,9 +36,7 @@ public class ConcertSchedule extends BaseEntity {
     private LocalDateTime reservation_end;
 
     @NotNull
-    @Min(0)
-    @Max(50)
-    private int leftTicket = 50;  // 최대 50 개
+    private Boolean isReserveAble = true;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "concert_id",nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
@@ -84,17 +82,5 @@ public class ConcertSchedule extends BaseEntity {
         this.reservation_end   = reserveEndTime;
     }
 
-    public void increaseTicketCnt(){
-        if(this.leftTicket==50){
-            throw new BusinessException(ErrorCode.Entity,"더 이상 티켓 수를 늘릴 수 없습니다.");
-        }
-        this.leftTicket++;
-    }
-    public void decreaseTicketCnt(){
-        if(this.leftTicket==0){
-            throw new BusinessException(ErrorCode.Entity,"남은 티켓 수량이 [0] 개 입니다.");
-        }
-        this.leftTicket--;
-    }
 
 }

@@ -60,50 +60,53 @@ class ConcertScheduleTest {
         assertEquals(ErrorCode.Entity,businessException.getErrorStatus());
     }
 
-    @Test
-    void 남은_티켓수가_50개_이면_증가_할_수_없습니다(){
-        LocalDateTime startTime = LocalDateTime.now();
-        LocalDateTime endTime   = startTime.plusDays(10);
-        LocalDateTime showTime  = startTime.plusDays(11);
-        Concert concert = Concert.builder().performer("김연습").title("서커스").build();
+// -> ConcertSchedule 의 leftTicket 필드가 변경되어 테스트 삭제
+//    @Test
+//    void 남은_티켓수가_50개_이면_증가_할_수_없습니다(){
+//        LocalDateTime startTime = LocalDateTime.now();
+//        LocalDateTime endTime   = startTime.plusDays(10);
+//        LocalDateTime showTime  = startTime.plusDays(11);
+//        Concert concert = Concert.builder().performer("김연습").title("서커스").build();
+//
+//        ConcertSchedule concertSchedule = ConcertSchedule.builder()
+//                .concert(concert)
+//                .showTime(showTime)
+//                .reserveStartTime(startTime)
+//                .reserveEndTime(endTime)
+//                .build();
+//
+//        // when
+//        BusinessException exception = Assertions.assertThrows(BusinessException.class, concertSchedule::increaseTicketCnt);
+//
+//        // then
+//        assertEquals(ErrorCode.Entity,exception.getErrorStatus());
+//    }
 
-        ConcertSchedule concertSchedule = ConcertSchedule.builder()
-                .concert(concert)
-                .showTime(showTime)
-                .reserveStartTime(startTime)
-                .reserveEndTime(endTime)
-                .build();
 
-        // when
-        BusinessException exception = Assertions.assertThrows(BusinessException.class, concertSchedule::increaseTicketCnt);
-
-        // then
-        assertEquals(ErrorCode.Entity,exception.getErrorStatus());
-    }
-
-    @Test
-    void 남은_티켓수가_0개_이면_감소_할_수_없습니다(){
-        LocalDateTime startTime = LocalDateTime.now();
-        LocalDateTime endTime   = startTime.plusDays(10);
-        LocalDateTime showTime  = startTime.plusDays(11);
-        Concert concert = Concert.builder().performer("김연습").title("서커스").build();
-
-        ConcertSchedule concertSchedule = ConcertSchedule.builder()
-                .showTime(showTime)
-                .concert(concert)
-                .reserveStartTime(startTime)
-                .reserveEndTime(endTime)
-                .build();
-
-        // when
-        BusinessException exception = Assertions.assertThrows(BusinessException.class, ()->{
-            for(int i = 0; i<51; i++){
-                concertSchedule.decreaseTicketCnt();
-            }
-        });
-
-        // then
-        assertEquals(ErrorCode.Entity,exception.getErrorStatus());
-    }
+    // -> ConcertSchedule 의 leftTicket 필드가 변경되어 테스트 삭제
+//    @Test
+//    void 남은_티켓수가_0개_이면_감소_할_수_없습니다(){
+//        LocalDateTime startTime = LocalDateTime.now();
+//        LocalDateTime endTime   = startTime.plusDays(10);
+//        LocalDateTime showTime  = startTime.plusDays(11);
+//        Concert concert = Concert.builder().performer("김연습").title("서커스").build();
+//
+//        ConcertSchedule concertSchedule = ConcertSchedule.builder()
+//                .showTime(showTime)
+//                .concert(concert)
+//                .reserveStartTime(startTime)
+//                .reserveEndTime(endTime)
+//                .build();
+//
+//        // when
+//        BusinessException exception = Assertions.assertThrows(BusinessException.class, ()->{
+//            for(int i = 0; i<51; i++){
+//                concertSchedule.decreaseTicketCnt();
+//            }
+//        });
+//
+//        // then
+//        assertEquals(ErrorCode.Entity,exception.getErrorStatus());
+//    }
 
 }

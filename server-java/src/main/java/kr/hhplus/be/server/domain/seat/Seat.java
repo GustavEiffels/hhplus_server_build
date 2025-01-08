@@ -43,16 +43,7 @@ public class Seat extends BaseEntity {
     private LocalDateTime expiredAt;
 
     @NotNull
-    private SeatStatus status = SeatStatus.RESERVED;
-
-
-
-//    @ManyToOne
-//    @JoinColumn(
-//            name = "user_id",
-//            //nullable = false,
-//            foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-//    private User user;
+    private SeatStatus status = SeatStatus.RESERVABLE;
 
 
     @Builder // 기본 생성
