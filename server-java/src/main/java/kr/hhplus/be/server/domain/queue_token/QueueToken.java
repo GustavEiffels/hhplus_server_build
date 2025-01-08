@@ -42,4 +42,10 @@ public class QueueToken extends BaseEntity {
         }
         this.user = user;
     }
+
+    // test-have to
+    public void activate(){
+        this.status   = QueueTokenStatus.Active;
+        this.expireAt = LocalDateTime.now().plusMinutes(3);
+    }
 }

@@ -8,6 +8,7 @@ import kr.hhplus.be.server.persentation.controller.ApiResponse;
 import kr.hhplus.be.server.persentation.controller.queue_token.TokenApiDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,6 +23,7 @@ public class QueueTokenFacade {
      * @param request
      * @return
      */
+    @Transactional
     public ApiResponse<TokenApiDto.GenerateTokenRes> create(TokenApiDto.GenerateTokenReq request){
         // 1. find user
         User user = userService.find(request.getUserId());
@@ -45,6 +47,21 @@ public class QueueTokenFacade {
 
         // 2. isValid Token
         return queueTokenService.isValidAndActive(queueTokenId,userId);
+    }
+
+
+    @Transactional
+    public void activate(long maxToken){
+        // 1. 현재 활성화 되어 있는 토큰 수 구하기
+        long activeCnt     = queueTokenService.countActive();
+
+        // 2. 활성화 가능한 토큰 수 반환
+        long activeAbleCnt = maxToken-activeCnt;
+
+        // 3. 토큰 활성화
+        if(activeAbleCnt>0){
+            queueTokenService.activate(activeAbleCnt);
+        }
     }
 
 
