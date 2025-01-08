@@ -18,7 +18,7 @@ public class QueueTokenService {
 
     /**
      * ACTIVE 토큰 개수 반환
-     * - 테스트 할 필요가 있나?
+     * - 통합테스트 진행
      * @return
      */
     public long countActive(){
@@ -30,7 +30,7 @@ public class QueueTokenService {
     /**
      * 토큰 활성화
      * @param activateCnt
-     * - 테스트 할 필요가 있나?
+     * - 통합테스트 진행
      */
     public void activate(long activateCnt){
         // 1. active 할 토큰들 조회하여 가져오기

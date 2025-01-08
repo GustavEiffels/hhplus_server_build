@@ -1,8 +1,8 @@
-package kr.hhplus.be.server.persentation.controller.queue_token;
+package kr.hhplus.be.server.interfaces.controller.queue_token;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kr.hhplus.be.server.persentation.controller.ApiResponse;
+import kr.hhplus.be.server.interfaces.controller.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

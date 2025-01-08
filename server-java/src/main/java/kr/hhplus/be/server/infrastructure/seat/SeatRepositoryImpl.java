@@ -17,4 +17,9 @@ public class SeatRepositoryImpl implements SeatRepository {
     public List<Seat> findAllReserveAble(Long concertScheduleId) {
         return jpaRepository.findAllReserveAble(concertScheduleId);
     }
+
+    @Override
+    public List<Seat> findAllReserveAbleWithLock(List<Long> concertScheduleIds) {
+        return jpaRepository.findAllReserveAbleWithLock(concertScheduleIds);
+    }
 }

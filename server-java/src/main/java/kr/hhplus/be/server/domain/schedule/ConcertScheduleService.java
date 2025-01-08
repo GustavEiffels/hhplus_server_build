@@ -28,7 +28,7 @@ public class ConcertScheduleService {
      * @param scheduleId
      * @return
      */
-    public ConcertSchedule find(Long scheduleId){
+    public ConcertSchedule findById(Long scheduleId){
         return repository.findById(scheduleId)
                     .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"해당 날짜의 공연을 찾지 못 하였습니다."));
     }

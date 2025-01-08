@@ -1,9 +1,10 @@
 
-package kr.hhplus.be.server.persentation.controller.concert;
+package kr.hhplus.be.server.interfaces.controller.concert;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kr.hhplus.be.server.persentation.controller.ApiResponse;
+import kr.hhplus.be.server.application.concert.ConcertFacadeDto;
+import kr.hhplus.be.server.interfaces.controller.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -45,17 +46,19 @@ public class ConcertController {
 
     @GetMapping("/{concertId}/{page}")
     @Operation(summary = "예약 가능 날짜",description = "예약 가능한 날짜 목록을 조회")
-    public ResponseEntity<ApiResponse<ConcertApiDto.AvailableDateRes>> findAvailableScheduleDate(
+    public ResponseEntity<ApiResponse<ConcertApiDto.FindScheduleResponse>> findAvailableScheduleDate(
             @PathVariable("concertId") Long concertId, @PathVariable("page") int page) {
-        List<ConcertApiDto.AvailableDateRes.ScheduleInfo> scheduleList = Arrays.asList(
-                ConcertApiDto.AvailableDateRes.ScheduleInfo.builder()
+
+        ConcertFacadeDto.FindScheduleCommand command = new ConcertFacadeDto.FindScheduleCommand(concertId,page);
+        List<ConcertApiDto.FindScheduleResponse.ScheduleInfo> scheduleList = Arrays.asList(
+                ConcertApiDto.FindScheduleResponse.ScheduleInfo.builder()
                         .schedule_id(1)
                         .date(LocalDateTime.now().plusDays(10))
                         .reservation_start(LocalDateTime.now().plusDays(1))
                         .reservation_end(LocalDateTime.now().plusDays(2))
                         .leftTicket(10)
                         .build(),
-                ConcertApiDto.AvailableDateRes.ScheduleInfo.builder()
+                ConcertApiDto.FindScheduleResponse.ScheduleInfo.builder()
                         .schedule_id(2)
                         .date(LocalDateTime.now().plusDays(10))
                         .reservation_start(LocalDateTime.now().plusDays(1))
@@ -64,9 +67,9 @@ public class ConcertController {
                         .build()
         );
 
-        ConcertApiDto.AvailableDateRes response = ConcertApiDto.AvailableDateRes.builder()
+        ConcertApiDto.FindScheduleResponse response = ConcertApiDto.FindScheduleResponse.builder()
                 .cnt(2)
-                .concert_info(ConcertApiDto.AvailableDateRes.ConcertInfoDto.builder()
+                .concert_info(ConcertApiDto.FindScheduleResponse.ConcertInfoDto.builder()
                         .name("서커스!")
                         .performer("김광대")
                         .build())

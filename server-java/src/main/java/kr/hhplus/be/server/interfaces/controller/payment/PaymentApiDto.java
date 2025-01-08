@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.persentation.controller.payment;
+package kr.hhplus.be.server.interfaces.controller.payment;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;

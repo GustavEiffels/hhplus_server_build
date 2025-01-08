@@ -5,8 +5,8 @@ import kr.hhplus.be.server.common.exceptions.ErrorCode;
 
 public interface ConcertFacadeDto {
 
-    record AvailableSchedulesCommand(Long concertId, Integer page){
-        public AvailableSchedulesCommand{
+    record FindScheduleCommand(Long concertId, Integer page){
+        public FindScheduleCommand{
             if(page<1){
                 throw new BusinessException(ErrorCode.INVALID_INPUT,"[page]는 자연수만 허용합니다.");
             }
@@ -15,4 +15,5 @@ public interface ConcertFacadeDto {
             }
         }
     }
+
 }

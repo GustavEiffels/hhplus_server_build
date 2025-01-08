@@ -5,13 +5,15 @@ import jakarta.validation.constraints.NotNull;
 import kr.hhplus.be.server.common.BaseEntity;
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
-import kr.hhplus.be.server.domain.payment.Payment;
 import kr.hhplus.be.server.domain.seat.Seat;
 import kr.hhplus.be.server.domain.user.User;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
 
 @Entity
 @Getter
@@ -24,8 +26,14 @@ public class Reservation extends BaseEntity {
     @NotNull
     private ReservationStatus status = ReservationStatus.Reserved;
 
+    @NotNull
+    private Long amount;
 
-    @ManyToOne
+    
+    private LocalDateTime expiredAt;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "user_id",
             nullable = false,
@@ -33,7 +41,7 @@ public class Reservation extends BaseEntity {
     private User user;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY  )
     @JoinColumn(
             name = "seat_id",
             nullable = false,
@@ -41,12 +49,6 @@ public class Reservation extends BaseEntity {
     private Seat seat;
 
 
-    @ManyToOne
-    @JoinColumn(
-            name = "payment_id",
-            nullable = false,
-            foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-    private Payment payment;
 
 
     @Builder // 생성
@@ -59,14 +61,9 @@ public class Reservation extends BaseEntity {
         }
         this.user = user;
         this.seat = seat;
+        this.amount = seat.getPrice();
     }
 
-    public void addPayment(Payment payment){
-        if(payment == null){
-            throw new BusinessException(ErrorCode.Entity,"[결제] 정보 등록 시 [결제] 정보는 필수로 입력 되어야 합니다.");
-        }
-        this.payment = payment;
-    }
 
     public void updateStatus(ReservationStatus status){
         if( status == null ){

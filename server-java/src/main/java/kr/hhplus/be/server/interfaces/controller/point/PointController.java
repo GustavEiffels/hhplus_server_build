@@ -1,10 +1,10 @@
-package kr.hhplus.be.server.persentation.controller.point;
+package kr.hhplus.be.server.interfaces.controller.point;
 
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kr.hhplus.be.server.persentation.controller.ApiResponse;
+import kr.hhplus.be.server.interfaces.controller.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
-import kr.hhplus.be.server.persentation.controller.ApiResponse;
+import kr.hhplus.be.server.interfaces.controller.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;

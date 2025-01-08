@@ -1,10 +1,10 @@
-package kr.hhplus.be.server.persentation.controller.reservation;
+package kr.hhplus.be.server.interfaces.controller.reservation;
 
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kr.hhplus.be.server.domain.reservation.ReservationStatus;
-import kr.hhplus.be.server.persentation.controller.ApiResponse;
+import kr.hhplus.be.server.interfaces.controller.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Tag(name = "3. 좌석 예약 요청 API",description = "좌석 예약을 위한 API")
 @RestController

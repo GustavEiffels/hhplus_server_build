@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.persentation.scheduler;
+package kr.hhplus.be.server.interfaces.scheduler;
 
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;

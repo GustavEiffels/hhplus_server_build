@@ -29,7 +29,7 @@ public class Seat extends BaseEntity {
     private int seatNo;
 
     @NotNull
-    private int price;
+    private long price;
 
     @ManyToOne
     @JoinColumn(
@@ -38,9 +38,6 @@ public class Seat extends BaseEntity {
             foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private ConcertSchedule concertSchedule;
 
-
-// update often
-    private LocalDateTime expiredAt;
 
     @NotNull
     private SeatStatus status = SeatStatus.RESERVABLE;
@@ -64,12 +61,6 @@ public class Seat extends BaseEntity {
     }
 
     public void updateStatus(SeatStatus status){
-        if( status.equals(SeatStatus.OCCUPIED) ){
-            this.expiredAt = LocalDateTime.now().plusMinutes(5);
-        }
-        else{
-            this.expiredAt = null;
-        }
         this.status = status;
     }
 

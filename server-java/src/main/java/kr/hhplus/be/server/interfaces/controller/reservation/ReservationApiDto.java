@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.persentation.controller.reservation;
+package kr.hhplus.be.server.interfaces.controller.reservation;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import kr.hhplus.be.server.domain.reservation.ReservationStatus;
@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 public interface ReservationApiDto {
 

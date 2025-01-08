@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.persentation.controller.concert;
+package kr.hhplus.be.server.interfaces.controller.concert;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
@@ -12,18 +12,14 @@ public interface ConcertApiDto {
 
     @Getter
     @Builder
-    class AvailableDateReq{
-        @Schema(description = "사용자 id",example = "1")
-        private Long userId;
-        @Schema(description = "대기열 토큰 id",example = "1")
-        private Long tokenId;
+    class FindScheduleRequest{
         @Schema(description = "콘서트 id",example = "1")
         private Long concertId;
     }
 
     @Getter
     @Builder
-    class AvailableDateRes{
+    class FindScheduleResponse{
         @Schema(description = "가능한 날짜 수",example = "2")
         private int cnt;
         @Schema(description = "콘서트 정보")

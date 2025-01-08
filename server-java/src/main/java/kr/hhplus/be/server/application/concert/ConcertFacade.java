@@ -4,8 +4,8 @@ import kr.hhplus.be.server.domain.concert.ConcertService;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.schedule.ConcertScheduleService;
 import kr.hhplus.be.server.domain.seat.SeatService;
-import kr.hhplus.be.server.persentation.controller.ApiResponse;
-import kr.hhplus.be.server.persentation.controller.concert.ConcertApiDto;
+import kr.hhplus.be.server.interfaces.controller.ApiResponse;
+import kr.hhplus.be.server.interfaces.controller.concert.ConcertApiDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,23 +25,21 @@ public class ConcertFacade {
 
     /**
      * USECASE 2.
-     * @param concertId
-     * @param page
      * @return
      */
-    public ApiResponse<ConcertApiDto.AvailableDateRes> searchAvailableSchedule(Long concertId, int page){
+    public ApiResponse<ConcertApiDto.FindScheduleResponse> findSchedules(ConcertFacadeDto.FindScheduleCommand command){
         // 0. concertId null checking
         // 들어오는 page 은 1 이상 의 자연수
 
         // 1. 존재하는 콘서트인지 확인
-        concertService.findById(concertId);
+        concertService.findById(command.concertId());
 
 
         // 2. 예약 가능한 콘서트 반환 || 예약 가능하고 현재 일짜가 예약가능한 날짜 사이에 있는 스케줄 리턴
-        scheduleService.findAvailableSchedules(concertId,(page-1));
+        scheduleService.findAvailableSchedules(command.concertId(), (command.page()-1));
 
 
-        return ApiResponse.ok(ConcertApiDto.AvailableDateRes.builder().build());
+        return ApiResponse.ok(ConcertApiDto.FindScheduleResponse.builder().build());
     }
 
 
@@ -52,7 +50,7 @@ public class ConcertFacade {
      */
     public ApiResponse<ConcertApiDto.LeftSeatRes> searchAvailableSeats(Long concertScheduleId){
         // 1. 존재하는 콘서트 스케줄인지 확인
-        ConcertSchedule concertSchedule = scheduleService.find(concertScheduleId);
+        ConcertSchedule concertSchedule = scheduleService.findById(concertScheduleId);
 
         // 2. 현재 조회 시 예약이 가능한 상태인지 확인
         if(!concertSchedule.getIsReserveAble()){

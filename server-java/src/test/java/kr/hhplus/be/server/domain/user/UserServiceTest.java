@@ -27,10 +27,10 @@ class UserServiceTest {
     void 사용자_조회시_사용자가_존재하지_않으면_BusinessException_Status_Repository_가_발생한다(){
         // given
         Long userId = 1L;
-        Mockito.when(repository.findByUserId(userId)).thenReturn(Optional.empty());
+        Mockito.when(repository.findById(userId)).thenReturn(Optional.empty());
 
         // when
-        BusinessException exception = Assertions.assertThrows(BusinessException.class, () -> userService.find(userId));
+        BusinessException exception = Assertions.assertThrows(BusinessException.class, () -> userService.findById(userId));
 
         // then
         Assertions.assertEquals(ErrorCode.Repository,exception.getErrorStatus());

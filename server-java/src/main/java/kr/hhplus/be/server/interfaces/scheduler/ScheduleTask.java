@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.persentation.scheduler;
+package kr.hhplus.be.server.interfaces.scheduler;
 
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ public class ScheduleTask {
     @Value("${queue.max-active-token:20}")
     private long maxActiveToken;
 
-    @Scheduled(fixedRate =  5_000)
+//    @Scheduled(fixedRate =  5_000)
     public void executeTokenActiveMaker(){
         queueTokenFacade.activate( new ScheduleDto.ActiveTokenRequest(maxActiveToken) );
     }
