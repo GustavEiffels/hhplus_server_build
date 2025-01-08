@@ -18,7 +18,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 
     @Override
-    public Optional<User> findByUserId(Long userId) {
-        return dslRepository.findByUserId(userId);
+    public Optional<User> findById(Long userId) {
+        return dslRepository.findById(userId);
     }
 }

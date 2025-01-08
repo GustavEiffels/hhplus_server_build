@@ -8,5 +8,5 @@ public interface ConcertScheduleRepository {
     List<ConcertSchedule> findReservableScheduleList(Long concertId, int page);
 
 
-    Optional<ConcertSchedule> findByConcertScheduleId(Long concertScheduleId);
+    Optional<ConcertSchedule> findById (Long concertScheduleId);
 }

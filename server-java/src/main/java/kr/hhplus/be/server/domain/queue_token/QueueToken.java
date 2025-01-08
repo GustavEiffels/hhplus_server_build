@@ -28,7 +28,7 @@ public class QueueToken extends BaseEntity {
 
     private LocalDateTime expireAt;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "user_id",
             nullable = false,

@@ -18,8 +18,8 @@ public class UserService {
      * @param userid
      * @return
      */
-    public User find(Long userid){
-        return userRepository.findByUserId(userid)
+    public User findById(Long userid){
+        return userRepository.findById(userid)
                 .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"존재하지 않은 [사용자] 입니다."));
     }
 

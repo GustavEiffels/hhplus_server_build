@@ -18,7 +18,7 @@ public class QueueTokenService {
 
     /**
      * ACTIVE 토큰 개수 반환
-     * - test : have to
+     * - 테스트 할 필요가 있나?
      * @return
      */
     public long countActive(){
@@ -30,7 +30,7 @@ public class QueueTokenService {
     /**
      * 토큰 활성화
      * @param activateCnt
-     * - test : have to
+     * - 테스트 할 필요가 있나?
      */
     public void activate(long activateCnt){
         // 1. active 할 토큰들 조회하여 가져오기
@@ -57,7 +57,7 @@ public class QueueTokenService {
      */
     public Boolean isValidAndActive(Long queueTokenId, Long userId){
 
-        QueueToken queueToken = repository.findById(queueTokenId)
+        QueueToken queueToken = repository.findByIdWithUser(queueTokenId)
                 .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"잘못된 대기열 토큰입니다."));
 
         if(!Objects.equals(queueToken.getUser().getId(), userId)){

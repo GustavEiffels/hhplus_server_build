@@ -34,11 +34,11 @@ public class ConcertFacade {
         // 들어오는 page 은 1 이상 의 자연수
 
         // 1. 존재하는 콘서트인지 확인
-        concertService.find(concertId);
+        concertService.findById(concertId);
 
 
         // 2. 예약 가능한 콘서트 반환 || 예약 가능하고 현재 일짜가 예약가능한 날짜 사이에 있는 스케줄 리턴
-        scheduleService.findReservableScheduleList(concertId,(page-1));
+        scheduleService.findAvailableSchedules(concertId,(page-1));
 
 
         return ApiResponse.ok(ConcertApiDto.AvailableDateRes.builder().build());

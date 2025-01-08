@@ -20,13 +20,10 @@ public class QueueTokenInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        Long queueTokenId = Long.parseLong(request.getHeader("Queue_Token"));
-        Long userId       = Long.parseLong(request.getHeader("UserId"));
+        QueueTokenHeaderRequest headerCommand = new QueueTokenHeaderRequest(request.getHeader("Queue_Token"),request.getHeader("UserId"));
 
-//        System.out.println("queueTokenId : "+queueTokenId);
-//        System.out.println("userId : "+userId);
 
-        if(queueTokenFacade.isValidToken(queueTokenId,userId)){
+        if(queueTokenFacade.isValidToken(headerCommand)){
             ApiResponse<String> tokenIsWait = new ApiResponse<>(HttpStatus.FORBIDDEN,"현재 대기열 대기 중 입니다.",null);
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
             response.setContentType("application/json");

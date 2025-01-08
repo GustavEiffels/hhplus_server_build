@@ -25,7 +25,7 @@ public interface QueueTokenRepository {
      * @param queueTokenId
      * @return
      */
-    Optional<QueueToken> findById(Long queueTokenId);
+    Optional<QueueToken> findByIdWithUser(Long queueTokenId);
 
 
 }

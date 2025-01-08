@@ -10,7 +10,7 @@ public interface TokenJpaRepositoryCustom {
 
     List<QueueToken>    findTokensToActivate(long activateCnt);
 
-    Optional<QueueToken> findByQueueTokenId(Long queueTokenId);
+    Optional<QueueToken> findByIdWithUser(Long queueTokenId);
 
     long countActiveTokens();
 }

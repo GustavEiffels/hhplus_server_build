@@ -32,9 +32,14 @@ public class TokenRepositoryImpl implements QueueTokenRepository {
     }
 
 
-    // 토큰 조회
+    /**
+     * 토큰아이디로
+     * 토큰과 유저 정보를 페치 조인하여 함께 가져오는 함수
+     * @param queueTokenId
+     * @return
+     */
     @Override
-    public Optional<QueueToken> findById(Long queueTokenId){
-        return tokenJpaRepository.findByQueueTokenId(queueTokenId);
+    public Optional<QueueToken> findByIdWithUser(Long queueTokenId){
+        return tokenJpaRepository.findByIdWithUser(queueTokenId);
     }
 }

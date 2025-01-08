@@ -13,14 +13,23 @@ public class ConcertScheduleService {
 
     private final ConcertScheduleRepository repository;
 
-    // lock 을 거는지
-    public List<ConcertSchedule> findReservableScheduleList(Long concertId, int page){
+    /**
+     * 콘서트 아이디를 사용하여, 예약 가능한 콘서트 일정을 반환
+     * @param concertId
+     * @param page
+     * @return
+     */
+    public List<ConcertSchedule> findAvailableSchedules(Long concertId, int page){
         return repository.findReservableScheduleList(concertId,page);
     }
 
+    /**
+     * 콘서트 스케줄 아이디를 사용하여, 콘서트 스케줄을 반환
+     * @param scheduleId
+     * @return
+     */
     public ConcertSchedule find(Long scheduleId){
-
-        return repository.findByConcertScheduleId(scheduleId)
+        return repository.findById(scheduleId)
                     .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"해당 날짜의 공연을 찾지 못 하였습니다."));
     }
 

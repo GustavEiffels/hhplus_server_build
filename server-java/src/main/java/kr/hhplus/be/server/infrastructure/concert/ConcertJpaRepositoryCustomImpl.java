@@ -13,10 +13,4 @@ import static kr.hhplus.be.server.domain.concert.QConcert.concert;
 public class ConcertJpaRepositoryCustomImpl implements ConcertJpaRepositoryCustom {
     private final JPAQueryFactory dsl;
 
-    @Override
-    public Optional<Concert> findByConcertId(Long concertId) {
-        return Optional.ofNullable(
-                dsl.selectFrom(concert).where(concert.id.eq(concertId))
-                        .fetchOne());
-    }
 }

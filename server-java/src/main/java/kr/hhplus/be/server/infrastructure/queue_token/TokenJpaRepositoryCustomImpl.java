@@ -27,7 +27,7 @@ public class TokenJpaRepositoryCustomImpl implements TokenJpaRepositoryCustom{
     }
 
     @Override
-    public Optional<QueueToken> findByQueueTokenId(Long queueTokenId) {
+    public Optional<QueueToken> findByIdWithUser(Long queueTokenId) {
         return Optional.ofNullable(
                 dsl.selectFrom(queueToken)
                         .join(queueToken.user).fetchJoin()

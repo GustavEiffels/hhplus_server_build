@@ -35,7 +35,7 @@ class QueueTokenServiceTest {
         QueueToken queueToken = mock(QueueToken.class);
         User       user = mock(User.class);
 
-        when(repository.findById(queueTokenId)).thenReturn(Optional.empty());
+        when(repository.findByIdWithUser(queueTokenId)).thenReturn(Optional.empty());
 
         // when
         BusinessException exception =
@@ -54,7 +54,7 @@ class QueueTokenServiceTest {
 
         QueueToken queueToken = mock(QueueToken.class);
         User user = mock(User.class);
-        when(repository.findById(queueTokenId)).thenReturn(Optional.of(queueToken));
+        when(repository.findByIdWithUser(queueTokenId)).thenReturn(Optional.of(queueToken));
         when(queueToken.getUser()).thenReturn(user);
         when(user.getId()).thenReturn(2L); // userId = 10 != 2L
 
@@ -75,7 +75,7 @@ class QueueTokenServiceTest {
 
         QueueToken queueToken = mock(QueueToken.class);
         User user = mock(User.class);
-        when(repository.findById(queueTokenId)).thenReturn(Optional.of(queueToken));
+        when(repository.findByIdWithUser(queueTokenId)).thenReturn(Optional.of(queueToken));
         when(queueToken.getUser()).thenReturn(user);
         when(user.getId()).thenReturn(userId);
         when(queueToken.getExpireAt()).thenReturn(LocalDateTime.now().minusHours(3)); // 지금으로 부터 3시간 전이 만료 시간전인 경우
@@ -98,7 +98,7 @@ class QueueTokenServiceTest {
 
         QueueToken queueToken = mock(QueueToken.class);
         User user = mock(User.class);
-        when(repository.findById(queueTokenId)).thenReturn(Optional.of(queueToken));
+        when(repository.findByIdWithUser(queueTokenId)).thenReturn(Optional.of(queueToken));
         when(queueToken.getUser()).thenReturn(user);
         when(user.getId()).thenReturn(userId);
         when(queueToken.getExpireAt()).thenReturn(LocalDateTime.now().plusHours(3));

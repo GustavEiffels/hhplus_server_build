@@ -15,6 +15,6 @@ public class ConcertRepositoryImpl implements ConcertRepository {
 
     @Override
     public Optional<Concert> findById(Long concertId) {
-        return jpaRepository.findByConcertId(concertId);
+        return jpaRepository.findById(concertId);
     }
 }

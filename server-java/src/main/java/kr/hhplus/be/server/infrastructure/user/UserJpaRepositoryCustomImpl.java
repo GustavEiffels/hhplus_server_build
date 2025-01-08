@@ -12,13 +12,4 @@ import static kr.hhplus.be.server.domain.user.QUser.user;
 @RequiredArgsConstructor
 public class UserJpaRepositoryCustomImpl implements UserJpaRepositoryCustom{
     private final JPAQueryFactory dsl;
-
-    @Override
-    public Optional<User> findByUserId(Long userId) {
-        return Optional.ofNullable(
-                dsl.selectFrom(user)
-                        .where(user.id.eq(userId))
-                        .fetchOne()
-        );
-    }
 }

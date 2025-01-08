@@ -1,11 +1,13 @@
 package kr.hhplus.be.server.application.queue_token;
 
+import kr.hhplus.be.server.common.interceptor.QueueTokenHeaderRequest;
 import kr.hhplus.be.server.domain.queue_token.QueueToken;
 import kr.hhplus.be.server.domain.queue_token.QueueTokenService;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserService;
 import kr.hhplus.be.server.persentation.controller.ApiResponse;
 import kr.hhplus.be.server.persentation.controller.queue_token.TokenApiDto;
+import kr.hhplus.be.server.persentation.scheduler.ScheduleDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +28,7 @@ public class QueueTokenFacade {
     @Transactional
     public ApiResponse<TokenApiDto.GenerateTokenRes> create(TokenApiDto.GenerateTokenReq request){
         // 1. find user
-        User user = userService.find(request.getUserId());
+        User user = userService.findById(request.getUserId());
 
         // 2. Create Entity & Create
         QueueToken newQueueToken = queueTokenService.createToken(
@@ -41,22 +43,22 @@ public class QueueTokenFacade {
      * @param userId
      * @return
      */
-    public Boolean isValidToken(Long queueTokenId,Long userId){
+    public Boolean isValidToken(QueueTokenHeaderRequest request){
         // 1. find user
-        userService.find(userId);
+        userService.findById(request.userId());
 
         // 2. isValid Token
-        return queueTokenService.isValidAndActive(queueTokenId,userId);
+        return queueTokenService.isValidAndActive(request.queueTokenId(), request.userId());
     }
 
 
     @Transactional
-    public void activate(long maxToken){
+    public void activate(ScheduleDto.ActiveTokenRequest request){
         // 1. 현재 활성화 되어 있는 토큰 수 구하기
         long activeCnt     = queueTokenService.countActive();
 
         // 2. 활성화 가능한 토큰 수 반환
-        long activeAbleCnt = maxToken-activeCnt;
+        long activeAbleCnt = request.maxToken()-activeCnt;
 
         // 3. 토큰 활성화
         if(activeAbleCnt>0){
