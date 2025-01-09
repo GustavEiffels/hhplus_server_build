@@ -18,11 +18,6 @@ import org.springframework.web.bind.annotation.*;
 public class PointController {
     private final PointFacade pointFacade;
 
-    @GetMapping("/point")
-    public String test(){
-        return null;
-    }
-
     @GetMapping("/point/{userId}")
     @Operation(summary = "조회 API",description = "사용자의 잔액을 조회하는 API")
     public ResponseEntity<ApiResponse<PointApiDto.FindBalanceResponse>> findBalance(
@@ -42,7 +37,7 @@ public class PointController {
             @RequestBody PointApiDto.ChargePointRequest request){
 
         PointFacadeDto.ChargeResult result = pointFacade.pointCharge(request.toParam());
-        PointApiDto.ChargePointResponse response = new PointApiDto.ChargePointResponse(result);
+        PointApiDto.ChargePointResponse response = new PointApiDto.ChargePointResponse(result.type(),result.amount(),result.userId());
 
         return new ResponseEntity<>(ApiResponse.ok(response ), HttpStatus.OK);
     }
