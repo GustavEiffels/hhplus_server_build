@@ -40,8 +40,10 @@ public class PaymentFacade {
 
 
         // 예약 lock : 에약 상태로 변경
-        List<Reservation> reservations = reservationService.findByIdsWithUseridAndLock(param.reservationIds(),param.userid());
-
+        List<Reservation> reservations = reservationService.findByIdsWithUseridAndLock(param.reservationIds(), param.userid())
+                .stream()
+                .peek(item -> item.updateStatus(ReservationStatus.Reserved)) // 상태를 업데이트
+                .toList();
 
         // 좌석 id 추출 -> lock 이 아님..
         List<Long> seatIds = reservations.stream()
