@@ -5,6 +5,7 @@ import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.concert.Concert;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.seat.Seat;
+import kr.hhplus.be.server.interfaces.controller.concert.ConcertApiDto;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -37,6 +38,13 @@ public interface ConcertFacadeDto {
                     concert.getPerformer(),
                     scheduleInfolist
             );
+        }
+        public ConcertApiDto.FindScheduleResponse toResponse() {
+            List<ConcertApiDto.ScheduleInfo> apiScheduleList = this.scheduleInfoList.stream()
+                    .map(info -> new ConcertApiDto.ScheduleInfo(info.re_start(), info.re_end(), info.show()))
+                    .toList();
+
+            return new ConcertApiDto.FindScheduleResponse(this.title, this.performer, apiScheduleList);
         }
     }
     record ScheduleInfo(LocalDateTime re_start,LocalDateTime re_end,LocalDateTime show){}

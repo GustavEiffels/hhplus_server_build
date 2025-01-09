@@ -3,8 +3,10 @@ package kr.hhplus.be.server.interfaces.controller.concert;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kr.hhplus.be.server.application.concert.ConcertFacade;
 import kr.hhplus.be.server.application.concert.ConcertFacadeDto;
 import kr.hhplus.be.server.interfaces.controller.ApiResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,67 +18,31 @@ import java.util.List;
 @Tag(name = "2. 예약 가능 날짜 / 좌석 API",description = "예약 가능한 날짜/좌석을 조회하기 위한 컨트롤러")
 @RestController
 @RequestMapping("/concerts")
+@RequiredArgsConstructor
 public class ConcertController {
 
-    // 임시 테스트
-    @GetMapping("")
-    public String test(){
-        return null;
-    }
+    private final ConcertFacade concertFacade;
 
-    @GetMapping("/{schedules}/available-seat")
+    @GetMapping("/{schedule_id}/available-seat")
     @Operation( summary = "예약 가능 좌석 API", description = "날짜 정보를 입력받아 예약가능한 좌석정보를 조회" )
-    public ResponseEntity<ApiResponse<ConcertApiDto.LeftSeatRes>> findLeftSeat(@PathVariable("schedules") Long schedules ){
-        ConcertApiDto.LeftSeatRes.SeatInfo seat = ConcertApiDto.LeftSeatRes.SeatInfo.builder()
-                .seat_num("10")
-                .seat_id(1)
-                .build();
-
-        ConcertApiDto.LeftSeatRes response = ConcertApiDto.LeftSeatRes.builder()
-                .cnt(1)
-                .date(LocalDateTime.now().plusDays(10))
-                .reservation_start(LocalDateTime.now().plusDays(1))
-                .reservation_end(LocalDateTime.now().plusDays(2))
-                .seat_list(Arrays.asList(seat))
-                .build();
-
+    public ResponseEntity<ApiResponse<ConcertApiDto.FindLeftSeatResponse>> findLeftSeat(@PathVariable("schedule_id") Long schedule_id ){
+        ConcertApiDto.FindLeftSeatRequest request   = new ConcertApiDto.FindLeftSeatRequest(schedule_id);
+        ConcertApiDto.FindLeftSeatResponse response = ConcertApiDto.FindLeftSeatResponse.from(concertFacade.findAvailableSeats(request.toParam()));
         return new ResponseEntity<>(ApiResponse.ok(response), HttpStatus.OK);
     }
 
 
     @GetMapping("/{concertId}/{page}")
     @Operation(summary = "예약 가능 날짜",description = "예약 가능한 날짜 목록을 조회")
-    public ResponseEntity<ApiResponse<ConcertApiDto.FindScheduleResponse>> findAvailableScheduleDate(
+    public ResponseEntity<ApiResponse<ConcertApiDto.FindScheduleResponse>> findSchedules(
             @PathVariable("concertId") Long concertId, @PathVariable("page") int page) {
 
-        ConcertFacadeDto.FindScheduleParam command = new ConcertFacadeDto.FindScheduleParam(concertId,page);
-        List<ConcertApiDto.FindScheduleResponse.ScheduleInfo> scheduleList = Arrays.asList(
-                ConcertApiDto.FindScheduleResponse.ScheduleInfo.builder()
-                        .schedule_id(1)
-                        .date(LocalDateTime.now().plusDays(10))
-                        .reservation_start(LocalDateTime.now().plusDays(1))
-                        .reservation_end(LocalDateTime.now().plusDays(2))
-                        .leftTicket(10)
-                        .build(),
-                ConcertApiDto.FindScheduleResponse.ScheduleInfo.builder()
-                        .schedule_id(2)
-                        .date(LocalDateTime.now().plusDays(10))
-                        .reservation_start(LocalDateTime.now().plusDays(1))
-                        .reservation_end(LocalDateTime.now().plusDays(2))
-                        .leftTicket(30)
-                        .build()
-        );
-
-        ConcertApiDto.FindScheduleResponse response = ConcertApiDto.FindScheduleResponse.builder()
-                .cnt(2)
-                .concert_info(ConcertApiDto.FindScheduleResponse.ConcertInfoDto.builder()
-                        .name("서커스!")
-                        .performer("김광대")
-                        .build())
-                .schedule_list(scheduleList)
-                .build();
-
-        return new ResponseEntity<>(ApiResponse.ok(response), HttpStatus.OK);
+        return new ResponseEntity<>(
+                ApiResponse.ok(
+                        concertFacade.findSchedules(
+                                new ConcertApiDto.FindScheduleRequest(concertId,page)
+                                        .to())
+                                .toResponse()), HttpStatus.OK);
     }
 
 
