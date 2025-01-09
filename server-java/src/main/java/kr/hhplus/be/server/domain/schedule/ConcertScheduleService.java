@@ -33,4 +33,17 @@ public class ConcertScheduleService {
                     .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"해당 날짜의 공연을 찾지 못 하였습니다."));
     }
 
+    public ConcertSchedule findByIdWithLock(Long scheduleId){
+        return repository.findByIdWithLock(scheduleId)
+                .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"해당 날짜의 공연을 찾지 못 하였습니다."));
+    }
+
+
+    public List<ConcertSchedule> findByIdsWithLock(List<Long> scheduleIds){
+        return repository.findByIdsWithLock(scheduleIds);
+    }
+
+
+
+
 }

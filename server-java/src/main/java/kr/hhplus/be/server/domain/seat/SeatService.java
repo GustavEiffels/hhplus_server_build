@@ -18,8 +18,8 @@ public class SeatService {
      * @param concertScheduleId
      * @return
      */
-    public List<Seat> findReserveAble(Long concertScheduleId){
-        return repository.findAllReserveAble(concertScheduleId);
+    public List<Seat> findByScheduleId(Long concertScheduleId){
+        return repository.findByScheduleId(concertScheduleId);
     }
 
     public List<Seat> findAllReserveAbleWithLock(List<Long> seatIds){

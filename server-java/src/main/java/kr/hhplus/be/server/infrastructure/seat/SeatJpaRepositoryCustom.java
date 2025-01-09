@@ -6,10 +6,7 @@ import java.util.List;
 
 public interface SeatJpaRepositoryCustom {
 
-    List<Seat> findAllReserveAble(Long concertId);
-
-    List<Seat> findAllReserveAbleWithLock(List<Long> concertScheduleIds);
-
-
     List<Seat> findAllByIdsWithLock(List<Long> seatIds);
+
+    List<Seat> findByScheduleId(Long concertScheduleId);
 }

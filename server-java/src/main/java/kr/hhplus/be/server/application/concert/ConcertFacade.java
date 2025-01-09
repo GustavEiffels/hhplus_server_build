@@ -30,7 +30,7 @@ public class ConcertFacade {
 
     /**
      * USECASE 2.concnertId 로 콘서트 스케줄 정보 페이징해서 가져오기
-     * @param command
+     * @param param
      * @return
      */
     public ConcertFacadeDto.FindScheduleResult findSchedules(ConcertFacadeDto.FindScheduleParam param){
@@ -57,7 +57,7 @@ public class ConcertFacade {
     public ConcertFacadeDto.FindLeftSeatResult findAvailableSeats(ConcertFacadeDto.FindLeftSeatParam param){
 
         // 1. 존재하는 콘서트 스케줄인지 확인
-        ConcertSchedule concertSchedule = scheduleService.findById(param.concertId());
+        ConcertSchedule concertSchedule = scheduleService.findById(param.scheduleId());
 
         // 2. 현재 조회 시 예약이 가능한 상태인지 확인
         if(!concertSchedule.getIsReserveAble()){
@@ -73,7 +73,7 @@ public class ConcertFacade {
 
         // 4. 예약 가능한 콘서트 반환
         // 조회 조건 -> Seat : status -> reservable
-        List<Seat> seatList = seatService.findReserveAble(param.concertId());
+        List<Seat> seatList = seatService.findByScheduleId(param.scheduleId());
 
 
         return ConcertFacadeDto.FindLeftSeatResult.from(seatList);

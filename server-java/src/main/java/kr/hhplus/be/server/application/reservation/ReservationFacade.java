@@ -4,6 +4,8 @@ package kr.hhplus.be.server.application.reservation;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationService;
 import kr.hhplus.be.server.domain.reservation.ReservationStatus;
+import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
+import kr.hhplus.be.server.domain.schedule.ConcertScheduleService;
 import kr.hhplus.be.server.domain.seat.Seat;
 import kr.hhplus.be.server.domain.seat.SeatService;
 import kr.hhplus.be.server.domain.seat.SeatStatus;
@@ -22,6 +24,7 @@ public class ReservationFacade {
 
     private final UserService userService;
     private final SeatService seatService;
+    private final ConcertScheduleService concertScheduleService;
     private final ReservationService reservationService;
 
     /**
@@ -30,9 +33,11 @@ public class ReservationFacade {
      * @param userId
      */
     @Transactional
-    public void reservation(List<Long> seatIdList, Long userId){
+    public void reservation(Long scheduleId ,List<Long> seatIdList, Long userId){
+
         // userid 를 가지고 유저를 조회
         User findUser = userService.findById(userId);
+
 
         // seatid 리스트를 받아서 id 로 list 를 받아서 조회 -> 비관적 락 적용 => findAllReserveAbleWithLock
         List<Seat> seatList = seatService.findAllReserveAbleWithLock(seatIdList);
@@ -46,6 +51,11 @@ public class ReservationFacade {
                     .seat(item)
                     .build());
         });
+
+        if(seatService.findByScheduleId(scheduleId).isEmpty()){
+            ConcertSchedule schedule = concertScheduleService.findByIdWithLock(scheduleId);
+            schedule.updateReserveStatus(false);
+        }
     }
 
 
@@ -62,9 +72,17 @@ public class ReservationFacade {
                 .toList();
 
         if(!seatIds.isEmpty()){
-            seatService.findAllByIdsWithLock(seatIds).forEach(item->{
-                item.updateStatus(SeatStatus.RESERVABLE);
-            });
+            List<Long> concertScheduleIds = seatService.findAllByIdsWithLock(seatIds).stream()
+                    .map(item -> {
+                        item.updateStatus(SeatStatus.RESERVABLE);
+                        return item.getConcertSchedule().getId();
+                    })
+                    .toList();
+
+            concertScheduleService.findByIdsWithLock(concertScheduleIds)
+                    .forEach(item->{
+                        item.updateReserveStatus(true);
+                    });
         }
     }
 }

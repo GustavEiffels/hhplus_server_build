@@ -24,4 +24,14 @@ public class ScheduleRepositoryImpl implements ConcertScheduleRepository {
     public Optional<ConcertSchedule> findById(Long concertScheduleId) {
         return jpaRepository.findById(concertScheduleId);
     }
+
+    @Override
+    public Optional<ConcertSchedule> findByIdWithLock(Long scheduleId) {
+        return jpaRepository.findByIdWithLock(scheduleId);
+    }
+
+    @Override
+    public List<ConcertSchedule> findByIdsWithLock(List<Long> scheduleIds) {
+        return jpaRepository.findByIdsWithLock(scheduleIds);
+    }
 }

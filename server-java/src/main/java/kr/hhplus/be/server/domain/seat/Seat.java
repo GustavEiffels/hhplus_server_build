@@ -31,7 +31,7 @@ public class Seat extends BaseEntity {
     @NotNull
     private Long price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "schedule_id",
             nullable = false,

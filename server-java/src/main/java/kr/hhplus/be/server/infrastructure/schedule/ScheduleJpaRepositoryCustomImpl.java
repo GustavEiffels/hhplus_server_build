@@ -1,11 +1,14 @@
 package kr.hhplus.be.server.infrastructure.schedule;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import jakarta.persistence.LockModeType;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
+import kr.hhplus.be.server.domain.schedule.QConcertSchedule;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static kr.hhplus.be.server.domain.concert.QConcert.concert;
 import static kr.hhplus.be.server.domain.schedule.QConcertSchedule.concertSchedule;
@@ -29,6 +32,24 @@ public class ScheduleJpaRepositoryCustomImpl implements ScheduleJpaRepositoryCus
                 )
                 .offset(page * pagingSize)
                 .limit(pagingSize)
+                .fetch();
+    }
+
+    @Override
+    public Optional<ConcertSchedule> findByIdWithLock(Long scheduleId) {
+        return Optional.ofNullable(
+                dsl.selectFrom(concertSchedule)
+                        .where(concertSchedule.id.eq(scheduleId))
+                        .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+                        .fetchOne()
+        );
+    }
+
+    @Override
+    public List<ConcertSchedule> findByIdsWithLock(List<Long> scheduleIds) {
+        return dsl.selectFrom(concertSchedule)
+                .where(concertSchedule.id.in(scheduleIds))
+                .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                 .fetch();
     }
 }

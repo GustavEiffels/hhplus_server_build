@@ -4,9 +4,8 @@ import java.util.List;
 
 public interface SeatRepository {
 
-    List<Seat> findAllReserveAble(Long concertScheduleId);
-
-    List<Seat> findAllReserveAbleWithLock(List<Long> concertScheduleIds);
 
     List<Seat> findAllByIdsWithLock(List<Long> seatIds);
+
+    List<Seat> findByScheduleId(Long concertScheduleId);
 }

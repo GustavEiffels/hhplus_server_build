@@ -44,10 +44,10 @@ public interface ConcertFacadeDto {
 
 
 
-    record FindLeftSeatParam(Long concertId){
+    record FindLeftSeatParam(Long scheduleId){
         public FindLeftSeatParam{
-            if(concertId == null){
-                throw new BusinessException(ErrorCode.INVALID_INPUT,"[concertId]는 필수 값 입니다.");
+            if(scheduleId == null){
+                throw new BusinessException(ErrorCode.INVALID_INPUT,"[scheduleId]는 필수 값 입니다.");
             }
         }
     }

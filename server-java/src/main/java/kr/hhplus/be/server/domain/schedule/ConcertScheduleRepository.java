@@ -9,4 +9,8 @@ public interface ConcertScheduleRepository {
 
 
     Optional<ConcertSchedule> findById (Long concertScheduleId);
+
+    Optional<ConcertSchedule> findByIdWithLock(Long scheduleId);
+
+    List<ConcertSchedule> findByIdsWithLock(List<Long> scheduleIds);
 }

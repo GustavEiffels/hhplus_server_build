@@ -14,17 +14,12 @@ public class SeatRepositoryImpl implements SeatRepository {
     private final SeatJpaRepository jpaRepository;
 
     @Override
-    public List<Seat> findAllReserveAble(Long concertScheduleId) {
-        return jpaRepository.findAllReserveAble(concertScheduleId);
-    }
-
-    @Override
-    public List<Seat> findAllReserveAbleWithLock(List<Long> concertScheduleIds) {
-        return jpaRepository.findAllReserveAbleWithLock(concertScheduleIds);
-    }
-
-    @Override
     public List<Seat> findAllByIdsWithLock(List<Long> seatIds) {
         return jpaRepository.findAllByIdsWithLock(seatIds);
+    }
+
+    @Override
+    public List<Seat> findByScheduleId(Long concertScheduleId) {
+        return jpaRepository.findByScheduleId(concertScheduleId);
     }
 }

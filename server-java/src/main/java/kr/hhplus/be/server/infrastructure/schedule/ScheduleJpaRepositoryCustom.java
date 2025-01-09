@@ -9,4 +9,7 @@ public interface ScheduleJpaRepositoryCustom {
 
     List<ConcertSchedule> findAllReserveAbleByConcertId(Long concertId, int page);
 
+    Optional<ConcertSchedule> findByIdWithLock(Long scheduleId);
+
+    List<ConcertSchedule> findByIdsWithLock(List<Long> scheduleIds);
 }
