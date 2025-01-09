@@ -16,7 +16,7 @@ class PointHistoryTest {
     @Test
     void 사용_결제_내역_셍성시_payment_가_존재하지_않으면_BaseException_예외가_발생(){
         // given
-        BigDecimal amount = BigDecimal.valueOf(100_000);
+        Long amount = 100_000L;
         User user = User.builder().name("김연습").build();
 
         // when
@@ -29,7 +29,7 @@ class PointHistoryTest {
     @Test
     void 결제내역의_결제금액이_0보다작거나_존재하지_않는다면_BaseException_예외가_발생(){
         // given
-        BigDecimal amount = BigDecimal.valueOf(-1);
+        Long amount = -1L;
         User user = User.builder().name("김연습").build();
 
         // when
@@ -45,7 +45,7 @@ class PointHistoryTest {
     @Test
     void 결제내역의_결제금액이_사용자_정보가_존재하지_않는다면_BaseException_예외가_발생(){
         // given
-        BigDecimal amount = BigDecimal.valueOf(-1);
+        Long amount = -1L;
 
         // when
         BusinessException be = assertThrows(

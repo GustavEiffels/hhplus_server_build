@@ -25,19 +25,19 @@ public class PointHistory extends BaseEntity {
     private Long id;
 
     @NotNull
-    private BigDecimal amount;
+    private long amount;
 
     @NotNull
     private PointHistoryStatus status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "user_id",
             nullable = false,
             foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "payment_id",
             //nullable = false, => 충전 시 payment 는 존재하지 않음
@@ -45,28 +45,28 @@ public class PointHistory extends BaseEntity {
     private Payment payment;
 
 
-    private PointHistory(BigDecimal amount, User user, Payment payment, PointHistoryStatus status) {
+    private PointHistory(long amount, User user, Payment payment, PointHistoryStatus status) {
         this.amount = amount;
         this.user = user;
         this.payment = payment;
         this.status = status;
     }
 
-    public static PointHistory createCharge(BigDecimal amount, User user) {
+    public static PointHistory createCharge(Long amount, User user) {
         validateAmount(amount);
         validateUser(user);
         return new PointHistory(amount, user, null, PointHistoryStatus.Charge);
     }
 
-    public static PointHistory createUse(BigDecimal amount, User user, Payment payment) {
+    public static PointHistory createUse(Long amount, User user, Payment payment) {
         validateAmount(amount);
         validateUser(user);
         validatePayment(payment);
         return new PointHistory(amount, user, payment, PointHistoryStatus.Use);
     }
 
-    private static void validateAmount(BigDecimal amount) {
-        if (amount == null || amount.compareTo(BigDecimal.ZERO) < 0) {
+    private static void validateAmount(Long amount) {
+        if (amount < 0) {
             throw new BusinessException(ErrorCode.Entity, "[결제 금액]은 0보다 커야합니다.");
         }
     }

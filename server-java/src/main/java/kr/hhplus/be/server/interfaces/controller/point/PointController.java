@@ -27,7 +27,7 @@ public class PointController {
     ){
         return new ResponseEntity<>(ApiResponse.ok(
                 PointApiDto.FindBalanceRes.builder()
-                .point(12000).build()), HttpStatus.OK);
+                .point(12000L).build()), HttpStatus.OK);
     }
 
     @PutMapping("/point/charge")
@@ -36,7 +36,7 @@ public class PointController {
             @RequestBody PointApiDto.BalanceChargeReq request){
         return new ResponseEntity<>(PointApiDto.BalanceChargeRes.builder()
                 .message("충전이 완료 되었습니다.")
-                .point(14000)
+                .point(14000L)
                 .build(), HttpStatus.OK);
     }
 

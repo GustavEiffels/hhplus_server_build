@@ -10,7 +10,7 @@ public interface PointApiDto {
     @Builder
     class FindBalanceRes{
         @Schema(description = "사용자의 잔액",example = "100000")
-        private int point;
+        private Long point;
     }
     class FindBalanceReq{
     }
@@ -19,7 +19,7 @@ public interface PointApiDto {
     @Builder
     class BalanceChargeReq{
         @Schema(description = "충전할 금액",example = "100000")
-        private int point;
+        private long point;
 
         @Schema(description = "사용자 id",example = "1")
         private Long userId;
@@ -31,6 +31,6 @@ public interface PointApiDto {
         @Schema(description = "충전 이후 메세지",example = "충전이 완료 되었습니다.")
         private String message;
         @Schema(description = "충전 이후 잔액",example = "200000")
-        private int point;
+        private Long point;
     }
 }

@@ -13,6 +13,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.util.StringUtils;
 
+import java.math.BigDecimal;
+
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -28,7 +30,7 @@ public class User extends BaseEntity {
     @NotNull
     @Min(value = 0)
     @Max(value = 100_000_000)
-    private int point; // min :  0  max : 100_000_000
+    private long point; // min :  0  max : 100_000_000
 
 
     @Builder
@@ -39,7 +41,7 @@ public class User extends BaseEntity {
         this.name  = name;
     }
 
-    public int pointTransaction(int pointAmount){
+    public long pointTransaction(long pointAmount){
         if(this.point + pointAmount < 0 || this.point + pointAmount > 100_000_000){
             throw new BusinessException(ErrorCode.Entity,"point 는 최소 0, 최대 100,000,000 까지 가질 수 있습니다.");
         }

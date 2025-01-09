@@ -15,9 +15,9 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class ConcertFacade {
 
-    private final ConcertService concertService;
+    private final ConcertService         concertService ;
     private final ConcertScheduleService scheduleService;
-    private final SeatService            seatService;
+    private final SeatService            seatService    ;
 
     // 콘서트 아이디로 가능한 콘서트 스케줄 조회
     // 1. concert service
@@ -49,6 +49,7 @@ public class ConcertFacade {
      * @return
      */
     public ApiResponse<ConcertApiDto.LeftSeatRes> searchAvailableSeats(Long concertScheduleId){
+
         // 1. 존재하는 콘서트 스케줄인지 확인
         ConcertSchedule concertSchedule = scheduleService.findById(concertScheduleId);
 

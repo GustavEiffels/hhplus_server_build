@@ -20,7 +20,8 @@ public class QueueTokenInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        QueueTokenHeaderRequest headerCommand = new QueueTokenHeaderRequest(request.getHeader("Queue_Token"),request.getHeader("UserId"));
+        QueueTokenHeaderRequest headerCommand =
+                new QueueTokenHeaderRequest(request.getHeader("Queue_Token"),request.getHeader("UserId"));
 
 
         if(queueTokenFacade.isValidToken(headerCommand)){

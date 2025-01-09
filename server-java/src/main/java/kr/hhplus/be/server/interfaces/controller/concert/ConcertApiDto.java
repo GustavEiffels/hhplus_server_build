@@ -22,6 +22,7 @@ public interface ConcertApiDto {
     class FindScheduleResponse{
         @Schema(description = "가능한 날짜 수",example = "2")
         private int cnt;
+
         @Schema(description = "콘서트 정보")
         private ConcertInfoDto concert_info;
 
