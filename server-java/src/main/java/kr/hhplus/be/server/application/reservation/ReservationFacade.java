@@ -14,7 +14,6 @@ import kr.hhplus.be.server.domain.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,35 +26,39 @@ public class ReservationFacade {
     private final ConcertScheduleService concertScheduleService;
     private final ReservationService reservationService;
 
+
     /**
-     * 예약하기
-     * @param seatIdList
-     * @param userId
+     * USECASE 3
+     * @param param
      */
     @Transactional
-    public void reservation(Long scheduleId ,List<Long> seatIdList, Long userId){
+    public ReservationFacadeDto.ReservationResult reservation(ReservationFacadeDto.ReservationParam param){
 
         // userid 를 가지고 유저를 조회
-        User findUser = userService.findById(userId);
+        User findUser = userService.findById(param.userId());
 
 
         // seatid 리스트를 받아서 id 로 list 를 받아서 조회 -> 비관적 락 적용 => findAllReserveAbleWithLock
-        List<Seat> seatList = seatService.findAllReserveAbleWithLock(seatIdList);
+        List<Seat> seatList = seatService.findAllReserveAbleWithLock(param.seatIdList());
 
 
         // 모든 seat 을 occupied, expiredAt 을 사용하여 5분 추가
-        seatList.forEach(item->{
-            item.updateStatus(SeatStatus.OCCUPIED);
-            reservationService.create(Reservation.builder()
-                    .user(findUser)
-                    .seat(item)
-                    .build());
-        });
+        List<Reservation> createdReservations = seatList.stream()
+                .map(item -> {
+                    item.updateStatus(SeatStatus.OCCUPIED);
+                    Reservation reservation = Reservation.builder()
+                            .user(findUser)
+                            .seat(item)
+                            .build();
+                    return reservationService.create(reservation);
+                })
+                .toList();
 
-        if(seatService.findByScheduleId(scheduleId).isEmpty()){
-            ConcertSchedule schedule = concertScheduleService.findByIdWithLock(scheduleId);
+        if(seatService.findByScheduleId(param.scheduleId()).isEmpty()){
+            ConcertSchedule schedule = concertScheduleService.findByIdWithLock(param.scheduleId());
             schedule.updateReserveStatus(false);
         }
+        return ReservationFacadeDto.ReservationResult.from(createdReservations);
     }
 
 

@@ -63,6 +63,11 @@ public class Reservation extends BaseEntity {
     }
 
 
+    public void expired(){
+        this.expiredAt = LocalDateTime.now();
+    }
+
+
     public void updateStatus(ReservationStatus status){
         if( status == null ){
             throw new BusinessException(ErrorCode.Entity,"[예약-상태] 변경 시 [예약-상태]는 필수 값 입니다.");
