@@ -22,43 +22,47 @@ public class QueueTokenFacade {
 
     /**
      * USECASE : 1. 유저 대기열 토큰 발급 받는 API
-     * @param request
+     * @param param
      * @return
      */
     @Transactional
-    public ApiResponse<TokenApiDto.GenerateTokenRes> create(TokenApiDto.GenerateTokenReq request){
+    public QueueTokenFacadeDto.CreateResult create(QueueTokenFacadeDto.CreateParam param){
         // 1. find user
-        User user = userService.findById(request.getUserId());
+        User user = userService.findById(param.userId());
 
         // 2. Create Entity & Create
         QueueToken newQueueToken = queueTokenService.createToken(
                 QueueToken.builder().user(user).build());
 
-        return ApiResponse.ok(TokenApiDto.GenerateTokenRes.builder().tokenId(newQueueToken.getId()).build());
+        return new QueueTokenFacadeDto.CreateResult(newQueueToken.getId());
     }
+
 
     /**
-     * 인터셉터
-     * @param queueTokenId
-     * @param userId
+     * 인터셉터에서 토큰이 활성화가 되었는지 확인
+     * @param param
      * @return
      */
-    public Boolean isValidToken(QueueTokenHeaderRequest request){
-        // 1. find user
-        userService.findById(request.userId());
+    public QueueTokenFacadeDto.ActiveCheckResult isValidToken(QueueTokenFacadeDto.ActiveCheckParam param){
+        // 1. 사용자 조회
+        userService.findById(param.userId());
 
-        // 2. isValid Token
-        return queueTokenService.isValidAndActive(request.queueTokenId(), request.userId());
+        // 2. 활성화된 토큰인지 확인
+        return new QueueTokenFacadeDto.ActiveCheckResult(queueTokenService.isValidAndActive(param.tokenId(), param.userId()));
     }
 
 
+    /**
+     * 최대 활성화 가능 토큰 수까지 토큰 활성화
+     * @param param
+     */
     @Transactional
-    public void activate(ScheduleDto.ActiveTokenRequest request){
+    public void activate(QueueTokenFacadeDto.ActivateParam param){
         // 1. 현재 활성화 되어 있는 토큰 수 구하기
         long activeCnt     = queueTokenService.countActive();
 
         // 2. 활성화 가능한 토큰 수 반환
-        long activeAbleCnt = request.maxToken()-activeCnt;
+        long activeAbleCnt = param.maxTokenCnt()-activeCnt;
 
         // 3. 토큰 활성화
         if(activeAbleCnt>0){

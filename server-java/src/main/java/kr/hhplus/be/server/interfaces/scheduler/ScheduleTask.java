@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.interfaces.scheduler;
 
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
+import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,12 +17,12 @@ public class ScheduleTask {
     @Value("${queue.max-active-token:20}")
     private long maxActiveToken;
 
-    @Scheduled(fixedRate =  1_000)
+    @Scheduled(fixedRate =  60_000)
     public void executeTokenActiveMaker(){
-        queueTokenFacade.activate( new ScheduleDto.ActiveTokenRequest(maxActiveToken) );
+        queueTokenFacade.activate( new QueueTokenFacadeDto.ActivateParam(maxActiveToken) );
     }
 
-    @Scheduled(fixedRate =  1_000)
+    @Scheduled(fixedRate =  60_000)
     public void executeReservationExpireMaker(){
         reservationFacade.expire();
     }

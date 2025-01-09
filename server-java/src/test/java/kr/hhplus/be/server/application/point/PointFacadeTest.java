@@ -17,8 +17,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class PointFacadeTest {
 
-    @Autowired
-    PointHistoryJpaRepository pointHistoryJpaRepository;
 
     @Autowired
     UserJpaRepository userJpaRepository;
