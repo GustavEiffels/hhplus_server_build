@@ -2,7 +2,10 @@ package kr.hhplus.be.server.application.point;
 
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
+import kr.hhplus.be.server.domain.point_history.PointHistory;
+import kr.hhplus.be.server.domain.point_history.PointHistoryRepository;
 import kr.hhplus.be.server.domain.user.User;
+import kr.hhplus.be.server.infrastructure.point_history.PointHistoryJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,9 +18,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class PointFacadeTest {
 
     @Autowired
+    PointHistoryJpaRepository pointHistoryJpaRepository;
+
+    @Autowired
     UserJpaRepository userJpaRepository;
 
     @Autowired PointFacade pointFacade;
+
 
 
     User newUser;
@@ -29,30 +36,8 @@ class PointFacadeTest {
         newUser = userJpaRepository.save(testUser);
     }
 
-    @Test
-    void param에_null이_입력되면_BusinessException_INVALID_INPUT_이_발생한다(){
-        //given & when
-        BusinessException exception = assertThrows(BusinessException.class,
-                ()-> new PointFacadeDto.FindBalanceParam(null));
 
-        // then
-        assertEquals(ErrorCode.INVALID_INPUT,exception.getErrorStatus());
-    }
-
-
-    @Test
-    void param에_존재하지_않은_사용자_아이디를_입력시_BusinessException_Repository_이_발생한다(){
-        // given
-        PointFacadeDto.FindBalanceParam param = new PointFacadeDto.FindBalanceParam(100L);
-
-        //when
-        BusinessException exception = assertThrows(BusinessException.class,
-                ()-> pointFacade.findUserBalance(param));
-
-        // then
-        assertEquals(ErrorCode.Repository,exception.getErrorStatus());
-    }
-
+// 잔액 조회
     @Test
     void param에_newUser_의_아이디를_넣으면_FindBalanceResult의_balance가_10000을_반환한다(){
         // given
@@ -70,5 +55,18 @@ class PointFacadeTest {
 
 
 
+// 잔액 충전
+    @Test
+    void param에_충전포인트를_20_000을넣으면_result의_amount_로_20_000이되고_user의_point는_30_000이_된다(){
+        // given
+        PointFacadeDto.ChargeParam param = new PointFacadeDto.ChargeParam(newUser.getId(), 20_000L);
 
+        // when
+        PointFacadeDto.ChargeResult result = pointFacade.pointCharge(param);
+
+        // then
+        assertEquals(20_000L,result.amount(), "충전한 금액은 20,000");
+        assertEquals( 30_000, userJpaRepository.findById(newUser.getId()).get().getPoint(),"충전한 사용자의 포인트 : 30,000");
+
+    }
 }

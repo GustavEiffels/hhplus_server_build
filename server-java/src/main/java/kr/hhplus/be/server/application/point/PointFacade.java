@@ -31,24 +31,22 @@ public class PointFacade {
 
     /**
      * USECASE 4. 잔액 충전 API
-     * @param request
+     * @param param
      * @return
      */
     @Transactional
-    public ApiResponse<PointApiDto.BalanceChargeRes> pointCharge(PointApiDto.BalanceChargeReq request){
+    public PointFacadeDto.ChargeResult pointCharge(PointFacadeDto.ChargeParam param){
         // 1. 사용자 조회
-        User user = userService.findByIdWithLock(request.getUserId());
+        User user = userService.findByIdWithLock(param.userId());
 
         // 2. 사용자 포인트 거래
-        user.pointTransaction(request.getPoint());
+        user.pointTransaction(param.chargePoint());
 
         // 3. Point 충전 이력 생성
-        pointHistoryService.create(PointHistory.createCharge(request.getPoint(),user));
+        PointHistory history
+                = pointHistoryService.create(PointHistory.createCharge(param.chargePoint(),user));
 
-        return  ApiResponse.ok(PointApiDto.BalanceChargeRes
-                .builder()
-                .point(request.getPoint())
-                .build());
+        return PointFacadeDto.ChargeResult.from(history,user);
     }
 
 
