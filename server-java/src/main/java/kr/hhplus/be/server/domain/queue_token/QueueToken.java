@@ -48,4 +48,8 @@ public class QueueToken extends BaseEntity {
         this.status   = QueueTokenStatus.Active;
         this.expireAt = LocalDateTime.now().plusMinutes(3);
     }
+
+    public void expire(){
+        this.expireAt = LocalDateTime.now();
+    }
 }

@@ -24,5 +24,11 @@ public class UserService {
                 .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"존재하지 않은 [사용자] 입니다."));
     }
 
+    public User findByIdWithLock(Long userid){
+        return userRepository.findByIdWithLock(userid)
+                .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"존재하지 않은 [사용자] 입니다."));
+
+    }
+
 
 }

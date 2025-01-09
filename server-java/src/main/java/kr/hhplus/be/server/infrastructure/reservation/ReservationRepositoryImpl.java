@@ -21,4 +21,9 @@ public class ReservationRepositoryImpl implements ReservationRepository {
     public List<Reservation> findExpiredWithLock() {
         return jpaRepository.findExpiredWithLock();
     }
+
+    @Override
+    public List<Reservation> findByIdsWithLock(List<Long> reservationsIds) {
+        return jpaRepository.findByIdsWithLock(reservationsIds);
+    }
 }

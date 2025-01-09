@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import kr.hhplus.be.server.common.BaseEntity;
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
+import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.user.User;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -24,38 +25,39 @@ public class Payment extends BaseEntity {
     @Column(name = "payment_id")
     private Long id;
 
-    @NotNull
-    @Min(0)
-    private int quantity;
 
     @NotNull
     @Min(0)
-    private BigDecimal amount;
+    private Long amount;
+
+    private PaymentStatus paymentStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-            name = "user_id",
+            name = "reservation_id",
             nullable = false,
             foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-    private User user;
+    private Reservation reservation;
 
     @Builder // 초기 생성
-    public Payment(int quantity, BigDecimal amount, User user){
+    public Payment(Long amount, Reservation reservation){
 
-        if( quantity < 0 ){
-            throw new BusinessException(ErrorCode.Entity,"수량은 0 보다 커야합니다.");
-        }
 
-        if( amount.compareTo(BigDecimal.ZERO ) < 0){
+        if( amount < 0){
             throw new BusinessException(ErrorCode.Entity,"결제 금액은 0보다 커야합니다.");
         }
 
-        if( user == null ){
-            throw new BusinessException(ErrorCode.Entity,"[사용자] 정보는 필수 값 입니다.");
+        if( reservation == null ){
+            throw new BusinessException(ErrorCode.Entity,"[예약] 정보는 필수 값 입니다.");
         }
 
-        this.quantity = quantity;
-        this.amount   = amount;
+        this.amount          = amount;
+        this.reservation     = reservation;
+        this.paymentStatus   = PaymentStatus.Success;
+    }
+
+    public void cancel(){
+        this.paymentStatus = PaymentStatus.Cancel;
     }
 
 }

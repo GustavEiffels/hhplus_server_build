@@ -42,4 +42,9 @@ public class TokenRepositoryImpl implements QueueTokenRepository {
     public Optional<QueueToken> findByIdWithUser(Long queueTokenId){
         return tokenJpaRepository.findByIdWithUser(queueTokenId);
     }
+
+    @Override
+    public Optional<QueueToken> findById(Long tokenId) {
+        return tokenJpaRepository.findById(tokenId);
+    }
 }

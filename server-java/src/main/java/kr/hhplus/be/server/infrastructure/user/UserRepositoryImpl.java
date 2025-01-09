@@ -14,11 +14,16 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
-    private final UserJpaRepository dslRepository;
+    private final UserJpaRepository jpaRepository;
 
 
     @Override
     public Optional<User> findById(Long userId) {
-        return dslRepository.findById(userId);
+        return jpaRepository.findById(userId);
+    }
+
+    @Override
+    public Optional<User> findByIdWithLock(Long userId) {
+        return jpaRepository.findByIdWithLock(userId);
     }
 }

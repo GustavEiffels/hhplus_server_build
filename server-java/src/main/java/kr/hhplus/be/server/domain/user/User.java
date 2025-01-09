@@ -42,8 +42,11 @@ public class User extends BaseEntity {
     }
 
     public long pointTransaction(long pointAmount){
-        if(this.point + pointAmount < 0 || this.point + pointAmount > 100_000_000){
-            throw new BusinessException(ErrorCode.Entity,"point 는 최소 0, 최대 100,000,000 까지 가질 수 있습니다.");
+        if(this.point + pointAmount < 0 ){
+            throw new BusinessException(ErrorCode.Entity,"잔액이 부족합니다. point 는 최소 0, 최대 100,000,000 까지 가질 수 있습니다.");
+        }
+        if(this.point + pointAmount > 100_000_000){
+            throw new BusinessException(ErrorCode.Entity,"최대 충전 금액입니다. point 는 최소 0, 최대 100,000,000 까지 가질 수 있습니다.");
         }
         this.point += pointAmount;
         return this.point;

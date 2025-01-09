@@ -39,6 +39,13 @@ public class QueueTokenService {
                 .forEach(QueueToken::activate);
     }
 
+    public void expired(Long tokenId){
+        QueueToken token = repository.findById(tokenId)
+                .orElseThrow(()->new BusinessException(ErrorCode.Entity,"존재하지 않는 대기열 토큰입니다."));
+
+        token.expire();
+    }
+
 
 
 

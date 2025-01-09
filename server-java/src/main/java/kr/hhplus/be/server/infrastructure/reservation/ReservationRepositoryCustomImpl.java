@@ -32,4 +32,15 @@ public class ReservationRepositoryCustomImpl implements ReservationRepositoryCus
                 .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                 .fetch();
     }
+
+    @Override
+    public List<Reservation> findByIdsWithLock(List<Long> reservationIds) {
+        return dsl.select(reservation)
+                .from(reservation)
+                .join(reservation.user)
+                .fetchJoin()
+                .where(reservation.id.in(reservationIds))
+                .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+                .fetch();
+    }
 }

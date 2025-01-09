@@ -5,6 +5,8 @@ import kr.hhplus.be.server.domain.point_history.PointHistoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Repository
 @RequiredArgsConstructor
@@ -15,5 +17,10 @@ public class PointHistoryRepositoryImpl implements PointHistoryRepository {
     @Override
     public PointHistory create(PointHistory pointHistory) {
         return  jpaRepository.save(pointHistory);
+    }
+
+    @Override
+    public List<PointHistory> create(List<PointHistory> pointHistories) {
+        return jpaRepository.saveAll(pointHistories);
     }
 }
