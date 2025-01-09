@@ -1,5 +1,6 @@
 package kr.hhplus.be.server.application.concert;
 
+import kr.hhplus.be.server.domain.concert.Concert;
 import kr.hhplus.be.server.domain.concert.ConcertService;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.schedule.ConcertScheduleService;
@@ -10,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -24,22 +26,23 @@ public class ConcertFacade {
     // 2. concert schedule service
 
     /**
-     * USECASE 2.
+     * USECASE 2.concnertId 로 콘서트 스케줄 정보 페이징해서 가져오기
+     * @param command
      * @return
      */
-    public ApiResponse<ConcertApiDto.FindScheduleResponse> findSchedules(ConcertFacadeDto.FindScheduleCommand command){
+    public ConcertFacadeDto.FindScheduleResult findSchedules(ConcertFacadeDto.FindScheduleParam param){
         // 0. concertId null checking
         // 들어오는 page 은 1 이상 의 자연수
 
         // 1. 존재하는 콘서트인지 확인
-        concertService.findById(command.concertId());
+        Concert concert =concertService.findById(param.concertId());
 
 
         // 2. 예약 가능한 콘서트 반환 || 예약 가능하고 현재 일짜가 예약가능한 날짜 사이에 있는 스케줄 리턴
-        scheduleService.findAvailableSchedules(command.concertId(), (command.page()-1));
+        List<ConcertSchedule> concertScheduleList =
+                scheduleService.findAvailableSchedules(param.concertId(), (param.page()-1));
 
-
-        return ApiResponse.ok(ConcertApiDto.FindScheduleResponse.builder().build());
+        return ConcertFacadeDto.FindScheduleResult.from(concert,concertScheduleList);
     }
 
 

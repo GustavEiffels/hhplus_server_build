@@ -49,7 +49,7 @@ public class ConcertController {
     public ResponseEntity<ApiResponse<ConcertApiDto.FindScheduleResponse>> findAvailableScheduleDate(
             @PathVariable("concertId") Long concertId, @PathVariable("page") int page) {
 
-        ConcertFacadeDto.FindScheduleCommand command = new ConcertFacadeDto.FindScheduleCommand(concertId,page);
+        ConcertFacadeDto.FindScheduleParam command = new ConcertFacadeDto.FindScheduleParam(concertId,page);
         List<ConcertApiDto.FindScheduleResponse.ScheduleInfo> scheduleList = Arrays.asList(
                 ConcertApiDto.FindScheduleResponse.ScheduleInfo.builder()
                         .schedule_id(1)

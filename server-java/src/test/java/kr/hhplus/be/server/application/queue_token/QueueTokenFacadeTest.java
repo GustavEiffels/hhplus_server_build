@@ -7,11 +7,11 @@ import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserRepository;
 import kr.hhplus.be.server.infrastructure.queue_token.TokenJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.testcontainers.shaded.org.yaml.snakeyaml.tokens.Token;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +40,12 @@ class QueueTokenFacadeTest {
             newUserList.add(User.builder().name("바보"+i).build());
         }
         userList = userJpaRepository.saveAll(newUserList);
+    }
+
+    @AfterEach
+    void tearDown() {
+        tokenJpaRepository.deleteAll();
+        userJpaRepository.deleteAll();
     }
 
 //  유저 대기열 토큰 발급 받는 API
