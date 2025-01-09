@@ -33,14 +33,14 @@ public class PaymentFacade {
 
 
     @Transactional
-    public void pay(List<Long> reservationIds, Long userid, Long tokenId){
+    public PaymentFacadeDto.PaymentResult pay(PaymentFacadeDto.PaymentParam param){
 
         // 사용자 lock
-        User user = userService.findByIdWithLock(userid);
+        User user = userService.findByIdWithLock(param.userid());
 
 
         // 예약 lock : 에약 상태로 변경
-        List<Reservation> reservations = reservationService.findByIdsWithUseridAndLock(reservationIds,userid);
+        List<Reservation> reservations = reservationService.findByIdsWithUseridAndLock(param.reservationIds(),param.userid());
 
 
         // 좌석 id 추출 -> lock 이 아님..
@@ -72,13 +72,17 @@ public class PaymentFacade {
                             .reservation(reservation).build()).toList();
 
 
+        paymentList = paymentService.create(paymentList);
+
         // History 생성
-        List<PointHistory> historyList = paymentService.create(paymentList).stream()
+        List<PointHistory> historyList = paymentList.stream()
                 .map(payment ->
                         PointHistory.createUse(payment.getAmount(),user,payment)).toList();
 
         pointHistoryService.create(historyList);
 
-        queueTokenService.expired(tokenId);
+        queueTokenService.expired(param.tokenId());
+
+        return  PaymentFacadeDto.PaymentResult.from(paymentList);
     }
 }

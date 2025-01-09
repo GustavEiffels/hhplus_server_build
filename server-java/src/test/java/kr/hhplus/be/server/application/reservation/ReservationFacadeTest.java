@@ -189,10 +189,6 @@ class ReservationFacadeTest {
         assertEquals(ReservationStatus.Expired,reservation0_1.getStatus());
         assertEquals(ReservationStatus.Expired,reservation1_1.getStatus());
 
-
-
-
-
     }
 
 }
