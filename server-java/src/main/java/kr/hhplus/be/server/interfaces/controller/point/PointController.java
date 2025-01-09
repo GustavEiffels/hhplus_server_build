@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 public class PointController {
     private final PointFacade pointFacade;
 
-    @GetMapping("/point/{userId}")
+    @GetMapping("/points/{userId}")
     @Operation(summary = "조회 API",description = "사용자의 잔액을 조회하는 API")
     public ResponseEntity<ApiResponse<PointApiDto.FindBalanceResponse>> findBalance(
             @PathVariable
@@ -31,7 +31,7 @@ public class PointController {
 
     }
 
-    @PutMapping("/point/charge")
+    @PutMapping("/points/charge")
     @Operation(summary = "충전 API",description = "사용자의 잔액을 충전하는 API")
     public ResponseEntity<ApiResponse<PointApiDto.ChargePointResponse>> balanceCharge(
             @RequestBody PointApiDto.ChargePointRequest request){

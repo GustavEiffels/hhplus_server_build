@@ -18,7 +18,7 @@ import java.util.List;
 
 @Tag(name = "5. 결제 API",description = "결제를 위한 컨트롤러")
 @RestController
-@RequestMapping("/payment")
+@RequestMapping("/payments")
 @RequiredArgsConstructor
 public class PaymentController {
 

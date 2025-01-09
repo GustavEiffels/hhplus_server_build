@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "1. 유저 대기열 토큰 기능",description = "서비스를 이용할 토큰을 발급받는 API")
 @RestController
-@RequestMapping("/queue_token")
+@RequestMapping("/queue_tokens")
 @RequiredArgsConstructor
 public class QueueTokenController {
     private final QueueTokenFacade queueTokenFacade;
