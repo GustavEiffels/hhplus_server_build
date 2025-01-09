@@ -7,4 +7,6 @@ public interface SeatRepository {
     List<Seat> findAllReserveAble(Long concertScheduleId);
 
     List<Seat> findAllReserveAbleWithLock(List<Long> concertScheduleIds);
+
+    List<Seat> findAllByIdsWithLock(List<Long> seatIds);
 }

@@ -6,8 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 
-@RequiredArgsConstructor
 @Repository
+@RequiredArgsConstructor
 public class PointHistoryRepositoryImpl implements PointHistoryRepository {
     private final PointHistoryJpaRepository jpaRepository;
 

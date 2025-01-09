@@ -42,7 +42,7 @@ public class PointFacade {
         // 2. 사용자 포인트 거래
         user.pointTransaction(request.getPoint());
 
-        // 3. Point 충전 이력 생성 
+        // 3. Point 충전 이력 생성
         pointHistoryService.create(PointHistory.createCharge(request.getPoint(),user));
 
         return  ApiResponse.ok(PointApiDto.BalanceChargeRes

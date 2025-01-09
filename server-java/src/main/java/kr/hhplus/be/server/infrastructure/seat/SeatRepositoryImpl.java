@@ -22,4 +22,9 @@ public class SeatRepositoryImpl implements SeatRepository {
     public List<Seat> findAllReserveAbleWithLock(List<Long> concertScheduleIds) {
         return jpaRepository.findAllReserveAbleWithLock(concertScheduleIds);
     }
+
+    @Override
+    public List<Seat> findAllByIdsWithLock(List<Long> seatIds) {
+        return jpaRepository.findAllByIdsWithLock(seatIds);
+    }
 }

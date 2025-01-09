@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Enabled
+@Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PointHistory extends BaseEntity {

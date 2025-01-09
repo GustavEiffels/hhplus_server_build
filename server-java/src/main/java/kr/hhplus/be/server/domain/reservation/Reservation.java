@@ -24,11 +24,10 @@ public class Reservation extends BaseEntity {
     private Long id;
 
     @NotNull
-    private ReservationStatus status = ReservationStatus.Reserved;
+    private ReservationStatus status = ReservationStatus.Pending;
 
     @NotNull
     private Long amount;
-
 
     private LocalDateTime expiredAt;
 
@@ -49,8 +48,6 @@ public class Reservation extends BaseEntity {
     private Seat seat;
 
 
-
-
     @Builder // 생성
     public Reservation(User user, Seat seat){
         if(user == null){
@@ -59,9 +56,10 @@ public class Reservation extends BaseEntity {
         if(seat == null){
             throw new BusinessException(ErrorCode.Entity,"[좌석] 정보는 필수로 할당이 되어야 합니다.");
         }
-        this.user   = user;
-        this.seat   = seat;
-        this.amount = seat.getPrice();
+        this.user      = user;
+        this.seat      = seat;
+        this.amount    = seat.getPrice();
+        this.expiredAt = LocalDateTime.now().plusMinutes(5);
     }
 
 

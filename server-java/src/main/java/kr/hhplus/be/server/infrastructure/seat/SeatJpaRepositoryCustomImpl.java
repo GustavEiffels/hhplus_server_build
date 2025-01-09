@@ -28,7 +28,16 @@ public class SeatJpaRepositoryCustomImpl implements SeatJpaRepositoryCustom {
     @Override
     public List<Seat> findAllReserveAbleWithLock(List<Long> concertScheduleIds) {
         return dsl.selectFrom(seat)
+                .innerJoin(seat.concertSchedule)
                 .where(seat.concertSchedule.id.in(concertScheduleIds))
+                .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+                .fetch();
+    }
+
+    @Override
+    public List<Seat> findAllByIdsWithLock(List<Long> seatIds) {
+        return dsl.selectFrom(seat)
+                .where(seat.id.in(seatIds))
                 .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                 .fetch();
     }

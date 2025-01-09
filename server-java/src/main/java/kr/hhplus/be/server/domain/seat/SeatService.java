@@ -22,8 +22,8 @@ public class SeatService {
         return repository.findAllReserveAble(concertScheduleId);
     }
 
-    public List<Seat> findAllReserveAbleWithLock(List<Long> concertScheduleIds){
-        List<Seat> seatList = repository.findAllReserveAbleWithLock(concertScheduleIds);
+    public List<Seat> findAllReserveAbleWithLock(List<Long> seatIds){
+        List<Seat> seatList = repository.findAllByIdsWithLock(seatIds);
         if (seatList.isEmpty()) {
             throw new BusinessException(ErrorCode.Repository,"예약 가능한 좌석이 존재하지 않습니다.");
         }
@@ -35,5 +35,9 @@ public class SeatService {
         });
 
         return  seatList;
+    }
+
+    public List<Seat> findAllByIdsWithLock(List<Long> seatIds){
+        return repository.findAllByIdsWithLock(seatIds);
     }
 }
