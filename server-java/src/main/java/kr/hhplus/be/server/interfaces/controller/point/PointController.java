@@ -39,14 +39,4 @@ public class PointController {
                 .point(14000L)
                 .build(), HttpStatus.OK);
     }
-
-    @GetMapping("/product")
-    public String product01(){
-        return "NORMAL";
-    }
-
-    @GetMapping("/product/{productId}")
-    public String product02(@PathVariable("productId") Long productId){
-        return "PathVariable";
-    }
 }

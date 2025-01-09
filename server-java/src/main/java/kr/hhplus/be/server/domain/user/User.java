@@ -30,7 +30,7 @@ public class User extends BaseEntity {
     @NotNull
     @Min(value = 0)
     @Max(value = 100_000_000)
-    private long point; // min :  0  max : 100_000_000
+    private Long point = 0L; // min :  0  max : 100_000_000
 
 
     @Builder
