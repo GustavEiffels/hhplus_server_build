@@ -11,8 +11,6 @@ import java.util.stream.Collectors;
 public interface ReservationApiDto {
 
     // 예약 요청 파라미터 (Request)
-    @Getter
-    @Builder
     record ReservationRequest(Long scheduleId, List<Long> seatIdList, Long userId) {
         public ReservationRequest {
             if (scheduleId == null) {
@@ -36,8 +34,6 @@ public interface ReservationApiDto {
     }
 
     // 예약 결과 응답 (Response)
-    @Getter
-    @Builder
     record ReservationResponse(List<ReservationInfo> reservationInfoList) {
         public static ReservationResponse from(ReservationFacadeDto.ReservationResult result) {
             List<ReservationInfo> reservationInfoList = result.reservationInfoList().stream()
@@ -51,7 +47,5 @@ public interface ReservationApiDto {
     }
 
     // 개별 예약 정보 (단일 응답 항목)
-    @Getter
-    @Builder
     record ReservationInfo(Long reservationId, Long seatId, Long amount) {}
 }

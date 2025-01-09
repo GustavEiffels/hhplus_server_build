@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public interface PaymentApiDto {
-    @Getter
-    @Builder
     record PaymentRequest(List<Long> reservationIds, Long userId, Long tokenId) {
         public PaymentRequest {
             if (reservationIds.isEmpty()) {
@@ -33,8 +31,6 @@ public interface PaymentApiDto {
     }
 
     // 결제 결과 응답 (Response)
-    @Getter
-    @Builder
     record PaymentResponse(List<PaymentInfo> paymentInfoList) {
         public static PaymentResponse from(PaymentFacadeDto.PaymentResult result) {
             List<PaymentInfo> paymentInfoList = result.paymentInfoList().stream()
@@ -48,7 +44,5 @@ public interface PaymentApiDto {
     }
 
     // 결제 정보 (단일 응답 항목)
-    @Getter
-    @Builder
     record PaymentInfo(Long paymentId, Long reservationId, Long amount) {}
 }
