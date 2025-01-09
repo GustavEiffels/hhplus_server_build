@@ -13,7 +13,7 @@ class SeatTest {
     void 좌석_번호가_1에서_50_사이의_자연수가_아니면_예외가_발생한다(){
         // given
         int seatNo = 51;
-        int price  = 10_000;
+        long price  = 10_000L;
 
         // when
         BusinessException businessException = Assertions.assertThrows(BusinessException.class,()->{
@@ -28,7 +28,7 @@ class SeatTest {
     void 금액은_10_000_에서_100_000_사이_자연수가_아니면_BusinessException이_발생한다(){
         // given
         int seatNo = 50;
-        int price  = 9_000;
+        long price  = 9_000;
 
         // when
         BusinessException businessException = Assertions.assertThrows(BusinessException.class,()->Seat.builder().seatNo(seatNo).price(price).build());

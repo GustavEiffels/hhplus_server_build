@@ -29,7 +29,7 @@ public class Seat extends BaseEntity {
     private int seatNo;
 
     @NotNull
-    private long price;
+    private Long price;
 
     @ManyToOne
     @JoinColumn(
@@ -44,12 +44,12 @@ public class Seat extends BaseEntity {
 
 
     @Builder // 기본 생성
-    public Seat(int seatNo, int price, ConcertSchedule concertSchedule){
+    public Seat(int seatNo, Long price, ConcertSchedule concertSchedule){
         if( seatNo < 1 || seatNo > 50){
             throw new BusinessException(ErrorCode.Entity,"[좌석 번호] 는 1 ~ 50 사이의 자연수여야 합니다.");
         }
-        if( price < 10_000 || price > 100_000 ){
-            throw new BusinessException(ErrorCode.Entity,"[금액] 은 10,000 원에서 100,000 사이로 책정 되어야 합니다.");
+        if( price < 10_000L || price > 1_000_000L ){
+            throw new BusinessException(ErrorCode.Entity,"[금액] 은 10,000 원에서 1_000,000 사이로 책정 되어야 합니다.");
         }
         if( concertSchedule == null ){
             throw new BusinessException(ErrorCode.Entity,"[콘서트 스케줄] 정보는 필수로 할당이 되어야 합니다.");

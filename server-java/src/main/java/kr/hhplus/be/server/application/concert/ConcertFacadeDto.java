@@ -4,6 +4,7 @@ import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.concert.Concert;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
+import kr.hhplus.be.server.domain.seat.Seat;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -39,6 +40,29 @@ public interface ConcertFacadeDto {
         }
     }
     record ScheduleInfo(LocalDateTime re_start,LocalDateTime re_end,LocalDateTime show){}
+
+
+
+
+    record FindLeftSeatParam(Long concertId){
+        public FindLeftSeatParam{
+            if(concertId == null){
+                throw new BusinessException(ErrorCode.INVALID_INPUT,"[concertId]는 필수 값 입니다.");
+            }
+        }
+    }
+
+
+    record FindLeftSeatResult(List<SeatInfo> seatInfoList){
+        public static FindLeftSeatResult from(List<Seat> seatList){
+            List<SeatInfo> seatInfoList = seatList.stream()
+                    .map(seat -> new SeatInfo(seat.getSeatNo(), seat.getId(), seat.getPrice()))
+                    .collect(Collectors.toList());
+            return new FindLeftSeatResult(seatInfoList);
+        }
+    }
+
+    record SeatInfo(int seatNo, Long seatId, Long price){}
 }
 
 

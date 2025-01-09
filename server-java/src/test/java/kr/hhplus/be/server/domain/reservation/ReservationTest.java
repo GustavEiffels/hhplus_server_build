@@ -26,7 +26,7 @@ class ReservationTest {
                 .build();
         Seat seat = Seat.builder()
                 .seatNo(10)
-                .price(100_000)
+                .price(100_000L)
                 .concertSchedule(schedule)
                 .build();
 
@@ -54,7 +54,7 @@ class ReservationTest {
                 .build();
         Seat seat = Seat.builder()
                 .seatNo(10)
-                .price(100_000)
+                .price(100_000L)
                 .concertSchedule(schedule)
                 .build();
 
