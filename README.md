@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a706801f-e308-41a3-a857-32321179d2fb)# hhplus_server_build
+# hhplus_server_build
 - hhplus server 구축
 
 ## Swagger 전체이미지
