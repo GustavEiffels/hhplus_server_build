@@ -1,4 +1,54 @@
 package kr.hhplus.be.server.domain.user;
 
-public class User {
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import kr.hhplus.be.server.common.BaseEntity;
+import kr.hhplus.be.server.common.exceptions.BusinessException;
+import kr.hhplus.be.server.common.exceptions.ErrorCode;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.springframework.util.StringUtils;
+
+import java.math.BigDecimal;
+
+@Entity
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class User extends BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
+    private Long id;
+
+    @NotNull
+    private String name;
+
+    @NotNull
+    @Min(value = 0)
+    @Max(value = 100_000_000)
+    private Long point = 0L; // min :  0  max : 100_000_000
+
+
+    @Builder
+    public User(String name){
+        if(!StringUtils.hasText(name)){
+            throw new BusinessException(ErrorCode.Entity,"[사용자-이름]은 필수 값 입니다.");
+        }
+        this.name  = name;
+    }
+
+    public long pointTransaction(long pointAmount){
+        if(this.point + pointAmount < 0 ){
+            throw new BusinessException(ErrorCode.Entity,"잔액이 부족합니다. point 는 최소 0, 최대 100,000,000 까지 가질 수 있습니다.");
+        }
+        if(this.point + pointAmount > 100_000_000){
+            throw new BusinessException(ErrorCode.Entity,"최대 충전 금액입니다. point 는 최소 0, 최대 100,000,000 까지 가질 수 있습니다.");
+        }
+        this.point += pointAmount;
+        return this.point;
+    }
 }

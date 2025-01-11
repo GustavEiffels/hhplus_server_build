@@ -3,18 +3,20 @@
 title: Concert API
 ---
 erDiagram
-
-
     Seat {
         long id PK
+
+
         int scheduleId    FK    "[콘서트 스케줄] 테이블 외래키" 
-        string status           "좌석 상태 : reserved (default), occupied, reservable"
-        int number              "좌석 번호"
-        decimal price           "좌석 가격"
-        int userId FK           "[사용자] 테이블 외래키 (nullable)" 
+
+        string   status           "좌석 상태 : reservable (default), occupied, reserved"
+        int      seatNo              "좌석 번호"
+        decimal  price           "좌석 가격"
+        datetime updateAt       "최근 수정 시간"
+        
         datetime expiredAt      "점유 만료 시간"
         datetime createAt       "생성 시간"
-        datetime updateAt       "최근 수정 시간"
+        
     }
 
     Reservation {
@@ -22,7 +24,9 @@ erDiagram
         int userId FK           "[사용자] 테이블 외래키"           
         int seatId FK           "[좌석] 테이블 외래키"
         int paymentId FK        "[결제] 테이블 외래키"
+
         string status           "예약 상태 : reserved (default), cancel, purchase"
+
         datetime createAt       "생성 시간"
         datetime updateAt       "최근 수정 시간"
     }
@@ -50,7 +54,7 @@ erDiagram
         int userId FK       "[사용자] 테이블 외래키"
         int paymentId FK    "[결제] 테이블 외래키 (nullable)"
         int amount          "포인트 변경량 (+ 충전, - 사용)"
-        string description  "변경 내역 설명 (e.g., 충전, 티켓 구매)"
+        String status
         datetime createAt   "생성 시간"
     }
 
@@ -58,6 +62,9 @@ erDiagram
         long id PK   
         string title        "콘서트 이름"
         string performer    "콘서트 공연자 이름"
+        datetime createAt   "생성 시간"
+        datetime updateAt   "최근 수정 시간"
+
     }
 
     ConcertSchedule {
@@ -86,5 +93,6 @@ erDiagram
     User ||--o{ Reservation : "User:Reservation = 1:N"
     User ||--o{ PointHistory : "User:PointHistory = 1:N"
     User ||--o{ QueueToken  : "User:QueueToken = 1:N"
+    User ||--o{ Payment  : "User:Payment = 1:N"
 
 ```
