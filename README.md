@@ -1,4 +1,4 @@
-# hhplus_server_build
+# STEP-07
 - hhplus server 구축
 
 ## Swagger 전체이미지
