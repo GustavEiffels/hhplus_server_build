@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kr.hhplus.be.server.application.point.PointFacadeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-01-11T06:52:47" hostname="seongseougs-MacBook-Air.local" time="0.558">
+  <properties/>
+  <testcase name="param에_충전포인트를_20_000을넣으면_result의_amount_로_20_000이되고_user의_point는_30_000이_된다()" classname="kr.hhplus.be.server.application.point.PointFacadeTest" time="0.513"/>
+  <testcase name="param에_newUser_의_아이디를_넣으면_FindBalanceResult의_balance가_10000을_반환한다()" classname="kr.hhplus.be.server.application.point.PointFacadeTest" time="0.045"/>
+  <system-out><![CDATA[06:52:32.044 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [kr.hhplus.be.server.application.point.PointFacadeTest]: PointFacadeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+06:52:32.242 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.point.PointFacadeTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2025-01-11T06:52:32.733Z  INFO 51518 --- [hhplus] [    Test worker] k.h.b.s.a.point.PointFacadeTest          : Starting PointFacadeTest using Java 17.0.8.1 with PID 51518 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-11T06:52:32.736Z  INFO 51518 --- [hhplus] [    Test worker] k.h.b.s.a.point.PointFacadeTest          : The following 1 profile is active: "local"
+2025-01-11T06:52:33.432Z  INFO 51518 --- [hhplus] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-11T06:52:33.495Z  INFO 51518 --- [hhplus] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 8 JPA repository interfaces.
+2025-01-11T06:52:34.162Z  INFO 51518 --- [hhplus] [    Test worker] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-11T06:52:34.164Z  INFO 51518 --- [hhplus] [    Test worker] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-11T06:52:34.171Z  INFO 51518 --- [hhplus] [    Test worker] org.testcontainers.DockerClientFactory   : Testcontainers version: 1.20.4
+2025-01-11T06:52:34.323Z  INFO 51518 --- [hhplus] [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-11T06:52:34.486Z  INFO 51518 --- [hhplus] [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-11T06:52:34.487Z  INFO 51518 --- [hhplus] [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2025-01-11T06:52:34.509Z  INFO 51518 --- [hhplus] [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-11T06:52:34.530Z  INFO 51518 --- [hhplus] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-11T06:52:34.757Z  INFO 51518 --- [hhplus] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: 279238bab11f69ba69d0586d273dfb0f060eaa48da29f74671f0696d14331824
+2025-01-11T06:52:35.152Z  INFO 51518 --- [hhplus] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT0.621637S
+2025-01-11T06:52:35.158Z  INFO 51518 --- [hhplus] [    Test worker] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-11T06:52:35.159Z  INFO 51518 --- [hhplus] [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
+2025-01-11T06:52:35.159Z  INFO 51518 --- [hhplus] [    Test worker] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
+2025-01-11T06:52:35.161Z  INFO 51518 --- [hhplus] [    Test worker] tc.mysql:8.0                             : Creating container for image: mysql:8.0
+2025-01-11T06:52:35.223Z  INFO 51518 --- [hhplus] [    Test worker] tc.mysql:8.0                             : Container mysql:8.0 is starting: e98b9d456132a1a8eb4ce2dfbf28f3cab7ff1e4c82b79fa330dd910f58945107
+2025-01-11T06:52:35.468Z  INFO 51518 --- [hhplus] [    Test worker] tc.mysql:8.0                             : Waiting for database connection to become available at jdbc:mysql://localhost:53958/hhplus using query 'SELECT 1'
+2025-01-11T06:52:43.594Z  INFO 51518 --- [hhplus] [    Test worker] tc.mysql:8.0                             : Container mysql:8.0 started in PT8.432525S
+2025-01-11T06:52:43.595Z  INFO 51518 --- [hhplus] [    Test worker] tc.mysql:8.0                             : Container is started (JDBC URL: jdbc:mysql://localhost:53958/hhplus)
+2025-01-11T06:52:44.381Z  INFO 51518 --- [hhplus] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-11T06:52:44.421Z  INFO 51518 --- [hhplus] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-11T06:52:44.466Z  INFO 51518 --- [hhplus] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-11T06:52:44.633Z  INFO 51518 --- [hhplus] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-11T06:52:44.651Z  INFO 51518 --- [hhplus] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HangHaePlusDataSource - Starting...
+2025-01-11T06:52:44.760Z  INFO 51518 --- [hhplus] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7fd7085d
+2025-01-11T06:52:44.761Z  INFO 51518 --- [hhplus] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HangHaePlusDataSource - Start completed.
+2025-01-11T06:52:44.805Z  INFO 51518 --- [hhplus] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-11T06:52:45.317Z  INFO 51518 --- [hhplus] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    drop table if exists concert
+Hibernate: 
+    drop table if exists concert_schedule_seq
+Hibernate: 
+    drop table if exists concert_seq
+Hibernate: 
+    drop table if exists concert_schedule
+Hibernate: 
+    drop table if exists payment
+Hibernate: 
+    drop table if exists payment_seq
+Hibernate: 
+    drop table if exists point_history_seq
+Hibernate: 
+    drop table if exists point_history
+Hibernate: 
+    drop table if exists queue_token_seq
+Hibernate: 
+    drop table if exists queue_token
+Hibernate: 
+    drop table if exists reservation
+Hibernate: 
+    drop table if exists reservation_seq
+Hibernate: 
+    drop table if exists seat
+Hibernate: 
+    drop table if exists seat_seq
+Hibernate: 
+    drop table if exists user
+Hibernate: 
+    drop table if exists user_seq
+Hibernate: 
+    create table concert (
+        create_at datetime(6),
+        id bigint not null,
+        update_at datetime(6),
+        performer varchar(255),
+        title varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table concert_schedule_seq (
+        next_val bigint
+    ) engine=InnoDB
+Hibernate: 
+    insert into concert_schedule_seq values ( 1 )
+Hibernate: 
+    create table concert_seq (
+        next_val bigint
+    ) engine=InnoDB
+Hibernate: 
+    insert into concert_seq values ( 1 )
+Hibernate: 
+    create table concert_schedule (
+        is_reserve_able bit,
+        concert_id bigint not null,
+        create_at datetime(6),
+        reservation_end datetime(6),
+        reservation_start datetime(6),
+        schedule_id bigint not null,
+        show_time datetime(6),
+        update_at datetime(6),
+        primary key (schedule_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table payment (
+        payment_status tinyint check (payment_status between 0 and 1),
+        amount bigint,
+        create_at datetime(6),
+        payment_id bigint not null,
+        reservation_id bigint not null,
+        update_at datetime(6),
+        primary key (payment_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table payment_seq (
+        next_val bigint
+    ) engine=InnoDB
+Hibernate: 
+    insert into payment_seq values ( 1 )
+Hibernate: 
+    create table point_history_seq (
+        next_val bigint
+    ) engine=InnoDB
+Hibernate: 
+    insert into point_history_seq values ( 1 )
+Hibernate: 
+    create table point_history (
+        status tinyint check (status between 0 and 1),
+        amount bigint not null,
+        create_at datetime(6),
+        id bigint not null,
+        payment_id bigint,
+        update_at datetime(6),
+        user_id bigint not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table queue_token_seq (
+        next_val bigint
+    ) engine=InnoDB
+Hibernate: 
+    insert into queue_token_seq values ( 1 )
+Hibernate: 
+    create table queue_token (
+        status tinyint check (status between 0 and 1),
+        create_at datetime(6),
+        expire_at datetime(6),
+        queue_id bigint not null,
+        update_at datetime(6),
+        user_id bigint not null,
+        primary key (queue_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table reservation (
+        status tinyint check (status between 0 and 3),
+        amount bigint,
+        create_at datetime(6),
+        expired_at datetime(6),
+        id bigint not null,
+        seat_id bigint not null,
+        update_at datetime(6),
+        user_id bigint not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table reservation_seq (
+        next_val bigint
+    ) engine=InnoDB
+Hibernate: 
+    insert into reservation_seq values ( 1 )
+Hibernate: 
+    create table seat (
+        seat_no integer not null,
+        status tinyint check (status between 0 and 2),
+        create_at datetime(6),
+        price bigint,
+        schedule_id bigint not null,
+        seat_id bigint not null,
+        update_at datetime(6),
+        primary key (seat_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table seat_seq (
+        next_val bigint
+    ) engine=InnoDB
+Hibernate: 
+    insert into seat_seq values ( 1 )
+Hibernate: 
+    create table user (
+        create_at datetime(6),
+        point bigint,
+        update_at datetime(6),
+        user_id bigint not null,
+        name varchar(255),
+        primary key (user_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table user_seq (
+        next_val bigint
+    ) engine=InnoDB
+Hibernate: 
+    insert into user_seq values ( 1 )
+2025-01-11T06:52:45.682Z  INFO 51518 --- [hhplus] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11T06:52:46.393Z  INFO 51518 --- [hhplus] [    Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-11T06:52:47.448Z  INFO 51518 --- [hhplus] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-11T06:52:47.507Z  INFO 51518 --- [hhplus] [    Test worker] k.h.b.s.a.point.PointFacadeTest          : Started PointFacadeTest in 15.145 seconds (process running for 16.253)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.amount,
+        r1_0.create_at,
+        r1_0.expired_at,
+        r1_0.seat_id,
+        r1_0.status,
+        r1_0.update_at,
+        r1_0.user_id 
+    from
+        reservation r1_0 
+    where
+        r1_0.status=? 
+        and r1_0.expired_at<? for update
+Hibernate: 
+    select
+        count(qt1_0.queue_id) 
+    from
+        queue_token qt1_0 
+    where
+        qt1_0.expire_at>?
+Hibernate: 
+    select
+        qt1_0.queue_id,
+        qt1_0.create_at,
+        qt1_0.expire_at,
+        qt1_0.status,
+        qt1_0.update_at,
+        qt1_0.user_id 
+    from
+        queue_token qt1_0 
+    where
+        qt1_0.status=? 
+    order by
+        qt1_0.create_at 
+    limit
+        ?
+Hibernate: 
+    select
+        next_val as id_val 
+    from
+        user_seq for update
+Hibernate: 
+    update
+        user_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+Hibernate: 
+    insert 
+    into
+        user
+        (create_at, name, point, update_at, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.create_at,
+        u1_0.name,
+        u1_0.point,
+        u1_0.update_at 
+    from
+        user u1_0 
+    where
+        u1_0.user_id=? for update
+Hibernate: 
+    select
+        next_val as id_val 
+    from
+        point_history_seq for update
+Hibernate: 
+    update
+        point_history_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+Hibernate: 
+    insert 
+    into
+        point_history
+        (amount, create_at, payment_id, status, update_at, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    update
+        user 
+    set
+        name=?,
+        point=?,
+        update_at=? 
+    where
+        user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.create_at,
+        u1_0.name,
+        u1_0.point,
+        u1_0.update_at 
+    from
+        user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        next_val as id_val 
+    from
+        user_seq for update
+Hibernate: 
+    update
+        user_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+Hibernate: 
+    insert 
+    into
+        user
+        (create_at, name, point, update_at, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.create_at,
+        u1_0.name,
+        u1_0.point,
+        u1_0.update_at 
+    from
+        user u1_0 
+    where
+        u1_0.user_id=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

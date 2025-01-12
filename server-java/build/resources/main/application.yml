@@ -1,0 +1,45 @@
+spring:
+  task:
+    scheduling:
+      pool:
+        size: 2
+      shutdown:
+        await-termination: true # 모든 스케줄 작업이 종료 되어야 어플리케이션 종료되게 마듬
+        await-termination-period: 10s # 스케줄러가 종료 작업을 기다리는 시간
+  application:
+    name: hhplus
+  profiles:
+    active: local
+  datasource:
+    name: HangHaePlusDataSource
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 3
+      connection-timeout: 10000
+      max-lifetime: 60000
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    open-in-view: true
+    generate-ddl: true
+    show-sql: true
+    format_sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate.timezone.default_storage: NORMALIZE_UTC
+      hibernate.jdbc.time_zone: UTC
+      hibernate.show-sql: true
+      hibernate.format_sql: true
+
+queue:
+  max-active-token: 20
+
+
+---
+spring.config.activate.on-profile: local, test
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hhplus?characterEncoding=UTF-8&serverTimezone=UTC
+    username: application
+    password: application
