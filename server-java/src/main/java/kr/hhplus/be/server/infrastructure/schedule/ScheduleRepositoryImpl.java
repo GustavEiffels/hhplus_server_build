@@ -16,7 +16,7 @@ public class ScheduleRepositoryImpl implements ConcertScheduleRepository {
     private final ScheduleJpaRepository jpaRepository;
 
     @Override
-    public List<ConcertSchedule> findReservableScheduleList(Long concertId, int page) {
+    public List<ConcertSchedule> findReservableByConcertIdAndPage(Long concertId, int page) {
         return jpaRepository.findAllReserveAbleByConcertId(concertId,page);
     }
 

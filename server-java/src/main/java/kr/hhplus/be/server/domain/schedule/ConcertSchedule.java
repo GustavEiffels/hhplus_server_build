@@ -85,5 +85,12 @@ public class ConcertSchedule extends BaseEntity {
         this.reservation_end   = reserveEndTime;
     }
 
+    /**
+     * 명시적으로 method 추가
+     * @return
+     */
+    public boolean isReservable(){
+        return this.isReserveAble;
+    }
 
 }

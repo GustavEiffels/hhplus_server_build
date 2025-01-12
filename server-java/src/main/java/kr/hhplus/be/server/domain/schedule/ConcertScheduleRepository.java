@@ -5,12 +5,11 @@ import java.util.Optional;
 
 public interface ConcertScheduleRepository {
 
-    List<ConcertSchedule> findReservableScheduleList(Long concertId, int page);
-
+    List<ConcertSchedule>    findReservableByConcertIdAndPage(Long concertId, int page);
 
     Optional<ConcertSchedule> findById (Long concertScheduleId);
 
     Optional<ConcertSchedule> findByIdWithLock(Long scheduleId);
 
-    List<ConcertSchedule> findByIdsWithLock(List<Long> scheduleIds);
+    List<ConcertSchedule>     findByIdsWithLock(List<Long> scheduleIds);
 }
