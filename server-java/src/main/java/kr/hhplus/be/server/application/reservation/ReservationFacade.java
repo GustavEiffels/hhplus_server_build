@@ -35,7 +35,7 @@ public class ReservationFacade {
     public ReservationFacadeDto.ReservationResult reservation(ReservationFacadeDto.ReservationParam param){
 
         // userid 를 가지고 유저를 조회
-        User findUser = userService.findById(param.userId());
+        User findUser = userService.findUser(param.userId());
 
 
         // seatid 리스트를 받아서 id 로 list 를 받아서 조회 -> 비관적 락 적용 => findAllReserveAbleWithLock

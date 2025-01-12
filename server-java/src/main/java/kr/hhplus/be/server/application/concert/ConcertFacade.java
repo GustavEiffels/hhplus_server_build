@@ -24,12 +24,10 @@ public class ConcertFacade {
     private final ConcertScheduleService scheduleService;
     private final SeatService            seatService    ;
 
-    // 콘서트 아이디로 가능한 콘서트 스케줄 조회
-    // 1. concert service
-    // 2. concert schedule service
 
     /**
-     * USECASE 2 : concertId 로 콘서트 스케줄 정보 페이징해서 가져오기
+     * USECASE 2 : 예약 가능 API
+     * - concertId 로 콘서트 스케줄 정보 페이징해서 가져오기
      * @param param
      * @return
      */

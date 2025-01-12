@@ -52,10 +52,10 @@ public class PointHistory extends BaseEntity {
         this.status = status;
     }
 
-    public static PointHistory createCharge(Long amount, User user) {
-        validateAmount(amount);
+    public static PointHistory createCharge(User user) {
+        validateAmount(user.getPoint());
         validateUser(user);
-        return new PointHistory(amount, user, null, PointHistoryStatus.Charge);
+        return new PointHistory(user.getPoint(), user, null, PointHistoryStatus.Charge);
     }
 
     public static PointHistory createUse(Long amount, User user, Payment payment) {
