@@ -35,24 +35,10 @@ class PointHistoryTest {
         // when
         BusinessException be = assertThrows(
                 BusinessException.class,()->{
-                    PointHistory.createCharge(amount,user);
+                    PointHistory.createCharge(user);
                 });
         // then
         assertEquals(ErrorCode.Entity,be.getErrorStatus());
     }
 
-
-    @Test
-    void 결제내역의_결제금액이_사용자_정보가_존재하지_않는다면_BaseException_예외가_발생(){
-        // given
-        Long amount = -1L;
-
-        // when
-        BusinessException be = assertThrows(
-                BusinessException.class,()->{
-                    PointHistory.createCharge(amount,null);
-                });
-        // then
-        assertEquals(ErrorCode.Entity,be.getErrorStatus());
-    }
 }

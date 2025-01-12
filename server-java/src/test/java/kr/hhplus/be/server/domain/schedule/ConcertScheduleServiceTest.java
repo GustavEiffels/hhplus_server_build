@@ -32,7 +32,7 @@ class ConcertScheduleServiceTest {
 
         // when & then
         BusinessException exception = assertThrows(BusinessException.class, () -> {
-            concertService.findById(concertId);
+            concertService.findConcert(concertId);
         });
         assertEquals(ErrorCode.Repository, exception.getErrorStatus());
     }
