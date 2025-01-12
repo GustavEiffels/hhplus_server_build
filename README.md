@@ -1,6 +1,15 @@
 # GIT EMOGI
 ```text
-🛠️ Refactor :
+🏛️ feat :  
+🔧 fix :    
+🛠️ refactor :
+🔨 test : 
+🏗️ build : 
+📜 docs : 
+🎨 style : 
+⚓ ci : 
+🚀 pref :
+🧹 chore :
 ```
 
 
