@@ -30,10 +30,10 @@ public class Concert extends BaseEntity {
     @Builder
     public Concert(String title, String performer){
         if(!StringUtils.hasText(title)){
-            throw new BusinessException(ErrorCode.Entity,"[콘서트-제목]은 필수 값 입니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
         if(!StringUtils.hasText(performer)){
-            throw new BusinessException(ErrorCode.Entity,"[콘서트-공연자]는 필수 값 입니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
 
         this.title = title;

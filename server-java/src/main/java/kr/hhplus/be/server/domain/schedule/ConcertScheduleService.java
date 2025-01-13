@@ -21,17 +21,17 @@ public class ConcertScheduleService {
      */
     public ConcertSchedule findReservableConcertSchedule(Long concertScheduleId){
         // 1. 존재하는 콘서트 스케줄인지 확인
-        ConcertSchedule concertSchedule = findConcertSchedule(concertScheduleId);
+        ConcertSchedule concertSchedule = findSchedule(concertScheduleId);
 
         // 2. 예약이 가능한 상태인지 확인
         if(!concertSchedule.isReservable()){
-            throw new BusinessException(ErrorCode.SERVICE,"예약이 마감되었습니다.");
+            throw new BusinessException(ErrorCode.RESERVATION_END);
         }
 
         // 3. 예약 가능한 시간대인지 확인
         LocalDateTime now = LocalDateTime.now();
         if (now.isBefore(concertSchedule.getReservation_start()) || now.isAfter(concertSchedule.getReservation_end())) {
-            throw new BusinessException(ErrorCode.SERVICE, "예약 가능한 시간대가 아닙니다.");
+            throw new BusinessException(ErrorCode.NOT_RESERVABLE_TIME);
         }
 
         return concertSchedule;
@@ -53,20 +53,34 @@ public class ConcertScheduleService {
      * @param scheduleId
      * @return
      */
-    public ConcertSchedule findConcertSchedule(Long scheduleId){
+    public ConcertSchedule findSchedule(Long scheduleId){
         return repository.findById(scheduleId)
-                    .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"해당 날짜의 공연을 찾지 못 하였습니다."));
+                    .orElseThrow(()-> new BusinessException(ErrorCode.NOT_FOUND_CONCERT_SCHEDULE));
     }
 
-    public ConcertSchedule findByIdWithLock(Long scheduleId){
+    /**
+     * 콘서트 스케줄 아이디를 사용하여, 콘서트 스케줄 반환
+     * - 비관적 락을 사용
+     * @param scheduleId
+     * @return
+     */
+    public ConcertSchedule findScheduleForUpdate(Long scheduleId){
         return repository.findByIdWithLock(scheduleId)
-                .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"해당 날짜의 공연을 찾지 못 하였습니다."));
+                .orElseThrow(()-> new BusinessException(ErrorCode.NOT_FOUND_CONCERT_SCHEDULE));
     }
 
-
-    public List<ConcertSchedule> findByIdsWithLock(List<Long> scheduleIds){
+    /**
+     * 콘서트 스케줄 아이디 리스트를 사용하여, 콘서트 스케줄 리스트를 반환
+     * - 비관적 락을 사용함
+     * @param scheduleIds
+     * @return
+     */
+    public List<ConcertSchedule> findScheduleListForUpdate(List<Long> scheduleIds){
         return repository.findByIdsWithLock(scheduleIds);
     }
+
+
+
 
 
 

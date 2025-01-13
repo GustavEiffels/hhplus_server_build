@@ -55,7 +55,7 @@ public class ReservationFacade {
                 .toList();
 
         if(seatService.findByScheduleId(param.scheduleId()).isEmpty()){
-            ConcertSchedule schedule = concertScheduleService.findByIdWithLock(param.scheduleId());
+            ConcertSchedule schedule = concertScheduleService.findScheduleForUpdate(param.scheduleId());
             schedule.updateReserveStatus(false);
         }
         return ReservationFacadeDto.ReservationResult.from(createdReservations);
@@ -82,7 +82,7 @@ public class ReservationFacade {
                     })
                     .toList();
 
-            concertScheduleService.findByIdsWithLock(concertScheduleIds)
+            concertScheduleService.findScheduleListForUpdate(concertScheduleIds)
                     .forEach(item->{
                         item.updateReserveStatus(true);
                     });

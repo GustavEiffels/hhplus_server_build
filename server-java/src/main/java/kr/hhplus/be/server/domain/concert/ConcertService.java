@@ -20,6 +20,6 @@ public class ConcertService {
      */
     public Concert findConcert(Long concertId){
         return  repository.findById(concertId)
-                .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"콘서트가 존재하지 않습니다."));
+                .orElseThrow(()-> new BusinessException(ErrorCode.NOT_FOUND_CONCERT));
     }
 }
