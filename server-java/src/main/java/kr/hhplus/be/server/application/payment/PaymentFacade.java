@@ -36,7 +36,7 @@ public class PaymentFacade {
     public PaymentFacadeDto.PaymentResult pay(PaymentFacadeDto.PaymentParam param){
 
         // 사용자 lock
-        User user = userService.findByIdWithLock(param.userid());
+        User user = userService.findUserForUpdate(param.userid());
 
 
         // 예약 lock : 에약 상태로 변경

@@ -3,23 +3,49 @@ package kr.hhplus.be.server.domain.user;
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class UserTest {
 
+    @DisplayName("사용자 생성 시, 이름을 넣지 않으면 ErrorCode : REQUIRE_FIELD_MISSING 가 발생한다.")
     @Test
-    void 사용자의_포인트_거래량이_100_000_000을_초과하는_경우_BaseException_예외가_발생(){
-        // given : 사용자를 생성하고, 사용자가 거래하는 포인트량을 적절하지 않은 포인트로 설정한다.
-        int transactionPoint = 100_000_001;
-        User testUser = User.builder().name("김연습").build();
+    void user_create_test00(){
+        // given & when
+        BusinessException exception = Assertions.assertThrows(BusinessException.class,()-> User.builder().build());
 
-        // when : 포인트 트랜잭션을 수행하면
-        BusinessException exception = Assertions.assertThrows(BusinessException.class,()-> testUser.pointTransaction(transactionPoint));
-
-        // then : ErrorCode 의 Status 가 "Entity" 인 에러가 발생한다.
-        Assertions.assertEquals(ErrorCode.Entity,exception.getErrorStatus());
+        // then
+        Assertions.assertEquals(ErrorCode.REQUIRE_FIELD_MISSING,exception.getErrorStatus(),"REQUIRE_FIELD_MISSING 예외가 발생 ");
     }
 
 
+    @DisplayName("한 사용자의 거래 이후 포인트가, 최대 포인트량을 넘을 경우 ErrorCode : MAXIMUM_POINT_EXCEEDED 가 발생한다.")
+    @Test
+    void user_pointTransaction_test00(){
+        // given
+        int transactionPoint = 100_000_001;
+        User testUser = User.builder().name("김연습").build();
+
+        // when
+        BusinessException exception = Assertions.assertThrows(BusinessException.class,()-> testUser.pointTransaction(transactionPoint));
+
+        // then
+        Assertions.assertEquals(ErrorCode.MAXIMUM_POINT_EXCEEDED,exception.getErrorStatus(),"MAXIMUM_POINT_EXCEEDED 예외가 발생 ");
+    }
+
+
+    @DisplayName("한 사용자의 거래 이후 포인트가, 최소 포인트량 보다 적은 경우 ErrorCode : INSUFFICIENT BALANCE 가 발생한다.")
+    @Test
+    void user_pointTransaction_test01(){
+        // given
+        long transactionPoint = -1L;
+        User testUser = User.builder().name("김연습").build();
+
+        // when
+        BusinessException exception = Assertions.assertThrows(BusinessException.class,()-> testUser.pointTransaction(transactionPoint));
+
+        // then
+        Assertions.assertEquals(ErrorCode.INSUFFICIENT_BALANCE,exception.getErrorStatus(),"INSUFFICIENT_BALANCE 예외가 발생 ");
+    }
 
 }

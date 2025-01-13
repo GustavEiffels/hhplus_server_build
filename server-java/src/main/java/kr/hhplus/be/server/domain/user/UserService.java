@@ -22,9 +22,8 @@ public class UserService {
      */
     public User findUser(Long userid){
         return userRepository.findById(userid)
-                .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"존재하지 않은 [사용자] 입니다."));
+                .orElseThrow(()-> new BusinessException(ErrorCode.NOT_FOUND_USER));
     }
-
 
     /**
      * User 를 조회하고 조회한 User 의 포인트를 충전한다.
@@ -48,13 +47,7 @@ public class UserService {
      */
     public User findUserForUpdate(Long userId){
         return userRepository.findByIdWithLock(userId)
-                .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"존재하지 않은 [사용자] 입니다."));
-    }
-
-    public User findByIdWithLock(Long userid){
-        return userRepository.findByIdWithLock(userid)
-                .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"존재하지 않은 [사용자] 입니다."));
-
+                .orElseThrow(()-> new BusinessException(ErrorCode.NOT_FOUND_USER));
     }
 
 
