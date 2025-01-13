@@ -3,7 +3,6 @@ package kr.hhplus.be.server.application.payment;
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.payment.Payment;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

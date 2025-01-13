@@ -45,6 +45,7 @@ public class PaymentFacade {
                 .peek(item -> item.updateStatus(ReservationStatus.Reserved)) // 상태를 업데이트
                 .toList();
 
+
         // 좌석 id 추출 -> lock 이 아님..
         List<Long> seatIds = reservations.stream()
                 .map(reservation -> reservation.getSeat().getId())
