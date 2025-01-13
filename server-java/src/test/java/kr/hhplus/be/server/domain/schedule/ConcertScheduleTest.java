@@ -4,6 +4,7 @@ import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.concert.Concert;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -12,15 +13,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ConcertScheduleTest {
 
+
+    @DisplayName("콘서트(콘서트 스케줄)의 [ 예약 시작 시간 ]이 [ 예약 시작 시간 ] 보다 늦으면 ErrorCode : RESCHEDULE_ERROR_INVALID_SHOWTIME")
     @Test
-    void 콘서트_예약_시작_시간_보다_콘서트_예약_종료_시간이_늦으면_BusinessException_예외가_발생(){
+    void concertSchedule_reschedule_test00(){
         // given
         LocalDateTime startTime = LocalDateTime.now();
         LocalDateTime endTime   = startTime.minusHours(1);
         LocalDateTime showTime  = startTime.plusDays(3);
         Concert concert = Concert.builder().performer("김연습").title("서커스").build();
-
-
 
         // when
         BusinessException businessException = Assertions.assertThrows(BusinessException.class,()->{
@@ -33,13 +34,13 @@ class ConcertScheduleTest {
         });
 
         // then
-        assertEquals(ErrorCode.Entity,businessException.getErrorStatus());
-        System.out.println(businessException.getMessage());
+        assertEquals(ErrorCode.RESCHEDULE_ERROR_END_BEFORE_START,businessException.getErrorStatus());
     }
 
 
+    @DisplayName("콘서트(콘서트 스케줄)의 [ 예약 마감 시간 ]이 [ 공연 시작 시간 ]보다 늦으면 ErrorCode : RESCHEDULE_ERROR_INVALID_SHOWTIME")
     @Test
-    void 콘서트_예약_종료_시간_보다_콘서트_공연_시작_시간이_늦으면_BusinessException_예외가_발생(){
+    void concertSchedule_reschedule_test01(){
         // given
         LocalDateTime startTime = LocalDateTime.now();
         LocalDateTime endTime   = startTime.plusDays(10);
@@ -57,56 +58,30 @@ class ConcertScheduleTest {
         });
 
         // then
-        assertEquals(ErrorCode.Entity,businessException.getErrorStatus());
+        assertEquals(ErrorCode.RESCHEDULE_ERROR_INVALID_SHOWTIME,businessException.getErrorStatus());
     }
 
-// -> ConcertSchedule 의 leftTicket 필드가 변경되어 테스트 삭제
-//    @Test
-//    void 남은_티켓수가_50개_이면_증가_할_수_없습니다(){
-//        LocalDateTime startTime = LocalDateTime.now();
-//        LocalDateTime endTime   = startTime.plusDays(10);
-//        LocalDateTime showTime  = startTime.plusDays(11);
-//        Concert concert = Concert.builder().performer("김연습").title("서커스").build();
-//
-//        ConcertSchedule concertSchedule = ConcertSchedule.builder()
-//                .concert(concert)
-//                .showTime(showTime)
-//                .reserveStartTime(startTime)
-//                .reserveEndTime(endTime)
-//                .build();
-//
-//        // when
-//        BusinessException exception = Assertions.assertThrows(BusinessException.class, concertSchedule::increaseTicketCnt);
-//
-//        // then
-//        assertEquals(ErrorCode.Entity,exception.getErrorStatus());
-//    }
+    @DisplayName("필수 값인 endTime 을 설정하지 않으면, ErrorCode : REQUIRE_FIELD_MISSING 가 발생한다.")
+    @Test
+    void concertSchedule_constructor_test00(){
+        // given
+        LocalDateTime startTime = LocalDateTime.now();
+        LocalDateTime endTime   = startTime.plusDays(2);
+        LocalDateTime showTime  = startTime.plusDays(8);
+        Concert concert = Concert.builder().performer("김연습").title("서커스").build();
 
+        // when
+        BusinessException businessException = Assertions.assertThrows(BusinessException.class,()->{
+            ConcertSchedule schedule = ConcertSchedule.builder()
+                    .reserveStartTime(startTime)
+                    .showTime(showTime)
+                    .concert(concert)
+                    .build();
+        });
 
-    // -> ConcertSchedule 의 leftTicket 필드가 변경되어 테스트 삭제
-//    @Test
-//    void 남은_티켓수가_0개_이면_감소_할_수_없습니다(){
-//        LocalDateTime startTime = LocalDateTime.now();
-//        LocalDateTime endTime   = startTime.plusDays(10);
-//        LocalDateTime showTime  = startTime.plusDays(11);
-//        Concert concert = Concert.builder().performer("김연습").title("서커스").build();
-//
-//        ConcertSchedule concertSchedule = ConcertSchedule.builder()
-//                .showTime(showTime)
-//                .concert(concert)
-//                .reserveStartTime(startTime)
-//                .reserveEndTime(endTime)
-//                .build();
-//
-//        // when
-//        BusinessException exception = Assertions.assertThrows(BusinessException.class, ()->{
-//            for(int i = 0; i<51; i++){
-//                concertSchedule.decreaseTicketCnt();
-//            }
-//        });
-//
-//        // then
-//        assertEquals(ErrorCode.Entity,exception.getErrorStatus());
-//    }
+        // then
+        assertEquals(ErrorCode.REQUIRE_FIELD_MISSING,businessException.getErrorStatus());
+    }
+
 
 }
