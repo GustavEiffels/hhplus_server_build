@@ -69,14 +69,9 @@ public class ConcertScheduleService {
                 .orElseThrow(()-> new BusinessException(ErrorCode.NOT_FOUND_CONCERT_SCHEDULE));
     }
 
-    /**
-     * 콘서트 스케줄 아이디 리스트를 사용하여, 콘서트 스케줄 리스트를 반환
-     * - 비관적 락을 사용함
-     * @param scheduleIds
-     * @return
-     */
-    public List<ConcertSchedule> findScheduleListForUpdate(List<Long> scheduleIds){
-        return repository.findByIdsWithLock(scheduleIds);
+
+    public void reservable(List<Long> concertScheduleIds){
+        repository.findByIdsWithLock(concertScheduleIds).forEach(ConcertSchedule::enableReservation);
     }
 
 

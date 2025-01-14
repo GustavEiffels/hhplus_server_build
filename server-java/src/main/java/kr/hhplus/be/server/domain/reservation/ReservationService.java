@@ -65,7 +65,7 @@ public class ReservationService {
      * 예약 만료 시키고, 만료된 좌석 ID 를 반환
      * @return
      */
-    public List<Long> expireWithSeatList(){
+    public List<Long> expireAndReturnSeatList(){
         // 만료된 예약들을 조회하고, 예약들의 status : pending -> expire, 연관된 좌석 id 리스트 반환
         return repository.findExpiredWithLock().stream()
                 .map(item -> {

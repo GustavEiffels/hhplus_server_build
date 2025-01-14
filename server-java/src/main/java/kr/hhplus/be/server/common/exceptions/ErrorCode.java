@@ -20,7 +20,6 @@ public enum ErrorCode {
     NOT_FOUND_CONCERT_SCHEDULE("[ NOT FOUND CONCERT SCHEDULE ]", "공연 일정을 찾을 수 없습니다."),
     RESCHEDULE_ERROR_END_BEFORE_START("[ RESCHEDULE ERROR END BEFORE START ]","[예약 종료] 시간은 [예약 시작] 시간보다 늦어야 합니다."),
     RESCHEDULE_ERROR_INVALID_SHOWTIME("[ RESCHEDULE ERROR INVALID SHOWTIME ]","[공연] 시간은 [예약 종료] 시간보다 늦어야 합니다."),
-
     RESERVATION_END("[ RESERVATION END ]","해당 예약은 마감되었습니다."),
     NOT_RESERVABLE_TIME("[ NOT RESERVABLE TIME ]","예약 가능한 시간이 아닙니다."),
 
@@ -33,9 +32,14 @@ public enum ErrorCode {
 
     // RESERVATION
     NOT_FOUND_RESERVATION("[ NOT_FOUND_RESERVATION ]","예약을 찾을 수 없습니다."),
-
     EXPIRE_RESERVATION("[ EXPIRE_RESERVATION ]","만료된 예약 입니다."),
     NOT_RESERVATION_OWNER("[ NOT RESERVATION OWNER ]","예약한 사용자가 일치하지 않습니다."),
+
+    // SEAT
+    NOT_FOUND_SEAT("[ NOT FOUND SEAT ]","좌석을 찾을 수 없습니다."),
+    NOT_RESERVABLE_DETECTED("[ NOT RESERVABLE ]","예약 불가능한 좌석이 포함되어 있습니다."),
+    INVALID_SEAT_NUMBER("[ INVALID SEAT NUMBER ]","좌석 번호 는 1 ~ 50 사이의 자연수여야 합니다."),
+    INVALID_SEAT_PRICE("[ INVALID SEAT PRICE ]","좌석 금액은 10,000 원에서 1_000,000 사이로 책정 되어야 합니다."),
 
 
 

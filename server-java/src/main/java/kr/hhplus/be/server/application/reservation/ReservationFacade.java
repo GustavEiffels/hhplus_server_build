@@ -3,19 +3,16 @@ package kr.hhplus.be.server.application.reservation;
 
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationService;
-import kr.hhplus.be.server.domain.reservation.ReservationStatus;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.schedule.ConcertScheduleService;
 import kr.hhplus.be.server.domain.seat.Seat;
 import kr.hhplus.be.server.domain.seat.SeatService;
-import kr.hhplus.be.server.domain.seat.SeatStatus;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -39,20 +36,19 @@ public class ReservationFacade {
 
 
         // seatId 리스트를 받아서 id 로 list 를 받아서 조회 -> 비관적 락 적용 => findAllReserveAbleWithLock
-        List<Seat> seatList = seatService.findAllReserveAbleWithLock(param.seatIdList());
+        List<Seat> seatList = seatService.findReservableForUpdate(param.seatIdList());
 
 
-        // 모든 seat 을 occupied, expiredAt 을 사용하여 5분 추가
         List<Reservation> createdReservations = seatList.stream()
                 .map(item -> {
-                    item.updateStatus(SeatStatus.RESERVED);
+                    item.reserve();
                     return Reservation.create(findUser,item);
                 })
                 .toList();
 
         reservationService.create(createdReservations);
 
-        if(seatService.findByScheduleId(param.scheduleId()).isEmpty()){
+        if(seatService.findReservable(param.scheduleId()).isEmpty()){
             ConcertSchedule schedule = concertScheduleService.findScheduleForUpdate(param.scheduleId());
             schedule.updateReserveStatus(false);
         }
@@ -65,20 +61,14 @@ public class ReservationFacade {
      */
     @Transactional
     public void expire(){
-        List<Long> seatIds = reservationService.expireWithSeatList();
+        // 1. 예약 만료 시키고 연관된 좌석들 id 반환
+        List<Long> seatIds = reservationService.expireAndReturnSeatList();
 
+        // 2. 예약 만료된 좌석들이 존재하면
         if(!seatIds.isEmpty()){
-            List<Long> concertScheduleIds = seatService.findAllByIdsWithLock(seatIds).stream()
-                    .map(item -> {
-                        item.updateStatus(SeatStatus.RESERVABLE);
-                        return item.getConcertSchedule().getId();
-                    })
-                    .toList();
-
-            concertScheduleService.findScheduleListForUpdate(concertScheduleIds)
-                    .forEach(item->{
-                        item.updateReserveStatus(true);
-                    });
+            // 1. 좌석들의 상태 : reserved -> reservable, 연관된 스케줄 아이디 리스트 반환
+            // 2. 콘서트 스케줄들의 예약 가능 상태 : true 로 변환
+            concertScheduleService.reservable( seatService.reservableAndReturnSchedules(seatIds) );
         }
     }
 }
