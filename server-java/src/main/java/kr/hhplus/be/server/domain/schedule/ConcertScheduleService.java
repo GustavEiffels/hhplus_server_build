@@ -70,8 +70,17 @@ public class ConcertScheduleService {
     }
 
 
-    public void reservable(List<Long> concertScheduleIds){
+    /**
+     *
+     * @param concertScheduleIds
+     */
+    public void changeReservable(List<Long> concertScheduleIds){
         repository.findByIdsWithLock(concertScheduleIds).forEach(ConcertSchedule::enableReservation);
+    }
+
+    public void changeUnReservable(Long scheduleId){
+        ConcertSchedule schedule = findScheduleForUpdate(scheduleId);
+        schedule.disableReservation();
     }
 
 

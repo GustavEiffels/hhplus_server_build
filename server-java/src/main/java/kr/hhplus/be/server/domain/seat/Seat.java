@@ -43,7 +43,7 @@ public class Seat extends BaseEntity {
     private SeatStatus status = SeatStatus.RESERVABLE;
 
 
-    @Builder // 기본 생성
+    @Builder
     public Seat(int seatNo, Long price, ConcertSchedule concertSchedule){
         if( seatNo < 1 || seatNo > 50){
             throw new BusinessException(ErrorCode.INVALID_SEAT_NUMBER);

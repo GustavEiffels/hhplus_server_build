@@ -55,31 +55,31 @@ public class PointHistory extends BaseEntity {
     public static PointHistory createCharge(Long amount,User user) {
         validateAmount(amount);
         validateUser(user);
-        return new PointHistory(user.getPoint(), user, null, PointHistoryStatus.Charge);
+        return new PointHistory(user.getPoint(), user, null, PointHistoryStatus.CHARGE);
     }
 
     public static PointHistory createUse(Long amount, User user, Payment payment) {
         validateAmount(amount);
         validateUser(user);
         validatePayment(payment);
-        return new PointHistory(amount, user, payment, PointHistoryStatus.Use);
+        return new PointHistory(amount, user, payment, PointHistoryStatus.USE);
     }
 
     private static void validateAmount(Long amount) {
         if (amount < 0) {
-            throw new BusinessException(ErrorCode.Entity, "[결제 금액]은 0보다 커야합니다.");
+            throw new BusinessException(ErrorCode.INVALID_AMOUNT);
         }
     }
 
     private static void validateUser(User user) {
         if (user == null) {
-            throw new BusinessException(ErrorCode.Entity, "[사용자] 정보는 필수 값 입니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
     }
 
     private static void validatePayment(Payment payment) {
         if (payment == null) {
-            throw new BusinessException(ErrorCode.Entity, "[결제] 정보는 필수 값 입니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
     }
 }

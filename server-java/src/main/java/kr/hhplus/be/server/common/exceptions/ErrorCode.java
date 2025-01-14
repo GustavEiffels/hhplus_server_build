@@ -41,17 +41,10 @@ public enum ErrorCode {
     INVALID_SEAT_NUMBER("[ INVALID SEAT NUMBER ]","좌석 번호 는 1 ~ 50 사이의 자연수여야 합니다."),
     INVALID_SEAT_PRICE("[ INVALID SEAT PRICE ]","좌석 금액은 10,000 원에서 1_000,000 사이로 책정 되어야 합니다."),
 
+    // HISTORY
+    INVALID_AMOUNT("[ INVALID AMOUNT ]","유효하지 않는 금액 입니다."),
 
-
-
-
-
-
-    Entity("DOMAIN ENTITY Error","[ 테이블 정책에 어긋나는 값이 감지 되었습니다. ]"),
-    Repository("REPOSITORY Error","[ 데이터를 찾는 과정에서 예외 상황이 감지 되었습니다. ]"),
-    INVALID_INPUT("INVALID INPUT Error", "[ 유효하지 않은 입력 값이 감지되었습니다. ]"),
-    SERVICE("SERVICE Error", "[서비스 결과]");
-
+    INVALID_INPUT("INVALID INPUT Error", "[ 유효하지 않은 입력 값이 감지되었습니다. ]");
 
 
 

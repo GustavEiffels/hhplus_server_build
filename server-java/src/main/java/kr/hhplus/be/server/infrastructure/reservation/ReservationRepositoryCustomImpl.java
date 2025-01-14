@@ -29,7 +29,7 @@ public class ReservationRepositoryCustomImpl implements ReservationRepositoryCus
     public List<Reservation> findExpiredWithLock() {
         return dsl.select(reservation)
                 .from(reservation)
-                .where(reservation.status.eq(ReservationStatus.Pending)
+                .where(reservation.status.eq(ReservationStatus.PENDING)
                         .and(reservation.expiredAt.before(LocalDateTime.now())))
                 .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                 .fetch();

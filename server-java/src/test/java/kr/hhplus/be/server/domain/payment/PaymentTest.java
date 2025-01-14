@@ -23,7 +23,7 @@ class PaymentTest {
         BusinessException exception = assertThrows(BusinessException.class,()-> Payment.create(amount,null));
 
         // then
-        assertEquals(ErrorCode.Entity,exception.getErrorStatus());
+        assertEquals(ErrorCode.REQUIRE_FIELD_MISSING,exception.getErrorStatus());
     }
 
     @Test
@@ -39,7 +39,7 @@ class PaymentTest {
         });
 
         // then
-        assertEquals(ErrorCode.Entity,exception.getErrorStatus());
+        assertEquals(ErrorCode.NOT_VALID_PAYMENT_AMOUNT,exception.getErrorStatus());
     }
 
 

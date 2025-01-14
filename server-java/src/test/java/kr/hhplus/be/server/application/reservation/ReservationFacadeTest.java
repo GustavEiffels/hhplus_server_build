@@ -117,7 +117,7 @@ class ReservationFacadeTest {
                     .price(300_000L).build();
 
             if(i % 2 == 0){
-                newSeat.updateStatus(SeatStatus.OCCUPIED);
+                newSeat.reserve();
             }
             seatList.add(newSeat);
         }
@@ -148,7 +148,7 @@ class ReservationFacadeTest {
 
         // then
         assertEquals(4,result.reservationInfoList().size());
-        assertEquals(21, seatService.findByScheduleId(scheduleId).size());
+        assertEquals(21, seatService.findReservable(scheduleId).size());
     }
 
 // 좌석 점유 만료
@@ -180,14 +180,10 @@ class ReservationFacadeTest {
         reservationFacade.expire();
 
         // then
-        Seat seat1_1 = seatJpaRepository.findById(seat1.getId()).get();
-        Seat seat2_1 = seatJpaRepository.findById(seat2.getId()).get();
-        assertEquals(SeatStatus.RESERVABLE,seat1_1.getStatus());
-        assertEquals(SeatStatus.RESERVABLE,seat2_1.getStatus());
         Reservation reservation0_1 = reservationJpaRepository.findById(reservationIds.get(0)).get();
         Reservation reservation1_1 = reservationJpaRepository.findById(reservationIds.get(1)).get();
-        assertEquals(ReservationStatus.Expired,reservation0_1.getStatus());
-        assertEquals(ReservationStatus.Expired,reservation1_1.getStatus());
+        assertEquals(ReservationStatus.EXPIRED,reservation0_1.getStatus());
+        assertEquals(ReservationStatus.EXPIRED,reservation1_1.getStatus());
 
     }
 

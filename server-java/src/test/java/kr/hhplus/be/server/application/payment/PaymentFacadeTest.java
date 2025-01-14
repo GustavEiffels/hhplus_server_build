@@ -119,11 +119,9 @@ class PaymentFacadeTest {
             assertEquals(SeatStatus.RESERVED,seatJpaRepository.findById(id).get().getStatus(),"id : "+id+" 인 좌석 상태 RESERVED");
         });
         reservationIds.forEach(id->{
-            assertEquals(ReservationStatus.Reserved,reservationJpaRepository.findById(id).get().getStatus(),"id : "+id+" 인 예약상태 RESERVED");
+            assertEquals(ReservationStatus.RESERVED,reservationJpaRepository.findById(id).get().getStatus(),"id : "+id+" 인 예약상태 RESERVED");
         });
         assertTrue(tokenJpaRepository.findById(createTokenResult.tokenId()).get().getExpireAt().isBefore(LocalDateTime.now()),"토큰 만료됨 ");
-
-
 
     }
 

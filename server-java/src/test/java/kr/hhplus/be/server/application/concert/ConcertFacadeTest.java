@@ -94,7 +94,7 @@ class ConcertFacadeTest {
                     .price(300_000L).build();
 
             if(i % 2 == 0){
-                newSeat.updateStatus(SeatStatus.OCCUPIED);
+                newSeat.reserve();
             }
             seatList.add(newSeat);
         }

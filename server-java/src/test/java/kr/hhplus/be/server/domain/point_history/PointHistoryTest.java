@@ -23,7 +23,7 @@ class PointHistoryTest {
         BusinessException be = assertThrows( BusinessException.class,()->PointHistory.createUse(amount,user,null) );
 
         // then
-        assertEquals(ErrorCode.Entity,be.getErrorStatus());
+        assertEquals(ErrorCode.REQUIRE_FIELD_MISSING,be.getErrorStatus());
     }
 
     @Test
@@ -38,7 +38,7 @@ class PointHistoryTest {
                     PointHistory.createCharge(amount,user);
                 });
         // then
-        assertEquals(ErrorCode.Entity,be.getErrorStatus());
+        assertEquals(ErrorCode.INVALID_AMOUNT,be.getErrorStatus());
     }
 
 }

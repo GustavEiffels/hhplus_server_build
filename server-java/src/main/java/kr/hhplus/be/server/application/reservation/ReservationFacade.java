@@ -31,14 +31,15 @@ public class ReservationFacade {
     @Transactional
     public ReservationFacadeDto.ReservationResult reservation(ReservationFacadeDto.ReservationParam param){
 
-        // userid 를 가지고 유저를 조회
+        // 1. 사용자 조회
         User findUser = userService.findUser(param.userId());
 
 
-        // seatId 리스트를 받아서 id 로 list 를 받아서 조회 -> 비관적 락 적용 => findAllReserveAbleWithLock
+        // 2. 예약할 좌석들을 조회 : lock
         List<Seat> seatList = seatService.findReservableForUpdate(param.seatIdList());
 
 
+        // 3. 예약할 좌석들을 기반으로 예약을 생성
         List<Reservation> createdReservations = seatList.stream()
                 .map(item -> {
                     item.reserve();
@@ -46,12 +47,14 @@ public class ReservationFacade {
                 })
                 .toList();
 
+        // 4. 예약 생성
         reservationService.create(createdReservations);
 
+        // 5. 해당 콘서트 스케줄에 더이상 예약 가능한 좌석이 없는 경우 -> 예약 불가능 상태로 변환
         if(seatService.findReservable(param.scheduleId()).isEmpty()){
-            ConcertSchedule schedule = concertScheduleService.findScheduleForUpdate(param.scheduleId());
-            schedule.updateReserveStatus(false);
+            concertScheduleService.changeUnReservable(param.scheduleId());
         }
+
         return ReservationFacadeDto.ReservationResult.from(createdReservations);
     }
 
@@ -68,7 +71,7 @@ public class ReservationFacade {
         if(!seatIds.isEmpty()){
             // 1. 좌석들의 상태 : reserved -> reservable, 연관된 스케줄 아이디 리스트 반환
             // 2. 콘서트 스케줄들의 예약 가능 상태 : true 로 변환
-            concertScheduleService.reservable( seatService.reservableAndReturnSchedules(seatIds) );
+            concertScheduleService.changeReservable( seatService.reservableAndReturnSchedules(seatIds) );
         }
     }
 }

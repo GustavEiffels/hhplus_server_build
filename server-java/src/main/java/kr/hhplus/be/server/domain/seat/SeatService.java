@@ -22,6 +22,11 @@ public class SeatService {
         return repository.findByScheduleId(concertScheduleId);
     }
 
+    /**
+     *
+     * @param seatIds
+     * @return
+     */
     public List<Seat> findReservableForUpdate(List<Long> seatIds){
         List<Seat> seatList = repository.findByIdsWithLock(seatIds);
         if (seatList.isEmpty()) {
