@@ -9,5 +9,6 @@ public interface ReservationRepositoryCustom{
     List<Reservation> findExpiredWithLock();
 
 
-    List<Reservation> findByIdsWithLock(List<Long> reservationIds);
+    List<Reservation> fetchFindByIdsWithLock(List<Long> reservationIds);
+
 }

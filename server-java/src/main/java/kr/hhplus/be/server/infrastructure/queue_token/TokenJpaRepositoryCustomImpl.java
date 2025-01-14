@@ -20,7 +20,7 @@ public class TokenJpaRepositoryCustomImpl implements TokenJpaRepositoryCustom{
     @Override
     public List<QueueToken> findTokensToActivate(long activateCnt) {
         return dsl.selectFrom(queueToken)
-                .where(queueToken.status.eq(QueueTokenStatus.Wait))
+                .where(queueToken.status.eq(QueueTokenStatus.WAIT))
                 .orderBy(queueToken.createAt.asc())
                 .limit(activateCnt)
                 .fetch();

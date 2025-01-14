@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PaymentFacade {
     private final PaymentService paymentService;
-    private final SeatService seatService;
     private final UserService userService;
     private final ReservationService reservationService;
     private final QueueTokenService queueTokenService;
@@ -40,24 +39,24 @@ public class PaymentFacade {
 
 
         // 예약 lock : 에약 상태로 변경
-        List<Reservation> reservations = reservationService.findByIdsWithUseridAndLock(param.reservationIds(), param.userid())
+        List<Reservation> reservations = reservationService.reserve(param.reservationIds(), param.userid())
                 .stream()
-                .peek(item -> item.updateStatus(ReservationStatus.Reserved)) // 상태를 업데이트
+                .peek(Reservation::reserve) // 상태를 업데이트
                 .toList();
 
-
-        // 좌석 id 추출 -> lock 이 아님..
-        List<Long> seatIds = reservations.stream()
-                .map(reservation -> reservation.getSeat().getId())
-                .collect(Collectors.toList());
-
-
-        // 좌석 lock : 예약 상태로 변경
-        if(!seatIds.isEmpty()){
-            seatService.findAllByIdsWithLock(seatIds).forEach(item->{
-                item.updateStatus(SeatStatus.RESERVED);
-            });
-        }
+// 김종협 코치님 : 예약만 완료 시키면 되지 않나??
+//        // 좌석 id 추출 -> lock 이 아님..
+//        List<Long> seatIds = reservations.stream()
+//                .map(reservation -> reservation.getSeat().getId())
+//                .collect(Collectors.toList());
+//
+//
+//        // 좌석 lock : 예약 상태로 변경
+//        if(!seatIds.isEmpty()){
+//            seatService.findAllByIdsWithLock(seatIds).forEach(item->{
+//                item.updateStatus(SeatStatus.RESERVED);
+//            });
+//        }
 
         // 총 예약 금액을 구함
         Long totalAmount = reservations.stream()

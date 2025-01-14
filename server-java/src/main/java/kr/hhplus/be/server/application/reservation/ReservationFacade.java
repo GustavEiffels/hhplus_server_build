@@ -45,11 +45,8 @@ public class ReservationFacade {
         // 모든 seat 을 occupied, expiredAt 을 사용하여 5분 추가
         List<Reservation> createdReservations = seatList.stream()
                 .map(item -> {
-                    item.updateStatus(SeatStatus.OCCUPIED);
-                    Reservation reservation = Reservation.builder()
-                            .user(findUser)
-                            .seat(item)
-                            .build();
+                    item.updateStatus(SeatStatus.RESERVED);
+                    Reservation reservation = Reservation.create(findUser,item);
                     return reservationService.create(reservation);
                 })
                 .toList();
@@ -63,16 +60,11 @@ public class ReservationFacade {
 
 
     /**
-     * 토큰 만료 스케줄
+     * 좌석 만료 스케줄
      */
     @Transactional
     public void expire(){
-        List<Long> seatIds = reservationService.findExpiredWithLock().stream()
-                .map(item -> {
-                    item.updateStatus(ReservationStatus.Expired);
-                    return item.getSeat().getId();
-                })
-                .toList();
+        List<Long> seatIds = reservationService.expireWithSeatList();
 
         if(!seatIds.isEmpty()){
             List<Long> concertScheduleIds = seatService.findAllByIdsWithLock(seatIds).stream()

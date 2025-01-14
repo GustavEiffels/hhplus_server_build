@@ -33,9 +33,7 @@ class ReservationTest {
         // when
         BusinessException be = assertThrows(
                 BusinessException.class,()->{
-                    Reservation re = Reservation.builder()
-                            .seat(seat)
-                            .build();
+                    Reservation re = Reservation.create(user,seat);
                 });
         // then
         assertEquals(ErrorCode.Entity,be.getErrorStatus());
@@ -61,9 +59,7 @@ class ReservationTest {
         // when
         BusinessException be = assertThrows(
                 BusinessException.class,() -> {
-                    Reservation re = Reservation.builder()
-                            .user(user)
-                            .build();
+                    Reservation re = Reservation.create(user,seat);
                 });
         // then
         assertEquals(ErrorCode.Entity,be.getErrorStatus());

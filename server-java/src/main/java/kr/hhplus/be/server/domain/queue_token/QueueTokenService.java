@@ -41,7 +41,6 @@ public class QueueTokenService {
     public void expired(Long tokenId){
         QueueToken token = repository.findById(tokenId)
                 .orElseThrow(()->new BusinessException(ErrorCode.NOT_FOUND_QUEUE_TOKEN));
-
         token.expire();
     }
 

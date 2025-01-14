@@ -20,11 +20,7 @@ class PaymentTest {
         Reservation reservation = mock(Reservation.class);
 
         // when
-        BusinessException exception = assertThrows(BusinessException.class,()->
-            Payment.builder()
-                    .amount(amount)
-                    .reservation(null).build()
-        );
+        BusinessException exception = assertThrows(BusinessException.class,()-> Payment.create(amount,null));
 
         // then
         assertEquals(ErrorCode.Entity,exception.getErrorStatus());
@@ -39,9 +35,7 @@ class PaymentTest {
 
         // when
         BusinessException exception = assertThrows(BusinessException.class,()->{
-            Payment.builder()
-                    .amount(amount)
-                    .reservation(reservation).build();
+            Payment.create(amount,reservation);
         });
 
         // then

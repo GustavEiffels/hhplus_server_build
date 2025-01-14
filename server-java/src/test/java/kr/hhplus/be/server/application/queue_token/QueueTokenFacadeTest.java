@@ -105,9 +105,9 @@ class QueueTokenFacadeTest {
         int waitCnt   = 0;
         List<QueueToken> tokenBefore = tokenJpaRepository.findAll();
         for (QueueToken item : tokenBefore) {
-            if (item.getStatus() == QueueTokenStatus.Active) {
+            if (item.getStatus() == QueueTokenStatus.ACTIVE) {
                 activeCnt++;
-            } else if (item.getStatus() == QueueTokenStatus.Wait) {
+            } else if (item.getStatus() == QueueTokenStatus.WAIT) {
                 waitCnt++;
             }
         }
@@ -122,9 +122,9 @@ class QueueTokenFacadeTest {
         waitCnt   = 0;
         List<QueueToken> tokenAfter = tokenJpaRepository.findAll();
         for (QueueToken item : tokenAfter) {
-            if (item.getStatus() == QueueTokenStatus.Active) {
+            if (item.getStatus() == QueueTokenStatus.ACTIVE) {
                 activeCnt++;
-            } else if (item.getStatus() == QueueTokenStatus.Wait) {
+            } else if (item.getStatus() == QueueTokenStatus.WAIT) {
                 waitCnt++;
             }
         }

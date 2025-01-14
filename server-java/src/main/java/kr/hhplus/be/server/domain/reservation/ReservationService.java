@@ -19,32 +19,47 @@ public class ReservationService {
         return repository.save(reservation);
     }
 
-
-    public List<Reservation> findExpiredWithLock(){
-        return repository.findExpiredWithLock();
+    public List<Reservation> create(List<Reservation> reservationList){
+        return  repository.save(reservationList);
     }
 
-    public List<Reservation> findByIdsWithUseridAndLock(List<Long> reservationIds, Long userId){
+    /**
+     * 입력 받은 예약들 중
+     * 사용자의 예약이며, 만료되지 않은 예약이면
+     * 상태 값을 pending -> reserve 로 변경
+     *
+     * @param reservationIds
+     * @param userId
+     * @return
+     */
+    public List<Reservation> reserve(List<Long> reservationIds, Long userId){
 
-        List<Reservation> reservations = repository.findByIdsWithLock(reservationIds);  // 예약 조회
+        List<Reservation> reservations = repository.fetchFindByIdsWithLock(reservationIds);  // 예약 조회
 
         if (reservations.isEmpty()) {
-            throw new BusinessException(ErrorCode.Entity, "예약이 존재하지 않습니다.");
+            throw new BusinessException(ErrorCode.NOT_FOUND_RESERVATION);
         }
 
         reservations.forEach(item -> {
-            // 사용자 ID가 일치하는지 확인
-            if (!Objects.equals(item.getUser().getId(), userId)) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "사용자와 예약자가 일치하지 않습니다.");
-            }
-
-            // 만료된 예약인지 확인
-            if (item.getExpiredAt().isBefore(LocalDateTime.now())) {
-                throw new BusinessException(ErrorCode.Entity, "만료된 예약이 존재합니다.");
-            }
+            item.isExpired();           // 만료된 예약은 아닌지 확인
+            item.isReserveUser(userId); // 예약한 사용자가 일치하는 지 확인
+            item.reserve();
         });
 
         return reservations;
+    }
+
+    /**
+     * 예약 만료 시키고, 만료된 좌석 ID 를 반환
+     * @return
+     */
+    public List<Long> expireWithSeatList(){
+        return repository.findExpiredWithLock().stream()
+                .map(item -> {
+                    item.expired();
+                    return item.getSeat().getId();
+                })
+                .toList();
     }
 
 }
