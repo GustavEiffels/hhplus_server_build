@@ -15,10 +15,20 @@ public class ReservationService {
 
     private final ReservationRepository repository;
 
+    /**
+     * 예약 생성 - 단건
+     * @param reservation
+     * @return
+     */
     public Reservation create(Reservation reservation){
         return repository.save(reservation);
     }
 
+    /**
+     * 예약 생성 - 복수
+     * @param reservationList
+     * @return
+     */
     public List<Reservation> create(List<Reservation> reservationList){
         return  repository.save(reservationList);
     }
@@ -33,17 +43,19 @@ public class ReservationService {
      * @return
      */
     public List<Reservation> reserve(List<Long> reservationIds, Long userId){
+        // 1. 예약 아이디 리스트로 조회
+        List<Reservation> reservations = repository.fetchFindByIdsWithLock(reservationIds);
 
-        List<Reservation> reservations = repository.fetchFindByIdsWithLock(reservationIds);  // 예약 조회
-
+        // 2. 존재하지 않은 예약일 경우 예외
         if (reservations.isEmpty()) {
             throw new BusinessException(ErrorCode.NOT_FOUND_RESERVATION);
         }
 
+        // 3. 예약 존재 시 내부에서 검증 -> 검증에 통과되면 상태를 pending-> reserve 로 변경
         reservations.forEach(item -> {
             item.isExpired();           // 만료된 예약은 아닌지 확인
             item.isReserveUser(userId); // 예약한 사용자가 일치하는 지 확인
-            item.reserve();
+            item.reserve();             // status : pending -> reserve
         });
 
         return reservations;
@@ -54,10 +66,11 @@ public class ReservationService {
      * @return
      */
     public List<Long> expireWithSeatList(){
+        // 만료된 예약들을 조회하고, 예약들의 status : pending -> expire, 연관된 좌석 id 리스트 반환
         return repository.findExpiredWithLock().stream()
                 .map(item -> {
-                    item.expired();
-                    return item.getSeat().getId();
+                    item.expired();                 //  예약들의 status : pending -> expire
+                    return item.getSeat().getId();  //  예약된 좌석 id 반환
                 })
                 .toList();
     }

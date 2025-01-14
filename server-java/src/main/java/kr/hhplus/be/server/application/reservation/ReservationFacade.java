@@ -38,7 +38,7 @@ public class ReservationFacade {
         User findUser = userService.findUser(param.userId());
 
 
-        // seatid 리스트를 받아서 id 로 list 를 받아서 조회 -> 비관적 락 적용 => findAllReserveAbleWithLock
+        // seatId 리스트를 받아서 id 로 list 를 받아서 조회 -> 비관적 락 적용 => findAllReserveAbleWithLock
         List<Seat> seatList = seatService.findAllReserveAbleWithLock(param.seatIdList());
 
 
@@ -46,10 +46,11 @@ public class ReservationFacade {
         List<Reservation> createdReservations = seatList.stream()
                 .map(item -> {
                     item.updateStatus(SeatStatus.RESERVED);
-                    Reservation reservation = Reservation.create(findUser,item);
-                    return reservationService.create(reservation);
+                    return Reservation.create(findUser,item);
                 })
                 .toList();
+
+        reservationService.create(createdReservations);
 
         if(seatService.findByScheduleId(param.scheduleId()).isEmpty()){
             ConcertSchedule schedule = concertScheduleService.findScheduleForUpdate(param.scheduleId());

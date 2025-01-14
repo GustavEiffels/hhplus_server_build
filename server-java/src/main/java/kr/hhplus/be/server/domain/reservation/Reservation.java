@@ -73,7 +73,7 @@ public class Reservation extends BaseEntity {
     }
 
     public void isReserveUser(Long userId){
-        if(this.user.getId().equals(userId)){
+        if(!this.user.getId().equals(userId)){
             throw new BusinessException(ErrorCode.NOT_RESERVATION_OWNER);
         }
     }
