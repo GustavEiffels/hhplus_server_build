@@ -4,6 +4,4 @@ public enum QueueTokenStatus {
 
     WAIT,
     ACTIVE,
-    Wait,
-    Active,
 }

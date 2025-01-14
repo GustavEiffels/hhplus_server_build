@@ -70,9 +70,7 @@ public class PaymentFacade {
         // Payments 생성
         List<Payment> paymentList = reservations.stream()
                 .map(reservation ->
-                    Payment.builder()
-                            .amount(reservation.getAmount())
-                            .reservation(reservation).build()).toList();
+                    Payment.create(reservation.getAmount(),reservation)).toList();
 
 
         paymentList = paymentService.create(paymentList);

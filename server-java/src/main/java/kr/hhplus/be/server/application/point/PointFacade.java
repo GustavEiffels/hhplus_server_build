@@ -41,7 +41,7 @@ public class PointFacade {
 
         // 2. 사용자 포인트 충전에 대한 이력 생성
         PointHistory history
-                = pointHistoryService.create(PointHistory.createCharge(user));
+                = pointHistoryService.create(PointHistory.createCharge(param.chargePoint(),user));
 
         return PointFacadeDto.ChargeResult.from(history,user);
     }

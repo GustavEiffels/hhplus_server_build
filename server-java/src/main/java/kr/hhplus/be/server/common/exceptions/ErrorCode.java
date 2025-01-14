@@ -28,6 +28,8 @@ public enum ErrorCode {
     // TOKEN
     NOT_FOUND_QUEUE_TOKEN("[ NOT FOUND QUEUE TOKEN ]", "대기열 토큰을 찾을 수 없습니다."),
 
+    // PAYMENT
+    NOT_VALID_PAYMENT_AMOUNT("NOT VALID PAYMENT AMOUNT","결제 금액은 0 보다 커야합니다."),
 
 
 

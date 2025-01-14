@@ -55,8 +55,6 @@ public class ConcertFacade {
                 scheduleService.findReservableConcertSchedule(param.scheduleId());
 
         // 2. 해당 스케줄에 예약 가능한 좌석 반환
-        List<Seat> seatList = seatService.findByScheduleId(concertSchedule.getId());
-
-        return ConcertFacadeDto.FindLeftSeatResult.from(seatList);
+        return ConcertFacadeDto.FindLeftSeatResult.from( seatService.findByScheduleId( concertSchedule.getId() ) );
     }
 }

@@ -35,7 +35,7 @@ class PointHistoryTest {
         // when
         BusinessException be = assertThrows(
                 BusinessException.class,()->{
-                    PointHistory.createCharge(user);
+                    PointHistory.createCharge(amount,user);
                 });
         // then
         assertEquals(ErrorCode.Entity,be.getErrorStatus());
