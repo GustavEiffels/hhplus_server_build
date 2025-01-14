@@ -12,6 +12,9 @@ public enum ErrorCode {
 
     // CONCERT
     NOT_FOUND_CONCERT("[ NOT FOUND CONCERT ]", "공연을 찾을 수 없습니다."),
+    EXPIRE_QUEUE_TOKEN("[ EXPIRE QUEUE TOKEN ]","대기열이 만료된 토큰 입니다."),
+    NOT_MATCHED_WITH_USER("[ NOT MATCHED WITH USER ]","사용자가 대기열 토큰과 매칭되지 않습니다."),
+
 
     // CONCERT SCHEDULE
     NOT_FOUND_CONCERT_SCHEDULE("[ NOT FOUND CONCERT SCHEDULE ]", "공연 일정을 찾을 수 없습니다."),
@@ -20,6 +23,10 @@ public enum ErrorCode {
 
     RESERVATION_END("[ RESERVATION END ]","해당 예약은 마감되었습니다."),
     NOT_RESERVABLE_TIME("[ NOT RESERVABLE TIME ]","예약 가능한 시간이 아닙니다."),
+
+
+    // TOKEN
+    NOT_FOUND_QUEUE_TOKEN("[ NOT FOUND QUEUE TOKEN ]", "대기열 토큰을 찾을 수 없습니다."),
 
 
 

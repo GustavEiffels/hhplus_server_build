@@ -12,7 +12,7 @@ class UserTest {
     @Test
     void user_create_test00(){
         // given & when
-        BusinessException exception = Assertions.assertThrows(BusinessException.class,()-> User.builder().build());
+        BusinessException exception = Assertions.assertThrows(BusinessException.class,()-> User.create("test"));
 
         // then
         Assertions.assertEquals(ErrorCode.REQUIRE_FIELD_MISSING,exception.getErrorStatus(),"REQUIRE_FIELD_MISSING 예외가 발생 ");
@@ -24,7 +24,7 @@ class UserTest {
     void user_pointTransaction_test00(){
         // given
         int transactionPoint = 100_000_001;
-        User testUser = User.builder().name("김연습").build();
+        User testUser = User.create("test");
 
         // when
         BusinessException exception = Assertions.assertThrows(BusinessException.class,()-> testUser.pointTransaction(transactionPoint));
@@ -39,7 +39,7 @@ class UserTest {
     void user_pointTransaction_test01(){
         // given
         long transactionPoint = -1L;
-        User testUser = User.builder().name("김연습").build();
+        User testUser = User.create("test");
 
         // when
         BusinessException exception = Assertions.assertThrows(BusinessException.class,()-> testUser.pointTransaction(transactionPoint));

@@ -29,7 +29,7 @@ class PointFacadeTest {
 
     @BeforeEach
     void setUp_테스트_유저_생성_10_000_포인트_충전(){
-        User testUser = User.builder().name("김연습").build();
+        User testUser = User.create("test");
         testUser.pointTransaction(10000L);
         newUser = userJpaRepository.save(testUser);
     }

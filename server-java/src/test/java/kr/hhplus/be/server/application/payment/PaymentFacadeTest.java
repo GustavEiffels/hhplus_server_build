@@ -61,7 +61,7 @@ class PaymentFacadeTest {
     void 사용자가_만원짜리_티켓_3장을_구매하면_사용자의잔액은_3만원줄어있고_좌석은_reserved_로변경되어있고_토큰은만료됨(){
         // given
         // 유저생성
-        User user   = User.builder().name("김바주").build();
+        User user   = User.create("test");
         user.pointTransaction(300_000);
         userJpaRepository.save(user);
 

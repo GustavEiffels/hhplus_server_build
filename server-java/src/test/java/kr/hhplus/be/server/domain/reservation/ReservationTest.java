@@ -16,7 +16,7 @@ class ReservationTest {
 
     @Test
     void 예약_생성시_사용자_정보가_존재하지_않으면_BaseException_예외가_발생(){
-        User user = User.builder().name("김바부").build();
+        User user = User.create("test");
         Concert concert = Concert.builder().performer("김연습").title("서커스").build();
         ConcertSchedule schedule = ConcertSchedule.builder()
                 .concert(concert)
@@ -44,7 +44,7 @@ class ReservationTest {
 
     @Test
     void 예약_생성시_좌석_정보가_존재하지_않으면_BaseException_예외가_발생(){
-        User user = User.builder().name("김바부").build();
+        User user = User.create("test");
         Concert concert = Concert.builder().performer("김연습").title("서커스").build();
         ConcertSchedule schedule = ConcertSchedule.builder()
                 .concert(concert)

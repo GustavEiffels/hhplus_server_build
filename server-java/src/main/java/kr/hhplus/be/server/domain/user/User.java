@@ -31,12 +31,16 @@ public class User extends BaseEntity {
     private Long point = 0L; // min :  0  max : 100_000_000
 
 
-    @Builder
-    public User(String name){
+
+    private User(String name){
+        this.name  = name;
+    }
+
+    public static User create(String name){
         if(!StringUtils.hasText(name)){
             throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
-        this.name  = name;
+        return new User(name);
     }
 
     public long pointTransaction(long pointAmount){

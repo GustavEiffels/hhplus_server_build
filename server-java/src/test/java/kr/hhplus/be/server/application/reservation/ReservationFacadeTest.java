@@ -63,7 +63,7 @@ class ReservationFacadeTest {
     @BeforeEach
     void setUp_공연0은예약가능_18_예약불가능_12_공연1_예약가능_12_예약_불가능_18_스케줄0_좌석50개_짝수_점유_홀수_예약가능(){
 
-        user = userJpaRepository.save(User.builder().name("김연습").build());
+        user = userJpaRepository.save(User.create("test"));
 
         concert0 = Concert.builder().title("서커스0").performer("김광대").build();
         concertJpaRepository.save(concert0);

@@ -36,7 +36,7 @@ public class ConcertSchedule extends BaseEntity {
     private LocalDateTime reservation_end;
 
     @NotNull
-    private Boolean isReserveAble = true;
+    private Boolean       isReserveAble = true;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "concert_id",nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))

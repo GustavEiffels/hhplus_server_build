@@ -23,7 +23,7 @@ public class QueueToken extends BaseEntity {
     private Long id;
 
     @NotNull
-    private QueueTokenStatus status = QueueTokenStatus.Wait;
+    private QueueTokenStatus status = QueueTokenStatus.WAIT;
 
     private LocalDateTime expireAt;
 
@@ -34,17 +34,21 @@ public class QueueToken extends BaseEntity {
             foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private User user;
 
-    @Builder
-    public QueueToken(User user){
-        if(user == null){
-            throw new BusinessException(ErrorCode.Entity,"[사용자] 정보는 필수로 입력이 되어야합니다.");
-        }
+
+    private QueueToken(User user){
         this.user = user;
     }
 
-    // test-have to
+// METHOD
+    public static QueueToken create(User user){
+        if(user == null){
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
+        }
+        return new QueueToken(user);
+    }
+
     public void activate(){
-        this.status   = QueueTokenStatus.Active;
+        this.status   = QueueTokenStatus.ACTIVE;
         this.expireAt = LocalDateTime.now().plusMinutes(10);
     }
 

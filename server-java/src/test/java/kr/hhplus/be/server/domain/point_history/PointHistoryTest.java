@@ -17,7 +17,7 @@ class PointHistoryTest {
     void 사용_결제_내역_셍성시_payment_가_존재하지_않으면_BaseException_예외가_발생(){
         // given
         Long amount = 100_000L;
-        User user = User.builder().name("김연습").build();
+        User user = User.create("test");
 
         // when
         BusinessException be = assertThrows( BusinessException.class,()->PointHistory.createUse(amount,user,null) );
@@ -30,7 +30,7 @@ class PointHistoryTest {
     void 결제내역의_결제금액이_0보다작거나_존재하지_않는다면_BaseException_예외가_발생(){
         // given
         Long amount = -1L;
-        User user = User.builder().name("김연습").build();
+        User user = User.create("test");
 
         // when
         BusinessException be = assertThrows(
