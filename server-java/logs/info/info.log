@@ -2618,3 +2618,592 @@
 2025-01-16 02:29:59 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-01-16 02:29:59 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
 2025-01-16 02:29:59 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 02:30:36 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 33139 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 02:30:36 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 02:30:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 02:30:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-01-16 02:30:37 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 02:30:37 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 02:30:37 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 02:30:37 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 02:30:37 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 02:30:37 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1106 ms
+2025-01-16 02:30:38 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 02:30:38 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 02:30:38 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 02:30:38 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 02:30:38 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 02:30:38 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@52b30dcd
+2025-01-16 02:30:38 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 02:30:38 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 02:30:39 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 02:30:39 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 02:30:39 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 02:30:40 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 02:30:40 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 02:30:40 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 02:30:40 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 4.171 seconds (process running for 4.493)
+2025-01-16 02:30:40 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-a9d30a06-aa6e-497a-94b1-6aef7e57f2b5] | <<--------------------------------------------------------------------------
+2025-01-16 02:30:40 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-04538a79-5362-4c45-9ef6-fcffeca42f1d] | <<--------------------------------------------------------------------------
+2025-01-16 02:30:40 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-a9d30a06-aa6e-497a-94b1-6aef7e57f2b5] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T02:30:40.738831
+2025-01-16 02:30:40 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-04538a79-5362-4c45-9ef6-fcffeca42f1d] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:30:40.738845
+2025-01-16 02:30:40 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-04538a79-5362-4c45-9ef6-fcffeca42f1d] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:30:40 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-a9d30a06-aa6e-497a-94b1-6aef7e57f2b5] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 02:30:41 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-04538a79-5362-4c45-9ef6-fcffeca42f1d] | Executed: TokenRepositoryImpl.countActiveTokens() in 317 ms
+2025-01-16 02:30:41 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-a9d30a06-aa6e-497a-94b1-6aef7e57f2b5] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 317 ms
+2025-01-16 02:30:41 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-04538a79-5362-4c45-9ef6-fcffeca42f1d] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:30:41 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-a9d30a06-aa6e-497a-94b1-6aef7e57f2b5] | schedule processed in 330 ms : 2025-01-16T02:30:41.068017
+2025-01-16 02:30:41 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-a9d30a06-aa6e-497a-94b1-6aef7e57f2b5] | END TIME : 2025-01-16T02:30:41.068197
+2025-01-16 02:30:41 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-a9d30a06-aa6e-497a-94b1-6aef7e57f2b5] | -------------------------------------------------------------------------->>
+2025-01-16 02:30:41 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-04538a79-5362-4c45-9ef6-fcffeca42f1d] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 8 ms
+2025-01-16 02:30:41 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-04538a79-5362-4c45-9ef6-fcffeca42f1d] | schedule processed in 337 ms : 2025-01-16T02:30:41.075725
+2025-01-16 02:30:41 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-04538a79-5362-4c45-9ef6-fcffeca42f1d] | END TIME : 2025-01-16T02:30:41.075904
+2025-01-16 02:30:41 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-04538a79-5362-4c45-9ef6-fcffeca42f1d] | -------------------------------------------------------------------------->>
+2025-01-16 02:30:50 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-79c88509-8217-436e-9fbe-ac2b139c986b] | <<--------------------------------------------------------------------------
+2025-01-16 02:30:50 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-79c88509-8217-436e-9fbe-ac2b139c986b] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:30:50.741699
+2025-01-16 02:30:50 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-79c88509-8217-436e-9fbe-ac2b139c986b] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:30:50 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-79c88509-8217-436e-9fbe-ac2b139c986b] | Executed: TokenRepositoryImpl.countActiveTokens() in 9 ms
+2025-01-16 02:30:50 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-79c88509-8217-436e-9fbe-ac2b139c986b] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:30:50 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-79c88509-8217-436e-9fbe-ac2b139c986b] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 3 ms
+2025-01-16 02:30:50 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-79c88509-8217-436e-9fbe-ac2b139c986b] | schedule processed in 22 ms : 2025-01-16T02:30:50.762436
+2025-01-16 02:30:50 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-79c88509-8217-436e-9fbe-ac2b139c986b] | END TIME : 2025-01-16T02:30:50.762548
+2025-01-16 02:30:50 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-79c88509-8217-436e-9fbe-ac2b139c986b] | -------------------------------------------------------------------------->>
+2025-01-16 02:31:00 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5ad1627a-ccd2-4b4a-a6bb-920e1e714cff] | <<--------------------------------------------------------------------------
+2025-01-16 02:31:00 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5ad1627a-ccd2-4b4a-a6bb-920e1e714cff] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:31:00.739346
+2025-01-16 02:31:00 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5ad1627a-ccd2-4b4a-a6bb-920e1e714cff] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:31:00 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5ad1627a-ccd2-4b4a-a6bb-920e1e714cff] | Executed: TokenRepositoryImpl.countActiveTokens() in 6 ms
+2025-01-16 02:31:00 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5ad1627a-ccd2-4b4a-a6bb-920e1e714cff] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:31:00 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5ad1627a-ccd2-4b4a-a6bb-920e1e714cff] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 2 ms
+2025-01-16 02:31:00 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5ad1627a-ccd2-4b4a-a6bb-920e1e714cff] | schedule processed in 18 ms : 2025-01-16T02:31:00.756299
+2025-01-16 02:31:00 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5ad1627a-ccd2-4b4a-a6bb-920e1e714cff] | END TIME : 2025-01-16T02:31:00.756408
+2025-01-16 02:31:00 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5ad1627a-ccd2-4b4a-a6bb-920e1e714cff] | -------------------------------------------------------------------------->>
+2025-01-16 02:31:10 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e83909fe-50fa-4ec9-8854-27a0d9077aac] | <<--------------------------------------------------------------------------
+2025-01-16 02:31:10 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e83909fe-50fa-4ec9-8854-27a0d9077aac] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:31:10.739368
+2025-01-16 02:31:10 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e83909fe-50fa-4ec9-8854-27a0d9077aac] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:31:10 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e83909fe-50fa-4ec9-8854-27a0d9077aac] | Executed: TokenRepositoryImpl.countActiveTokens() in 8 ms
+2025-01-16 02:31:10 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e83909fe-50fa-4ec9-8854-27a0d9077aac] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:31:10 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e83909fe-50fa-4ec9-8854-27a0d9077aac] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 3 ms
+2025-01-16 02:31:10 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e83909fe-50fa-4ec9-8854-27a0d9077aac] | schedule processed in 18 ms : 2025-01-16T02:31:10.756404
+2025-01-16 02:31:10 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e83909fe-50fa-4ec9-8854-27a0d9077aac] | END TIME : 2025-01-16T02:31:10.756548
+2025-01-16 02:31:10 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e83909fe-50fa-4ec9-8854-27a0d9077aac] | -------------------------------------------------------------------------->>
+2025-01-16 02:31:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-336455b3-4b64-46f1-a9ff-c9cadf6f3b05] | <<--------------------------------------------------------------------------
+2025-01-16 02:31:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-336455b3-4b64-46f1-a9ff-c9cadf6f3b05] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:31:20.741779
+2025-01-16 02:31:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-336455b3-4b64-46f1-a9ff-c9cadf6f3b05] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:31:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-336455b3-4b64-46f1-a9ff-c9cadf6f3b05] | Executed: TokenRepositoryImpl.countActiveTokens() in 8 ms
+2025-01-16 02:31:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-336455b3-4b64-46f1-a9ff-c9cadf6f3b05] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:31:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-336455b3-4b64-46f1-a9ff-c9cadf6f3b05] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 3 ms
+2025-01-16 02:31:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-336455b3-4b64-46f1-a9ff-c9cadf6f3b05] | schedule processed in 27 ms : 2025-01-16T02:31:20.767505
+2025-01-16 02:31:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-336455b3-4b64-46f1-a9ff-c9cadf6f3b05] | END TIME : 2025-01-16T02:31:20.767609
+2025-01-16 02:31:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-336455b3-4b64-46f1-a9ff-c9cadf6f3b05] | -------------------------------------------------------------------------->>
+2025-01-16 02:31:30 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-871ac5c6-b522-46ae-a436-28d0c8c605a5] | <<--------------------------------------------------------------------------
+2025-01-16 02:31:30 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-871ac5c6-b522-46ae-a436-28d0c8c605a5] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:31:30.738713
+2025-01-16 02:31:30 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-871ac5c6-b522-46ae-a436-28d0c8c605a5] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:31:30 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-871ac5c6-b522-46ae-a436-28d0c8c605a5] | Executed: TokenRepositoryImpl.countActiveTokens() in 8 ms
+2025-01-16 02:31:30 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-871ac5c6-b522-46ae-a436-28d0c8c605a5] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:31:30 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-871ac5c6-b522-46ae-a436-28d0c8c605a5] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 4 ms
+2025-01-16 02:31:30 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-871ac5c6-b522-46ae-a436-28d0c8c605a5] | schedule processed in 19 ms : 2025-01-16T02:31:30.756094
+2025-01-16 02:31:30 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-871ac5c6-b522-46ae-a436-28d0c8c605a5] | END TIME : 2025-01-16T02:31:30.756324
+2025-01-16 02:31:30 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-871ac5c6-b522-46ae-a436-28d0c8c605a5] | -------------------------------------------------------------------------->>
+2025-01-16 02:31:35 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 02:31:35 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 02:31:35 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 02:31:35 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 02:31:35 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 02:34:41 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 34090 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 02:34:41 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 02:34:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 02:34:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 02:34:42 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 02:34:42 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 02:34:42 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 02:34:42 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 02:34:42 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 02:34:42 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1128 ms
+2025-01-16 02:34:42 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 02:34:42 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 02:34:42 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 02:34:42 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 02:34:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 02:34:43 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@29e3c28
+2025-01-16 02:34:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 02:34:43 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 02:34:43 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 02:34:44 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 02:34:44 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 02:34:45 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 02:34:45 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 02:34:45 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 02:34:45 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 4.192 seconds (process running for 4.546)
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-64aedca8-208a-4eda-b444-f6a9f907918a] | <<--------------------------------------------------------------------------
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-058db753-85ac-4aa5-8a61-ea496805fad4] | <<--------------------------------------------------------------------------
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-64aedca8-208a-4eda-b444-f6a9f907918a] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T02:34:45.446621
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-058db753-85ac-4aa5-8a61-ea496805fad4] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:34:45.446634
+2025-01-16 02:34:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-058db753-85ac-4aa5-8a61-ea496805fad4] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:34:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-64aedca8-208a-4eda-b444-f6a9f907918a] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 02:34:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-64aedca8-208a-4eda-b444-f6a9f907918a] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 304 ms
+2025-01-16 02:34:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-058db753-85ac-4aa5-8a61-ea496805fad4] | Executed: TokenRepositoryImpl.countActiveTokens() in 304 ms
+2025-01-16 02:34:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-058db753-85ac-4aa5-8a61-ea496805fad4] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-64aedca8-208a-4eda-b444-f6a9f907918a] | schedule processed in 316 ms : 2025-01-16T02:34:45.762630
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-64aedca8-208a-4eda-b444-f6a9f907918a] | END TIME : 2025-01-16T02:34:45.762788
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-64aedca8-208a-4eda-b444-f6a9f907918a] | -------------------------------------------------------------------------->>
+2025-01-16 02:34:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-058db753-85ac-4aa5-8a61-ea496805fad4] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 10 ms
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-058db753-85ac-4aa5-8a61-ea496805fad4] | schedule processed in 325 ms : 2025-01-16T02:34:45.771216
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-058db753-85ac-4aa5-8a61-ea496805fad4] | END TIME : 2025-01-16T02:34:45.771291
+2025-01-16 02:34:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-058db753-85ac-4aa5-8a61-ea496805fad4] | -------------------------------------------------------------------------->>
+2025-01-16 02:34:49 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 02:34:49 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 02:34:49 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 02:34:49 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-b352b1bd-705e-4405-a170-98cc8d1f12a7] | <<--------------------------------------------------------------------------
+2025-01-16 02:34:49 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-b352b1bd-705e-4405-a170-98cc8d1f12a7] | START TIME : 2025-01-16T02:34:49.558157
+2025-01-16 02:34:49 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-b352b1bd-705e-4405-a170-98cc8d1f12a7] | Request : GET uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 02:34:49 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-b352b1bd-705e-4405-a170-98cc8d1f12a7] | RequestBody : null
+2025-01-16 02:34:49 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-b352b1bd-705e-4405-a170-98cc8d1f12a7] | Response : 405 
+2025-01-16 02:34:49 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-b352b1bd-705e-4405-a170-98cc8d1f12a7] | ResponseBody : null
+2025-01-16 02:34:49 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-b352b1bd-705e-4405-a170-98cc8d1f12a7] | Request processed in 12 ms
+2025-01-16 02:34:49 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-b352b1bd-705e-4405-a170-98cc8d1f12a7] | END TIME : 2025-01-16T02:34:49.569510
+2025-01-16 02:34:49 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-b352b1bd-705e-4405-a170-98cc8d1f12a7] | -------------------------------------------------------------------------->>
+2025-01-16 02:34:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-68cbe017-2d11-4836-906e-606a2a3b1291] | <<--------------------------------------------------------------------------
+2025-01-16 02:34:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-68cbe017-2d11-4836-906e-606a2a3b1291] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:34:55.443840
+2025-01-16 02:34:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-68cbe017-2d11-4836-906e-606a2a3b1291] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:34:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-68cbe017-2d11-4836-906e-606a2a3b1291] | Executed: TokenRepositoryImpl.countActiveTokens() in 19 ms
+2025-01-16 02:34:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-68cbe017-2d11-4836-906e-606a2a3b1291] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:34:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-68cbe017-2d11-4836-906e-606a2a3b1291] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 8 ms
+2025-01-16 02:34:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-68cbe017-2d11-4836-906e-606a2a3b1291] | schedule processed in 49 ms : 2025-01-16T02:34:55.492946
+2025-01-16 02:34:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-68cbe017-2d11-4836-906e-606a2a3b1291] | END TIME : 2025-01-16T02:34:55.493537
+2025-01-16 02:34:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-68cbe017-2d11-4836-906e-606a2a3b1291] | -------------------------------------------------------------------------->>
+2025-01-16 02:34:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-1cb98537-2cf0-44e2-8524-77121b9064d0] | <<--------------------------------------------------------------------------
+2025-01-16 02:34:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-1cb98537-2cf0-44e2-8524-77121b9064d0] | START TIME : 2025-01-16T02:34:59.311615
+2025-01-16 02:34:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-1cb98537-2cf0-44e2-8524-77121b9064d0] | Request : GET uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 02:34:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-1cb98537-2cf0-44e2-8524-77121b9064d0] | RequestBody : null
+2025-01-16 02:34:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-1cb98537-2cf0-44e2-8524-77121b9064d0] | Response : 405 
+2025-01-16 02:34:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-1cb98537-2cf0-44e2-8524-77121b9064d0] | ResponseBody : null
+2025-01-16 02:34:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-1cb98537-2cf0-44e2-8524-77121b9064d0] | Request processed in 3 ms
+2025-01-16 02:34:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-1cb98537-2cf0-44e2-8524-77121b9064d0] | END TIME : 2025-01-16T02:34:59.314567
+2025-01-16 02:34:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-1cb98537-2cf0-44e2-8524-77121b9064d0] | -------------------------------------------------------------------------->>
+2025-01-16 02:35:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c7086378-8439-4a5b-b198-66e0b0697385] | <<--------------------------------------------------------------------------
+2025-01-16 02:35:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c7086378-8439-4a5b-b198-66e0b0697385] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:35:05.445854
+2025-01-16 02:35:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c7086378-8439-4a5b-b198-66e0b0697385] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:35:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c7086378-8439-4a5b-b198-66e0b0697385] | Executed: TokenRepositoryImpl.countActiveTokens() in 14 ms
+2025-01-16 02:35:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c7086378-8439-4a5b-b198-66e0b0697385] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:35:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c7086378-8439-4a5b-b198-66e0b0697385] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 4 ms
+2025-01-16 02:35:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c7086378-8439-4a5b-b198-66e0b0697385] | schedule processed in 36 ms : 2025-01-16T02:35:05.480776
+2025-01-16 02:35:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c7086378-8439-4a5b-b198-66e0b0697385] | END TIME : 2025-01-16T02:35:05.481148
+2025-01-16 02:35:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c7086378-8439-4a5b-b198-66e0b0697385] | -------------------------------------------------------------------------->>
+2025-01-16 02:35:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-699b8243-69db-476a-b7be-e53bf270a107] | <<--------------------------------------------------------------------------
+2025-01-16 02:35:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-699b8243-69db-476a-b7be-e53bf270a107] | START TIME : 2025-01-16T02:35:07.170941
+2025-01-16 02:35:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-699b8243-69db-476a-b7be-e53bf270a107] | Request : GET uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 02:35:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-699b8243-69db-476a-b7be-e53bf270a107] | RequestBody : null
+2025-01-16 02:35:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-699b8243-69db-476a-b7be-e53bf270a107] | Response : 405 
+2025-01-16 02:35:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-699b8243-69db-476a-b7be-e53bf270a107] | ResponseBody : null
+2025-01-16 02:35:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-699b8243-69db-476a-b7be-e53bf270a107] | Request processed in 4 ms
+2025-01-16 02:35:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-699b8243-69db-476a-b7be-e53bf270a107] | END TIME : 2025-01-16T02:35:07.174428
+2025-01-16 02:35:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [REQUEST-699b8243-69db-476a-b7be-e53bf270a107] | -------------------------------------------------------------------------->>
+2025-01-16 02:35:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4514e8fb-49b6-4965-b629-65ecc36d43ff] | <<--------------------------------------------------------------------------
+2025-01-16 02:35:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4514e8fb-49b6-4965-b629-65ecc36d43ff] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:35:15.449589
+2025-01-16 02:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4514e8fb-49b6-4965-b629-65ecc36d43ff] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4514e8fb-49b6-4965-b629-65ecc36d43ff] | Executed: TokenRepositoryImpl.countActiveTokens() in 14 ms
+2025-01-16 02:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4514e8fb-49b6-4965-b629-65ecc36d43ff] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4514e8fb-49b6-4965-b629-65ecc36d43ff] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 2 ms
+2025-01-16 02:35:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4514e8fb-49b6-4965-b629-65ecc36d43ff] | schedule processed in 35 ms : 2025-01-16T02:35:15.481447
+2025-01-16 02:35:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4514e8fb-49b6-4965-b629-65ecc36d43ff] | END TIME : 2025-01-16T02:35:15.481564
+2025-01-16 02:35:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4514e8fb-49b6-4965-b629-65ecc36d43ff] | -------------------------------------------------------------------------->>
+2025-01-16 02:35:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-95c2f3aa-b734-4a37-8a16-c99824cee1bf] | <<--------------------------------------------------------------------------
+2025-01-16 02:35:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-95c2f3aa-b734-4a37-8a16-c99824cee1bf] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:35:25.444262
+2025-01-16 02:35:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-95c2f3aa-b734-4a37-8a16-c99824cee1bf] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:35:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-95c2f3aa-b734-4a37-8a16-c99824cee1bf] | Executed: TokenRepositoryImpl.countActiveTokens() in 7 ms
+2025-01-16 02:35:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-95c2f3aa-b734-4a37-8a16-c99824cee1bf] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:35:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-95c2f3aa-b734-4a37-8a16-c99824cee1bf] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 2 ms
+2025-01-16 02:35:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-95c2f3aa-b734-4a37-8a16-c99824cee1bf] | schedule processed in 17 ms : 2025-01-16T02:35:25.459156
+2025-01-16 02:35:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-95c2f3aa-b734-4a37-8a16-c99824cee1bf] | END TIME : 2025-01-16T02:35:25.459265
+2025-01-16 02:35:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-95c2f3aa-b734-4a37-8a16-c99824cee1bf] | -------------------------------------------------------------------------->>
+2025-01-16 02:35:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-32af0357-feca-4483-af83-c1ebbe6e090a] | <<--------------------------------------------------------------------------
+2025-01-16 02:35:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-32af0357-feca-4483-af83-c1ebbe6e090a] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:35:35.449629
+2025-01-16 02:35:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-32af0357-feca-4483-af83-c1ebbe6e090a] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:35:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-32af0357-feca-4483-af83-c1ebbe6e090a] | Executed: TokenRepositoryImpl.countActiveTokens() in 13 ms
+2025-01-16 02:35:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-32af0357-feca-4483-af83-c1ebbe6e090a] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:35:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-32af0357-feca-4483-af83-c1ebbe6e090a] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:35:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-32af0357-feca-4483-af83-c1ebbe6e090a] | schedule processed in 53 ms : 2025-01-16T02:35:35.500179
+2025-01-16 02:35:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-32af0357-feca-4483-af83-c1ebbe6e090a] | END TIME : 2025-01-16T02:35:35.500368
+2025-01-16 02:35:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-32af0357-feca-4483-af83-c1ebbe6e090a] | -------------------------------------------------------------------------->>
+2025-01-16 02:35:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4008fc60-dedf-4038-8cfb-d5d3d6c7c7a6] | <<--------------------------------------------------------------------------
+2025-01-16 02:35:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4008fc60-dedf-4038-8cfb-d5d3d6c7c7a6] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:35:45.444975
+2025-01-16 02:35:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4008fc60-dedf-4038-8cfb-d5d3d6c7c7a6] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:35:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4008fc60-dedf-4038-8cfb-d5d3d6c7c7a6] | Executed: TokenRepositoryImpl.countActiveTokens() in 16 ms
+2025-01-16 02:35:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4008fc60-dedf-4038-8cfb-d5d3d6c7c7a6] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:35:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4008fc60-dedf-4038-8cfb-d5d3d6c7c7a6] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:35:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4008fc60-dedf-4038-8cfb-d5d3d6c7c7a6] | schedule processed in 48 ms : 2025-01-16T02:35:45.491853
+2025-01-16 02:35:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4008fc60-dedf-4038-8cfb-d5d3d6c7c7a6] | END TIME : 2025-01-16T02:35:45.492223
+2025-01-16 02:35:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4008fc60-dedf-4038-8cfb-d5d3d6c7c7a6] | -------------------------------------------------------------------------->>
+2025-01-16 02:35:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-42b45d7a-9cdc-452e-8489-ae740eca91cc] | <<--------------------------------------------------------------------------
+2025-01-16 02:35:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-42b45d7a-9cdc-452e-8489-ae740eca91cc] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:35:55.443026
+2025-01-16 02:35:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-42b45d7a-9cdc-452e-8489-ae740eca91cc] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:35:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-42b45d7a-9cdc-452e-8489-ae740eca91cc] | Executed: TokenRepositoryImpl.countActiveTokens() in 12 ms
+2025-01-16 02:35:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-42b45d7a-9cdc-452e-8489-ae740eca91cc] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:35:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-42b45d7a-9cdc-452e-8489-ae740eca91cc] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:35:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-42b45d7a-9cdc-452e-8489-ae740eca91cc] | schedule processed in 32 ms : 2025-01-16T02:35:55.474397
+2025-01-16 02:35:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-42b45d7a-9cdc-452e-8489-ae740eca91cc] | END TIME : 2025-01-16T02:35:55.474728
+2025-01-16 02:35:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-42b45d7a-9cdc-452e-8489-ae740eca91cc] | -------------------------------------------------------------------------->>
+2025-01-16 02:36:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-abbb9b67-0781-4c7b-834b-19b02c22c333] | <<--------------------------------------------------------------------------
+2025-01-16 02:36:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-abbb9b67-0781-4c7b-834b-19b02c22c333] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:36:05.449220
+2025-01-16 02:36:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-abbb9b67-0781-4c7b-834b-19b02c22c333] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:36:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-abbb9b67-0781-4c7b-834b-19b02c22c333] | Executed: TokenRepositoryImpl.countActiveTokens() in 14 ms
+2025-01-16 02:36:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-abbb9b67-0781-4c7b-834b-19b02c22c333] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:36:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-abbb9b67-0781-4c7b-834b-19b02c22c333] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 3 ms
+2025-01-16 02:36:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-abbb9b67-0781-4c7b-834b-19b02c22c333] | schedule processed in 31 ms : 2025-01-16T02:36:05.478539
+2025-01-16 02:36:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-abbb9b67-0781-4c7b-834b-19b02c22c333] | END TIME : 2025-01-16T02:36:05.478623
+2025-01-16 02:36:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-abbb9b67-0781-4c7b-834b-19b02c22c333] | -------------------------------------------------------------------------->>
+2025-01-16 02:36:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6a4a6ba8-b3db-4600-976f-e3bb27a3f73d] | <<--------------------------------------------------------------------------
+2025-01-16 02:36:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6a4a6ba8-b3db-4600-976f-e3bb27a3f73d] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:36:15.450825
+2025-01-16 02:36:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6a4a6ba8-b3db-4600-976f-e3bb27a3f73d] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:36:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6a4a6ba8-b3db-4600-976f-e3bb27a3f73d] | Executed: TokenRepositoryImpl.countActiveTokens() in 26 ms
+2025-01-16 02:36:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6a4a6ba8-b3db-4600-976f-e3bb27a3f73d] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:36:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6a4a6ba8-b3db-4600-976f-e3bb27a3f73d] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 6 ms
+2025-01-16 02:36:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6a4a6ba8-b3db-4600-976f-e3bb27a3f73d] | schedule processed in 67 ms : 2025-01-16T02:36:15.515482
+2025-01-16 02:36:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6a4a6ba8-b3db-4600-976f-e3bb27a3f73d] | END TIME : 2025-01-16T02:36:15.515885
+2025-01-16 02:36:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6a4a6ba8-b3db-4600-976f-e3bb27a3f73d] | -------------------------------------------------------------------------->>
+2025-01-16 02:36:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e72f4e62-c417-4304-8870-fa08020804ec] | <<--------------------------------------------------------------------------
+2025-01-16 02:36:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e72f4e62-c417-4304-8870-fa08020804ec] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:36:25.449449
+2025-01-16 02:36:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e72f4e62-c417-4304-8870-fa08020804ec] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:36:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e72f4e62-c417-4304-8870-fa08020804ec] | Executed: TokenRepositoryImpl.countActiveTokens() in 19 ms
+2025-01-16 02:36:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e72f4e62-c417-4304-8870-fa08020804ec] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:36:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e72f4e62-c417-4304-8870-fa08020804ec] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:36:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e72f4e62-c417-4304-8870-fa08020804ec] | schedule processed in 46 ms : 2025-01-16T02:36:25.493756
+2025-01-16 02:36:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e72f4e62-c417-4304-8870-fa08020804ec] | END TIME : 2025-01-16T02:36:25.494246
+2025-01-16 02:36:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e72f4e62-c417-4304-8870-fa08020804ec] | -------------------------------------------------------------------------->>
+2025-01-16 02:36:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9c19c421-5577-4b5a-b135-7f19066bfb49] | <<--------------------------------------------------------------------------
+2025-01-16 02:36:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9c19c421-5577-4b5a-b135-7f19066bfb49] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:36:35.445254
+2025-01-16 02:36:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-9c19c421-5577-4b5a-b135-7f19066bfb49] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:36:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-9c19c421-5577-4b5a-b135-7f19066bfb49] | Executed: TokenRepositoryImpl.countActiveTokens() in 14 ms
+2025-01-16 02:36:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-9c19c421-5577-4b5a-b135-7f19066bfb49] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:36:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-9c19c421-5577-4b5a-b135-7f19066bfb49] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 7 ms
+2025-01-16 02:36:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9c19c421-5577-4b5a-b135-7f19066bfb49] | schedule processed in 40 ms : 2025-01-16T02:36:35.483587
+2025-01-16 02:36:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9c19c421-5577-4b5a-b135-7f19066bfb49] | END TIME : 2025-01-16T02:36:35.483940
+2025-01-16 02:36:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9c19c421-5577-4b5a-b135-7f19066bfb49] | -------------------------------------------------------------------------->>
+2025-01-16 02:36:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b5546613-0848-4ee1-86ef-76c67e2b7b5c] | <<--------------------------------------------------------------------------
+2025-01-16 02:36:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b5546613-0848-4ee1-86ef-76c67e2b7b5c] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:36:45.444604
+2025-01-16 02:36:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b5546613-0848-4ee1-86ef-76c67e2b7b5c] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:36:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b5546613-0848-4ee1-86ef-76c67e2b7b5c] | Executed: TokenRepositoryImpl.countActiveTokens() in 19 ms
+2025-01-16 02:36:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b5546613-0848-4ee1-86ef-76c67e2b7b5c] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:36:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b5546613-0848-4ee1-86ef-76c67e2b7b5c] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:36:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b5546613-0848-4ee1-86ef-76c67e2b7b5c] | schedule processed in 40 ms : 2025-01-16T02:36:45.482630
+2025-01-16 02:36:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b5546613-0848-4ee1-86ef-76c67e2b7b5c] | END TIME : 2025-01-16T02:36:45.482925
+2025-01-16 02:36:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b5546613-0848-4ee1-86ef-76c67e2b7b5c] | -------------------------------------------------------------------------->>
+2025-01-16 02:36:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-374d0ce3-4c16-4bb5-84fb-ba8b9c181a4b] | <<--------------------------------------------------------------------------
+2025-01-16 02:36:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-374d0ce3-4c16-4bb5-84fb-ba8b9c181a4b] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:36:55.445749
+2025-01-16 02:36:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-374d0ce3-4c16-4bb5-84fb-ba8b9c181a4b] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:36:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-374d0ce3-4c16-4bb5-84fb-ba8b9c181a4b] | Executed: TokenRepositoryImpl.countActiveTokens() in 11 ms
+2025-01-16 02:36:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-374d0ce3-4c16-4bb5-84fb-ba8b9c181a4b] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:36:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-374d0ce3-4c16-4bb5-84fb-ba8b9c181a4b] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 6 ms
+2025-01-16 02:36:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-374d0ce3-4c16-4bb5-84fb-ba8b9c181a4b] | schedule processed in 33 ms : 2025-01-16T02:36:55.476603
+2025-01-16 02:36:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-374d0ce3-4c16-4bb5-84fb-ba8b9c181a4b] | END TIME : 2025-01-16T02:36:55.476963
+2025-01-16 02:36:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-374d0ce3-4c16-4bb5-84fb-ba8b9c181a4b] | -------------------------------------------------------------------------->>
+2025-01-16 02:37:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9ef925ac-1bce-4fc4-b2dd-08fc7296e1f3] | <<--------------------------------------------------------------------------
+2025-01-16 02:37:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9ef925ac-1bce-4fc4-b2dd-08fc7296e1f3] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:37:05.442637
+2025-01-16 02:37:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-9ef925ac-1bce-4fc4-b2dd-08fc7296e1f3] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:37:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-9ef925ac-1bce-4fc4-b2dd-08fc7296e1f3] | Executed: TokenRepositoryImpl.countActiveTokens() in 17 ms
+2025-01-16 02:37:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-9ef925ac-1bce-4fc4-b2dd-08fc7296e1f3] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:37:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-9ef925ac-1bce-4fc4-b2dd-08fc7296e1f3] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 8 ms
+2025-01-16 02:37:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9ef925ac-1bce-4fc4-b2dd-08fc7296e1f3] | schedule processed in 36 ms : 2025-01-16T02:37:05.477216
+2025-01-16 02:37:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9ef925ac-1bce-4fc4-b2dd-08fc7296e1f3] | END TIME : 2025-01-16T02:37:05.477309
+2025-01-16 02:37:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-9ef925ac-1bce-4fc4-b2dd-08fc7296e1f3] | -------------------------------------------------------------------------->>
+2025-01-16 02:37:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d4e0e6a7-a819-4bd5-87ec-55d123d7496e] | <<--------------------------------------------------------------------------
+2025-01-16 02:37:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d4e0e6a7-a819-4bd5-87ec-55d123d7496e] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:37:15.447238
+2025-01-16 02:37:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d4e0e6a7-a819-4bd5-87ec-55d123d7496e] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:37:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d4e0e6a7-a819-4bd5-87ec-55d123d7496e] | Executed: TokenRepositoryImpl.countActiveTokens() in 12 ms
+2025-01-16 02:37:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d4e0e6a7-a819-4bd5-87ec-55d123d7496e] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:37:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d4e0e6a7-a819-4bd5-87ec-55d123d7496e] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 6 ms
+2025-01-16 02:37:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d4e0e6a7-a819-4bd5-87ec-55d123d7496e] | schedule processed in 39 ms : 2025-01-16T02:37:15.484497
+2025-01-16 02:37:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d4e0e6a7-a819-4bd5-87ec-55d123d7496e] | END TIME : 2025-01-16T02:37:15.484930
+2025-01-16 02:37:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d4e0e6a7-a819-4bd5-87ec-55d123d7496e] | -------------------------------------------------------------------------->>
+2025-01-16 02:37:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-85a8fbc7-8be0-4446-81b0-cf9c5bb811e0] | <<--------------------------------------------------------------------------
+2025-01-16 02:37:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-85a8fbc7-8be0-4446-81b0-cf9c5bb811e0] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:37:25.445103
+2025-01-16 02:37:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-85a8fbc7-8be0-4446-81b0-cf9c5bb811e0] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:37:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-85a8fbc7-8be0-4446-81b0-cf9c5bb811e0] | Executed: TokenRepositoryImpl.countActiveTokens() in 13 ms
+2025-01-16 02:37:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-85a8fbc7-8be0-4446-81b0-cf9c5bb811e0] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:37:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-85a8fbc7-8be0-4446-81b0-cf9c5bb811e0] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 3 ms
+2025-01-16 02:37:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-85a8fbc7-8be0-4446-81b0-cf9c5bb811e0] | schedule processed in 29 ms : 2025-01-16T02:37:25.471814
+2025-01-16 02:37:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-85a8fbc7-8be0-4446-81b0-cf9c5bb811e0] | END TIME : 2025-01-16T02:37:25.471901
+2025-01-16 02:37:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-85a8fbc7-8be0-4446-81b0-cf9c5bb811e0] | -------------------------------------------------------------------------->>
+2025-01-16 02:37:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-49ccc56f-b0ab-4e2a-8c9a-2eb2a96dac06] | <<--------------------------------------------------------------------------
+2025-01-16 02:37:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-49ccc56f-b0ab-4e2a-8c9a-2eb2a96dac06] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:37:35.445597
+2025-01-16 02:37:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-49ccc56f-b0ab-4e2a-8c9a-2eb2a96dac06] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:37:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-49ccc56f-b0ab-4e2a-8c9a-2eb2a96dac06] | Executed: TokenRepositoryImpl.countActiveTokens() in 10 ms
+2025-01-16 02:37:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-49ccc56f-b0ab-4e2a-8c9a-2eb2a96dac06] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:37:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-49ccc56f-b0ab-4e2a-8c9a-2eb2a96dac06] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 6 ms
+2025-01-16 02:37:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-49ccc56f-b0ab-4e2a-8c9a-2eb2a96dac06] | schedule processed in 32 ms : 2025-01-16T02:37:35.475342
+2025-01-16 02:37:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-49ccc56f-b0ab-4e2a-8c9a-2eb2a96dac06] | END TIME : 2025-01-16T02:37:35.475700
+2025-01-16 02:37:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-49ccc56f-b0ab-4e2a-8c9a-2eb2a96dac06] | -------------------------------------------------------------------------->>
+2025-01-16 02:37:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-37412cf6-1641-4d28-9a05-08ff46932199] | <<--------------------------------------------------------------------------
+2025-01-16 02:37:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-37412cf6-1641-4d28-9a05-08ff46932199] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:37:45.440289
+2025-01-16 02:37:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-37412cf6-1641-4d28-9a05-08ff46932199] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:37:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-37412cf6-1641-4d28-9a05-08ff46932199] | Executed: TokenRepositoryImpl.countActiveTokens() in 12 ms
+2025-01-16 02:37:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-37412cf6-1641-4d28-9a05-08ff46932199] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:37:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-37412cf6-1641-4d28-9a05-08ff46932199] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:37:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-37412cf6-1641-4d28-9a05-08ff46932199] | schedule processed in 26 ms : 2025-01-16T02:37:45.465896
+2025-01-16 02:37:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-37412cf6-1641-4d28-9a05-08ff46932199] | END TIME : 2025-01-16T02:37:45.466189
+2025-01-16 02:37:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-37412cf6-1641-4d28-9a05-08ff46932199] | -------------------------------------------------------------------------->>
+2025-01-16 02:37:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-00c36b9d-666a-4537-9f54-503667edf1f5] | <<--------------------------------------------------------------------------
+2025-01-16 02:37:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-00c36b9d-666a-4537-9f54-503667edf1f5] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:37:55.440875
+2025-01-16 02:37:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-00c36b9d-666a-4537-9f54-503667edf1f5] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:37:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-00c36b9d-666a-4537-9f54-503667edf1f5] | Executed: TokenRepositoryImpl.countActiveTokens() in 4 ms
+2025-01-16 02:37:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-00c36b9d-666a-4537-9f54-503667edf1f5] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:37:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-00c36b9d-666a-4537-9f54-503667edf1f5] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 2 ms
+2025-01-16 02:37:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-00c36b9d-666a-4537-9f54-503667edf1f5] | schedule processed in 16 ms : 2025-01-16T02:37:55.454847
+2025-01-16 02:37:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-00c36b9d-666a-4537-9f54-503667edf1f5] | END TIME : 2025-01-16T02:37:55.454920
+2025-01-16 02:37:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-00c36b9d-666a-4537-9f54-503667edf1f5] | -------------------------------------------------------------------------->>
+2025-01-16 02:38:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6db2bcd2-a65b-45c3-a968-a67c9cf2a150] | <<--------------------------------------------------------------------------
+2025-01-16 02:38:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6db2bcd2-a65b-45c3-a968-a67c9cf2a150] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:38:05.440733
+2025-01-16 02:38:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6db2bcd2-a65b-45c3-a968-a67c9cf2a150] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:38:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6db2bcd2-a65b-45c3-a968-a67c9cf2a150] | Executed: TokenRepositoryImpl.countActiveTokens() in 12 ms
+2025-01-16 02:38:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6db2bcd2-a65b-45c3-a968-a67c9cf2a150] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:38:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6db2bcd2-a65b-45c3-a968-a67c9cf2a150] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:38:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6db2bcd2-a65b-45c3-a968-a67c9cf2a150] | schedule processed in 27 ms : 2025-01-16T02:38:05.466541
+2025-01-16 02:38:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6db2bcd2-a65b-45c3-a968-a67c9cf2a150] | END TIME : 2025-01-16T02:38:05.466850
+2025-01-16 02:38:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6db2bcd2-a65b-45c3-a968-a67c9cf2a150] | -------------------------------------------------------------------------->>
+2025-01-16 02:38:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c2bb6bd1-58dd-487f-8a71-442f9c7ce1f7] | <<--------------------------------------------------------------------------
+2025-01-16 02:38:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c2bb6bd1-58dd-487f-8a71-442f9c7ce1f7] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:38:15.443479
+2025-01-16 02:38:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c2bb6bd1-58dd-487f-8a71-442f9c7ce1f7] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:38:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c2bb6bd1-58dd-487f-8a71-442f9c7ce1f7] | Executed: TokenRepositoryImpl.countActiveTokens() in 9 ms
+2025-01-16 02:38:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c2bb6bd1-58dd-487f-8a71-442f9c7ce1f7] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:38:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c2bb6bd1-58dd-487f-8a71-442f9c7ce1f7] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 9 ms
+2025-01-16 02:38:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c2bb6bd1-58dd-487f-8a71-442f9c7ce1f7] | schedule processed in 32 ms : 2025-01-16T02:38:15.474690
+2025-01-16 02:38:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c2bb6bd1-58dd-487f-8a71-442f9c7ce1f7] | END TIME : 2025-01-16T02:38:15.475135
+2025-01-16 02:38:15 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c2bb6bd1-58dd-487f-8a71-442f9c7ce1f7] | -------------------------------------------------------------------------->>
+2025-01-16 02:38:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-3ec443b9-2bd5-4a3e-9ddf-6d5bafc179b9] | <<--------------------------------------------------------------------------
+2025-01-16 02:38:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-3ec443b9-2bd5-4a3e-9ddf-6d5bafc179b9] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:38:25.442461
+2025-01-16 02:38:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-3ec443b9-2bd5-4a3e-9ddf-6d5bafc179b9] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:38:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-3ec443b9-2bd5-4a3e-9ddf-6d5bafc179b9] | Executed: TokenRepositoryImpl.countActiveTokens() in 11 ms
+2025-01-16 02:38:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-3ec443b9-2bd5-4a3e-9ddf-6d5bafc179b9] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:38:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-3ec443b9-2bd5-4a3e-9ddf-6d5bafc179b9] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:38:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-3ec443b9-2bd5-4a3e-9ddf-6d5bafc179b9] | schedule processed in 36 ms : 2025-01-16T02:38:25.476621
+2025-01-16 02:38:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-3ec443b9-2bd5-4a3e-9ddf-6d5bafc179b9] | END TIME : 2025-01-16T02:38:25.477009
+2025-01-16 02:38:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-3ec443b9-2bd5-4a3e-9ddf-6d5bafc179b9] | -------------------------------------------------------------------------->>
+2025-01-16 02:38:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2a0b397f-f73d-448c-81e0-05a7fc09d290] | <<--------------------------------------------------------------------------
+2025-01-16 02:38:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2a0b397f-f73d-448c-81e0-05a7fc09d290] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:38:35.442692
+2025-01-16 02:38:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2a0b397f-f73d-448c-81e0-05a7fc09d290] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:38:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2a0b397f-f73d-448c-81e0-05a7fc09d290] | Executed: TokenRepositoryImpl.countActiveTokens() in 14 ms
+2025-01-16 02:38:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2a0b397f-f73d-448c-81e0-05a7fc09d290] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:38:35 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2a0b397f-f73d-448c-81e0-05a7fc09d290] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 7 ms
+2025-01-16 02:38:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2a0b397f-f73d-448c-81e0-05a7fc09d290] | schedule processed in 35 ms : 2025-01-16T02:38:35.476136
+2025-01-16 02:38:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2a0b397f-f73d-448c-81e0-05a7fc09d290] | END TIME : 2025-01-16T02:38:35.476596
+2025-01-16 02:38:35 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2a0b397f-f73d-448c-81e0-05a7fc09d290] | -------------------------------------------------------------------------->>
+2025-01-16 02:38:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-449b050a-1724-49fe-903e-67f882df8927] | <<--------------------------------------------------------------------------
+2025-01-16 02:38:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-449b050a-1724-49fe-903e-67f882df8927] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:38:45.442487
+2025-01-16 02:38:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-449b050a-1724-49fe-903e-67f882df8927] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:38:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-449b050a-1724-49fe-903e-67f882df8927] | Executed: TokenRepositoryImpl.countActiveTokens() in 13 ms
+2025-01-16 02:38:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-449b050a-1724-49fe-903e-67f882df8927] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:38:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-449b050a-1724-49fe-903e-67f882df8927] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:38:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-449b050a-1724-49fe-903e-67f882df8927] | schedule processed in 32 ms : 2025-01-16T02:38:45.473068
+2025-01-16 02:38:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-449b050a-1724-49fe-903e-67f882df8927] | END TIME : 2025-01-16T02:38:45.473405
+2025-01-16 02:38:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-449b050a-1724-49fe-903e-67f882df8927] | -------------------------------------------------------------------------->>
+2025-01-16 02:38:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-82351f65-1c58-41b8-af9b-f94259870bbf] | <<--------------------------------------------------------------------------
+2025-01-16 02:38:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-82351f65-1c58-41b8-af9b-f94259870bbf] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:38:55.441638
+2025-01-16 02:38:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-82351f65-1c58-41b8-af9b-f94259870bbf] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:38:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-82351f65-1c58-41b8-af9b-f94259870bbf] | Executed: TokenRepositoryImpl.countActiveTokens() in 9 ms
+2025-01-16 02:38:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-82351f65-1c58-41b8-af9b-f94259870bbf] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:38:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-82351f65-1c58-41b8-af9b-f94259870bbf] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 5 ms
+2025-01-16 02:38:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-82351f65-1c58-41b8-af9b-f94259870bbf] | schedule processed in 25 ms : 2025-01-16T02:38:55.465058
+2025-01-16 02:38:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-82351f65-1c58-41b8-af9b-f94259870bbf] | END TIME : 2025-01-16T02:38:55.465383
+2025-01-16 02:38:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-82351f65-1c58-41b8-af9b-f94259870bbf] | -------------------------------------------------------------------------->>
+2025-01-16 02:39:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-34cdf58a-ca2f-42b3-873e-842b87b7674d] | <<--------------------------------------------------------------------------
+2025-01-16 02:39:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-34cdf58a-ca2f-42b3-873e-842b87b7674d] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T02:39:05.444392
+2025-01-16 02:39:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-34cdf58a-ca2f-42b3-873e-842b87b7674d] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 02:39:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-34cdf58a-ca2f-42b3-873e-842b87b7674d] | Executed: TokenRepositoryImpl.countActiveTokens() in 18 ms
+2025-01-16 02:39:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-34cdf58a-ca2f-42b3-873e-842b87b7674d] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 02:39:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-34cdf58a-ca2f-42b3-873e-842b87b7674d] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 6 ms
+2025-01-16 02:39:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-34cdf58a-ca2f-42b3-873e-842b87b7674d] | schedule processed in 40 ms : 2025-01-16T02:39:05.481144
+2025-01-16 02:39:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-34cdf58a-ca2f-42b3-873e-842b87b7674d] | END TIME : 2025-01-16T02:39:05.481414
+2025-01-16 02:39:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-34cdf58a-ca2f-42b3-873e-842b87b7674d] | -------------------------------------------------------------------------->>
+2025-01-16 02:39:08 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 02:39:08 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 02:39:08 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 02:39:08 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 02:39:08 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-15 17:50:51 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.concert.ConcertFacadeTest]: ConcertFacadeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-15 17:50:52 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.concert.ConcertFacadeTest
+2025-01-15 17:50:52 INFO  k.h.b.s.a.concert.ConcertFacadeTest - Starting ConcertFacadeTest using Java 17.0.8.1 with PID 37609 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-15 17:50:52 INFO  k.h.b.s.a.concert.ConcertFacadeTest - The following 1 profile is active: "local"
+2025-01-15 17:50:52 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15 17:50:52 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 8 JPA repository interfaces.
+2025-01-15 17:50:53 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-15 17:50:53 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-15 17:50:53 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-15 17:50:53 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-15 17:50:53 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-15 17:50:53 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-15 17:50:53 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-15 17:50:53 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-15 17:50:53 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 08f9b326614e3f943fec908775bfca5197aba61b946aa9394fa8ab7b28eaa76d
+2025-01-15 17:50:54 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.880421S
+2025-01-15 17:50:54 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-15 17:50:54 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-15 17:50:54 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-15 17:50:54 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-15 17:50:54 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: ad7c7a4d452cdb8de68fbc482dad199cdcf5a0e3bffb4a9e3ef9055accd4cba5
+2025-01-15 17:50:54 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:51612/hhplus using query 'SELECT 1'
+2025-01-15 17:51:02 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT8.139696S
+2025-01-15 17:51:02 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:51612/hhplus)
+2025-01-15 17:51:02 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15 17:51:02 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-15 17:51:02 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-15 17:51:02 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15 17:51:02 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-15 17:51:03 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@23974cac
+2025-01-15 17:51:03 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-15 17:51:03 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15 17:51:03 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15 17:51:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15 17:51:04 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-15 17:51:05 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15 17:51:05 INFO  k.h.b.s.a.concert.ConcertFacadeTest - Started ConcertFacadeTest in 13.339 seconds (process running for 14.089)
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-90e398ae-33e0-4c1b-b108-a4fcc543b9b1] | <<--------------------------------------------------------------------------
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c15a1043-da94-404b-a6ce-687ae0c158f5] | <<--------------------------------------------------------------------------
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-90e398ae-33e0-4c1b-b108-a4fcc543b9b1] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-15T17:51:05.465334
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c15a1043-da94-404b-a6ce-687ae0c158f5] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-15T17:51:05.465521
+2025-01-15 17:51:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c15a1043-da94-404b-a6ce-687ae0c158f5] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-15 17:51:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-90e398ae-33e0-4c1b-b108-a4fcc543b9b1] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-15 17:51:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c15a1043-da94-404b-a6ce-687ae0c158f5] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 330 ms
+2025-01-15 17:51:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-90e398ae-33e0-4c1b-b108-a4fcc543b9b1] | Executed: TokenRepositoryImpl.countActiveTokens() in 330 ms
+2025-01-15 17:51:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-90e398ae-33e0-4c1b-b108-a4fcc543b9b1] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c15a1043-da94-404b-a6ce-687ae0c158f5] | schedule processed in 355 ms : 2025-01-15T17:51:05.820818
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c15a1043-da94-404b-a6ce-687ae0c158f5] | END TIME : 2025-01-15T17:51:05.821040
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c15a1043-da94-404b-a6ce-687ae0c158f5] | -------------------------------------------------------------------------->>
+2025-01-15 17:51:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-90e398ae-33e0-4c1b-b108-a4fcc543b9b1] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 16 ms
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-90e398ae-33e0-4c1b-b108-a4fcc543b9b1] | schedule processed in 362 ms : 2025-01-15T17:51:05.827432
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-90e398ae-33e0-4c1b-b108-a4fcc543b9b1] | END TIME : 2025-01-15T17:51:05.827639
+2025-01-15 17:51:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-90e398ae-33e0-4c1b-b108-a4fcc543b9b1] | -------------------------------------------------------------------------->>
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ConcertRepositoryImpl.findById(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ConcertRepositoryImpl.findById(..) in 14 ms
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..) in 64 ms
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ConcertRepositoryImpl.findById(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ConcertRepositoryImpl.findById(..) in 5 ms
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..) in 4 ms
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ConcertRepositoryImpl.findById(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ConcertRepositoryImpl.findById(..) in 5 ms
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..) in 4 ms
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ConcertRepositoryImpl.findById(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ConcertRepositoryImpl.findById(..) in 7 ms
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..) in 4 ms
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findById(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findById(..) in 5 ms
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-15 17:51:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 17 ms
+2025-01-15 17:51:07 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15 17:51:07 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-15 17:51:07 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-15 17:51:50 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.concert.ConcertFacadeTest]: ConcertFacadeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-15 17:51:50 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.concert.ConcertFacadeTest
+2025-01-15 17:51:51 INFO  k.h.b.s.a.concert.ConcertFacadeTest - Starting ConcertFacadeTest using Java 17.0.8.1 with PID 37819 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-15 17:51:51 INFO  k.h.b.s.a.concert.ConcertFacadeTest - The following 1 profile is active: "local"
+2025-01-15 17:51:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15 17:51:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 8 JPA repository interfaces.
+2025-01-15 17:51:51 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-15 17:51:51 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-15 17:51:51 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-15 17:51:51 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-15 17:51:52 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-15 17:51:52 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-15 17:51:52 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-15 17:51:52 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-15 17:51:52 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: af0d05381894831bd907474d117505530ced785b2e12b24dd9f3b19cc7192100
+2025-01-15 17:51:52 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.47239S
+2025-01-15 17:51:52 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-15 17:51:52 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-15 17:51:52 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-15 17:51:52 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-15 17:51:52 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 5d78d6a8fe561702054c7ee5672c22a36a3a56e9b9119c93a140449200745e1c
+2025-01-15 17:51:52 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:51696/hhplus using query 'SELECT 1'
+2025-01-15 17:52:00 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT8.307016S
+2025-01-15 17:52:00 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:51696/hhplus)
+2025-01-15 17:52:01 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15 17:52:01 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-15 17:52:01 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-15 17:52:01 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15 17:52:01 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-15 17:52:01 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@f4aec23
+2025-01-15 17:52:01 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-15 17:52:01 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15 17:52:02 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15 17:52:02 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15 17:52:03 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-15 17:52:04 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15 17:52:04 INFO  k.h.b.s.a.concert.ConcertFacadeTest - Started ConcertFacadeTest in 13.362 seconds (process running for 14.032)
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6883b9df-6e69-4653-ace7-41bab5e151fa] | <<--------------------------------------------------------------------------
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6883b9df-6e69-4653-ace7-41bab5e151fa] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-15T17:52:04.397279
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-421a7e36-0de4-42c3-95c4-e7976c89d068] | <<--------------------------------------------------------------------------
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-421a7e36-0de4-42c3-95c4-e7976c89d068] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-15T17:52:04.397397
+2025-01-15 17:52:04 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6883b9df-6e69-4653-ace7-41bab5e151fa] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-15 17:52:04 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-421a7e36-0de4-42c3-95c4-e7976c89d068] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-15 17:52:04 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-421a7e36-0de4-42c3-95c4-e7976c89d068] | Executed: TokenRepositoryImpl.countActiveTokens() in 320 ms
+2025-01-15 17:52:04 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-6883b9df-6e69-4653-ace7-41bab5e151fa] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 320 ms
+2025-01-15 17:52:04 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-421a7e36-0de4-42c3-95c4-e7976c89d068] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6883b9df-6e69-4653-ace7-41bab5e151fa] | schedule processed in 338 ms : 2025-01-15T17:52:04.734702
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6883b9df-6e69-4653-ace7-41bab5e151fa] | END TIME : 2025-01-15T17:52:04.734897
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-6883b9df-6e69-4653-ace7-41bab5e151fa] | -------------------------------------------------------------------------->>
+2025-01-15 17:52:04 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-421a7e36-0de4-42c3-95c4-e7976c89d068] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 12 ms
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-421a7e36-0de4-42c3-95c4-e7976c89d068] | schedule processed in 348 ms : 2025-01-15T17:52:04.744629
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-421a7e36-0de4-42c3-95c4-e7976c89d068] | END TIME : 2025-01-15T17:52:04.744859
+2025-01-15 17:52:04 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-421a7e36-0de4-42c3-95c4-e7976c89d068] | -------------------------------------------------------------------------->>
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ConcertRepositoryImpl.findById(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ConcertRepositoryImpl.findById(..) in 11 ms
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..) in 60 ms
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ConcertRepositoryImpl.findById(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ConcertRepositoryImpl.findById(..) in 5 ms
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..) in 5 ms
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ConcertRepositoryImpl.findById(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ConcertRepositoryImpl.findById(..) in 5 ms
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..) in 4 ms
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ConcertRepositoryImpl.findById(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ConcertRepositoryImpl.findById(..) in 6 ms
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findReservableByConcertIdAndPage(..) in 3 ms
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findById(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findById(..) in 6 ms
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-15 17:52:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 38 ms
+2025-01-15 17:52:06 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15 17:52:06 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-15 17:52:06 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.

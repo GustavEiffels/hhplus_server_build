@@ -14,16 +14,16 @@ public interface ReservationApiDto {
     record ReservationRequest(Long scheduleId, List<Long> seatIdList, Long userId) {
         public ReservationRequest {
             if (scheduleId == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[scheduleId]는 필수 값입니다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
             if (seatIdList.size() > 4) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "한번에 예약 가능한 좌석수는 최대 4개 까지입니다.");
+                throw new BusinessException(ErrorCode.EXCEEDED_MAX_RESERVATION_ONCE);
             }
             if (seatIdList.isEmpty()) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "예약할 좌석을 입력해주세요.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
             if (userId == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[사용자 아이디]는 필수 값입니다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
         }
 

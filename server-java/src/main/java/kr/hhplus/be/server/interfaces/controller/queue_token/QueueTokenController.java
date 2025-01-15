@@ -21,19 +21,10 @@ import org.springframework.web.bind.annotation.*;
 public class QueueTokenController {
     private final QueueTokenFacade queueTokenFacade;
 
-    @GetMapping("")
-    public String test(){
-        queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(20L));
-        return "test";
-    }
-
     @PostMapping("")
     @Operation(summary = "유저 ",description = "결제 처리하고 결제 내역을 생성하는 API")
     public ResponseEntity<ApiResponse<QueueTokenApiDto.CreateTokenResponse>> createQueueToken(
             @RequestBody QueueTokenApiDto.CreateTokenRequest request) {
-        log.debug("듄!");
-        log.debug("듄!");
-
         QueueTokenFacadeDto.CreateResult result = queueTokenFacade.create(request.toParam());
         QueueTokenApiDto.CreateTokenResponse response = new QueueTokenApiDto.CreateTokenResponse(result.tokenId());
         return new ResponseEntity<>( ApiResponse.ok(response), HttpStatus.CREATED);

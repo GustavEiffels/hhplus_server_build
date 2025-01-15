@@ -18,10 +18,10 @@ public interface ConcertApiDto {
     record FindScheduleRequest(Long concertId, Integer page) {
         public FindScheduleRequest {
             if (page == null || page < 1) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[page]는 1 이상의 자연수만 허용합니다.");
+                throw new BusinessException(ErrorCode.INVALID_PAGING);
             }
             if (concertId == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[concertId]는 필수 값 입니다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
         }
         public ConcertFacadeDto.FindScheduleParam to() {
@@ -38,7 +38,7 @@ public interface ConcertApiDto {
     record FindLeftSeatRequest(Long scheduleId) {
         public FindLeftSeatRequest {
             if (scheduleId == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[scheduleId]는 필수 값 입니다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
         }
 

@@ -16,12 +16,14 @@ public enum ErrorCode {
     NOT_MATCHED_WITH_USER("[ NOT MATCHED WITH USER ]","사용자가 대기열 토큰과 매칭되지 않습니다."),
 
 
+
     // CONCERT SCHEDULE
     NOT_FOUND_CONCERT_SCHEDULE("[ NOT FOUND CONCERT SCHEDULE ]", "공연 일정을 찾을 수 없습니다."),
     RESCHEDULE_ERROR_END_BEFORE_START("[ RESCHEDULE ERROR END BEFORE START ]","[예약 종료] 시간은 [예약 시작] 시간보다 늦어야 합니다."),
     RESCHEDULE_ERROR_INVALID_SHOWTIME("[ RESCHEDULE ERROR INVALID SHOWTIME ]","[공연] 시간은 [예약 종료] 시간보다 늦어야 합니다."),
     RESERVATION_END("[ RESERVATION END ]","해당 예약은 마감되었습니다."),
     NOT_RESERVABLE_TIME("[ NOT RESERVABLE TIME ]","예약 가능한 시간이 아닙니다."),
+    INVALID_PAGING("[ INVALID PAGING ]","페이지 수는 1 이상의 자연수 입니다."),
 
 
     // TOKEN
@@ -34,6 +36,8 @@ public enum ErrorCode {
     NOT_FOUND_RESERVATION("[ NOT_FOUND_RESERVATION ]","예약을 찾을 수 없습니다."),
     EXPIRE_RESERVATION("[ EXPIRE_RESERVATION ]","만료된 예약 입니다."),
     NOT_RESERVATION_OWNER("[ NOT RESERVATION OWNER ]","예약한 사용자가 일치하지 않습니다."),
+    EXCEEDED_MAX_RESERVATION_ONCE("[ EXCEEDED MAX RESERVATION ONCE ]","한번에 예약가능한 좌석수 ( 4좌석 ) 을 초과 했습니다."),
+
 
     // SEAT
     NOT_FOUND_SEAT("[ NOT FOUND SEAT ]","좌석을 찾을 수 없습니다."),
@@ -43,7 +47,6 @@ public enum ErrorCode {
 
     // HISTORY
     INVALID_AMOUNT("[ INVALID AMOUNT ]","유효하지 않는 금액 입니다."),
-
     INVALID_INPUT("INVALID INPUT Error", "[ 유효하지 않은 입력 값이 감지되었습니다. ]");
 
 
