@@ -5,11 +5,13 @@ import kr.hhplus.be.server.domain.queue_token.QueueTokenService;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class QueueTokenFacade {
 
     private final UserService userService;
@@ -23,6 +25,7 @@ public class QueueTokenFacade {
      */
     @Transactional
     public QueueTokenFacadeDto.CreateResult create(QueueTokenFacadeDto.CreateParam param){
+        log.debug("TEST INFO ");
         // 1. find user
         User user = userService.findUser(param.userId());
 

@@ -41,10 +41,9 @@ public class PaymentFacade {
         // 예약 lock : 에약 상태로 변경
         List<Reservation> reservations = reservationService.reserve(param.reservationIds(), param.userid());
 
+
         // 총 예약 금액을 구함
-        Long totalAmount = reservations.stream()
-                .map(Reservation::getAmount)
-                .reduce(0L, Long::sum);
+        Long totalAmount = reservationService.totalAmount(reservations);
 
         // user point 차감 -> 여기서 금액 모자르면 예외 발생
         user.pointTransaction(-totalAmount);

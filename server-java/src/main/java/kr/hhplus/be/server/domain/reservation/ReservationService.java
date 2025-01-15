@@ -75,4 +75,10 @@ public class ReservationService {
                 .toList();
     }
 
+    public Long totalAmount(List<Reservation> reservations){
+        return reservations.stream()
+                .map(Reservation::getAmount)
+                .reduce(0L, Long::sum);
+    }
+
 }

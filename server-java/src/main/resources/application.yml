@@ -29,11 +29,15 @@ spring:
       hibernate.timezone.default_storage: NORMALIZE_UTC
       hibernate.jdbc.time_zone: UTC
       hibernate.show-sql: true
-      hibernate.format_sql: true
+#      hibernate.format_sql: true
 
 queue:
   max-active-token: 20
 
+logging:
+  level:
+    root: INFO
+  charset: UTF-8
 
 ---
 spring.config.activate.on-profile: local, test

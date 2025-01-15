@@ -1,0 +1,1225 @@
+2025-01-16 00:37:31 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 17.0.8.1 with PID 8356 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 00:37:31 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 00:37:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 00:37:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 114 ms. Found 8 JPA repository interfaces.
+2025-01-16 00:37:36 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 00:37:36 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 00:37:36 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 00:37:36 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 00:37:36 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 00:37:36 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4263 ms
+2025-01-16 00:37:37 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 00:37:37 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 00:37:37 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 00:37:38 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 00:37:38 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@46d18a33
+2025-01-16 00:37:38 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 00:37:38 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 00:37:41 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 00:37:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 00:37:47 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 00:37:48 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 00:37:48 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 00:37:48 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 17.003 seconds (process running for 19.224)
+2025-01-16 00:38:00 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 00:38:00 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 00:38:00 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-01-16 00:38:35 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 00:38:35 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 00:38:35 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 00:38:35 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 00:38:35 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:08:24 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 14624 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:08:24 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:09:08 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 14808 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:09:08 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:09:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:09:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:09:09 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:09:09 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:09:09 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:09:09 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:09:09 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:09:09 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1297 ms
+2025-01-16 01:09:10 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:09:10 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:09:10 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:09:10 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:09:10 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@52963839
+2025-01-16 01:09:10 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:09:10 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:09:11 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:09:11 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:09:13 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:09:13 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:09:13 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:09:13 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 5.11 seconds (process running for 5.443)
+2025-01-16 01:09:20 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:09:21 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:09:21 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:09:21 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:09:21 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:09:37 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 14926 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:09:37 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:09:38 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:09:38 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:09:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:09:38 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:09:38 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:09:38 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:09:38 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:09:38 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1053 ms
+2025-01-16 01:09:39 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:09:39 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:09:39 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:09:39 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:09:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:09:39 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@121dac1a
+2025-01-16 01:09:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:09:39 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:09:40 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:09:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:09:40 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:09:41 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:09:41 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:09:41 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:09:41 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.922 seconds (process running for 4.199)
+2025-01-16 01:09:45 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:09:45 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:09:45 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:09:45 INFO  k.h.b.server.common.filter.LogFilter - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-01-16 01:09:45 INFO  k.h.b.server.common.filter.LogFilter - Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:09:45 INFO  k.h.b.server.common.filter.LogFilter - Response : 200 body=[null]
+2025-01-16 01:09:45 INFO  k.h.b.server.common.filter.LogFilter - Request processed in 97ms
+2025-01-16 01:09:45 INFO  k.h.b.server.common.filter.LogFilter - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-01-16 01:10:27 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:10:27 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:10:27 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:10:27 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:10:27 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:16:55 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 16732 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:16:55 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:16:56 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:16:56 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:16:56 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:16:56 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:16:56 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:16:56 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:16:56 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:16:56 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1146 ms
+2025-01-16 01:16:57 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:16:57 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:16:57 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:16:57 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:16:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:16:57 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c3b0cc8
+2025-01-16 01:16:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:16:57 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:16:58 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:16:58 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:16:59 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:17:00 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:17:00 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:17:00 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:17:00 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 4.888 seconds (process running for 5.29)
+2025-01-16 01:17:05 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:17:05 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:17:05 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-01-16 01:17:05 INFO  k.h.b.server.common.filter.LogFilter - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-01-16 01:17:05 INFO  k.h.b.server.common.filter.LogFilter - Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:17:06 INFO  k.h.b.server.common.filter.LogFilter - Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:17:06 INFO  k.h.b.server.common.filter.LogFilter - Request processed in 155ms
+2025-01-16 01:17:06 INFO  k.h.b.server.common.filter.LogFilter - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-01-16 01:19:57 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:19:57 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:19:57 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:19:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:19:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:20:01 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 17422 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:20:01 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:20:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:20:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:20:02 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:20:02 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:20:02 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:20:02 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:20:02 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:20:02 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1096 ms
+2025-01-16 01:20:02 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:20:02 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:20:02 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:20:02 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:20:02 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:20:02 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@3cae4518
+2025-01-16 01:20:02 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:20:02 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:20:03 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:20:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:20:04 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:20:04 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:20:04 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:20:04 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:20:04 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 4.046 seconds (process running for 4.418)
+2025-01-16 01:20:07 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:20:07 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:20:07 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-01-16 01:20:07 INFO  k.h.b.server.common.filter.LogFilter - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-01-16 01:20:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [57b15a0a-86b9-474b-93ed-af8cae167ec1]
+2025-01-16 01:20:07 INFO  k.h.b.server.common.filter.LogFilter - Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:20:07 INFO  k.h.b.server.common.filter.LogFilter - Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:20:07 INFO  k.h.b.server.common.filter.LogFilter - Request processed in 113ms
+2025-01-16 01:20:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [57b15a0a-86b9-474b-93ed-af8cae167ec1]
+2025-01-16 01:20:07 INFO  k.h.b.server.common.filter.LogFilter - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-01-16 01:20:20 INFO  k.h.b.server.common.filter.LogFilter - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-01-16 01:20:20 INFO  k.h.b.server.common.filter.LogFilter - UUID - [cecb9f63-25df-469c-bb4a-77d39ba03558]
+2025-01-16 01:20:20 INFO  k.h.b.server.common.filter.LogFilter - Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:20:20 INFO  k.h.b.server.common.filter.LogFilter - Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:20:20 INFO  k.h.b.server.common.filter.LogFilter - Request processed in 60ms
+2025-01-16 01:20:20 INFO  k.h.b.server.common.filter.LogFilter - UUID - [cecb9f63-25df-469c-bb4a-77d39ba03558]
+2025-01-16 01:20:20 INFO  k.h.b.server.common.filter.LogFilter - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-01-16 01:20:45 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:20:45 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:20:45 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:20:45 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:20:45 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:21:59 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 17858 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:21:59 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:21:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:21:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:22:00 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:22:00 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:22:00 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:22:00 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:22:00 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:22:00 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1130 ms
+2025-01-16 01:22:00 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:22:00 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:22:00 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:22:00 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:22:00 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:22:00 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c459194
+2025-01-16 01:22:00 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:22:00 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:22:01 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:22:02 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:22:02 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:22:03 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:22:03 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:22:03 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:22:03 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 4.738 seconds (process running for 5.01)
+2025-01-16 01:22:05 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:22:05 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:22:05 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-01-16 01:22:05 INFO  k.h.b.server.common.filter.LogFilter - UUID : [f5a8b6ea-098f-46e2-967a-4ce88fd75880] START TIME : [2025-01-16T01:22:05.199322}
+2025-01-16 01:22:05 INFO  k.h.b.server.common.filter.LogFilter - Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:22:05 INFO  k.h.b.server.common.filter.LogFilter - Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:22:05 INFO  k.h.b.server.common.filter.LogFilter - Request processed in 98ms
+2025-01-16 01:22:05 INFO  k.h.b.server.common.filter.LogFilter - UUID : [f5a8b6ea-098f-46e2-967a-4ce88fd75880] END TIME : [2025-01-16T01:22:05.297601}
+2025-01-16 01:22:08 INFO  k.h.b.server.common.filter.LogFilter - UUID : [4734ba05-29f5-40ee-99eb-98513305d005] START TIME : [2025-01-16T01:22:08.700579}
+2025-01-16 01:22:08 INFO  k.h.b.server.common.filter.LogFilter - Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:22:08 INFO  k.h.b.server.common.filter.LogFilter - Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:22:08 INFO  k.h.b.server.common.filter.LogFilter - Request processed in 18ms
+2025-01-16 01:22:08 INFO  k.h.b.server.common.filter.LogFilter - UUID : [4734ba05-29f5-40ee-99eb-98513305d005] END TIME : [2025-01-16T01:22:08.719027}
+2025-01-16 01:22:52 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:22:52 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:22:52 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:22:52 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:22:52 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:22:55 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 18070 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:22:55 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:22:56 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:22:56 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:22:56 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:22:56 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:22:56 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:22:56 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:22:56 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:22:56 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1012 ms
+2025-01-16 01:22:56 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:22:56 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:22:56 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:22:57 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:22:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:22:57 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d3990a5
+2025-01-16 01:22:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:22:57 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:22:57 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:22:58 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:22:58 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:22:59 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:22:59 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:22:59 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:22:59 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.873 seconds (process running for 4.142)
+2025-01-16 01:23:03 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:23:03 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:23:03 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:23:03 INFO  k.h.b.server.common.filter.LogFilter - UUID : [b3230172-e714-40a2-a2ad-d4b3b8b92f58] START TIME : [2025-01-16T01:23:03.750139}
+2025-01-16 01:23:03 INFO  k.h.b.server.common.filter.LogFilter - Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:23:03 INFO  k.h.b.server.common.filter.LogFilter - Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:23:03 INFO  k.h.b.server.common.filter.LogFilter - Request processed in 126ms
+2025-01-16 01:23:03 INFO  k.h.b.server.common.filter.LogFilter - UUID : [b3230172-e714-40a2-a2ad-d4b3b8b92f58] END TIME : [2025-01-16T01:23:03.876830}
+2025-01-16 01:23:03 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:23:03 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:23:03 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:25:45 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:25:45 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:25:45 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:25:45 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:25:45 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:25:49 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 18713 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:25:49 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:25:49 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:25:49 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:25:50 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:25:50 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:25:50 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:25:50 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:25:50 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:25:50 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1051 ms
+2025-01-16 01:25:50 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:25:50 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:25:50 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:25:50 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:25:50 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:25:50 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2336d3f
+2025-01-16 01:25:50 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:25:50 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:25:51 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:25:51 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:25:51 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:25:52 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:25:52 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:25:52 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:25:52 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.882 seconds (process running for 4.148)
+2025-01-16 01:25:55 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:25:55 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:25:55 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:25:55 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 4ddcb1b1-69b2-4c40-8e37-011a663ae92a ] | START TIME : 2025-01-16T01:25:55.087860
+2025-01-16 01:25:55 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 4ddcb1b1-69b2-4c40-8e37-011a663ae92a ] | Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:25:55 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 4ddcb1b1-69b2-4c40-8e37-011a663ae92a ] | Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:25:55 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 4ddcb1b1-69b2-4c40-8e37-011a663ae92a ] | Request processed in 133ms
+2025-01-16 01:25:55 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 4ddcb1b1-69b2-4c40-8e37-011a663ae92a ] | END TIME : 2025-01-16T01:25:55.220932
+2025-01-16 01:26:33 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:26:33 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:26:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:26:33 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:26:33 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:26:35 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 18886 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:26:35 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:26:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:26:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:26:36 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:26:36 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:26:36 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:26:36 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:26:36 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:26:36 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1074 ms
+2025-01-16 01:26:36 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:26:36 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:26:36 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:26:36 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:26:36 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:26:36 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c7c898a
+2025-01-16 01:26:36 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:26:36 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:26:37 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:26:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:26:38 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:26:38 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:26:38 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:26:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:26:38 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.906 seconds (process running for 4.176)
+2025-01-16 01:26:41 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:26:41 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:26:41 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-01-16 01:26:41 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 337a0a9b-f555-48de-8768-206aa26170f7 ] | START TIME : 2025-01-16T01:26:41.559014
+2025-01-16 01:26:41 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 337a0a9b-f555-48de-8768-206aa26170f7 ] | Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:26:41 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 337a0a9b-f555-48de-8768-206aa26170f7 ] | Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:26:41 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 337a0a9b-f555-48de-8768-206aa26170f7 ] | Request processed in 147ms
+2025-01-16 01:26:41 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 337a0a9b-f555-48de-8768-206aa26170f7 ] | END TIME : 2025-01-16T01:26:41.705735
+2025-01-16 01:26:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9e1a94b2-3bbb-4935-b66f-4cbf49a03afa ] | START TIME : 2025-01-16T01:26:45.540601
+2025-01-16 01:26:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9e1a94b2-3bbb-4935-b66f-4cbf49a03afa ] | Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:26:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9e1a94b2-3bbb-4935-b66f-4cbf49a03afa ] | Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:26:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9e1a94b2-3bbb-4935-b66f-4cbf49a03afa ] | Request processed in 20ms
+2025-01-16 01:26:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9e1a94b2-3bbb-4935-b66f-4cbf49a03afa ] | END TIME : 2025-01-16T01:26:45.560688
+2025-01-16 01:27:29 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:27:29 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:27:29 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:27:29 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:27:29 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:27:32 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 19115 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:27:32 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:27:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:27:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:27:33 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:27:33 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:27:33 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:27:33 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:27:33 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:27:33 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1035 ms
+2025-01-16 01:27:33 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:27:33 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:27:33 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:27:33 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:27:33 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:27:33 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@53b907d9
+2025-01-16 01:27:33 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:27:34 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:27:34 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:27:35 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:27:35 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:27:36 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:27:36 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:27:36 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:27:36 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 4.337 seconds (process running for 4.602)
+2025-01-16 01:27:40 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:27:40 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:27:40 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:27:40 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:27:40 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:27:40 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b54b06bf-5b4c-46b8-a58b-462c5a5aa808 ] | START TIME : 2025-01-16T01:27:40.294416
+2025-01-16 01:27:40 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b54b06bf-5b4c-46b8-a58b-462c5a5aa808 ] | Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:27:40 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b54b06bf-5b4c-46b8-a58b-462c5a5aa808 ] | Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:27:40 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b54b06bf-5b4c-46b8-a58b-462c5a5aa808 ] | Request processed in 127ms
+2025-01-16 01:27:40 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b54b06bf-5b4c-46b8-a58b-462c5a5aa808 ] | END TIME : 2025-01-16T01:27:40.421445
+2025-01-16 01:27:40 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:27:40 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:27:42 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:27:42 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:27:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 32821569-4302-4213-b9eb-7e9c62bdfb08 ] | START TIME : 2025-01-16T01:27:42.320869
+2025-01-16 01:27:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 32821569-4302-4213-b9eb-7e9c62bdfb08 ] | Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:27:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 32821569-4302-4213-b9eb-7e9c62bdfb08 ] | Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:27:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 32821569-4302-4213-b9eb-7e9c62bdfb08 ] | Request processed in 21ms
+2025-01-16 01:27:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 32821569-4302-4213-b9eb-7e9c62bdfb08 ] | END TIME : 2025-01-16T01:27:42.341671
+2025-01-16 01:27:42 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:27:42 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:27:52 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:27:52 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:27:52 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 8b173a46-3152-4314-a731-53dcc26a6c36 ] | START TIME : 2025-01-16T01:27:52.243575
+2025-01-16 01:27:52 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 8b173a46-3152-4314-a731-53dcc26a6c36 ] | Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:27:52 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 8b173a46-3152-4314-a731-53dcc26a6c36 ] | Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:27:52 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 8b173a46-3152-4314-a731-53dcc26a6c36 ] | Request processed in 41ms
+2025-01-16 01:27:52 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 8b173a46-3152-4314-a731-53dcc26a6c36 ] | END TIME : 2025-01-16T01:27:52.283919
+2025-01-16 01:27:52 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:27:52 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:27:53 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:27:53 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:27:53 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ ac2c8060-da89-4f12-8745-ee42705d4ea9 ] | START TIME : 2025-01-16T01:27:53.741867
+2025-01-16 01:27:53 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ ac2c8060-da89-4f12-8745-ee42705d4ea9 ] | Request : POST uri=[/queue_tokens] content-type=[application/json], body=[{"userId":"1"}]
+2025-01-16 01:27:53 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ ac2c8060-da89-4f12-8745-ee42705d4ea9 ] | Response : 200 body=[{"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}]
+2025-01-16 01:27:53 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ ac2c8060-da89-4f12-8745-ee42705d4ea9 ] | Request processed in 14ms
+2025-01-16 01:27:53 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ ac2c8060-da89-4f12-8745-ee42705d4ea9 ] | END TIME : 2025-01-16T01:27:53.755295
+2025-01-16 01:27:53 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:27:53 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:27:57 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:27:57 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:27:57 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:27:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:27:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:29:14 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 19494 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:29:14 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:29:15 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:29:15 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:29:15 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:29:15 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:29:15 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:29:15 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:29:15 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:29:15 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1034 ms
+2025-01-16 01:29:16 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:29:16 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:29:16 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:29:16 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:29:16 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:29:16 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4eec5fa6
+2025-01-16 01:29:16 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:29:16 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:29:17 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:29:17 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:29:17 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:29:18 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:29:18 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:29:18 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:29:18 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.884 seconds (process running for 4.188)
+2025-01-16 01:29:25 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:29:25 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:29:25 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:29:25 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:29:25 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:29:25 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 28c3e55b-d4b1-4ea8-8783-d5b9953c6712 ] | START TIME : 2025-01-16T01:29:25.286344
+2025-01-16 01:29:25 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 28c3e55b-d4b1-4ea8-8783-d5b9953c6712 ] | Request : POST uri=[/queue_tokens] content-type=[application/json], body = {"userId":"1"}
+2025-01-16 01:29:25 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 28c3e55b-d4b1-4ea8-8783-d5b9953c6712 ] | Response : 200 body : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400} 
+2025-01-16 01:29:25 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 28c3e55b-d4b1-4ea8-8783-d5b9953c6712 ] | Request processed in 131 ms
+2025-01-16 01:29:25 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 28c3e55b-d4b1-4ea8-8783-d5b9953c6712 ] | END TIME : 2025-01-16T01:29:25.417726
+2025-01-16 01:29:25 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:29:25 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:31:27 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:31:27 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:31:27 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:31:27 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:31:27 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:31:30 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 19993 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:31:30 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:31:30 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:31:30 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:31:31 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:31:31 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:31:31 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:31:31 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:31:31 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:31:31 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1086 ms
+2025-01-16 01:31:31 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:31:31 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:31:31 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:31:31 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:31:31 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:31:31 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c3b0cc8
+2025-01-16 01:31:31 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:31:31 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:31:32 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:31:32 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:31:33 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:31:33 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:31:33 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:31:33 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:31:33 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.972 seconds (process running for 4.237)
+2025-01-16 01:31:35 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:31:35 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:31:35 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 78f1ff02-e80a-402c-8aee-fb403ba6b0f5 ] | START TIME : 2025-01-16T01:31:35.772157
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 78f1ff02-e80a-402c-8aee-fb403ba6b0f5 ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 78f1ff02-e80a-402c-8aee-fb403ba6b0f5 ] | RequestBody : {"userId":"1"}
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 78f1ff02-e80a-402c-8aee-fb403ba6b0f5 ] | Response : 200 
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 78f1ff02-e80a-402c-8aee-fb403ba6b0f5 ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 78f1ff02-e80a-402c-8aee-fb403ba6b0f5 ] | Request processed in 129 ms
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 78f1ff02-e80a-402c-8aee-fb403ba6b0f5 ] | END TIME : 2025-01-16T01:31:35.900183
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:31:35 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:31:57 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:31:57 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:31:57 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:31:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:31:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:32:00 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 20104 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:32:00 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:32:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:32:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:32:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:32:01 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:32:01 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:32:01 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:32:01 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:32:01 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1070 ms
+2025-01-16 01:32:01 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:32:01 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:32:01 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:32:01 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:32:01 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:32:01 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@6296e4bf
+2025-01-16 01:32:01 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:32:01 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:32:02 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:32:02 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:32:03 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:32:03 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:32:04 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:32:04 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:32:04 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 4.008 seconds (process running for 4.279)
+2025-01-16 01:32:07 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:32:07 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:32:07 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d6c35710-db21-4505-b910-7a176e6d47ec ] | START TIME : 2025-01-16T01:32:07.622674
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d6c35710-db21-4505-b910-7a176e6d47ec ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d6c35710-db21-4505-b910-7a176e6d47ec ] | RequestBody : {"userId":"1"}
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d6c35710-db21-4505-b910-7a176e6d47ec ] | Response : 200 
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d6c35710-db21-4505-b910-7a176e6d47ec ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d6c35710-db21-4505-b910-7a176e6d47ec ] | Request processed in 107 ms
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d6c35710-db21-4505-b910-7a176e6d47ec ] | END TIME : 2025-01-16T01:32:07.729715
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:32:07 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:32:09 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:32:09 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:32:09 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2664a9d6-4117-420c-acfb-bbdad1bff66e ] | START TIME : 2025-01-16T01:32:09.996389
+2025-01-16 01:32:09 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2664a9d6-4117-420c-acfb-bbdad1bff66e ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:32:09 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2664a9d6-4117-420c-acfb-bbdad1bff66e ] | RequestBody : {"userId":"1"}
+2025-01-16 01:32:10 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2664a9d6-4117-420c-acfb-bbdad1bff66e ] | Response : 200 
+2025-01-16 01:32:10 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2664a9d6-4117-420c-acfb-bbdad1bff66e ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:32:10 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2664a9d6-4117-420c-acfb-bbdad1bff66e ] | Request processed in 21 ms
+2025-01-16 01:32:10 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2664a9d6-4117-420c-acfb-bbdad1bff66e ] | END TIME : 2025-01-16T01:32:10.016643
+2025-01-16 01:32:10 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:32:10 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d208ef63-f5b5-4002-9db0-7aee7b64174d ] | START TIME : 2025-01-16T01:32:12.092681
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d208ef63-f5b5-4002-9db0-7aee7b64174d ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d208ef63-f5b5-4002-9db0-7aee7b64174d ] | RequestBody : {"userId":"1"}
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d208ef63-f5b5-4002-9db0-7aee7b64174d ] | Response : 200 
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d208ef63-f5b5-4002-9db0-7aee7b64174d ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d208ef63-f5b5-4002-9db0-7aee7b64174d ] | Request processed in 13 ms
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ d208ef63-f5b5-4002-9db0-7aee7b64174d ] | END TIME : 2025-01-16T01:32:12.106127
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - --------------------------------------------------------------------------
+2025-01-16 01:32:12 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:32:47 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:32:47 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:32:47 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:32:47 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:32:47 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:32:50 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 20308 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:32:50 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:32:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:32:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:32:51 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:32:51 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:32:51 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:32:51 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:32:51 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:32:51 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1047 ms
+2025-01-16 01:32:51 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:32:51 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:32:51 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:32:52 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:32:52 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:32:52 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@121dac1a
+2025-01-16 01:32:52 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:32:52 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:32:52 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:32:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:32:53 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:32:54 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:32:54 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:32:54 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:32:54 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.818 seconds (process running for 4.098)
+2025-01-16 01:32:59 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:32:59 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:32:59 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:32:59 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:32:59 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:32:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f64e080-7c7b-46e4-b12d-65a4db29aa82 ] | START TIME : 2025-01-16T01:32:59.971925
+2025-01-16 01:32:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f64e080-7c7b-46e4-b12d-65a4db29aa82 ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:32:59 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f64e080-7c7b-46e4-b12d-65a4db29aa82 ] | RequestBody : {"userId":"1"}
+2025-01-16 01:33:00 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f64e080-7c7b-46e4-b12d-65a4db29aa82 ] | Response : 200 
+2025-01-16 01:33:00 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f64e080-7c7b-46e4-b12d-65a4db29aa82 ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:33:00 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f64e080-7c7b-46e4-b12d-65a4db29aa82 ] | Request processed in 147 ms
+2025-01-16 01:33:00 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f64e080-7c7b-46e4-b12d-65a4db29aa82 ] | END TIME : 2025-01-16T01:33:00.118958
+2025-01-16 01:33:00 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:33:00 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:32 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:34:32 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:34:32 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:34:32 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:34:32 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:34:34 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 20687 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:34:34 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:34:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:34:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:34:35 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:34:35 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:34:35 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:34:35 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:34:36 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:34:36 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1230 ms
+2025-01-16 01:34:36 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:34:36 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:34:36 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:34:36 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:34:36 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:34:36 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c7c898a
+2025-01-16 01:34:36 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:34:36 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:34:37 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:34:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:34:37 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:34:38 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:34:38 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:34:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:34:38 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 4.063 seconds (process running for 4.347)
+2025-01-16 01:34:42 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:34:42 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:34:42 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6b5b91ae-52c1-426c-aa16-e5774a5ef000 ] | START TIME : 2025-01-16T01:34:42.204668
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6b5b91ae-52c1-426c-aa16-e5774a5ef000 ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6b5b91ae-52c1-426c-aa16-e5774a5ef000 ] | RequestBody : {"userId":"1"}
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6b5b91ae-52c1-426c-aa16-e5774a5ef000 ] | Response : 200 
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6b5b91ae-52c1-426c-aa16-e5774a5ef000 ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6b5b91ae-52c1-426c-aa16-e5774a5ef000 ] | Request processed in 121 ms
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6b5b91ae-52c1-426c-aa16-e5774a5ef000 ] | END TIME : 2025-01-16T01:34:42.325240
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:34:42 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f3a0677-bc08-4471-87fd-189416034293 ] | START TIME : 2025-01-16T01:34:45.979767
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f3a0677-bc08-4471-87fd-189416034293 ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f3a0677-bc08-4471-87fd-189416034293 ] | RequestBody : {"userId":"1"}
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f3a0677-bc08-4471-87fd-189416034293 ] | Response : 200 
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f3a0677-bc08-4471-87fd-189416034293 ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f3a0677-bc08-4471-87fd-189416034293 ] | Request processed in 23 ms
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 9f3a0677-bc08-4471-87fd-189416034293 ] | END TIME : 2025-01-16T01:34:45.996969
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:34:45 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 485fc695-ce8a-48b5-acb6-b182a06665a3 ] | START TIME : 2025-01-16T01:34:54.031542
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 485fc695-ce8a-48b5-acb6-b182a06665a3 ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 485fc695-ce8a-48b5-acb6-b182a06665a3 ] | RequestBody : {"userId":"1"}
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 485fc695-ce8a-48b5-acb6-b182a06665a3 ] | Response : 200 
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 485fc695-ce8a-48b5-acb6-b182a06665a3 ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 485fc695-ce8a-48b5-acb6-b182a06665a3 ] | Request processed in 41 ms
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 485fc695-ce8a-48b5-acb6-b182a06665a3 ] | END TIME : 2025-01-16T01:34:54.070544
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 5fe72a5d-6d46-4722-8b8e-7daa6d9bc504 ] | START TIME : 2025-01-16T01:34:54.994583
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 5fe72a5d-6d46-4722-8b8e-7daa6d9bc504 ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:34:54 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 5fe72a5d-6d46-4722-8b8e-7daa6d9bc504 ] | RequestBody : {"userId":"1"}
+2025-01-16 01:34:55 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 5fe72a5d-6d46-4722-8b8e-7daa6d9bc504 ] | Response : 200 
+2025-01-16 01:34:55 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 5fe72a5d-6d46-4722-8b8e-7daa6d9bc504 ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:34:55 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 5fe72a5d-6d46-4722-8b8e-7daa6d9bc504 ] | Request processed in 21 ms
+2025-01-16 01:34:55 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 5fe72a5d-6d46-4722-8b8e-7daa6d9bc504 ] | END TIME : 2025-01-16T01:34:55.015545
+2025-01-16 01:34:55 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:34:55 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b928f19a-0fa5-4c21-9ec9-1ee72c0d87a7 ] | START TIME : 2025-01-16T01:34:56.092911
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b928f19a-0fa5-4c21-9ec9-1ee72c0d87a7 ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b928f19a-0fa5-4c21-9ec9-1ee72c0d87a7 ] | RequestBody : {"userId":"1"}
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b928f19a-0fa5-4c21-9ec9-1ee72c0d87a7 ] | Response : 200 
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b928f19a-0fa5-4c21-9ec9-1ee72c0d87a7 ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b928f19a-0fa5-4c21-9ec9-1ee72c0d87a7 ] | Request processed in 12 ms
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ b928f19a-0fa5-4c21-9ec9-1ee72c0d87a7 ] | END TIME : 2025-01-16T01:34:56.104869
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6a8f3b39-a775-41ed-9bc5-f933ef294ae3 ] | START TIME : 2025-01-16T01:34:56.747647
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6a8f3b39-a775-41ed-9bc5-f933ef294ae3 ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6a8f3b39-a775-41ed-9bc5-f933ef294ae3 ] | RequestBody : {"userId":"1"}
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6a8f3b39-a775-41ed-9bc5-f933ef294ae3 ] | Response : 200 
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6a8f3b39-a775-41ed-9bc5-f933ef294ae3 ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6a8f3b39-a775-41ed-9bc5-f933ef294ae3 ] | Request processed in 18 ms
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6a8f3b39-a775-41ed-9bc5-f933ef294ae3 ] | END TIME : 2025-01-16T01:34:56.765217
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:34:56 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2a5aa996-c59d-42e4-863c-8ecdfd13d828 ] | START TIME : 2025-01-16T01:34:57.426185
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2a5aa996-c59d-42e4-863c-8ecdfd13d828 ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2a5aa996-c59d-42e4-863c-8ecdfd13d828 ] | RequestBody : {"userId":"1"}
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2a5aa996-c59d-42e4-863c-8ecdfd13d828 ] | Response : 200 
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2a5aa996-c59d-42e4-863c-8ecdfd13d828 ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2a5aa996-c59d-42e4-863c-8ecdfd13d828 ] | Request processed in 15 ms
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 2a5aa996-c59d-42e4-863c-8ecdfd13d828 ] | END TIME : 2025-01-16T01:34:57.440211
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:34:57 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6e666b58-f33e-400a-ad5d-98e3ff60c95a ] | START TIME : 2025-01-16T01:34:58.042782
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6e666b58-f33e-400a-ad5d-98e3ff60c95a ] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6e666b58-f33e-400a-ad5d-98e3ff60c95a ] | RequestBody : {"userId":"1"}
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6e666b58-f33e-400a-ad5d-98e3ff60c95a ] | Response : 200 
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6e666b58-f33e-400a-ad5d-98e3ff60c95a ] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6e666b58-f33e-400a-ad5d-98e3ff60c95a ] | Request processed in 14 ms
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ 6e666b58-f33e-400a-ad5d-98e3ff60c95a ] | END TIME : 2025-01-16T01:34:58.057079
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:34:58 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:40:43 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:40:43 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:40:43 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:40:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:40:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:40:47 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 22004 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:40:47 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:40:47 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:40:47 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:40:48 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:40:48 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:40:48 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:40:48 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:40:48 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:40:48 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1109 ms
+2025-01-16 01:40:48 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:40:48 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:40:48 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:40:48 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:40:48 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:40:48 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d3990a5
+2025-01-16 01:40:48 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:40:48 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:40:49 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:40:49 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:40:50 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:40:50 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:40:50 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:40:50 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:40:50 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 4.002 seconds (process running for 4.269)
+2025-01-16 01:40:50 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:40:50 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:40:50 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 2524625d-db78-4a83-8bba-36c5447982de ] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:40:50.903286
+2025-01-16 01:40:50 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 7026f415-b6e3-4c42-a905-b4f390fbfa22 ] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:40:50.903345
+2025-01-16 01:40:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 7026f415-b6e3-4c42-a905-b4f390fbfa22 ] | schedule processed in 332 ms : 2025-01-16T01:40:51.235992
+2025-01-16 01:40:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 7026f415-b6e3-4c42-a905-b4f390fbfa22 ] | END TIME : 2025-01-16T01:40:51.236152
+2025-01-16 01:40:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:40:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 2524625d-db78-4a83-8bba-36c5447982de ] | schedule processed in 341 ms : 2025-01-16T01:40:51.244742
+2025-01-16 01:40:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 2524625d-db78-4a83-8bba-36c5447982de ] | END TIME : 2025-01-16T01:40:51.244910
+2025-01-16 01:40:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:41:44 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:41:44 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:41:44 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:41:44 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:41:44 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:41:47 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 22233 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:41:47 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:41:47 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:41:47 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:41:48 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:41:48 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:41:48 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:41:48 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:41:48 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:41:48 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 991 ms
+2025-01-16 01:41:48 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:41:48 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:41:48 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:41:48 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:41:48 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:41:49 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@3945886e
+2025-01-16 01:41:49 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:41:49 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:41:49 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:41:49 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:41:50 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:41:51 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:41:51 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:41:51 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:41:51 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.965 seconds (process running for 4.228)
+2025-01-16 01:41:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ b85cbdb4-a321-4b2e-b5a2-19498e3da361 ] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:41:51.257277
+2025-01-16 01:41:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ fcb7d989-700e-436c-a4fc-47be430af218 ] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:41:51.257277
+2025-01-16 01:41:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ fcb7d989-700e-436c-a4fc-47be430af218 ] | schedule processed in 368 ms : 2025-01-16T01:41:51.625995
+2025-01-16 01:41:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ fcb7d989-700e-436c-a4fc-47be430af218 ] | END TIME : 2025-01-16T01:41:51.626230
+2025-01-16 01:41:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ b85cbdb4-a321-4b2e-b5a2-19498e3da361 ] | schedule processed in 374 ms : 2025-01-16T01:41:51.631719
+2025-01-16 01:41:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ b85cbdb4-a321-4b2e-b5a2-19498e3da361 ] | END TIME : 2025-01-16T01:41:51.631887
+2025-01-16 01:42:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ c26f5321-b6e5-43fa-95fd-edc7e78526fb ] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:42:51.254792
+2025-01-16 01:42:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 3d10043e-9161-4920-b040-f87419850167 ] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:42:51.254792
+2025-01-16 01:42:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ c26f5321-b6e5-43fa-95fd-edc7e78526fb ] | schedule processed in 23 ms : 2025-01-16T01:42:51.277102
+2025-01-16 01:42:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ c26f5321-b6e5-43fa-95fd-edc7e78526fb ] | END TIME : 2025-01-16T01:42:51.277283
+2025-01-16 01:42:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 3d10043e-9161-4920-b040-f87419850167 ] | schedule processed in 25 ms : 2025-01-16T01:42:51.279103
+2025-01-16 01:42:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 3d10043e-9161-4920-b040-f87419850167 ] | END TIME : 2025-01-16T01:42:51.279255
+2025-01-16 01:43:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 6da454ce-aa29-44de-a6ce-05eb2c777e8a ] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:43:51.253629
+2025-01-16 01:43:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 8ea08db0-1a8f-4b2d-b208-a40a369d5dd4 ] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:43:51.253629
+2025-01-16 01:43:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 8ea08db0-1a8f-4b2d-b208-a40a369d5dd4 ] | schedule processed in 20 ms : 2025-01-16T01:43:51.273254
+2025-01-16 01:43:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 8ea08db0-1a8f-4b2d-b208-a40a369d5dd4 ] | END TIME : 2025-01-16T01:43:51.273433
+2025-01-16 01:43:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 6da454ce-aa29-44de-a6ce-05eb2c777e8a ] | schedule processed in 21 ms : 2025-01-16T01:43:51.274803
+2025-01-16 01:43:51 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [ 6da454ce-aa29-44de-a6ce-05eb2c777e8a ] | END TIME : 2025-01-16T01:43:51.274929
+2025-01-16 01:44:13 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:44:13 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:44:13 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:44:13 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:44:13 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:44:16 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 22776 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:44:16 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:44:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:44:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:44:17 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:44:17 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:44:17 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:44:17 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:44:17 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:44:17 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1145 ms
+2025-01-16 01:44:17 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:44:17 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:44:17 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:44:18 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:44:18 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:44:18 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d3990a5
+2025-01-16 01:44:18 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:44:18 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:44:18 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:44:19 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:44:19 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:44:20 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:44:20 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:44:20 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:44:20 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.915 seconds (process running for 4.17)
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [2b89d658-cdef-458d-b6dd-761cfe1324d8] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:44:20.261601
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [e2274690-e6b6-4e77-83ff-4ba52849d24d] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:44:20.261645
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [e2274690-e6b6-4e77-83ff-4ba52849d24d] | schedule processed in 343 ms : 2025-01-16T01:44:20.604020
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [e2274690-e6b6-4e77-83ff-4ba52849d24d] | END TIME : 2025-01-16T01:44:20.604211
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [2b89d658-cdef-458d-b6dd-761cfe1324d8] | schedule processed in 351 ms : 2025-01-16T01:44:20.612821
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [2b89d658-cdef-458d-b6dd-761cfe1324d8] | END TIME : 2025-01-16T01:44:20.612996
+2025-01-16 01:44:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:44:28 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:44:28 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:44:28 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c014d478-08ec-4fba-a678-744919e2951e] | START TIME : 2025-01-16T01:44:28.126628
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c014d478-08ec-4fba-a678-744919e2951e] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c014d478-08ec-4fba-a678-744919e2951e] | RequestBody : {"userId":"1"}
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c014d478-08ec-4fba-a678-744919e2951e] | Response : 200 
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c014d478-08ec-4fba-a678-744919e2951e] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c014d478-08ec-4fba-a678-744919e2951e] | Request processed in 126 ms
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c014d478-08ec-4fba-a678-744919e2951e] | END TIME : 2025-01-16T01:44:28.252920
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [94dde03a-72af-44de-87b5-f89121e3d454] | START TIME : 2025-01-16T01:44:28.751970
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [94dde03a-72af-44de-87b5-f89121e3d454] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [94dde03a-72af-44de-87b5-f89121e3d454] | RequestBody : {"userId":"1"}
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [94dde03a-72af-44de-87b5-f89121e3d454] | Response : 200 
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [94dde03a-72af-44de-87b5-f89121e3d454] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [94dde03a-72af-44de-87b5-f89121e3d454] | Request processed in 18 ms
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [94dde03a-72af-44de-87b5-f89121e3d454] | END TIME : 2025-01-16T01:44:28.769931
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [017c1fa2-5ecf-4e7f-a7d9-22c7508608b0] | START TIME : 2025-01-16T01:44:28.901551
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [017c1fa2-5ecf-4e7f-a7d9-22c7508608b0] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [017c1fa2-5ecf-4e7f-a7d9-22c7508608b0] | RequestBody : {"userId":"1"}
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [017c1fa2-5ecf-4e7f-a7d9-22c7508608b0] | Response : 200 
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [017c1fa2-5ecf-4e7f-a7d9-22c7508608b0] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [017c1fa2-5ecf-4e7f-a7d9-22c7508608b0] | Request processed in 15 ms
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - UUID - [017c1fa2-5ecf-4e7f-a7d9-22c7508608b0] | END TIME : 2025-01-16T01:44:28.916705
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:44:28 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d38aa4ec-2fb5-4875-8bd6-795a713adde9] | START TIME : 2025-01-16T01:44:29.245990
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d38aa4ec-2fb5-4875-8bd6-795a713adde9] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d38aa4ec-2fb5-4875-8bd6-795a713adde9] | RequestBody : {"userId":"1"}
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d38aa4ec-2fb5-4875-8bd6-795a713adde9] | Response : 200 
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d38aa4ec-2fb5-4875-8bd6-795a713adde9] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d38aa4ec-2fb5-4875-8bd6-795a713adde9] | Request processed in 11 ms
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d38aa4ec-2fb5-4875-8bd6-795a713adde9] | END TIME : 2025-01-16T01:44:29.256905
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c0defbb8-a420-4ce5-b8dc-e39856810907] | START TIME : 2025-01-16T01:44:29.411637
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c0defbb8-a420-4ce5-b8dc-e39856810907] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c0defbb8-a420-4ce5-b8dc-e39856810907] | RequestBody : {"userId":"1"}
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c0defbb8-a420-4ce5-b8dc-e39856810907] | Response : 200 
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c0defbb8-a420-4ce5-b8dc-e39856810907] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c0defbb8-a420-4ce5-b8dc-e39856810907] | Request processed in 15 ms
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [c0defbb8-a420-4ce5-b8dc-e39856810907] | END TIME : 2025-01-16T01:44:29.425428
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d0a078e4-64e9-4d67-8c11-0de75134310a] | START TIME : 2025-01-16T01:44:29.608319
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d0a078e4-64e9-4d67-8c11-0de75134310a] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d0a078e4-64e9-4d67-8c11-0de75134310a] | RequestBody : {"userId":"1"}
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d0a078e4-64e9-4d67-8c11-0de75134310a] | Response : 200 
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d0a078e4-64e9-4d67-8c11-0de75134310a] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d0a078e4-64e9-4d67-8c11-0de75134310a] | Request processed in 13 ms
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d0a078e4-64e9-4d67-8c11-0de75134310a] | END TIME : 2025-01-16T01:44:29.620504
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:44:29 INFO  k.h.b.server.common.filter.LogFilter - 
+2025-01-16 01:44:50 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 01:44:50 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-16 01:44:50 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:44:50 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 01:44:50 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 01:44:53 INFO  k.hhplus.be.server.ServerApplication - Starting ServerApplication using Java 21.0.5 with PID 22926 (/Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java/build/classes/java/main started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 01:44:53 INFO  k.hhplus.be.server.ServerApplication - The following 1 profile is active: "local"
+2025-01-16 01:44:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 01:44:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 8 JPA repository interfaces.
+2025-01-16 01:44:54 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-16 01:44:54 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:44:54 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-16 01:44:54 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 01:44:54 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-16 01:44:54 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1074 ms
+2025-01-16 01:44:54 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 01:44:54 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 01:44:54 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 01:44:55 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 01:44:55 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 01:44:55 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@45e35a0d
+2025-01-16 01:44:55 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 01:44:55 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 01:44:55 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 01:44:56 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 01:44:56 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 01:44:57 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 01:44:57 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-16 01:44:57 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 01:44:57 INFO  k.hhplus.be.server.ServerApplication - Started ServerApplication in 3.81 seconds (process running for 4.11)
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [b06fd6f8-8542-4e77-af7d-8bf04d4f4692] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:44:57.191346
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [e2988ef3-6d37-47f5-8665-4823d1fe8438] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:44:57.191480
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [e2988ef3-6d37-47f5-8665-4823d1fe8438] | schedule processed in 331 ms : 2025-01-16T01:44:57.522333
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [e2988ef3-6d37-47f5-8665-4823d1fe8438] | END TIME : 2025-01-16T01:44:57.522486
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [b06fd6f8-8542-4e77-af7d-8bf04d4f4692] | schedule processed in 339 ms : 2025-01-16T01:44:57.530302
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [b06fd6f8-8542-4e77-af7d-8bf04d4f4692] | END TIME : 2025-01-16T01:44:57.530461
+2025-01-16 01:44:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:45:00 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-16 01:45:00 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-16 01:45:00 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-16 01:45:00 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:45:00 INFO  k.h.b.server.common.filter.LogFilter - UUID - [0aed6da6-d98a-407e-8dfe-253529f042fa] | START TIME : 2025-01-16T01:45:00.892067
+2025-01-16 01:45:00 INFO  k.h.b.server.common.filter.LogFilter - UUID - [0aed6da6-d98a-407e-8dfe-253529f042fa] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:45:00 INFO  k.h.b.server.common.filter.LogFilter - UUID - [0aed6da6-d98a-407e-8dfe-253529f042fa] | RequestBody : {"userId":"1"}
+2025-01-16 01:45:01 INFO  k.h.b.server.common.filter.LogFilter - UUID - [0aed6da6-d98a-407e-8dfe-253529f042fa] | Response : 200 
+2025-01-16 01:45:01 INFO  k.h.b.server.common.filter.LogFilter - UUID - [0aed6da6-d98a-407e-8dfe-253529f042fa] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:45:01 INFO  k.h.b.server.common.filter.LogFilter - UUID - [0aed6da6-d98a-407e-8dfe-253529f042fa] | Request processed in 131 ms
+2025-01-16 01:45:01 INFO  k.h.b.server.common.filter.LogFilter - UUID - [0aed6da6-d98a-407e-8dfe-253529f042fa] | END TIME : 2025-01-16T01:45:01.023047
+2025-01-16 01:45:01 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:45:03 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:45:03 INFO  k.h.b.server.common.filter.LogFilter - UUID - [47cf520e-139b-4c7e-8080-f198a78ba6a0] | START TIME : 2025-01-16T01:45:03.992615
+2025-01-16 01:45:03 INFO  k.h.b.server.common.filter.LogFilter - UUID - [47cf520e-139b-4c7e-8080-f198a78ba6a0] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:45:03 INFO  k.h.b.server.common.filter.LogFilter - UUID - [47cf520e-139b-4c7e-8080-f198a78ba6a0] | RequestBody : {"userId":"1"}
+2025-01-16 01:45:04 INFO  k.h.b.server.common.filter.LogFilter - UUID - [47cf520e-139b-4c7e-8080-f198a78ba6a0] | Response : 200 
+2025-01-16 01:45:04 INFO  k.h.b.server.common.filter.LogFilter - UUID - [47cf520e-139b-4c7e-8080-f198a78ba6a0] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:45:04 INFO  k.h.b.server.common.filter.LogFilter - UUID - [47cf520e-139b-4c7e-8080-f198a78ba6a0] | Request processed in 28 ms
+2025-01-16 01:45:04 INFO  k.h.b.server.common.filter.LogFilter - UUID - [47cf520e-139b-4c7e-8080-f198a78ba6a0] | END TIME : 2025-01-16T01:45:04.020149
+2025-01-16 01:45:04 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:45:05 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:45:05 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d5647fbc-3b87-4cdf-b390-6b5d789184db] | START TIME : 2025-01-16T01:45:05.619898
+2025-01-16 01:45:05 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d5647fbc-3b87-4cdf-b390-6b5d789184db] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:45:05 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d5647fbc-3b87-4cdf-b390-6b5d789184db] | RequestBody : {"userId":"1"}
+2025-01-16 01:45:05 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d5647fbc-3b87-4cdf-b390-6b5d789184db] | Response : 200 
+2025-01-16 01:45:05 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d5647fbc-3b87-4cdf-b390-6b5d789184db] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:45:05 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d5647fbc-3b87-4cdf-b390-6b5d789184db] | Request processed in 9 ms
+2025-01-16 01:45:05 INFO  k.h.b.server.common.filter.LogFilter - UUID - [d5647fbc-3b87-4cdf-b390-6b5d789184db] | END TIME : 2025-01-16T01:45:05.628520
+2025-01-16 01:45:05 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:45:08 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:45:08 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ed055bfc-7684-444d-9c35-0cea99d353da] | START TIME : 2025-01-16T01:45:08.788498
+2025-01-16 01:45:08 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ed055bfc-7684-444d-9c35-0cea99d353da] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:45:08 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ed055bfc-7684-444d-9c35-0cea99d353da] | RequestBody : {"userId":"1"}
+2025-01-16 01:45:08 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ed055bfc-7684-444d-9c35-0cea99d353da] | Response : 200 
+2025-01-16 01:45:08 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ed055bfc-7684-444d-9c35-0cea99d353da] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:45:08 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ed055bfc-7684-444d-9c35-0cea99d353da] | Request processed in 23 ms
+2025-01-16 01:45:08 INFO  k.h.b.server.common.filter.LogFilter - UUID - [ed055bfc-7684-444d-9c35-0cea99d353da] | END TIME : 2025-01-16T01:45:08.810867
+2025-01-16 01:45:08 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [89fbb56f-299c-4ca4-b720-7ea83c3a1b5b] | START TIME : 2025-01-16T01:45:13.082396
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [89fbb56f-299c-4ca4-b720-7ea83c3a1b5b] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [89fbb56f-299c-4ca4-b720-7ea83c3a1b5b] | RequestBody : {"userId":"1"}
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [89fbb56f-299c-4ca4-b720-7ea83c3a1b5b] | Response : 200 
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [89fbb56f-299c-4ca4-b720-7ea83c3a1b5b] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [89fbb56f-299c-4ca4-b720-7ea83c3a1b5b] | Request processed in 11 ms
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [89fbb56f-299c-4ca4-b720-7ea83c3a1b5b] | END TIME : 2025-01-16T01:45:13.093168
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [256e1622-8804-4ca7-be06-f2219d383b6d] | START TIME : 2025-01-16T01:45:13.844957
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [256e1622-8804-4ca7-be06-f2219d383b6d] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [256e1622-8804-4ca7-be06-f2219d383b6d] | RequestBody : {"userId":"1"}
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [256e1622-8804-4ca7-be06-f2219d383b6d] | Response : 200 
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [256e1622-8804-4ca7-be06-f2219d383b6d] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [256e1622-8804-4ca7-be06-f2219d383b6d] | Request processed in 14 ms
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - UUID - [256e1622-8804-4ca7-be06-f2219d383b6d] | END TIME : 2025-01-16T01:45:13.859158
+2025-01-16 01:45:13 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:45:14 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:45:14 INFO  k.h.b.server.common.filter.LogFilter - UUID - [4cb95fff-991e-47d3-a63e-2f29833ba4c5] | START TIME : 2025-01-16T01:45:14.880976
+2025-01-16 01:45:14 INFO  k.h.b.server.common.filter.LogFilter - UUID - [4cb95fff-991e-47d3-a63e-2f29833ba4c5] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:45:14 INFO  k.h.b.server.common.filter.LogFilter - UUID - [4cb95fff-991e-47d3-a63e-2f29833ba4c5] | RequestBody : {"userId":"1"}
+2025-01-16 01:45:14 INFO  k.h.b.server.common.filter.LogFilter - UUID - [4cb95fff-991e-47d3-a63e-2f29833ba4c5] | Response : 200 
+2025-01-16 01:45:14 INFO  k.h.b.server.common.filter.LogFilter - UUID - [4cb95fff-991e-47d3-a63e-2f29833ba4c5] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:45:14 INFO  k.h.b.server.common.filter.LogFilter - UUID - [4cb95fff-991e-47d3-a63e-2f29833ba4c5] | Request processed in 19 ms
+2025-01-16 01:45:14 INFO  k.h.b.server.common.filter.LogFilter - UUID - [4cb95fff-991e-47d3-a63e-2f29833ba4c5] | END TIME : 2025-01-16T01:45:14.899166
+2025-01-16 01:45:14 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:45:16 INFO  k.h.b.server.common.filter.LogFilter - <<--------------------------------------------------------------------------
+2025-01-16 01:45:16 INFO  k.h.b.server.common.filter.LogFilter - UUID - [a9330993-0070-465b-b6eb-499c7752f425] | START TIME : 2025-01-16T01:45:16.093487
+2025-01-16 01:45:16 INFO  k.h.b.server.common.filter.LogFilter - UUID - [a9330993-0070-465b-b6eb-499c7752f425] | Request : POST uri=[/queue_tokens] content-type=[application/json]
+2025-01-16 01:45:16 INFO  k.h.b.server.common.filter.LogFilter - UUID - [a9330993-0070-465b-b6eb-499c7752f425] | RequestBody : {"userId":"1"}
+2025-01-16 01:45:16 INFO  k.h.b.server.common.filter.LogFilter - UUID - [a9330993-0070-465b-b6eb-499c7752f425] | Response : 200 
+2025-01-16 01:45:16 INFO  k.h.b.server.common.filter.LogFilter - UUID - [a9330993-0070-465b-b6eb-499c7752f425] | ResponseBody : {"status":"BAD_REQUEST","message":"사용자를 찾을 수 없습니다.","data":"NOT_FOUND_USER","code":400}
+2025-01-16 01:45:16 INFO  k.h.b.server.common.filter.LogFilter - UUID - [a9330993-0070-465b-b6eb-499c7752f425] | Request processed in 12 ms
+2025-01-16 01:45:16 INFO  k.h.b.server.common.filter.LogFilter - UUID - [a9330993-0070-465b-b6eb-499c7752f425] | END TIME : 2025-01-16T01:45:16.105698
+2025-01-16 01:45:16 INFO  k.h.b.server.common.filter.LogFilter - -------------------------------------------------------------------------->>
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [de56a4f3-9929-40e0-9e26-c0874bad97a9] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:45:57.194743
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [4a6ac4ec-2e6f-47cc-88b3-8131d7feef0b] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:45:57.194743
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [de56a4f3-9929-40e0-9e26-c0874bad97a9] | schedule processed in 17 ms : 2025-01-16T01:45:57.209755
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [de56a4f3-9929-40e0-9e26-c0874bad97a9] | END TIME : 2025-01-16T01:45:57.210043
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [4a6ac4ec-2e6f-47cc-88b3-8131d7feef0b] | schedule processed in 19 ms : 2025-01-16T01:45:57.211775
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [4a6ac4ec-2e6f-47cc-88b3-8131d7feef0b] | END TIME : 2025-01-16T01:45:57.211968
+2025-01-16 01:45:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [d8aa6174-fa99-4ceb-8dd3-aed1ed01b9d1] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:46:57.192304
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [e641b0d1-c35c-48e5-8556-3ed7bc5cc998] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:46:57.192294
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [d8aa6174-fa99-4ceb-8dd3-aed1ed01b9d1] | schedule processed in 31 ms : 2025-01-16T01:46:57.220455
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [d8aa6174-fa99-4ceb-8dd3-aed1ed01b9d1] | END TIME : 2025-01-16T01:46:57.220613
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [e641b0d1-c35c-48e5-8556-3ed7bc5cc998] | schedule processed in 32 ms : 2025-01-16T01:46:57.221925
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [e641b0d1-c35c-48e5-8556-3ed7bc5cc998] | END TIME : 2025-01-16T01:46:57.222019
+2025-01-16 01:46:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [1a88298e-f6ba-4ff5-b184-ce8c5d3630a2] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:47:57.192944
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [3aec7b54-b090-480b-80eb-b3723ef96db7] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:47:57.192951
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [3aec7b54-b090-480b-80eb-b3723ef96db7] | schedule processed in 38 ms : 2025-01-16T01:47:57.228125
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [3aec7b54-b090-480b-80eb-b3723ef96db7] | END TIME : 2025-01-16T01:47:57.228275
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [1a88298e-f6ba-4ff5-b184-ce8c5d3630a2] | schedule processed in 40 ms : 2025-01-16T01:47:57.230189
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [1a88298e-f6ba-4ff5-b184-ce8c5d3630a2] | END TIME : 2025-01-16T01:47:57.230338
+2025-01-16 01:47:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [c7d7c296-c28b-4014-b6ed-50df57ee1650] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:48:57.184836
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [d23c4e0a-753e-4807-be85-f6c393174b16] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:48:57.184836
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [c7d7c296-c28b-4014-b6ed-50df57ee1650] | schedule processed in 33 ms : 2025-01-16T01:48:57.215650
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [c7d7c296-c28b-4014-b6ed-50df57ee1650] | END TIME : 2025-01-16T01:48:57.215963
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [d23c4e0a-753e-4807-be85-f6c393174b16] | schedule processed in 35 ms : 2025-01-16T01:48:57.217548
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [d23c4e0a-753e-4807-be85-f6c393174b16] | END TIME : 2025-01-16T01:48:57.217755
+2025-01-16 01:48:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - <<--------------------------------------------------------------------------
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [41418175-6aa5-4032-a480-803aaed9f4a2] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T01:49:57.187628
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [72be6566-5449-48b4-8bb7-206b5a3a55d0] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T01:49:57.188060
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [72be6566-5449-48b4-8bb7-206b5a3a55d0] | schedule processed in 27 ms : 2025-01-16T01:49:57.211997
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [72be6566-5449-48b4-8bb7-206b5a3a55d0] | END TIME : 2025-01-16T01:49:57.212368
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [41418175-6aa5-4032-a480-803aaed9f4a2] | schedule processed in 32 ms : 2025-01-16T01:49:57.216027
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [41418175-6aa5-4032-a480-803aaed9f4a2] | END TIME : 2025-01-16T01:49:57.216224
+2025-01-16 01:49:57 INFO  k.h.b.s.i.scheduler.ScheduleTask - -------------------------------------------------------------------------->>

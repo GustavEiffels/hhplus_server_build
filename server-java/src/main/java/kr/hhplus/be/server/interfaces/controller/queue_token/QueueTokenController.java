@@ -6,6 +6,8 @@ import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.interfaces.controller.ApiResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/queue_tokens")
 @RequiredArgsConstructor
+@Slf4j
 public class QueueTokenController {
     private final QueueTokenFacade queueTokenFacade;
 
@@ -22,6 +25,8 @@ public class QueueTokenController {
     @Operation(summary = "유저 ",description = "결제 처리하고 결제 내역을 생성하는 API")
     public ResponseEntity<ApiResponse<QueueTokenApiDto.CreateTokenResponse>> createQueueToken(
             @RequestBody QueueTokenApiDto.CreateTokenRequest request) {
+        log.debug("듄!");
+        log.debug("듄!");
 
         QueueTokenFacadeDto.CreateResult result = queueTokenFacade.create(request.toParam());
         QueueTokenApiDto.CreateTokenResponse response = new QueueTokenApiDto.CreateTokenResponse(result.tokenId());
