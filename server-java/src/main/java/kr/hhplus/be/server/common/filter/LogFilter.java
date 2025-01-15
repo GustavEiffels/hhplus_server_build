@@ -18,26 +18,31 @@ import java.util.UUID;
 
 @Slf4j
 public class LogFilter extends OncePerRequestFilter {
+    private static final ThreadLocal<String> uuidHolder = new ThreadLocal<>();
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+        String uuid    = "REQUEST-"+UUID.randomUUID();
+        uuidHolder.set(uuid);
+
         CachingRequestWrapper requestWrapper = new CachingRequestWrapper(request);
         ContentCachingResponseWrapper responseWrapper = new ContentCachingResponseWrapper(response);
 
-        String uuid    = UUID.randomUUID().toString();
         long startTime = System.currentTimeMillis();
+
         try {
             logRequest(requestWrapper,uuid);
             filterChain.doFilter(requestWrapper, responseWrapper);
         } finally {
             logResponse(responseWrapper,uuid, startTime);
             responseWrapper.copyBodyToResponse();
+            uuidHolder.remove();
         }
     }
 
     private void logRequest(CachingRequestWrapper request, String uuid) throws IOException {
         String queryString = request.getQueryString();
         String body = getBody(request.getInputStream());
-        log.info("<<--------------------------------------------------------------------------");
+        log.info("UUID - [{}] | <<--------------------------------------------------------------------------",uuid);
         log.info("UUID - [{}] | START TIME : {}",uuid, LocalDateTime.now());
         log.info("UUID - [{}] | Request : {} uri=[{}] content-type=[{}]"
                 , uuid
@@ -51,13 +56,11 @@ public class LogFilter extends OncePerRequestFilter {
             throws IOException {
         String body = getBody(response.getContentInputStream());
 
-        log.info("UUID - [{}] | Response : {} "
-                , uuid
-                , response.getStatus());
+        log.info("UUID - [{}] | Response : {} ", uuid, response.getStatus());
         log.info("UUID - [{}] | ResponseBody : {}",uuid,body);
         log.info("UUID - [{}] | Request processed in {} ms", uuid,(System.currentTimeMillis() - startTime));
         log.info("UUID - [{}] | END TIME : {}",uuid, LocalDateTime.now());
-        log.info("-------------------------------------------------------------------------->>");
+        log.info("UUID - [{}] | -------------------------------------------------------------------------->>",uuid);
     }
 
     public String getBody(InputStream is) throws IOException {
@@ -66,5 +69,9 @@ public class LogFilter extends OncePerRequestFilter {
             return null;
         }
         return new String(content, StandardCharsets.UTF_8);
+    }
+
+    public static String getCurrentUUID() {
+        return uuidHolder.get();
     }
 }
