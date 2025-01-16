@@ -65,7 +65,7 @@ public class ReservationFacade {
     @Transactional
     public void expire(){
         // 1. 예약 만료 시키고 연관된 좌석들 id 반환
-        List<Long> seatIds = reservationService.expireAndReturnSeatList();
+        List<Long> seatIds = reservationService.expireAndReturnSeatIdList();
 
         // 2. 예약 만료된 좌석들이 존재하면
         if(!seatIds.isEmpty()){

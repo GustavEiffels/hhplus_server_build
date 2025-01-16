@@ -25,7 +25,6 @@ public class QueueTokenFacade {
      */
     @Transactional
     public QueueTokenFacadeDto.CreateResult create(QueueTokenFacadeDto.CreateParam param){
-        log.debug("TEST INFO ");
         // 1. find user
         User user = userService.findUser(param.userId());
 
@@ -46,7 +45,7 @@ public class QueueTokenFacade {
         userService.findUser(param.userId());
 
         // 2. 활성화된 토큰인지 확인
-        return new QueueTokenFacadeDto.ActiveCheckResult(queueTokenService.isValidAndActive(param.tokenId(), param.userId()));
+        return new QueueTokenFacadeDto.ActiveCheckResult( queueTokenService.isValidAndActive(param.tokenId(), param.userId()) );
     }
 
 

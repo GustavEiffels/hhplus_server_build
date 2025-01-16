@@ -65,10 +65,10 @@ class ReservationFacadeTest {
 
         user = userJpaRepository.save(User.create("test"));
 
-        concert0 = Concert.builder().title("서커스0").performer("김광대").build();
+        concert0 = Concert.create("서커스0","김광대");
         concertJpaRepository.save(concert0);
 
-        concert1 = Concert.builder().title("서커스1").performer("이광대").build();
+        concert1 = Concert.create("서커스1","이광대");
         concertJpaRepository.save(concert1);
 
         List<ConcertSchedule> concertScheduleList0 = new ArrayList<>();

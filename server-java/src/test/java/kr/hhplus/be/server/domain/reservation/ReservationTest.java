@@ -24,7 +24,7 @@ class ReservationTest {
 
     @BeforeEach
     void setUp(){
-        Concert concert = Concert.builder().performer("김연습").title("서커스").build();
+        Concert concert = Concert.create("김연습","서커스");
         ConcertSchedule schedule = ConcertSchedule.builder()
                 .concert(concert)
                 .reserveStartTime(LocalDateTime.now())
@@ -137,5 +137,6 @@ class ReservationTest {
         // then
         assertEquals(ReservationStatus.RESERVED,reservation.getStatus());
     }
+
 
 }

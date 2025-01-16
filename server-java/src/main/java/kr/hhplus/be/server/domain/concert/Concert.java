@@ -27,17 +27,21 @@ public class Concert extends BaseEntity {
     @NotNull
     private String performer;
 
-    @Builder
-    public Concert(String title, String performer){
+
+    private Concert(String title, String performer){
+
+        this.title = title;
+        this.performer = performer;
+    }
+
+    public static Concert create(String title, String performer){
         if(!StringUtils.hasText(title)){
             throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
         if(!StringUtils.hasText(performer)){
             throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
-
-        this.title = title;
-        this.performer = performer;
+        return new Concert(title,performer);
     }
 
 }

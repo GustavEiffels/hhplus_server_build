@@ -1,13 +1,10 @@
 package kr.hhplus.be.server.application.point;
 
-import kr.hhplus.be.server.common.exceptions.BusinessException;
-import kr.hhplus.be.server.common.exceptions.ErrorCode;
-import kr.hhplus.be.server.domain.point_history.PointHistory;
-import kr.hhplus.be.server.domain.point_history.PointHistoryRepository;
+
 import kr.hhplus.be.server.domain.user.User;
-import kr.hhplus.be.server.infrastructure.point_history.PointHistoryJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,14 +27,15 @@ class PointFacadeTest {
     @BeforeEach
     void setUp_테스트_유저_생성_10_000_포인트_충전(){
         User testUser = User.create("test");
-        testUser.pointTransaction(10000L);
+        testUser.pointTransaction(10_000L);
         newUser = userJpaRepository.save(testUser);
     }
 
 
 // 잔액 조회
+    @DisplayName("포인트가 10,000이 있는 사용자의 id 값을 [param] 에 설정하여 findUserBalance 를 호출하면 잔액이 10,000 인 것을 확인할 수 있다.")
     @Test
-    void param에_newUser_의_아이디를_넣으면_FindBalanceResult의_balance가_10000을_반환한다(){
+    void findUserBalance(){
         // given
         PointFacadeDto.FindBalanceParam param = new PointFacadeDto.FindBalanceParam(newUser.getId());
 
@@ -54,8 +52,9 @@ class PointFacadeTest {
 
 
 // 잔액 충전
+    @DisplayName("충전할 량을 20,000을 설정하고, 잔여 포인트가 10,000 인 사용자 아이디를 pointCharge 에 입력할때, 충전한 결과 30,000 원을 반환 받는다.")
     @Test
-    void param에_충전포인트를_20_000을넣으면_result의_amount_로_20_000이되고_user의_point는_30_000이_된다(){
+    void pointCharge(){
         // given
         PointFacadeDto.ChargeParam param = new PointFacadeDto.ChargeParam(newUser.getId(), 20_000L);
 

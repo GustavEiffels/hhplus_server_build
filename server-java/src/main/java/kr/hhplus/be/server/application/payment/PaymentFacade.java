@@ -50,19 +50,16 @@ public class PaymentFacade {
 
         // Payments 생성
         List<Payment> paymentList = reservations.stream()
-                .map(reservation ->
-                    Payment.create(reservation.getAmount(),reservation)).toList();
+                .map(reservation -> Payment.create(reservation.getAmount(),reservation)).toList();
 
 
         paymentList = paymentService.create(paymentList);
 
         // History 생성
         List<PointHistory> historyList = paymentList.stream()
-                .map(payment ->
-                        PointHistory.createUse(payment.getAmount(),user,payment)).toList();
+                .map(payment -> PointHistory.createUse(payment.getAmount(),user,payment)).toList();
 
         pointHistoryService.create(historyList);
-
         queueTokenService.expired(param.tokenId());
 
         return  PaymentFacadeDto.PaymentResult.from(paymentList);

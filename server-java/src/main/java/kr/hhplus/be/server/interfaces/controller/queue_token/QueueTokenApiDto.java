@@ -39,14 +39,14 @@ public interface QueueTokenApiDto {
         }
     }
 
-    record ActivateTokenRequest(Long maxTokenCnt) {
-        public ActivateTokenRequest {
-            if (maxTokenCnt == null) {
-                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
+    @Getter
+    class ActivateTokenRequest {
+        private  Long maxTokenCnt;
+        public ActivateTokenRequest(Long maxTokenCnt) {
+            if (maxTokenCnt == null || maxTokenCnt < 10) {
+                maxTokenCnt = 20L;
             }
-            if (maxTokenCnt < 10) {
-                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
-            }
+            this.maxTokenCnt = maxTokenCnt;
         }
 
         public QueueTokenFacadeDto.ActivateParam toParam() {

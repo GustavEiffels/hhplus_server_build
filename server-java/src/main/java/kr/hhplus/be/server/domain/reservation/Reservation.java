@@ -72,18 +72,6 @@ public class Reservation extends BaseEntity {
         return new Reservation(user,seat);
     }
 
-    public void isReserveUser(Long userId){
-        if(!this.user.getId().equals(userId)){
-            throw new BusinessException(ErrorCode.NOT_RESERVATION_OWNER);
-        }
-    }
-
-    public void isExpired(){
-        if(this.expiredAt.isBefore(LocalDateTime.now())){
-            throw new BusinessException(ErrorCode.EXPIRE_RESERVATION);
-        }
-    }
-
     public void expired(){
         this.status    = ReservationStatus.EXPIRED;
         this.expiredAt = LocalDateTime.now();
@@ -92,5 +80,23 @@ public class Reservation extends BaseEntity {
     public void reserve(){
         this.status    = ReservationStatus.RESERVED;
         this.expiredAt = LocalDateTime.now();
+    }
+
+    /**
+     * @param userId
+     */
+    public void isReserveUser(Long userId){
+        if(!this.user.getId().equals(userId)){
+            throw new BusinessException(ErrorCode.NOT_RESERVATION_OWNER);
+        }
+    }
+
+    /**
+     * 만료된 예약 인지 확인
+     */
+    public void isExpired(){
+        if(this.expiredAt.isBefore(LocalDateTime.now())){
+            throw new BusinessException(ErrorCode.EXPIRE_RESERVATION);
+        }
     }
 }

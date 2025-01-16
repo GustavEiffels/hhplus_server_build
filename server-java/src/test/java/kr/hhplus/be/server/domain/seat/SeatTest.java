@@ -57,4 +57,32 @@ class SeatTest {
         // then
         assertEquals(ErrorCode.REQUIRE_FIELD_MISSING,businessException.getErrorStatus());
     }
+
+    @DisplayName("좌석을 reserve 을 호출하면, 좌석 상태가 RESERVED 가 된다.")
+    @Test
+    void reserve_Test00(){
+        // given
+        ConcertSchedule concertSchedule = mock(ConcertSchedule.class);
+        Seat seat = Seat.builder().price(100_000L).seatNo(10).concertSchedule(concertSchedule).build();
+        assertEquals(SeatStatus.RESERVABLE,seat.getStatus());
+
+        // when & then
+        seat.reserve();
+        assertEquals(SeatStatus.RESERVED,seat.getStatus());
+    }
+
+    @DisplayName("좌석을 reservable 을 호출하면, 좌석 상태가 RESERVABLE 가 된다.")
+    @Test
+    void reservable_Test00(){
+        // given
+        ConcertSchedule concertSchedule = mock(ConcertSchedule.class);
+        Seat seat = Seat.builder().price(100_000L).seatNo(10).concertSchedule(concertSchedule).build();
+        assertEquals(SeatStatus.RESERVABLE,seat.getStatus());
+        seat.reserve();
+        assertEquals(SeatStatus.RESERVED,seat.getStatus());
+
+        // when & then
+        seat.reservable();
+        assertEquals(SeatStatus.RESERVABLE,seat.getStatus());
+    }
 }

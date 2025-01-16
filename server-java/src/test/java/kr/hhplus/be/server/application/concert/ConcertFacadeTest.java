@@ -42,10 +42,10 @@ class ConcertFacadeTest {
 
     @BeforeEach
     void setUp_공연0은예약가능_18_예약불가능_12_공연1_예약가능_12_예약_불가능_18_스케줄0_좌석50개_짝수_점유_홀수_예약가능(){
-        concert0 = Concert.builder().title("서커스0").performer("김광대").build();
+        concert0 = Concert.create("서커스0","김광대");
         concertJpaRepository.save(concert0);
 
-        concert1 = Concert.builder().title("서커스1").performer("이광대").build();
+        concert1 = Concert.create("서커스1","이광대");
         concertJpaRepository.save(concert1);
 
         List<ConcertSchedule> concertScheduleList0 = new ArrayList<>();

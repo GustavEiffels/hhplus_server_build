@@ -55,9 +55,6 @@ public class ConcertSchedule extends BaseEntity {
         reschedule(showTime,reserveStartTime,reserveEndTime);
         this.concert = concert;
     }
-    public void updateReserveStatus(Boolean isReserveAble){
-        this.isReserveAble = isReserveAble;
-    }
 
     public void reschedule(
             LocalDateTime showTime,

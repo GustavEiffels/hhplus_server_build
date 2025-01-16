@@ -42,7 +42,6 @@ public class LogFilter extends OncePerRequestFilter {
     private void logRequest(CachingRequestWrapper request, String uuid) throws IOException {
         String queryString = request.getQueryString();
         String body = getBody(request.getInputStream());
-        log.info("UUID - [{}] | <<--------------------------------------------------------------------------",uuid);
         log.info("UUID - [{}] | START TIME : {}",uuid, LocalDateTime.now());
         log.info("UUID - [{}] | Request : {} uri=[{}] content-type=[{}]"
                 , uuid
@@ -60,7 +59,6 @@ public class LogFilter extends OncePerRequestFilter {
         log.info("UUID - [{}] | ResponseBody : {}",uuid,body);
         log.info("UUID - [{}] | Request processed in {} ms", uuid,(System.currentTimeMillis() - startTime));
         log.info("UUID - [{}] | END TIME : {}",uuid, LocalDateTime.now());
-        log.info("UUID - [{}] | -------------------------------------------------------------------------->>",uuid);
     }
 
     public String getBody(InputStream is) throws IOException {

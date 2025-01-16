@@ -27,31 +27,28 @@ public class ScheduleTask {
         String uuid = "SCHEDULER-" + UUID.randomUUID();
         SchedulerContext.setUuid(uuid);
         long startTime = System.currentTimeMillis();
-        log.info("UUID - [{}] | <<--------------------------------------------------------------------------", uuid);
         log.info("UUID - [{}] | ACTIVE_TOKEN_SCHEDULER | START TIME : {}", uuid, LocalDateTime.now());
         try {
             queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(maxActiveToken));
         } finally {
             log.info("UUID - [{}] | schedule processed in {} ms : {}", uuid, (System.currentTimeMillis() - startTime), LocalDateTime.now());
             log.info("UUID - [{}] | END TIME : {}", uuid, LocalDateTime.now());
-            log.info("UUID - [{}] | -------------------------------------------------------------------------->>", uuid);
             SchedulerContext.clear();
         }
     }
 
-    @Scheduled(fixedRate =  600_000)
+    @Scheduled(fixedRate =  60_000)
     public void executeReservationExpireMaker(){
         String uuid = "SCHEDULER-" + UUID.randomUUID();
         SchedulerContext.setUuid(uuid);
         long startTime = System.currentTimeMillis();
-        log.info("UUID - [{}] | <<--------------------------------------------------------------------------",uuid);
         log.info("UUID - [{}] | RESERVATION_EXPIRE_SCHEDULER | START TIME : {}",uuid, LocalDateTime.now());
         try {
             reservationFacade.expire();
         }finally {
             log.info("UUID - [{}] | schedule processed in {} ms : {}",uuid, (System.currentTimeMillis()-startTime),LocalDateTime.now());
             log.info("UUID - [{}] | END TIME : {}",uuid, LocalDateTime.now());
-            log.info("UUID - [{}] | -------------------------------------------------------------------------->>",uuid);
+
             SchedulerContext.clear();
         }
 

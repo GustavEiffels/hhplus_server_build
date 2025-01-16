@@ -4,6 +4,7 @@ import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.user.User;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
@@ -13,8 +14,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 
 class PaymentTest {
+
+    @DisplayName("결제 생성 시, 예약 정보가 없을 경우 ErrorCode : REQUIRE_FIELD_MISSING 에러가 발생한다.")
     @Test
-    void 예약이_없을경우_BusinessException_이_발생한다(){
+    void create_Test00(){
         // given
         long amount = 100_000L;
         Reservation reservation = mock(Reservation.class);
@@ -26,12 +29,12 @@ class PaymentTest {
         assertEquals(ErrorCode.REQUIRE_FIELD_MISSING,exception.getErrorStatus());
     }
 
+    @DisplayName("결제 생성 시, 유효하지 않은 AMOUNT 를 할당할 경우 ErrorCode : NOT_VALID_PAYMENT_AMOUNT 에러가 발생한다.")
     @Test
-    void 결제_금액이_0보다_작을_경우_BusinessException_ErrorCode_Entity_가_발생한다(){
+    void create_Test01(){
         // given
         long amount = -1L;
         Reservation reservation = mock(Reservation.class);
-
 
         // when
         BusinessException exception = assertThrows(BusinessException.class,()->{
@@ -42,5 +45,32 @@ class PaymentTest {
         assertEquals(ErrorCode.NOT_VALID_PAYMENT_AMOUNT,exception.getErrorStatus());
     }
 
+    @DisplayName("결제를 정상적으로 생성하면, status : SUCCESS 가 된다.")
+    @Test
+    void create_Test02(){
+        // given
+        long amount = 100_000L;
+        Reservation reservation = mock(Reservation.class);
 
+        // when
+        Payment newPayment = Payment.create(amount,reservation);
+
+        // then
+        assertEquals(PaymentStatus.SUCCESS,newPayment.getPaymentStatus());
+    }
+
+    @DisplayName("결제를 정상적으로 생성하고, 결제를 취소하면 status : CANCEL 이 된다.")
+    @Test
+    void cancel_Test00(){
+        // given
+        long amount = 100_000L;
+        Reservation reservation = mock(Reservation.class);
+
+        // when
+        Payment payment = Payment.create(amount,reservation);
+        payment.cancel();
+
+        // then
+        assertEquals(PaymentStatus.CANCEL,payment.getPaymentStatus());
+    }
 }

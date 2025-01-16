@@ -55,7 +55,7 @@ public class PointHistory extends BaseEntity {
     public static PointHistory createCharge(Long amount,User user) {
         validateAmount(amount);
         validateUser(user);
-        return new PointHistory(user.getPoint(), user, null, PointHistoryStatus.CHARGE);
+        return new PointHistory(amount, user, null, PointHistoryStatus.CHARGE);
     }
 
     public static PointHistory createUse(Long amount, User user, Payment payment) {

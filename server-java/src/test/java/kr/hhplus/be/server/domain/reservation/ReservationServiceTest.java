@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
@@ -20,6 +21,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -33,7 +35,7 @@ class ReservationServiceTest {
 
     @BeforeEach
     void setUp(){
-        Concert concert = Concert.builder().performer("김연습").title("서커스").build();
+        Concert concert = Concert.create("김연습","서커스");
         ConcertSchedule schedule = ConcertSchedule.builder()
                 .concert(concert)
                 .reserveStartTime(LocalDateTime.now())
@@ -52,7 +54,7 @@ class ReservationServiceTest {
     Seat seat;
     User user;
 
-
+// reserve
     @DisplayName("예약 시, 예약 아이디 리스트를 넣고 결과가 없을 경우 [ ErrorCode : NOT_FOUND_RESERVATION ] 가 발생한다. ")
     @Test
     void reserve_Test00(){
@@ -116,6 +118,38 @@ class ReservationServiceTest {
         // then
         assertEquals(ErrorCode.NOT_RESERVATION_OWNER, exception.getErrorStatus());
     }
+
+// expireAndReturnSeatIdList
+    @DisplayName("만료된 예약을 만료시키고 좌석 아이디를 리턴 받는다.")
+    @Test
+    void expireAndReturnSeatIdList_Test00(){
+        // given
+        Reservation reservation01 = mock(Reservation.class);
+        Reservation reservation02 = mock(Reservation.class);
+        Seat seat1 = mock(Seat.class);
+        Seat seat2 = mock(Seat.class);
+        when(reservation01.getSeat()).thenReturn(seat1);
+        when(reservation02.getSeat()).thenReturn(seat2);
+        when(seat1.getId()).thenReturn(1L);
+        when(seat2.getId()).thenReturn(2L);
+        List<Reservation> reservations = new ArrayList<>();
+        reservations.add(reservation01);
+        reservations.add(reservation02);
+        when(repository.findExpiredWithLock()).thenReturn(reservations);
+
+        // when
+        List<Long> seatIdList = reservationService.expireAndReturnSeatIdList();
+
+        // then
+        assertEquals(2,seatIdList.size());
+        seatIdList.forEach(item -> {
+            if (item != 1L && item != 2L) {
+                fail();
+            }
+        });
+    }
+
+
 
 
 }

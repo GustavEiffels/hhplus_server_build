@@ -18,9 +18,8 @@ class ConcertTest {
 
         // when
         BusinessException be = assertThrows(
-                BusinessException.class,()->{
-                    Concert.builder().title(title).performer(performer).build();
-                });
+                BusinessException.class, () -> Concert.create(title,performer) );
+
 
         // then
         assertEquals(ErrorCode.REQUIRE_FIELD_MISSING,be.getErrorStatus());
@@ -36,10 +35,22 @@ class ConcertTest {
 
         // when
         BusinessException be = assertThrows(
-                BusinessException.class, () -> Concert.builder().title(title).performer(performer).build() );
+                BusinessException.class, () -> Concert.create(title,performer) );
 
         // then
         assertEquals(ErrorCode.REQUIRE_FIELD_MISSING,be.getErrorStatus());
+    }
+
+    @DisplayName("콘서트 생성 시, 공연 이름과 공연자를 입력하면, Concert 객체가 성공적으로 만들어진다.")
+    @Test
+    void concert_constructor_test02(){
+        // given
+        String title = "서커스!";
+        String performer = "김광대";
+
+        // when
+        Concert concert = Concert.create(title,performer);
+
     }
 
 
