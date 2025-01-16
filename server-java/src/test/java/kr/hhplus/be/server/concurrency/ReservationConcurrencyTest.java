@@ -5,7 +5,6 @@ import kr.hhplus.be.server.application.reservation.ReservationFacadeDto;
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.concert.Concert;
-import kr.hhplus.be.server.domain.reservation.ReservationRepository;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.seat.Seat;
 import kr.hhplus.be.server.domain.user.User;
@@ -27,7 +26,7 @@ import java.util.concurrent.*;
 
 
 @SpringBootTest
-public class ReservationOneSeatWithTenUserTest {
+public class ReservationConcurrencyTest {
 
     @Autowired
     ReservationFacade reservationFacade;

@@ -837,7 +837,7 @@ The last packet successfully received from the server was 497 milliseconds ago. 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy3/jdk.proxy3.$Proxy189.saveAll(Unknown Source)
-	at kr.hhplus.be.server.concurrency.ReservationOneSeatWithTenUserTest.setUp(ReservationOneSeatWithTenUserTest.java:123)
+	at kr.hhplus.be.server.concurrency.ReservationConcurrencyTest.setUp(ReservationOneSeatWithTenUserTest.java:123)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
