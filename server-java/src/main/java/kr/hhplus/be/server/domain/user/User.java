@@ -30,7 +30,8 @@ public class User extends BaseEntity {
     @Max(value = 100_000_000)
     private Long point = 0L; // min :  0  max : 100_000_000
 
-
+    @Version
+    private Integer version; // 낙관적 락 추가
 
     private User(String name){
         this.name  = name;

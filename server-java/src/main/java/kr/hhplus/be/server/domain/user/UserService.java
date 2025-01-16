@@ -34,7 +34,8 @@ public class UserService {
      * @return
      */
     public User chargePoints(Long userId, Long amount){
-        User user = findUserForUpdate(userId);
+        User user = userRepository.findById(userId)
+                .orElseThrow(()-> new BusinessException(ErrorCode.NOT_FOUND_USER));
         user.pointTransaction(amount);
         return user;
     }
