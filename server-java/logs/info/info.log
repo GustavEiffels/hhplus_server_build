@@ -21610,3 +21610,1258 @@
 2025-01-16 18:22:30 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-01-16 18:22:30 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
 2025-01-16 18:22:30 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 18:25:58 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.reservation.ReservationFacadeTest]: ReservationFacadeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 18:25:58 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.reservation.ReservationFacadeTest
+2025-01-16 18:25:58 INFO  k.h.b.s.a.r.ReservationFacadeTest - Starting ReservationFacadeTest using Java 17.0.8.1 with PID 90696 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 18:25:58 INFO  k.h.b.s.a.r.ReservationFacadeTest - The following 1 profile is active: "local"
+2025-01-16 18:25:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 18:25:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 8 JPA repository interfaces.
+2025-01-16 18:25:59 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 18:25:59 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 18:25:59 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 18:25:59 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 18:25:59 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 18:25:59 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 18:25:59 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 18:25:59 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 18:25:59 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 8ab7a4bb4e51feaac131a772a4f723ac8acc7c818e3645adbcaf903f351b73d8
+2025-01-16 18:26:00 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.533798S
+2025-01-16 18:26:00 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 18:26:00 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 18:26:00 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 18:26:00 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 18:26:00 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 63105e16ac94db1472ecf96ff140e85251df62c50dea44f8c5636b744b7559d4
+2025-01-16 18:26:00 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:61963/hhplus using query 'SELECT 1'
+2025-01-16 18:26:09 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.057089S
+2025-01-16 18:26:09 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:61963/hhplus)
+2025-01-16 18:26:09 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 18:26:09 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 18:26:09 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 18:26:09 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 18:26:09 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 18:26:09 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e834a5b
+2025-01-16 18:26:09 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 18:26:10 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 18:26:10 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 18:26:10 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 18:26:11 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 18:26:12 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 18:26:12 INFO  k.h.b.s.a.r.ReservationFacadeTest - Started ReservationFacadeTest in 13.96 seconds (process running for 14.722)
+2025-01-16 18:26:12 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-514c6e38-4241-42cb-ac8b-b8d92ddbb040] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T18:26:12.481872
+2025-01-16 18:26:12 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-18e8a55c-6634-4ac9-bcf6-689a10e835bc] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T18:26:12.481872
+2025-01-16 18:26:12 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-18e8a55c-6634-4ac9-bcf6-689a10e835bc] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 18:26:12 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-514c6e38-4241-42cb-ac8b-b8d92ddbb040] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 18:26:12 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-18e8a55c-6634-4ac9-bcf6-689a10e835bc] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 322 ms
+2025-01-16 18:26:12 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-514c6e38-4241-42cb-ac8b-b8d92ddbb040] | Executed: TokenRepositoryImpl.countActiveTokens() in 322 ms
+2025-01-16 18:26:12 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-514c6e38-4241-42cb-ac8b-b8d92ddbb040] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 18:26:12 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-18e8a55c-6634-4ac9-bcf6-689a10e835bc] | schedule processed in 336 ms : 2025-01-16T18:26:12.817480
+2025-01-16 18:26:12 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-18e8a55c-6634-4ac9-bcf6-689a10e835bc] | END TIME : 2025-01-16T18:26:12.817705
+2025-01-16 18:26:12 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-514c6e38-4241-42cb-ac8b-b8d92ddbb040] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 13 ms
+2025-01-16 18:26:12 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-514c6e38-4241-42cb-ac8b-b8d92ddbb040] | schedule processed in 347 ms : 2025-01-16T18:26:12.828358
+2025-01-16 18:26:12 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-514c6e38-4241-42cb-ac8b-b8d92ddbb040] | END TIME : 2025-01-16T18:26:12.828576
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 8 ms
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 17 ms
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 17 ms
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 63 ms
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 18:26:13 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 18 ms
+2025-01-16 18:26:13 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 18:26:13 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 18:26:13 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 18:34:58 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.reservation.ReservationScenarioTest]: ReservationScenarioTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 18:34:59 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.reservation.ReservationScenarioTest
+2025-01-16 18:34:59 INFO  k.h.b.s.a.r.ReservationScenarioTest - Starting ReservationScenarioTest using Java 17.0.8.1 with PID 92697 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 18:34:59 INFO  k.h.b.s.a.r.ReservationScenarioTest - The following 1 profile is active: "local"
+2025-01-16 18:34:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 18:34:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 8 JPA repository interfaces.
+2025-01-16 18:35:00 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 18:35:00 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 18:35:00 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 18:35:00 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 18:35:00 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 18:35:00 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 18:35:00 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 18:35:00 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 18:35:00 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: e98fea01f99246a7692fc561cb076777fb52d182a176b0ef8343ab3154aba5f3
+2025-01-16 18:35:01 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.582969S
+2025-01-16 18:35:01 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 18:35:01 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 18:35:01 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 18:35:01 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 18:35:01 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 21cc95b314ccbb46f42bf8aaa5b484f1435c2cb69ab87af2cb9564634236794e
+2025-01-16 18:35:01 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:62156/hhplus using query 'SELECT 1'
+2025-01-16 18:35:10 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.158731S
+2025-01-16 18:35:10 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:62156/hhplus)
+2025-01-16 18:35:10 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 18:35:10 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 18:35:10 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 18:35:10 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 18:35:10 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 18:35:10 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@282079b9
+2025-01-16 18:35:10 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 18:35:10 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 18:35:11 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 18:35:11 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 18:35:12 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 18:35:14 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 18:35:14 INFO  k.h.b.s.a.r.ReservationScenarioTest - Started ReservationScenarioTest in 15.117 seconds (process running for 15.988)
+2025-01-16 18:35:14 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-20729c27-892d-426c-b8b6-3b89dea906ce] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T18:35:14.282445
+2025-01-16 18:35:14 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2c10ba74-608a-4431-9890-803d19a32d10] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T18:35:14.282445
+2025-01-16 18:35:14 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-20729c27-892d-426c-b8b6-3b89dea906ce] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 18:35:14 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2c10ba74-608a-4431-9890-803d19a32d10] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 18:35:14 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2c10ba74-608a-4431-9890-803d19a32d10] | Executed: TokenRepositoryImpl.countActiveTokens() in 602 ms
+2025-01-16 18:35:14 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-20729c27-892d-426c-b8b6-3b89dea906ce] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 602 ms
+2025-01-16 18:35:14 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2c10ba74-608a-4431-9890-803d19a32d10] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 18:35:14 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-20729c27-892d-426c-b8b6-3b89dea906ce] | schedule processed in 619 ms : 2025-01-16T18:35:14.901485
+2025-01-16 18:35:14 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-20729c27-892d-426c-b8b6-3b89dea906ce] | END TIME : 2025-01-16T18:35:14.901793
+2025-01-16 18:35:14 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2c10ba74-608a-4431-9890-803d19a32d10] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 12 ms
+2025-01-16 18:35:14 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2c10ba74-608a-4431-9890-803d19a32d10] | schedule processed in 628 ms : 2025-01-16T18:35:14.910750
+2025-01-16 18:35:14 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2c10ba74-608a-4431-9890-803d19a32d10] | END TIME : 2025-01-16T18:35:14.910932
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 10 ms
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 11 ms
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 10 ms
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 56 ms
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:35:15 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 18:35:15 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 18:35:15 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 18:35:15 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 18:46:26 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.concurrency.ReservationConcurrencyTest]: ReservationConcurrencyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 18:46:26 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.concurrency.ReservationConcurrencyTest
+2025-01-16 18:46:27 INFO  k.h.b.s.c.ReservationConcurrencyTest - Starting ReservationConcurrencyTest using Java 17.0.8.1 with PID 95190 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 18:46:27 INFO  k.h.b.s.c.ReservationConcurrencyTest - The following 1 profile is active: "local"
+2025-01-16 18:46:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 18:46:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 8 JPA repository interfaces.
+2025-01-16 18:46:28 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 18:46:28 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 18:46:28 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 18:46:28 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 18:46:28 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 18:46:28 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 18:46:28 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 18:46:28 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 18:46:28 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 50f40d55a1381da7ce409b91a0c67aa001c93119c31f919ebcc666c2fa4a03dd
+2025-01-16 18:46:29 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.58526S
+2025-01-16 18:46:29 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 18:46:29 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 18:46:29 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 18:46:29 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 18:46:29 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 69e9c6f10837d8d7558742c7d6fb0185b9711be48de77a0f189f92da0e97619d
+2025-01-16 18:46:29 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:62502/hhplus using query 'SELECT 1'
+2025-01-16 18:46:38 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.229321S
+2025-01-16 18:46:38 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:62502/hhplus)
+2025-01-16 18:46:38 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 18:46:38 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 18:46:38 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 18:46:38 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 18:46:38 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 18:46:39 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@490f2fad
+2025-01-16 18:46:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 18:46:39 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 18:46:39 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 18:46:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 18:46:40 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 18:46:41 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 18:46:42 INFO  k.h.b.s.c.ReservationConcurrencyTest - Started ReservationConcurrencyTest in 15.172 seconds (process running for 16.193)
+2025-01-16 18:46:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-374b9694-ee3c-4c89-ac28-796f8da6b407] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T18:46:42.030848
+2025-01-16 18:46:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-7b4e2e1e-b546-4e49-9dad-12924878d003] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T18:46:42.030852
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-7b4e2e1e-b546-4e49-9dad-12924878d003] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-374b9694-ee3c-4c89-ac28-796f8da6b407] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-374b9694-ee3c-4c89-ac28-796f8da6b407] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 372 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-7b4e2e1e-b546-4e49-9dad-12924878d003] | Executed: TokenRepositoryImpl.countActiveTokens() in 372 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-7b4e2e1e-b546-4e49-9dad-12924878d003] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-374b9694-ee3c-4c89-ac28-796f8da6b407] | schedule processed in 387 ms : 2025-01-16T18:46:42.417050
+2025-01-16 18:46:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-374b9694-ee3c-4c89-ac28-796f8da6b407] | END TIME : 2025-01-16T18:46:42.417396
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-7b4e2e1e-b546-4e49-9dad-12924878d003] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 13 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-7b4e2e1e-b546-4e49-9dad-12924878d003] | schedule processed in 400 ms : 2025-01-16T18:46:42.430573
+2025-01-16 18:46:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-7b4e2e1e-b546-4e49-9dad-12924878d003] | END TIME : 2025-01-16T18:46:42.431194
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 13 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 14 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 13 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 13 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 13 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 10 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 8 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 20 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 15 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 47 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 93 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 97 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 100 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 105 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 106 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 107 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 109 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 112 ms
+2025-01-16 18:46:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 112 ms
+2025-01-16 18:46:43 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 18:46:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 18:46:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:08:38 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:08:38 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:08:38 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 130 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:08:38 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:08:39 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:08:39 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:08:39 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:08:39 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:08:39 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:08:39 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:08:39 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:08:39 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:08:39 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:08:39 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:08:40 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 59642ede5ff9ca4d7b8e8043f9634265e5e5e062a15e7e32804e24a456a08084
+2025-01-16 19:08:40 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.613878S
+2025-01-16 19:08:40 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:08:40 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:08:40 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:08:40 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:08:40 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 33510b6d57172c705102cbeae528705b9cf7472c551911daed421e194bc7154e
+2025-01-16 19:08:40 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:62940/hhplus using query 'SELECT 1'
+2025-01-16 19:08:50 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.516275S
+2025-01-16 19:08:50 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:62940/hhplus)
+2025-01-16 19:08:50 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:08:50 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:08:50 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:08:50 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:08:50 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:08:50 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@74f9004c
+2025-01-16 19:08:50 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:08:50 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:08:51 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:08:51 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:08:52 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:08:53 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:08:53 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 14.864 seconds (process running for 15.609)
+2025-01-16 19:08:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-13b62827-589d-4806-8230-201022eaafc9] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:08:53.574540
+2025-01-16 19:08:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4ae1d338-8c1a-475d-8613-0340971536ba] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:08:53.574540
+2025-01-16 19:08:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-13b62827-589d-4806-8230-201022eaafc9] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:08:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4ae1d338-8c1a-475d-8613-0340971536ba] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:08:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4ae1d338-8c1a-475d-8613-0340971536ba] | Executed: TokenRepositoryImpl.countActiveTokens() in 292 ms
+2025-01-16 19:08:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-13b62827-589d-4806-8230-201022eaafc9] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 292 ms
+2025-01-16 19:08:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4ae1d338-8c1a-475d-8613-0340971536ba] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:08:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-13b62827-589d-4806-8230-201022eaafc9] | schedule processed in 303 ms : 2025-01-16T19:08:53.877485
+2025-01-16 19:08:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-13b62827-589d-4806-8230-201022eaafc9] | END TIME : 2025-01-16T19:08:53.877668
+2025-01-16 19:08:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4ae1d338-8c1a-475d-8613-0340971536ba] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 12 ms
+2025-01-16 19:08:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4ae1d338-8c1a-475d-8613-0340971536ba] | schedule processed in 314 ms : 2025-01-16T19:08:53.888851
+2025-01-16 19:08:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4ae1d338-8c1a-475d-8613-0340971536ba] | END TIME : 2025-01-16T19:08:53.889032
+2025-01-16 19:08:53 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:08:53 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:08:53 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:08:54 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:08:54 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 19:08:54 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:08:54 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 62 ms
+2025-01-16 19:08:54 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:08:54 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 9 ms
+2025-01-16 19:08:54 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:08:54 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:08:54 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:09:39 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:09:39 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:09:40 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 366 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:09:40 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:09:40 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:09:40 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:09:40 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:09:40 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:09:40 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:09:40 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:09:40 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:09:40 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:09:40 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:09:41 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:09:41 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 1e99722eb068bf7803e6124a625f3fcb5e5746df759f17abaf96f9b6126ac153
+2025-01-16 19:09:41 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.426567S
+2025-01-16 19:09:41 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:09:41 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:09:41 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:09:41 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:09:41 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 72944668c3a29de8765221f1151f56b9148e2d7780370dcb774485ba2d7e1656
+2025-01-16 19:09:41 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:63094/hhplus using query 'SELECT 1'
+2025-01-16 19:09:49 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT8.392498S
+2025-01-16 19:09:49 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:63094/hhplus)
+2025-01-16 19:09:50 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:09:50 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:09:50 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:09:50 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:09:50 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:09:50 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@686ace1f
+2025-01-16 19:09:50 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:09:50 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:09:51 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:09:51 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:09:52 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:09:53 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:09:53 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 13.373 seconds (process running for 14.09)
+2025-01-16 19:09:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-04bff1e6-c703-4169-a10c-8e34bb88b400] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:09:53.241054
+2025-01-16 19:09:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-14e704dc-9853-4e80-bb34-dc7d1c3bf546] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:09:53.242177
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-14e704dc-9853-4e80-bb34-dc7d1c3bf546] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-04bff1e6-c703-4169-a10c-8e34bb88b400] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-04bff1e6-c703-4169-a10c-8e34bb88b400] | Executed: TokenRepositoryImpl.countActiveTokens() in 321 ms
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-14e704dc-9853-4e80-bb34-dc7d1c3bf546] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 321 ms
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-04bff1e6-c703-4169-a10c-8e34bb88b400] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:09:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-14e704dc-9853-4e80-bb34-dc7d1c3bf546] | schedule processed in 333 ms : 2025-01-16T19:09:53.575199
+2025-01-16 19:09:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-14e704dc-9853-4e80-bb34-dc7d1c3bf546] | END TIME : 2025-01-16T19:09:53.575396
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-04bff1e6-c703-4169-a10c-8e34bb88b400] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 10 ms
+2025-01-16 19:09:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-04bff1e6-c703-4169-a10c-8e34bb88b400] | schedule processed in 342 ms : 2025-01-16T19:09:53.583622
+2025-01-16 19:09:53 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-04bff1e6-c703-4169-a10c-8e34bb88b400] | END TIME : 2025-01-16T19:09:53.583772
+2025-01-16 19:09:53 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:09:53 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:09:53 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 13 ms
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:09:53 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 59 ms
+2025-01-16 19:09:53 INFO  k.h.b.s.i.c.ExceptionController - UUID - [null] | ERROR STATUS = 500 INTERNAL_SERVER_ERROR , ERROR MESSAGE = Cannot invoke "java.time.LocalDateTime.isBefore(java.time.chrono.ChronoLocalDateTime)" because the return value of "kr.hhplus.be.server.domain.queue_token.QueueToken.getExpireAt()" is null
+2025-01-16 19:09:54 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:09:54 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:09:54 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:10:21 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:10:21 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:10:21 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 619 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:10:21 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:10:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:10:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:10:22 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:10:22 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:10:22 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:10:22 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:10:22 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:10:22 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:10:22 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:10:23 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:10:23 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 8f52697a3a49e9170ac3714d4a56261f8287c914b2207bd62006024f3e7329eb
+2025-01-16 19:10:23 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.690375S
+2025-01-16 19:10:23 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:10:23 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:10:23 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:10:23 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:10:23 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 4bdeece862868200a0bf54b56ac49c8458649b572a6e728874635dd4dfda16c3
+2025-01-16 19:10:24 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:63242/hhplus using query 'SELECT 1'
+2025-01-16 19:10:32 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.027762S
+2025-01-16 19:10:32 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:63242/hhplus)
+2025-01-16 19:10:33 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:10:33 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:10:33 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:10:33 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:10:33 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:10:33 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a8e484b
+2025-01-16 19:10:33 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:10:33 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:10:33 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:10:34 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:10:35 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:10:36 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:10:36 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 14.692 seconds (process running for 15.378)
+2025-01-16 19:10:36 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-559269c5-061d-4591-88f3-a64aa03c90ca] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:10:36.102599
+2025-01-16 19:10:36 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-74b86b9d-c299-4728-a914-62d2ca8ee635] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:10:36.102853
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-74b86b9d-c299-4728-a914-62d2ca8ee635] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-559269c5-061d-4591-88f3-a64aa03c90ca] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-74b86b9d-c299-4728-a914-62d2ca8ee635] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 388 ms
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-559269c5-061d-4591-88f3-a64aa03c90ca] | Executed: TokenRepositoryImpl.countActiveTokens() in 388 ms
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-559269c5-061d-4591-88f3-a64aa03c90ca] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:10:36 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-74b86b9d-c299-4728-a914-62d2ca8ee635] | schedule processed in 436 ms : 2025-01-16T19:10:36.538846
+2025-01-16 19:10:36 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-74b86b9d-c299-4728-a914-62d2ca8ee635] | END TIME : 2025-01-16T19:10:36.539035
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-559269c5-061d-4591-88f3-a64aa03c90ca] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 11 ms
+2025-01-16 19:10:36 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-559269c5-061d-4591-88f3-a64aa03c90ca] | schedule processed in 445 ms : 2025-01-16T19:10:36.547845
+2025-01-16 19:10:36 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-559269c5-061d-4591-88f3-a64aa03c90ca] | END TIME : 2025-01-16T19:10:36.548004
+2025-01-16 19:10:36 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:10:36 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:10:36 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 11 ms
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:10:36 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 44 ms
+2025-01-16 19:10:36 INFO  k.h.b.s.i.c.ExceptionController - UUID - [null] | ERROR STATUS = 500 INTERNAL_SERVER_ERROR , ERROR MESSAGE = Cannot invoke "java.time.LocalDateTime.isBefore(java.time.chrono.ChronoLocalDateTime)" because the return value of "kr.hhplus.be.server.domain.queue_token.QueueToken.getExpireAt()" is null
+2025-01-16 19:10:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:10:37 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:10:37 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:13:23 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:13:23 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:13:23 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 1434 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:13:23 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:13:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:13:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:13:24 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:13:24 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:13:24 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:13:24 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:13:24 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:13:24 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:13:24 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:13:24 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:13:24 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 18fcde48d10cffb3560b88b1dbf26b2b270ec615f080e8d7cc5ad64c86f0c1ad
+2025-01-16 19:13:25 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.477981S
+2025-01-16 19:13:25 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:13:25 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:13:25 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:13:25 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:13:25 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: a2e03fb2a60adbf21a5cdee21c5f858bcf56805261fdd1cf8d3cac07847f42c9
+2025-01-16 19:13:25 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:63404/hhplus using query 'SELECT 1'
+2025-01-16 19:13:34 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT8.723641S
+2025-01-16 19:13:34 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:63404/hhplus)
+2025-01-16 19:13:34 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:13:34 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:13:34 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:13:34 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:13:34 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:13:34 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5471342
+2025-01-16 19:13:34 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:13:34 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:13:35 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:13:35 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:13:36 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:13:37 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:13:37 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 13.78 seconds (process running for 14.578)
+2025-01-16 19:13:37 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-21d115c6-22d0-412a-a6f4-23b38a244fd3] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:13:37.363014
+2025-01-16 19:13:37 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c26f7e97-62b1-48a8-bb91-c742d7a52f4e] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:13:37.363014
+2025-01-16 19:13:37 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c26f7e97-62b1-48a8-bb91-c742d7a52f4e] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:13:37 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-21d115c6-22d0-412a-a6f4-23b38a244fd3] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:13:37 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c26f7e97-62b1-48a8-bb91-c742d7a52f4e] | Executed: TokenRepositoryImpl.countActiveTokens() in 352 ms
+2025-01-16 19:13:37 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-21d115c6-22d0-412a-a6f4-23b38a244fd3] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 352 ms
+2025-01-16 19:13:37 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c26f7e97-62b1-48a8-bb91-c742d7a52f4e] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:13:37 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-21d115c6-22d0-412a-a6f4-23b38a244fd3] | schedule processed in 365 ms : 2025-01-16T19:13:37.727141
+2025-01-16 19:13:37 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-21d115c6-22d0-412a-a6f4-23b38a244fd3] | END TIME : 2025-01-16T19:13:37.727524
+2025-01-16 19:13:37 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-c26f7e97-62b1-48a8-bb91-c742d7a52f4e] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 11 ms
+2025-01-16 19:13:37 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c26f7e97-62b1-48a8-bb91-c742d7a52f4e] | schedule processed in 373 ms : 2025-01-16T19:13:37.735792
+2025-01-16 19:13:37 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-c26f7e97-62b1-48a8-bb91-c742d7a52f4e] | END TIME : 2025-01-16T19:13:37.735961
+2025-01-16 19:13:37 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:13:37 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:13:37 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:13:37 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:13:37 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 32 ms
+2025-01-16 19:13:37 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:13:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 74 ms
+2025-01-16 19:13:38 INFO  k.h.b.s.i.c.ExceptionController - UUID - [null] | ERROR STATUS = 500 INTERNAL_SERVER_ERROR , ERROR MESSAGE = Cannot invoke "java.time.LocalDateTime.isBefore(java.time.chrono.ChronoLocalDateTime)" because the return value of "kr.hhplus.be.server.domain.queue_token.QueueToken.getExpireAt()" is null
+2025-01-16 19:13:38 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:13:38 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:13:38 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:14:24 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:14:24 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:14:24 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 1716 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:14:24 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:14:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:14:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:14:25 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:14:25 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:14:25 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:14:25 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:14:25 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:14:25 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:14:25 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:14:25 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:14:25 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 0c218619b772a9300498c8ba1f3fefffa60734607f9afcdcb0a0873cbadb63da
+2025-01-16 19:14:25 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.454295S
+2025-01-16 19:14:25 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:14:25 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:14:25 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:14:25 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:14:25 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 2fbe5b24a008f616701528aeaa4b851844a04224014b0ce1e1a000a15133af15
+2025-01-16 19:14:26 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:63562/hhplus using query 'SELECT 1'
+2025-01-16 19:14:35 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.209643S
+2025-01-16 19:14:35 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:63562/hhplus)
+2025-01-16 19:14:35 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:14:35 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:14:35 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:14:35 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:14:35 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:14:35 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@72e5206
+2025-01-16 19:14:35 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:14:35 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:14:36 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:14:36 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:14:37 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:14:38 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:14:38 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 14.122 seconds (process running for 14.872)
+2025-01-16 19:14:38 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-1783a553-e682-4a6d-b45b-c2b1bfcf6a94] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:14:38.391050
+2025-01-16 19:14:38 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b62aa3e4-b81e-402c-89a5-e48075f2b896] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:14:38.391051
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-1783a553-e682-4a6d-b45b-c2b1bfcf6a94] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b62aa3e4-b81e-402c-89a5-e48075f2b896] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-1783a553-e682-4a6d-b45b-c2b1bfcf6a94] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 299 ms
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b62aa3e4-b81e-402c-89a5-e48075f2b896] | Executed: TokenRepositoryImpl.countActiveTokens() in 299 ms
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b62aa3e4-b81e-402c-89a5-e48075f2b896] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:14:38 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-1783a553-e682-4a6d-b45b-c2b1bfcf6a94] | schedule processed in 312 ms : 2025-01-16T19:14:38.703299
+2025-01-16 19:14:38 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-1783a553-e682-4a6d-b45b-c2b1bfcf6a94] | END TIME : 2025-01-16T19:14:38.703685
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b62aa3e4-b81e-402c-89a5-e48075f2b896] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 14 ms
+2025-01-16 19:14:38 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b62aa3e4-b81e-402c-89a5-e48075f2b896] | schedule processed in 324 ms : 2025-01-16T19:14:38.715294
+2025-01-16 19:14:38 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b62aa3e4-b81e-402c-89a5-e48075f2b896] | END TIME : 2025-01-16T19:14:38.715484
+2025-01-16 19:14:38 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:14:38 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:14:38 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:14:38 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 58 ms
+2025-01-16 19:14:38 INFO  k.h.b.s.i.c.ExceptionController - UUID - [null] | ERROR STATUS = 500 INTERNAL_SERVER_ERROR , ERROR MESSAGE = Cannot invoke "java.time.LocalDateTime.isBefore(java.time.chrono.ChronoLocalDateTime)" because the return value of "kr.hhplus.be.server.domain.queue_token.QueueToken.getExpireAt()" is null
+2025-01-16 19:14:39 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:14:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:14:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:15:27 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:15:27 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:15:28 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 1964 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:15:28 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:15:28 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:15:28 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:15:28 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:15:28 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:15:28 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:15:29 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:15:29 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:15:29 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:15:29 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:15:29 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:15:29 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 5effa6dac460a3f0de615199a827c67b88f8b88931782a4a9479f7ffb358ca57
+2025-01-16 19:15:29 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.506616S
+2025-01-16 19:15:29 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:15:29 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:15:29 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:15:29 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:15:29 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: e3327f4404c30d483b34637c974541b4c17c7280bac5a12f479ac2e8bec25586
+2025-01-16 19:15:29 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:63731/hhplus using query 'SELECT 1'
+2025-01-16 19:15:39 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.50882S
+2025-01-16 19:15:39 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:63731/hhplus)
+2025-01-16 19:15:39 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:15:39 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:15:39 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:15:39 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:15:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:15:39 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@23d0f6be
+2025-01-16 19:15:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:15:40 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:15:40 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:15:41 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:15:41 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:15:42 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:15:42 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 14.706 seconds (process running for 15.657)
+2025-01-16 19:15:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-3e0f5ac6-7c4e-4201-a1c0-8cae117ed8c4] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:15:42.795119
+2025-01-16 19:15:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d0393d1c-b91b-4aac-a9d0-e84a6a63e591] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:15:42.795117
+2025-01-16 19:15:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-3e0f5ac6-7c4e-4201-a1c0-8cae117ed8c4] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:15:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d0393d1c-b91b-4aac-a9d0-e84a6a63e591] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:15:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-3e0f5ac6-7c4e-4201-a1c0-8cae117ed8c4] | Executed: TokenRepositoryImpl.countActiveTokens() in 418 ms
+2025-01-16 19:15:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d0393d1c-b91b-4aac-a9d0-e84a6a63e591] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 418 ms
+2025-01-16 19:15:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-3e0f5ac6-7c4e-4201-a1c0-8cae117ed8c4] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:15:43 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d0393d1c-b91b-4aac-a9d0-e84a6a63e591] | schedule processed in 431 ms : 2025-01-16T19:15:43.226337
+2025-01-16 19:15:43 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d0393d1c-b91b-4aac-a9d0-e84a6a63e591] | END TIME : 2025-01-16T19:15:43.226872
+2025-01-16 19:15:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-3e0f5ac6-7c4e-4201-a1c0-8cae117ed8c4] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 10 ms
+2025-01-16 19:15:43 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-3e0f5ac6-7c4e-4201-a1c0-8cae117ed8c4] | schedule processed in 440 ms : 2025-01-16T19:15:43.235030
+2025-01-16 19:15:43 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-3e0f5ac6-7c4e-4201-a1c0-8cae117ed8c4] | END TIME : 2025-01-16T19:15:43.235209
+2025-01-16 19:15:43 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:15:43 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:15:43 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:15:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:15:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 13 ms
+2025-01-16 19:15:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:15:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 85 ms
+2025-01-16 19:15:43 INFO  k.h.b.s.i.c.ExceptionController - UUID - [null] | ERROR STATUS = 500 INTERNAL_SERVER_ERROR , ERROR MESSAGE = Cannot invoke "java.time.LocalDateTime.isBefore(java.time.chrono.ChronoLocalDateTime)" because the return value of "kr.hhplus.be.server.domain.queue_token.QueueToken.getExpireAt()" is null
+2025-01-16 19:15:43 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:15:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:15:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:16:06 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:16:06 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:16:06 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 2125 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:16:06 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:16:06 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:16:06 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:16:07 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:16:07 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:16:07 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:16:07 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:16:07 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:16:07 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:16:07 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:16:07 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:16:07 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: de85a53ea1e159e074a80104dafa8a7117d9c68b7f2ff756fcbb8f0a3195e4a3
+2025-01-16 19:16:07 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.468774S
+2025-01-16 19:16:07 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:16:07 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:16:07 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:16:07 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:16:08 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: ff16fc154a05a934db3ba98c1d78130ee5705cdd3a89b5d2c3187d75e25c85e8
+2025-01-16 19:16:08 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:63886/hhplus using query 'SELECT 1'
+2025-01-16 19:16:17 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.27872S
+2025-01-16 19:16:17 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:63886/hhplus)
+2025-01-16 19:16:17 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:16:17 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:16:17 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:16:17 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:16:17 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:16:17 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@6bbd4048
+2025-01-16 19:16:17 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:16:17 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:16:18 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:16:18 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:16:19 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:16:20 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:16:20 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 14.131 seconds (process running for 14.788)
+2025-01-16 19:16:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-8edec805-08e9-4bb2-baa8-1cae4dc5c667] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:16:20.404990
+2025-01-16 19:16:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e80e5ecb-2569-47ab-9d51-52822a366c98] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:16:20.404990
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e80e5ecb-2569-47ab-9d51-52822a366c98] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-8edec805-08e9-4bb2-baa8-1cae4dc5c667] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-8edec805-08e9-4bb2-baa8-1cae4dc5c667] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 303 ms
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e80e5ecb-2569-47ab-9d51-52822a366c98] | Executed: TokenRepositoryImpl.countActiveTokens() in 303 ms
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e80e5ecb-2569-47ab-9d51-52822a366c98] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:16:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-8edec805-08e9-4bb2-baa8-1cae4dc5c667] | schedule processed in 316 ms : 2025-01-16T19:16:20.720237
+2025-01-16 19:16:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-8edec805-08e9-4bb2-baa8-1cae4dc5c667] | END TIME : 2025-01-16T19:16:20.720490
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e80e5ecb-2569-47ab-9d51-52822a366c98] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 16 ms
+2025-01-16 19:16:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e80e5ecb-2569-47ab-9d51-52822a366c98] | schedule processed in 331 ms : 2025-01-16T19:16:20.735467
+2025-01-16 19:16:20 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e80e5ecb-2569-47ab-9d51-52822a366c98] | END TIME : 2025-01-16T19:16:20.735691
+2025-01-16 19:16:20 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:16:20 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:16:20 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:16:20 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 59 ms
+2025-01-16 19:16:20 INFO  k.h.b.s.i.c.ExceptionController - UUID - [null] | ERROR STATUS = 500 INTERNAL_SERVER_ERROR , ERROR MESSAGE = Cannot invoke "java.time.LocalDateTime.isBefore(java.time.chrono.ChronoLocalDateTime)" because the return value of "kr.hhplus.be.server.domain.queue_token.QueueToken.getExpireAt()" is null
+2025-01-16 19:16:21 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:16:21 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:16:21 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:17:26 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:17:26 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:17:26 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 2441 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:17:26 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:17:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:17:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:17:27 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:17:27 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:17:27 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:17:27 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:17:27 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:17:27 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:17:27 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:17:27 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:17:27 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 79bc6564e07b1824333c330f364a1571d830b92a94d5a5116b3f33b89ced1cab
+2025-01-16 19:17:28 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.438843S
+2025-01-16 19:17:28 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:17:28 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:17:28 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:17:28 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:17:28 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: ec22a101cc4f7e23ccb0b766d4d48efc340440ce0f9a6598551ca667b541c305
+2025-01-16 19:17:28 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:64044/hhplus using query 'SELECT 1'
+2025-01-16 19:17:38 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT10.583364S
+2025-01-16 19:17:38 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:64044/hhplus)
+2025-01-16 19:17:39 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:17:39 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:17:39 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:17:39 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:17:39 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:17:39 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:17:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:17:39 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 2497 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:17:39 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:17:39 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ad57db1
+2025-01-16 19:17:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:17:39 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:17:40 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:17:40 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:17:40 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:17:40 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:17:40 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:17:40 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:17:40 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:17:40 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:17:40 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:17:40 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:17:40 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:17:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:17:41 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: bd4455364d4d57b30ddd4340fbee6d4b6fea70d4340301c27cfeb84b8fbbcce0
+2025-01-16 19:17:41 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.68991S
+2025-01-16 19:17:41 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:17:41 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:17:41 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:17:41 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:17:41 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 4d3683dae63ddfdb448de2ce618b474dd5cd004855a160960a7157644d84636a
+2025-01-16 19:17:42 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:64186/hhplus using query 'SELECT 1'
+2025-01-16 19:17:42 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:17:43 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:17:43 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 17.149 seconds (process running for 17.782)
+2025-01-16 19:17:43 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-389aa9bb-a2dc-4dd7-af6c-0cbc897b292f] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:17:43.649200
+2025-01-16 19:17:43 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-bfa65863-1efe-4498-9162-8b91fc848026] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:17:43.649200
+2025-01-16 19:17:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-389aa9bb-a2dc-4dd7-af6c-0cbc897b292f] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:17:43 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-bfa65863-1efe-4498-9162-8b91fc848026] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:17:44 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-bfa65863-1efe-4498-9162-8b91fc848026] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 418 ms
+2025-01-16 19:17:44 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-389aa9bb-a2dc-4dd7-af6c-0cbc897b292f] | Executed: TokenRepositoryImpl.countActiveTokens() in 418 ms
+2025-01-16 19:17:44 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-389aa9bb-a2dc-4dd7-af6c-0cbc897b292f] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:17:44 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-bfa65863-1efe-4498-9162-8b91fc848026] | schedule processed in 441 ms : 2025-01-16T19:17:44.090126
+2025-01-16 19:17:44 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-bfa65863-1efe-4498-9162-8b91fc848026] | END TIME : 2025-01-16T19:17:44.090508
+2025-01-16 19:17:44 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-389aa9bb-a2dc-4dd7-af6c-0cbc897b292f] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 15 ms
+2025-01-16 19:17:44 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-389aa9bb-a2dc-4dd7-af6c-0cbc897b292f] | schedule processed in 454 ms : 2025-01-16T19:17:44.103995
+2025-01-16 19:17:44 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-389aa9bb-a2dc-4dd7-af6c-0cbc897b292f] | END TIME : 2025-01-16T19:17:44.104183
+2025-01-16 19:17:44 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:17:44 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:17:44 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2025-01-16 19:17:44 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:17:44 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:17:44 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:17:53 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT11.695978S
+2025-01-16 19:17:53 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:64186/hhplus)
+2025-01-16 19:17:53 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:17:53 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:17:53 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:17:53 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:17:53 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:17:53 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@72e5206
+2025-01-16 19:17:53 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:17:53 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:17:54 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:17:54 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:17:55 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:17:56 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:17:56 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 17.344 seconds (process running for 18.286)
+2025-01-16 19:17:56 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-f1e54e97-6501-48d0-8a42-388c5014e2b2] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:17:56.602308
+2025-01-16 19:17:56 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d4d70249-6409-44f4-af21-f7017f6e4c8f] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:17:56.602308
+2025-01-16 19:17:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d4d70249-6409-44f4-af21-f7017f6e4c8f] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:17:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-f1e54e97-6501-48d0-8a42-388c5014e2b2] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:17:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-f1e54e97-6501-48d0-8a42-388c5014e2b2] | Executed: TokenRepositoryImpl.countActiveTokens() in 306 ms
+2025-01-16 19:17:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d4d70249-6409-44f4-af21-f7017f6e4c8f] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 306 ms
+2025-01-16 19:17:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-f1e54e97-6501-48d0-8a42-388c5014e2b2] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:17:56 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d4d70249-6409-44f4-af21-f7017f6e4c8f] | schedule processed in 319 ms : 2025-01-16T19:17:56.921087
+2025-01-16 19:17:56 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d4d70249-6409-44f4-af21-f7017f6e4c8f] | END TIME : 2025-01-16T19:17:56.921463
+2025-01-16 19:17:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-f1e54e97-6501-48d0-8a42-388c5014e2b2] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 17 ms
+2025-01-16 19:17:56 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-f1e54e97-6501-48d0-8a42-388c5014e2b2] | schedule processed in 334 ms : 2025-01-16T19:17:56.936459
+2025-01-16 19:17:56 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-f1e54e97-6501-48d0-8a42-388c5014e2b2] | END TIME : 2025-01-16T19:17:56.936740
+2025-01-16 19:17:57 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:17:57 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:17:57 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:17:57 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:17:57 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 19:17:57 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:17:57 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 43 ms
+2025-01-16 19:17:57 INFO  k.h.b.s.i.c.ExceptionController - UUID - [null] | ERROR STATUS = 500 INTERNAL_SERVER_ERROR , ERROR MESSAGE = Cannot invoke "java.time.LocalDateTime.isBefore(java.time.chrono.ChronoLocalDateTime)" because the return value of "kr.hhplus.be.server.domain.queue_token.QueueToken.getExpireAt()" is null
+2025-01-16 19:17:57 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:17:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:17:57 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:19:11 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:19:11 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:19:11 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 2877 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:19:11 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:19:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:19:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:19:12 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:19:12 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:19:12 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:19:12 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:19:12 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:19:12 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:19:12 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:19:12 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:19:12 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 84f4b29a931f8cfaf993110b3afeb96712557300b4ccc6300054401acc965a4f
+2025-01-16 19:19:13 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.481008S
+2025-01-16 19:19:13 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:19:13 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:19:13 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:19:13 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:19:13 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 6c7bf1f1a119c7b7330dcef2ec7d1a2e6fce5254373e74f6ee1bf2621a705c27
+2025-01-16 19:19:13 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:64384/hhplus using query 'SELECT 1'
+2025-01-16 19:19:22 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.698984S
+2025-01-16 19:19:22 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:64384/hhplus)
+2025-01-16 19:19:23 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:19:23 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:19:23 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:19:23 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:19:23 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:19:23 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5471342
+2025-01-16 19:19:23 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:19:23 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:19:24 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:19:24 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:19:25 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:19:26 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:19:26 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 14.729 seconds (process running for 15.392)
+2025-01-16 19:19:26 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d5e98409-3d92-4465-8f05-3557b1c89c79] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:19:26.233149
+2025-01-16 19:19:26 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-cedf9d23-e916-4f28-b473-43ec7a3ee5bc] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:19:26.233149
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-cedf9d23-e916-4f28-b473-43ec7a3ee5bc] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d5e98409-3d92-4465-8f05-3557b1c89c79] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-cedf9d23-e916-4f28-b473-43ec7a3ee5bc] | Executed: TokenRepositoryImpl.countActiveTokens() in 299 ms
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-d5e98409-3d92-4465-8f05-3557b1c89c79] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 299 ms
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-cedf9d23-e916-4f28-b473-43ec7a3ee5bc] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:19:26 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d5e98409-3d92-4465-8f05-3557b1c89c79] | schedule processed in 313 ms : 2025-01-16T19:19:26.546970
+2025-01-16 19:19:26 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-d5e98409-3d92-4465-8f05-3557b1c89c79] | END TIME : 2025-01-16T19:19:26.557660
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-cedf9d23-e916-4f28-b473-43ec7a3ee5bc] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 22 ms
+2025-01-16 19:19:26 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-cedf9d23-e916-4f28-b473-43ec7a3ee5bc] | schedule processed in 334 ms : 2025-01-16T19:19:26.567127
+2025-01-16 19:19:26 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-cedf9d23-e916-4f28-b473-43ec7a3ee5bc] | END TIME : 2025-01-16T19:19:26.568253
+2025-01-16 19:19:26 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:19:26 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:19:26 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 16 ms
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 51 ms
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:19:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 6 ms
+2025-01-16 19:19:27 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:19:27 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:19:27 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:20:48 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.PointControllerE2ETest]: PointControllerE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:20:48 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.PointControllerE2ETest
+2025-01-16 19:20:48 INFO  k.h.b.s.e2e.PointControllerE2ETest - Starting PointControllerE2ETest using Java 17.0.8.1 with PID 3238 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:20:48 INFO  k.h.b.s.e2e.PointControllerE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:20:49 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:20:49 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:20:49 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:20:49 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:20:49 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:20:49 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:20:49 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:20:49 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:20:49 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:20:49 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:20:49 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 7ce8584ff147c3ed55c95a2cbe80c76db23e035e8d8758832718068ae812181c
+2025-01-16 19:20:50 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.420106S
+2025-01-16 19:20:50 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:20:50 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:20:50 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:20:50 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:20:50 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 687b48e1255e6e3d80e7f6891454dbb496bedd28523390755a5bfeaadfc223fc
+2025-01-16 19:20:50 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:64544/hhplus using query 'SELECT 1'
+2025-01-16 19:20:59 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.558809S
+2025-01-16 19:20:59 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:64544/hhplus)
+2025-01-16 19:21:00 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:21:00 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:21:00 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:21:00 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:21:00 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:21:00 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@686ace1f
+2025-01-16 19:21:00 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:21:00 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:21:00 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:21:01 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:21:01 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:21:02 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:21:02 INFO  k.h.b.s.e2e.PointControllerE2ETest - Started PointControllerE2ETest in 14.307 seconds (process running for 14.984)
+2025-01-16 19:21:02 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-90d0e31c-8254-4ce0-83ea-ff9e323dd770] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:21:02.925558
+2025-01-16 19:21:02 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b3862b3c-d720-4c27-98b1-e7421905e782] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:21:02.925558
+2025-01-16 19:21:02 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b3862b3c-d720-4c27-98b1-e7421905e782] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:21:02 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-90d0e31c-8254-4ce0-83ea-ff9e323dd770] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-90d0e31c-8254-4ce0-83ea-ff9e323dd770] | Executed: TokenRepositoryImpl.countActiveTokens() in 292 ms
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-b3862b3c-d720-4c27-98b1-e7421905e782] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 292 ms
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-90d0e31c-8254-4ce0-83ea-ff9e323dd770] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:21:03 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b3862b3c-d720-4c27-98b1-e7421905e782] | schedule processed in 304 ms : 2025-01-16T19:21:03.229921
+2025-01-16 19:21:03 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-b3862b3c-d720-4c27-98b1-e7421905e782] | END TIME : 2025-01-16T19:21:03.230102
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-90d0e31c-8254-4ce0-83ea-ff9e323dd770] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 11 ms
+2025-01-16 19:21:03 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-90d0e31c-8254-4ce0-83ea-ff9e323dd770] | schedule processed in 314 ms : 2025-01-16T19:21:03.239723
+2025-01-16 19:21:03 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-90d0e31c-8254-4ce0-83ea-ff9e323dd770] | END TIME : 2025-01-16T19:21:03.239921
+2025-01-16 19:21:03 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:21:03 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:21:03 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 14 ms
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 63 ms
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:21:03 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 9 ms
+2025-01-16 19:21:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:21:03 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:21:03 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:26:12 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.InterceptorE2ETest]: InterceptorE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:26:12 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.InterceptorE2ETest
+2025-01-16 19:26:12 INFO  k.h.be.server.e2e.InterceptorE2ETest - Starting InterceptorE2ETest using Java 17.0.8.1 with PID 4466 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:26:12 INFO  k.h.be.server.e2e.InterceptorE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:26:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:26:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:26:13 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:26:13 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:26:13 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:26:13 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:26:13 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:26:13 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:26:13 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:26:13 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:26:14 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 3253fe959b965eff083e069fd3efc90a7c6eba8d7a26967739928db53828ad95
+2025-01-16 19:26:14 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.546083S
+2025-01-16 19:26:14 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:26:14 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:26:14 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:26:14 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:26:14 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 4b0616c4ce3dcb22453a9e4c0c909a62024586344a34fc58d3f857ca980e972c
+2025-01-16 19:26:14 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:64732/hhplus using query 'SELECT 1'
+2025-01-16 19:26:24 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.628726S
+2025-01-16 19:26:24 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:64732/hhplus)
+2025-01-16 19:26:24 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:26:24 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:26:24 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:26:24 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:26:24 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:26:24 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@569b3009
+2025-01-16 19:26:24 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:26:24 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:26:25 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:26:25 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:26:26 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:26:27 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:26:27 INFO  k.h.be.server.e2e.InterceptorE2ETest - Started InterceptorE2ETest in 15.065 seconds (process running for 15.798)
+2025-01-16 19:26:27 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5adb71f6-48f1-42cb-993f-39cdbf5721b0] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:26:27.735233
+2025-01-16 19:26:27 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-56642899-1f41-4371-989e-9da53ee6d864] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:26:27.735238
+2025-01-16 19:26:27 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5adb71f6-48f1-42cb-993f-39cdbf5721b0] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:26:27 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-56642899-1f41-4371-989e-9da53ee6d864] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-56642899-1f41-4371-989e-9da53ee6d864] | Executed: TokenRepositoryImpl.countActiveTokens() in 890 ms
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5adb71f6-48f1-42cb-993f-39cdbf5721b0] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 890 ms
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-56642899-1f41-4371-989e-9da53ee6d864] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:26:28 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5adb71f6-48f1-42cb-993f-39cdbf5721b0] | schedule processed in 908 ms : 2025-01-16T19:26:28.643381
+2025-01-16 19:26:28 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5adb71f6-48f1-42cb-993f-39cdbf5721b0] | END TIME : 2025-01-16T19:26:28.643570
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-56642899-1f41-4371-989e-9da53ee6d864] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 13 ms
+2025-01-16 19:26:28 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-56642899-1f41-4371-989e-9da53ee6d864] | schedule processed in 918 ms : 2025-01-16T19:26:28.653320
+2025-01-16 19:26:28 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-56642899-1f41-4371-989e-9da53ee6d864] | END TIME : 2025-01-16T19:26:28.653513
+2025-01-16 19:26:28 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:26:28 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:26:28 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 66 ms
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:26:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 10 ms
+2025-01-16 19:26:29 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:26:29 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:26:29 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:26:31 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.InterceptorE2ETest]: InterceptorE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:26:31 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.InterceptorE2ETest
+2025-01-16 19:26:31 INFO  k.h.be.server.e2e.InterceptorE2ETest - Starting InterceptorE2ETest using Java 17.0.8.1 with PID 4553 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:26:31 INFO  k.h.be.server.e2e.InterceptorE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:26:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:26:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:26:32 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:26:32 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:26:32 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:26:32 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:26:32 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:26:32 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:26:32 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:26:32 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:26:32 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 8382c19d1378b74d6ed526de456bc2bceec34e24a12e4de7f43df8813212e60e
+2025-01-16 19:26:33 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.596882S
+2025-01-16 19:26:33 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:26:33 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:26:33 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:26:33 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:26:33 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 8ca1f2d5628134cf1c62641d8e505d9df0830e57727f5ac9a6e9e3640b18bbec
+2025-01-16 19:26:33 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:64885/hhplus using query 'SELECT 1'
+2025-01-16 19:26:42 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.334566S
+2025-01-16 19:26:42 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:64885/hhplus)
+2025-01-16 19:26:42 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:26:43 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:26:43 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:26:43 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:26:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:26:43 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7fda84cf
+2025-01-16 19:26:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:26:43 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:26:43 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:26:44 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:26:44 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:26:45 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:26:45 INFO  k.h.be.server.e2e.InterceptorE2ETest - Started InterceptorE2ETest in 14.274 seconds (process running for 14.913)
+2025-01-16 19:26:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-668df28f-38b3-4ec0-9592-25c10489fbab] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:26:45.791308
+2025-01-16 19:26:45 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2888c02a-41f5-4054-b366-5cb576447a8d] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:26:45.791308
+2025-01-16 19:26:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-668df28f-38b3-4ec0-9592-25c10489fbab] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:26:45 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2888c02a-41f5-4054-b366-5cb576447a8d] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:26:46 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-668df28f-38b3-4ec0-9592-25c10489fbab] | Executed: TokenRepositoryImpl.countActiveTokens() in 310 ms
+2025-01-16 19:26:46 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-2888c02a-41f5-4054-b366-5cb576447a8d] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 310 ms
+2025-01-16 19:26:46 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-668df28f-38b3-4ec0-9592-25c10489fbab] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:26:46 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2888c02a-41f5-4054-b366-5cb576447a8d] | schedule processed in 326 ms : 2025-01-16T19:26:46.117507
+2025-01-16 19:26:46 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-2888c02a-41f5-4054-b366-5cb576447a8d] | END TIME : 2025-01-16T19:26:46.117823
+2025-01-16 19:26:46 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-668df28f-38b3-4ec0-9592-25c10489fbab] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 11 ms
+2025-01-16 19:26:46 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-668df28f-38b3-4ec0-9592-25c10489fbab] | schedule processed in 336 ms : 2025-01-16T19:26:46.127662
+2025-01-16 19:26:46 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-668df28f-38b3-4ec0-9592-25c10489fbab] | END TIME : 2025-01-16T19:26:46.127895
+2025-01-16 19:26:46 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:26:46 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:26:46 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:26:46 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:26:46 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 19:26:46 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:26:46 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 47 ms
+2025-01-16 19:26:46 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:26:46 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:26:46 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 19:28:27 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.e2e.InterceptorE2ETest]: InterceptorE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 19:28:27 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.e2e.InterceptorE2ETest
+2025-01-16 19:28:27 INFO  k.h.be.server.e2e.InterceptorE2ETest - Starting InterceptorE2ETest using Java 17.0.8.1 with PID 4993 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 19:28:27 INFO  k.h.be.server.e2e.InterceptorE2ETest - The following 1 profile is active: "local"
+2025-01-16 19:28:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 19:28:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 8 JPA repository interfaces.
+2025-01-16 19:28:28 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 19:28:28 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 19:28:28 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 19:28:28 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 19:28:28 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 19:28:28 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 19:28:28 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 19:28:28 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 19:28:28 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 886d789556567d0eda56801a1ea78456950343b93fa08ccf339231819482be95
+2025-01-16 19:28:28 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.442019S
+2025-01-16 19:28:28 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 19:28:28 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 19:28:28 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 19:28:28 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 19:28:28 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 64e3992f5ba62d14541ac38690c8c6eee445ffee9fe957640cc7068f29f945cf
+2025-01-16 19:28:29 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:65040/hhplus using query 'SELECT 1'
+2025-01-16 19:28:38 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.585593S
+2025-01-16 19:28:38 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:65040/hhplus)
+2025-01-16 19:28:38 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 19:28:38 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 19:28:38 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 19:28:38 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 19:28:38 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 19:28:39 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e6add8d
+2025-01-16 19:28:39 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 19:28:39 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 19:28:39 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 19:28:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:28:40 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 19:28:41 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 19:28:41 INFO  k.h.be.server.e2e.InterceptorE2ETest - Started InterceptorE2ETest in 14.827 seconds (process running for 15.487)
+2025-01-16 19:28:41 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-df66603d-2e49-457f-9f7c-256c51ed239d] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T19:28:41.998201
+2025-01-16 19:28:41 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-132f63ec-58eb-410b-9747-734e0f171bce] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T19:28:41.998201
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-132f63ec-58eb-410b-9747-734e0f171bce] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-df66603d-2e49-457f-9f7c-256c51ed239d] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-132f63ec-58eb-410b-9747-734e0f171bce] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 468 ms
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-df66603d-2e49-457f-9f7c-256c51ed239d] | Executed: TokenRepositoryImpl.countActiveTokens() in 468 ms
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-df66603d-2e49-457f-9f7c-256c51ed239d] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 19:28:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-132f63ec-58eb-410b-9747-734e0f171bce] | schedule processed in 483 ms : 2025-01-16T19:28:42.481642
+2025-01-16 19:28:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-132f63ec-58eb-410b-9747-734e0f171bce] | END TIME : 2025-01-16T19:28:42.481827
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-df66603d-2e49-457f-9f7c-256c51ed239d] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 10 ms
+2025-01-16 19:28:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-df66603d-2e49-457f-9f7c-256c51ed239d] | schedule processed in 489 ms : 2025-01-16T19:28:42.487776
+2025-01-16 19:28:42 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-df66603d-2e49-457f-9f7c-256c51ed239d] | END TIME : 2025-01-16T19:28:42.487955
+2025-01-16 19:28:42 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:28:42 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:28:42 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 12 ms
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 59 ms
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 31 ms
+2025-01-16 19:28:42 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-16 19:28:42 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-16 19:28:42 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 16 ms
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: TokenRepositoryImpl.findByIdWithUser(..)
+2025-01-16 19:28:42 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: TokenRepositoryImpl.findByIdWithUser(..) in 6 ms
+2025-01-16 19:28:43 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 19:28:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 19:28:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.

@@ -70,10 +70,14 @@ public class QueueTokenService {
             throw new BusinessException(ErrorCode.NOT_MATCHED_WITH_USER);
         }
 
+        if( queueToken.getStatus().equals(QueueTokenStatus.WAIT) ){
+            return false;
+        }
+
         if( queueToken.getExpireAt().isBefore(LocalDateTime.now()) ){
             throw new BusinessException(ErrorCode.EXPIRE_QUEUE_TOKEN);
         }
 
-        return queueToken.getStatus().equals(QueueTokenStatus.ACTIVE);
+        return true;
     }
 }
