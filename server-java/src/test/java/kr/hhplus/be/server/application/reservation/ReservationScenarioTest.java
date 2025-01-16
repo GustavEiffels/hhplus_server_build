@@ -5,6 +5,7 @@ import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.concert.Concert;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.seat.Seat;
+import kr.hhplus.be.server.domain.seat.SeatService;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.infrastructure.concert.ConcertJpaRepository;
 import kr.hhplus.be.server.infrastructure.reservation.ReservationJpaRepository;
@@ -36,8 +37,6 @@ public class ReservationScenarioTest {
     @Autowired
     SeatJpaRepository seatRepository;
 
-    @Autowired
-    ReservationJpaRepository reservationRepository;
 
     List<User> userList;
     List<Seat> newSeatList;
@@ -49,7 +48,7 @@ public class ReservationScenarioTest {
 
         // Create User
         List<User> newUserList = new ArrayList<>();
-        for(int i = 1; i<=10; i++){
+        for(int i = 1; i<=20; i++){
             User newUser = User.create("김연습"+i);
             newUser.pointTransaction(100_000L);
             newUserList.add(newUser);
@@ -106,6 +105,38 @@ public class ReservationScenarioTest {
 
         // then
         Assertions.assertEquals(ErrorCode.NOT_RESERVABLE_DETECTED,exception.getErrorStatus());
+    }
+
+    @DisplayName("""
+            모든 좌석이 예매되면 
+            해당 콘서트 스케줄은 예매 불가능하다.
+            """)
+    @Test
+    void reservationAll(){
+        // given
+        int seatIndex   = 0;
+        Long scheduleId = concertSchedule.getId();
+        // user 12명이서 48 석 차지
+        for(int i = 0; i<12; i++) {
+            Long userId = userList.get(i).getId();
+            Long seatId1 = newSeatList.get(seatIndex).getId();
+            Long seatId2 = newSeatList.get(seatIndex + 1).getId();
+            Long seatId3 = newSeatList.get(seatIndex + 2).getId();
+            Long seatId4 = newSeatList.get(seatIndex + 3).getId();
+            List<Long> seatIds = List.of(seatId1,seatId2,seatId3,seatId4);
+            seatIndex+=4;
+            reservationFacade.reservation(new ReservationFacadeDto.ReservationParam(scheduleId,seatIds,userId));
+        }
+        // user 1명이 2석 차지 : 모두 예매 됨
+        Long userId = userList.get(12).getId();
+        Long seatId1 = newSeatList.get(seatIndex).getId();
+        Long seatId2 = newSeatList.get(seatIndex + 1).getId();
+        List<Long> seatIds = List.of(seatId1,seatId2);
+        reservationFacade.reservation(new ReservationFacadeDto.ReservationParam(scheduleId,seatIds,userId));
+
+
+        // when & then
+        Assertions.assertFalse(concertScheduleRepository.findById(scheduleId).get().isReservable());
     }
 
 }

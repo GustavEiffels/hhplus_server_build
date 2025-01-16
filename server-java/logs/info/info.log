@@ -22865,3 +22865,1178 @@
 2025-01-16 19:28:43 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-01-16 19:28:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
 2025-01-16 19:28:43 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 20:50:11 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.reservation.ReservationScenarioTest]: ReservationScenarioTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 20:50:11 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.reservation.ReservationScenarioTest
+2025-01-16 20:50:11 INFO  k.h.b.s.a.r.ReservationScenarioTest - Starting ReservationScenarioTest using Java 17.0.8.1 with PID 22508 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 20:50:11 INFO  k.h.b.s.a.r.ReservationScenarioTest - The following 1 profile is active: "local"
+2025-01-16 20:50:11 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 20:50:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 8 JPA repository interfaces.
+2025-01-16 20:50:12 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 20:50:12 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 20:50:12 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 20:50:12 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 20:50:12 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 20:50:12 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 20:50:12 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 20:50:12 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 20:50:12 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: f568784bfd967987d3dc20a7bceb709e32d093cf4c32e43e2197cfd90f04ac04
+2025-01-16 20:50:13 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT1.155339S
+2025-01-16 20:50:13 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 20:50:13 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 20:50:13 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 20:50:13 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 20:50:13 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: d1b743dfe5e86c1a21eeee73a2208571c4d3f40987cb506bdde3be69fda5add8
+2025-01-16 20:50:14 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:50077/hhplus using query 'SELECT 1'
+2025-01-16 20:50:23 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.869993S
+2025-01-16 20:50:23 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:50077/hhplus)
+2025-01-16 20:50:24 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 20:50:24 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 20:50:24 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 20:50:24 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 20:50:24 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 20:50:24 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@34947355
+2025-01-16 20:50:24 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 20:50:24 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 20:50:25 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 20:50:25 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 20:50:26 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 20:50:27 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 20:50:27 INFO  k.h.b.s.a.r.ReservationScenarioTest - Started ReservationScenarioTest in 16.098 seconds (process running for 16.975)
+2025-01-16 20:50:27 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-1cd0325e-05dd-43e7-85dc-81a2366ba5c3] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T20:50:27.379294
+2025-01-16 20:50:27 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-dc9eac3b-880e-4562-a64a-a88b39a015a9] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T20:50:27.379295
+2025-01-16 20:50:27 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-1cd0325e-05dd-43e7-85dc-81a2366ba5c3] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 20:50:27 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-dc9eac3b-880e-4562-a64a-a88b39a015a9] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 20:50:27 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-dc9eac3b-880e-4562-a64a-a88b39a015a9] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 363 ms
+2025-01-16 20:50:27 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-1cd0325e-05dd-43e7-85dc-81a2366ba5c3] | Executed: TokenRepositoryImpl.countActiveTokens() in 364 ms
+2025-01-16 20:50:27 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-1cd0325e-05dd-43e7-85dc-81a2366ba5c3] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 20:50:27 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-dc9eac3b-880e-4562-a64a-a88b39a015a9] | schedule processed in 381 ms : 2025-01-16T20:50:27.760035
+2025-01-16 20:50:27 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-dc9eac3b-880e-4562-a64a-a88b39a015a9] | END TIME : 2025-01-16T20:50:27.760323
+2025-01-16 20:50:27 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-1cd0325e-05dd-43e7-85dc-81a2366ba5c3] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 11 ms
+2025-01-16 20:50:27 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-1cd0325e-05dd-43e7-85dc-81a2366ba5c3] | schedule processed in 388 ms : 2025-01-16T20:50:27.767183
+2025-01-16 20:50:27 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-1cd0325e-05dd-43e7-85dc-81a2366ba5c3] | END TIME : 2025-01-16T20:50:27.767353
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 8 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 14 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 12 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 57 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 27 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 8 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 25 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 17 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 13 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 20 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 20 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 5 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 18 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:50:28 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 18 ms
+2025-01-16 20:50:28 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 20:50:28 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 20:50:28 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 20:51:52 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.reservation.ReservationScenarioTest]: ReservationScenarioTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 20:51:52 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.reservation.ReservationScenarioTest
+2025-01-16 20:51:53 INFO  k.h.b.s.a.r.ReservationScenarioTest - Starting ReservationScenarioTest using Java 17.0.8.1 with PID 22883 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 20:51:53 INFO  k.h.b.s.a.r.ReservationScenarioTest - The following 1 profile is active: "local"
+2025-01-16 20:51:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 20:51:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-01-16 20:51:53 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 20:51:53 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 20:51:53 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 20:51:53 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 20:51:54 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 20:51:54 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 20:51:54 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 20:51:54 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 20:51:54 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 199ff59b319fab3dd831c9663c7a15c53e5b1a7d3e257e311aa9a5558cdc61a8
+2025-01-16 20:51:54 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.467973S
+2025-01-16 20:51:54 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 20:51:54 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 20:51:54 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 20:51:54 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 20:51:54 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: bf4fd3c093428480127587f51b1ef155d32b2b363acbac9b351046c5ae426461
+2025-01-16 20:51:54 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:50233/hhplus using query 'SELECT 1'
+2025-01-16 20:52:04 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.637168S
+2025-01-16 20:52:04 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:50233/hhplus)
+2025-01-16 20:52:04 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 20:52:04 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 20:52:04 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 20:52:04 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 20:52:04 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 20:52:04 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@56728f48
+2025-01-16 20:52:04 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 20:52:04 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 20:52:05 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 20:52:05 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 20:52:06 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 20:52:07 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 20:52:07 INFO  k.h.b.s.a.r.ReservationScenarioTest - Started ReservationScenarioTest in 14.555 seconds (process running for 15.223)
+2025-01-16 20:52:07 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-12e94058-7505-40d1-a780-305ff5d0c02a] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T20:52:07.416629
+2025-01-16 20:52:07 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-a2193bd0-7357-4119-b155-f97e459f16e9] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T20:52:07.416640
+2025-01-16 20:52:07 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-a2193bd0-7357-4119-b155-f97e459f16e9] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 20:52:07 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-12e94058-7505-40d1-a780-305ff5d0c02a] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 20:52:07 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-12e94058-7505-40d1-a780-305ff5d0c02a] | Executed: TokenRepositoryImpl.countActiveTokens() in 313 ms
+2025-01-16 20:52:07 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-a2193bd0-7357-4119-b155-f97e459f16e9] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 313 ms
+2025-01-16 20:52:07 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-12e94058-7505-40d1-a780-305ff5d0c02a] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 20:52:07 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-a2193bd0-7357-4119-b155-f97e459f16e9] | schedule processed in 333 ms : 2025-01-16T20:52:07.749582
+2025-01-16 20:52:07 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-a2193bd0-7357-4119-b155-f97e459f16e9] | END TIME : 2025-01-16T20:52:07.749845
+2025-01-16 20:52:07 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-12e94058-7505-40d1-a780-305ff5d0c02a] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 12 ms
+2025-01-16 20:52:07 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-12e94058-7505-40d1-a780-305ff5d0c02a] | schedule processed in 342 ms : 2025-01-16T20:52:07.758937
+2025-01-16 20:52:07 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-12e94058-7505-40d1-a780-305ff5d0c02a] | END TIME : 2025-01-16T20:52:07.759183
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 7 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 16 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 14 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 39 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 5 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 26 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 21 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 21 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 11 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 17 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 9 ms
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findByIdWithLock(..)
+2025-01-16 20:52:08 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findByIdWithLock(..) in 4 ms
+2025-01-16 20:52:08 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 20:52:08 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 20:52:08 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 20:55:40 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.reservation.ReservationScenarioTest]: ReservationScenarioTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 20:55:40 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.reservation.ReservationScenarioTest
+2025-01-16 20:55:41 INFO  k.h.b.s.a.r.ReservationScenarioTest - Starting ReservationScenarioTest using Java 17.0.8.1 with PID 23717 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 20:55:41 INFO  k.h.b.s.a.r.ReservationScenarioTest - The following 1 profile is active: "local"
+2025-01-16 20:55:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 20:55:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 8 JPA repository interfaces.
+2025-01-16 20:55:41 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 20:55:41 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 20:55:41 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 20:55:41 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 20:55:42 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 20:55:42 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 20:55:42 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 20:55:42 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 20:55:42 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 41672f56f4ebea38f4e115ca4b922ddcc297c48c3ab2fdfb1ac54cde3b7d55d2
+2025-01-16 20:55:42 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.529261S
+2025-01-16 20:55:42 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 20:55:42 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 20:55:42 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 20:55:42 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 20:55:42 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: bd7a7da170f49d64a93cb1b272689742b7e847f4e9a370bd87faf4bde2198d80
+2025-01-16 20:55:42 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:50393/hhplus using query 'SELECT 1'
+2025-01-16 20:55:52 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.317627S
+2025-01-16 20:55:52 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:50393/hhplus)
+2025-01-16 20:55:52 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 20:55:52 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 20:55:52 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 20:55:52 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 20:55:52 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 20:55:52 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@11d557a5
+2025-01-16 20:55:52 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 20:55:52 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 20:55:53 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 20:55:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 20:55:54 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 20:55:55 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 20:55:55 INFO  k.h.b.s.a.r.ReservationScenarioTest - Started ReservationScenarioTest in 14.51 seconds (process running for 15.278)
+2025-01-16 20:55:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-641cd47d-af53-43b9-a5a2-52903691f188] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T20:55:55.408751
+2025-01-16 20:55:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4a60553a-c19a-43ff-bbe7-0744be19629a] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T20:55:55.408751
+2025-01-16 20:55:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-641cd47d-af53-43b9-a5a2-52903691f188] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 20:55:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4a60553a-c19a-43ff-bbe7-0744be19629a] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 20:55:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4a60553a-c19a-43ff-bbe7-0744be19629a] | Executed: TokenRepositoryImpl.countActiveTokens() in 369 ms
+2025-01-16 20:55:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-641cd47d-af53-43b9-a5a2-52903691f188] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 370 ms
+2025-01-16 20:55:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4a60553a-c19a-43ff-bbe7-0744be19629a] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 20:55:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-641cd47d-af53-43b9-a5a2-52903691f188] | schedule processed in 384 ms : 2025-01-16T20:55:55.792453
+2025-01-16 20:55:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-641cd47d-af53-43b9-a5a2-52903691f188] | END TIME : 2025-01-16T20:55:55.792851
+2025-01-16 20:55:55 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-4a60553a-c19a-43ff-bbe7-0744be19629a] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 12 ms
+2025-01-16 20:55:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4a60553a-c19a-43ff-bbe7-0744be19629a] | schedule processed in 393 ms : 2025-01-16T20:55:55.801881
+2025-01-16 20:55:55 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-4a60553a-c19a-43ff-bbe7-0744be19629a] | END TIME : 2025-01-16T20:55:55.802098
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 7 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 14 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 14 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 45 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 26 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 19 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 19 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 15 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 13 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 18 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 15 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 4 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 5 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 23 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 19 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 12 ms
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findByIdWithLock(..)
+2025-01-16 20:55:56 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findByIdWithLock(..) in 4 ms
+2025-01-16 20:55:56 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 20:55:56 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 20:55:56 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 20:59:44 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.reservation.ReservationScenarioTest]: ReservationScenarioTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 20:59:44 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.reservation.ReservationScenarioTest
+2025-01-16 20:59:44 INFO  k.h.b.s.a.r.ReservationScenarioTest - Starting ReservationScenarioTest using Java 17.0.8.1 with PID 24580 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 20:59:44 INFO  k.h.b.s.a.r.ReservationScenarioTest - The following 1 profile is active: "local"
+2025-01-16 20:59:44 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 20:59:44 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 8 JPA repository interfaces.
+2025-01-16 20:59:45 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 20:59:45 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 20:59:45 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 20:59:45 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 20:59:45 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 20:59:45 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 20:59:45 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 20:59:45 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 20:59:45 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 1f680bad6c11590a0977c606b336b379ea50330f7db36af3b6ab340742db0df6
+2025-01-16 20:59:46 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.539956S
+2025-01-16 20:59:46 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 20:59:46 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 20:59:46 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 20:59:46 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 20:59:46 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: fab45a9f81459a637e439050fdd877087702a4b59c7d6e69010b82839d11ed20
+2025-01-16 20:59:46 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:50552/hhplus using query 'SELECT 1'
+2025-01-16 20:59:55 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.313876S
+2025-01-16 20:59:55 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:50552/hhplus)
+2025-01-16 20:59:55 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 20:59:55 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 20:59:55 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 20:59:55 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 20:59:55 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 20:59:56 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@62ad5f35
+2025-01-16 20:59:56 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 20:59:56 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 20:59:56 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 20:59:56 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 20:59:57 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 20:59:58 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 20:59:58 INFO  k.h.b.s.a.r.ReservationScenarioTest - Started ReservationScenarioTest in 14.365 seconds (process running for 15.062)
+2025-01-16 20:59:58 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-28c43e55-0e51-4328-8f5d-3b9586032a5c] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T20:59:58.605918
+2025-01-16 20:59:58 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-619ab114-3b8a-42df-b919-7411c11891cd] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T20:59:58.605918
+2025-01-16 20:59:58 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-28c43e55-0e51-4328-8f5d-3b9586032a5c] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 20:59:58 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-619ab114-3b8a-42df-b919-7411c11891cd] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 20:59:58 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-28c43e55-0e51-4328-8f5d-3b9586032a5c] | Executed: TokenRepositoryImpl.countActiveTokens() in 322 ms
+2025-01-16 20:59:58 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-619ab114-3b8a-42df-b919-7411c11891cd] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 322 ms
+2025-01-16 20:59:58 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-28c43e55-0e51-4328-8f5d-3b9586032a5c] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 20:59:58 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-619ab114-3b8a-42df-b919-7411c11891cd] | schedule processed in 335 ms : 2025-01-16T20:59:58.940057
+2025-01-16 20:59:58 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-619ab114-3b8a-42df-b919-7411c11891cd] | END TIME : 2025-01-16T20:59:58.940294
+2025-01-16 20:59:58 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-28c43e55-0e51-4328-8f5d-3b9586032a5c] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 14 ms
+2025-01-16 20:59:58 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-28c43e55-0e51-4328-8f5d-3b9586032a5c] | schedule processed in 348 ms : 2025-01-16T20:59:58.953421
+2025-01-16 20:59:58 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-28c43e55-0e51-4328-8f5d-3b9586032a5c] | END TIME : 2025-01-16T20:59:58.953633
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 7 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 16 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 14 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 69 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 22 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 17 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 13 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 18 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 17 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 15 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 12 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 7 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findByIdWithLock(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findByIdWithLock(..) in 4 ms
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 20:59:59 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 21:00:00 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 21:00:00 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 21:00:00 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 21:00:50 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.reservation.ReservationScenarioTest]: ReservationScenarioTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 21:00:50 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.reservation.ReservationScenarioTest
+2025-01-16 21:00:50 INFO  k.h.b.s.a.r.ReservationScenarioTest - Starting ReservationScenarioTest using Java 17.0.8.1 with PID 24847 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 21:00:50 INFO  k.h.b.s.a.r.ReservationScenarioTest - The following 1 profile is active: "local"
+2025-01-16 21:00:50 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 21:00:50 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 8 JPA repository interfaces.
+2025-01-16 21:00:51 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 21:00:51 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 21:00:51 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 21:00:51 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 21:00:51 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 21:00:51 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 21:00:51 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 21:00:51 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 21:00:51 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: d6318807a4548c227ffb0d458032d9eb051c55d6c15cfda7ed335829687e7f74
+2025-01-16 21:00:51 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.466277S
+2025-01-16 21:00:51 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 21:00:51 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 21:00:51 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 21:00:51 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 21:00:52 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 304b39d156b1c88c166ae4b399f41cd874df73dc8f151068ace4251440fce81d
+2025-01-16 21:00:52 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:50710/hhplus using query 'SELECT 1'
+2025-01-16 21:01:02 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT10.395166S
+2025-01-16 21:01:02 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:50710/hhplus)
+2025-01-16 21:01:02 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 21:01:02 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 21:01:02 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 21:01:02 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 21:01:02 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 21:01:03 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@48cebb78
+2025-01-16 21:01:03 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 21:01:03 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 21:01:03 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 21:01:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 21:01:04 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 21:01:05 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 21:01:05 INFO  k.h.b.s.a.r.ReservationScenarioTest - Started ReservationScenarioTest in 15.279 seconds (process running for 16.064)
+2025-01-16 21:01:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5434f18a-2802-4043-9185-fd43a6f174db] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T21:01:05.510879
+2025-01-16 21:01:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e279007a-48fc-4f6a-aa1e-dad526f1d114] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T21:01:05.510883
+2025-01-16 21:01:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e279007a-48fc-4f6a-aa1e-dad526f1d114] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 21:01:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5434f18a-2802-4043-9185-fd43a6f174db] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 21:01:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5434f18a-2802-4043-9185-fd43a6f174db] | Executed: TokenRepositoryImpl.countActiveTokens() in 372 ms
+2025-01-16 21:01:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-e279007a-48fc-4f6a-aa1e-dad526f1d114] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 372 ms
+2025-01-16 21:01:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5434f18a-2802-4043-9185-fd43a6f174db] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 21:01:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e279007a-48fc-4f6a-aa1e-dad526f1d114] | schedule processed in 387 ms : 2025-01-16T21:01:05.897403
+2025-01-16 21:01:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-e279007a-48fc-4f6a-aa1e-dad526f1d114] | END TIME : 2025-01-16T21:01:05.897626
+2025-01-16 21:01:05 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5434f18a-2802-4043-9185-fd43a6f174db] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 10 ms
+2025-01-16 21:01:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5434f18a-2802-4043-9185-fd43a6f174db] | schedule processed in 395 ms : 2025-01-16T21:01:05.905212
+2025-01-16 21:01:05 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5434f18a-2802-4043-9185-fd43a6f174db] | END TIME : 2025-01-16T21:01:05.905389
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 8 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 15 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 15 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 45 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 21 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 17 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 15 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 13 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 13 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 15 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 18 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 13 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 8 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findByIdWithLock(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findByIdWithLock(..) in 4 ms
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:01:06 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 21:01:06 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 21:01:06 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 21:01:06 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 21:03:11 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.reservation.ReservationScenarioTest]: ReservationScenarioTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 21:03:11 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.reservation.ReservationScenarioTest
+2025-01-16 21:03:11 INFO  k.h.b.s.a.r.ReservationScenarioTest - Starting ReservationScenarioTest using Java 17.0.8.1 with PID 25421 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 21:03:11 INFO  k.h.b.s.a.r.ReservationScenarioTest - The following 1 profile is active: "local"
+2025-01-16 21:03:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 21:03:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 8 JPA repository interfaces.
+2025-01-16 21:03:12 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 21:03:12 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 21:03:12 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 21:03:12 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 21:03:12 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 21:03:12 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 21:03:12 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 21:03:12 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 21:03:13 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 98633574fbab2099835a151b109e9de44e38487dbd6f6279272ec738e863307a
+2025-01-16 21:03:13 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.527726S
+2025-01-16 21:03:13 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 21:03:13 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 21:03:13 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 21:03:13 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 21:03:13 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: 98fd0f0193c49a1e834c1dccfe8b5b2f4508d662f1bace27fafa7a65e3c30d4b
+2025-01-16 21:03:13 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:50888/hhplus using query 'SELECT 1'
+2025-01-16 21:03:21 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT8.310005S
+2025-01-16 21:03:21 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:50888/hhplus)
+2025-01-16 21:03:22 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 21:03:22 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 21:03:22 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 21:03:22 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 21:03:22 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 21:03:22 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4615bc00
+2025-01-16 21:03:22 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 21:03:22 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 21:03:23 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 21:03:23 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 21:03:24 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 21:03:25 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 21:03:25 INFO  k.h.b.s.a.r.ReservationScenarioTest - Started ReservationScenarioTest in 13.465 seconds (process running for 14.225)
+2025-01-16 21:03:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-488c53be-4a4b-4d2f-a4f0-fbfbaccfa3cf] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T21:03:25.190939
+2025-01-16 21:03:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-f5a54cf6-231c-443f-bbf3-02a8ae5ed559] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T21:03:25.190939
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-488c53be-4a4b-4d2f-a4f0-fbfbaccfa3cf] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-f5a54cf6-231c-443f-bbf3-02a8ae5ed559] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-f5a54cf6-231c-443f-bbf3-02a8ae5ed559] | Executed: TokenRepositoryImpl.countActiveTokens() in 306 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-488c53be-4a4b-4d2f-a4f0-fbfbaccfa3cf] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 306 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-f5a54cf6-231c-443f-bbf3-02a8ae5ed559] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-488c53be-4a4b-4d2f-a4f0-fbfbaccfa3cf] | schedule processed in 320 ms : 2025-01-16T21:03:25.510638
+2025-01-16 21:03:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-488c53be-4a4b-4d2f-a4f0-fbfbaccfa3cf] | END TIME : 2025-01-16T21:03:25.511018
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-f5a54cf6-231c-443f-bbf3-02a8ae5ed559] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 14 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-f5a54cf6-231c-443f-bbf3-02a8ae5ed559] | schedule processed in 331 ms : 2025-01-16T21:03:25.521804
+2025-01-16 21:03:25 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-f5a54cf6-231c-443f-bbf3-02a8ae5ed559] | END TIME : 2025-01-16T21:03:25.522021
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 8 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 16 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 15 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 66 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 20 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:03:25 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 8 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 17 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 12 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 17 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 15 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 19 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 19 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 4 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 12 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 7 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findByIdWithLock(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findByIdWithLock(..) in 4 ms
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:03:26 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 21:03:26 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 21:03:26 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 21:03:26 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
+2025-01-16 21:04:08 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.hhplus.be.server.application.reservation.ReservationScenarioTest]: ReservationScenarioTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-16 21:04:08 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.hhplus.be.server.ServerApplication for test class kr.hhplus.be.server.application.reservation.ReservationScenarioTest
+2025-01-16 21:04:08 INFO  k.h.b.s.a.r.ReservationScenarioTest - Starting ReservationScenarioTest using Java 17.0.8.1 with PID 25649 (started by maxxing in /Users/maxxing/Documents/GIT-HUB/HANG_HAE/hhplus_server_build/server-java)
+2025-01-16 21:04:08 INFO  k.h.b.s.a.r.ReservationScenarioTest - The following 1 profile is active: "local"
+2025-01-16 21:04:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 21:04:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 8 JPA repository interfaces.
+2025-01-16 21:04:09 INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-01-16 21:04:09 INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-01-16 21:04:09 INFO  o.testcontainers.DockerClientFactory - Testcontainers version: 1.20.4
+2025-01-16 21:04:09 INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-01-16 21:04:09 INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-01-16 21:04:09 INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-01-16 21:04:09 INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 3933 MB
+2025-01-16 21:04:09 INFO  tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2025-01-16 21:04:09 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: f4735345ef7c32cfd228aef43e4ae9b46cded8cbc25f3097386c5bd5dfa55f5f
+2025-01-16 21:04:10 INFO  tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.452663S
+2025-01-16 21:04:10 INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-01-16 21:04:10 INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2025-01-16 21:04:10 INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2025-01-16 21:04:10 INFO  tc.mysql:8.0 - Creating container for image: mysql:8.0
+2025-01-16 21:04:10 INFO  tc.mysql:8.0 - Container mysql:8.0 is starting: d4a9520886a5ffc054db27747c6091566ded18778b54f3f528aa97b4bdda07d5
+2025-01-16 21:04:10 INFO  tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:51033/hhplus using query 'SELECT 1'
+2025-01-16 21:04:19 INFO  tc.mysql:8.0 - Container mysql:8.0 started in PT9.547946S
+2025-01-16 21:04:19 INFO  tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:51033/hhplus)
+2025-01-16 21:04:20 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 21:04:20 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 21:04:20 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-16 21:04:20 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 21:04:20 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Starting...
+2025-01-16 21:04:20 INFO  com.zaxxer.hikari.pool.HikariPool - HangHaePlusDataSource - Added connection com.mysql.cj.jdbc.ConnectionImpl@3ed3e66d
+2025-01-16 21:04:20 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Start completed.
+2025-01-16 21:04:20 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HangHaePlusDataSource)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 21:04:20 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 21:04:21 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 21:04:21 INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-16 21:04:22 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-01-16 21:04:22 INFO  k.h.b.s.a.r.ReservationScenarioTest - Started ReservationScenarioTest in 14.416 seconds (process running for 15.178)
+2025-01-16 21:04:22 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-21f23e68-d4b7-45da-a5db-dbe9db1a19fe] | RESERVATION_EXPIRE_SCHEDULER | START TIME : 2025-01-16T21:04:22.927395
+2025-01-16 21:04:22 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5fe4c702-be7e-4f43-8318-c817efd24394] | ACTIVE_TOKEN_SCHEDULER | START TIME : 2025-01-16T21:04:22.927396
+2025-01-16 21:04:22 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-21f23e68-d4b7-45da-a5db-dbe9db1a19fe] | Executing: ReservationRepositoryImpl.findExpiredWithLock()
+2025-01-16 21:04:22 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5fe4c702-be7e-4f43-8318-c817efd24394] | Executing: TokenRepositoryImpl.countActiveTokens()
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-21f23e68-d4b7-45da-a5db-dbe9db1a19fe] | Executed: ReservationRepositoryImpl.findExpiredWithLock() in 330 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5fe4c702-be7e-4f43-8318-c817efd24394] | Executed: TokenRepositoryImpl.countActiveTokens() in 330 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5fe4c702-be7e-4f43-8318-c817efd24394] | Executing: TokenRepositoryImpl.findTokensToActivate(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-21f23e68-d4b7-45da-a5db-dbe9db1a19fe] | schedule processed in 345 ms : 2025-01-16T21:04:23.273001
+2025-01-16 21:04:23 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-21f23e68-d4b7-45da-a5db-dbe9db1a19fe] | END TIME : 2025-01-16T21:04:23.273290
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [SCHEDULER-5fe4c702-be7e-4f43-8318-c817efd24394] | Executed: TokenRepositoryImpl.findTokensToActivate(..) in 11 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5fe4c702-be7e-4f43-8318-c817efd24394] | schedule processed in 354 ms : 2025-01-16T21:04:23.281375
+2025-01-16 21:04:23 INFO  k.h.b.s.i.scheduler.ScheduleTask - UUID - [SCHEDULER-5fe4c702-be7e-4f43-8318-c817efd24394] | END TIME : 2025-01-16T21:04:23.281578
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 10 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 11 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 12 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 41 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 3 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 5 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 14 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 7 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 18 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:04:23 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 19 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 15 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 16 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 15 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 14 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 1 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 11 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 10 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 2 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 0 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 13 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: UserRepositoryImpl.findById(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: UserRepositoryImpl.findById(..) in 2 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByIdsWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByIdsWithLock(..) in 3 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ReservationRepositoryImpl.save(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ReservationRepositoryImpl.save(..) in 1 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: SeatRepositoryImpl.findByScheduleId(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: SeatRepositoryImpl.findByScheduleId(..) in 8 ms
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executing: ScheduleRepositoryImpl.findByIdWithLock(..)
+2025-01-16 21:04:24 INFO  k.h.b.s.common.aop.LoggingAspect - UUID - [null] | Executed: ScheduleRepositoryImpl.findByIdWithLock(..) in 5 ms
+2025-01-16 21:04:24 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 21:04:24 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown initiated...
+2025-01-16 21:04:24 INFO  com.zaxxer.hikari.HikariDataSource - HangHaePlusDataSource - Shutdown completed.
