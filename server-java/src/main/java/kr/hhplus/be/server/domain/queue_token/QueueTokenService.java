@@ -17,36 +17,32 @@ public class QueueTokenService {
     private final QueueTokenRepository repository;
 
     /**
-     * ACTIVE 토큰 개수 반환
-     * - 통합테스트 진행
-     * @return
+     * 토큰 활성화 시키기
+     * @param maxTokenCnt
      */
-    public long countActive(){
-        return repository.countActiveTokens();
+    public void activate(Long maxTokenCnt){
+        // 1. 현재 활성화 되어 있는 토큰 수 구하기
+        long currentActiveCnt     = repository.countActiveTokens();
+
+        // 2. 활성화 가능한 토큰 수 반환
+        long activeAbleCnt        = maxTokenCnt-currentActiveCnt;
+
+        // 3. 토큰 활성화
+        if(activeAbleCnt>0){
+            repository.findTokensToActivate(activeAbleCnt)
+                    .forEach(QueueToken::activate);
+        }
     }
-
-
 
     /**
-     * 토큰 활성화
-     * @param activateCnt
-     * - 통합테스트 진행
+     * 토큰 만료 시키기
+     * @param tokenId
      */
-    public void activate(long activateCnt){
-        // 1. active 할 토큰들 조회하여 가져오기
-        // 2. 순회하여 토큰을 activate 시키기
-        repository.findTokensToActivate(activateCnt)
-                .forEach(QueueToken::activate);
-    }
-
     public void expired(Long tokenId){
         QueueToken token = repository.findById(tokenId)
-                .orElseThrow(()->new BusinessException(ErrorCode.Entity,"존재하지 않는 대기열 토큰입니다."));
-
+                .orElseThrow(()->new BusinessException(ErrorCode.NOT_FOUND_QUEUE_TOKEN));
         token.expire();
     }
-
-
 
 
     /**
@@ -58,23 +54,30 @@ public class QueueTokenService {
         return repository.create(queueToken);
     }
 
+
     /**
      * 대기열 토큰이 유효하며, active 된 토큰인지 확인
-     * - test: done
+     * @param queueTokenId
+     * @param userId
+     * @return
      */
     public Boolean isValidAndActive(Long queueTokenId, Long userId){
 
         QueueToken queueToken = repository.findByIdWithUser(queueTokenId)
-                .orElseThrow(()-> new BusinessException(ErrorCode.Repository,"잘못된 대기열 토큰입니다."));
+                .orElseThrow(()-> new BusinessException(ErrorCode.NOT_FOUND_QUEUE_TOKEN));
 
         if(!Objects.equals(queueToken.getUser().getId(), userId)){
-            throw new BusinessException(ErrorCode.Repository,"사용자가 대기열 토큰와 매칭되지 않습니다.");
+            throw new BusinessException(ErrorCode.NOT_MATCHED_WITH_USER);
+        }
+
+        if( queueToken.getStatus().equals(QueueTokenStatus.WAIT) ){
+            return false;
         }
 
         if( queueToken.getExpireAt().isBefore(LocalDateTime.now()) ){
-            throw new BusinessException(ErrorCode.Repository,"대기열이 만료된 토큰 입니다.");
+            throw new BusinessException(ErrorCode.EXPIRE_QUEUE_TOKEN);
         }
 
-        return queueToken.getStatus().equals(QueueTokenStatus.Active);
+        return true;
     }
 }

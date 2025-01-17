@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PaymentFacade {
     private final PaymentService paymentService;
-    private final SeatService seatService;
     private final UserService userService;
     private final ReservationService reservationService;
     private final QueueTokenService queueTokenService;
@@ -36,53 +35,31 @@ public class PaymentFacade {
     public PaymentFacadeDto.PaymentResult pay(PaymentFacadeDto.PaymentParam param){
 
         // 사용자 lock
-        User user = userService.findByIdWithLock(param.userid());
+        User user = userService.findUserForUpdate(param.userid());
 
 
         // 예약 lock : 에약 상태로 변경
-        List<Reservation> reservations = reservationService.findByIdsWithUseridAndLock(param.reservationIds(), param.userid())
-                .stream()
-                .peek(item -> item.updateStatus(ReservationStatus.Reserved)) // 상태를 업데이트
-                .toList();
+        List<Reservation> reservations = reservationService.reserve(param.reservationIds(), param.userid());
 
-        // 좌석 id 추출 -> lock 이 아님..
-        List<Long> seatIds = reservations.stream()
-                .map(reservation -> reservation.getSeat().getId())
-                .collect(Collectors.toList());
-
-
-        // 좌석 lock : 예약 상태로 변경
-        if(!seatIds.isEmpty()){
-            seatService.findAllByIdsWithLock(seatIds).forEach(item->{
-                item.updateStatus(SeatStatus.RESERVED);
-            });
-        }
 
         // 총 예약 금액을 구함
-        Long totalAmount = reservations.stream()
-                .map(Reservation::getAmount)
-                .reduce(0L, Long::sum);
+        Long totalAmount = reservationService.totalAmount(reservations);
 
         // user point 차감 -> 여기서 금액 모자르면 예외 발생
         user.pointTransaction(-totalAmount);
 
         // Payments 생성
         List<Payment> paymentList = reservations.stream()
-                .map(reservation ->
-                    Payment.builder()
-                            .amount(reservation.getAmount())
-                            .reservation(reservation).build()).toList();
+                .map(reservation -> Payment.create(reservation.getAmount(),reservation)).toList();
 
 
         paymentList = paymentService.create(paymentList);
 
         // History 생성
         List<PointHistory> historyList = paymentList.stream()
-                .map(payment ->
-                        PointHistory.createUse(payment.getAmount(),user,payment)).toList();
+                .map(payment -> PointHistory.createUse(payment.getAmount(),user,payment)).toList();
 
         pointHistoryService.create(historyList);
-
         queueTokenService.expired(param.tokenId());
 
         return  PaymentFacadeDto.PaymentResult.from(paymentList);

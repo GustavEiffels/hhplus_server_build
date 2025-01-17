@@ -5,11 +5,13 @@ import kr.hhplus.be.server.domain.queue_token.QueueTokenService;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class QueueTokenFacade {
 
     private final UserService userService;
@@ -24,11 +26,10 @@ public class QueueTokenFacade {
     @Transactional
     public QueueTokenFacadeDto.CreateResult create(QueueTokenFacadeDto.CreateParam param){
         // 1. find user
-        User user = userService.findById(param.userId());
+        User user = userService.findUser(param.userId());
 
         // 2. Create Entity & Create
-        QueueToken newQueueToken = queueTokenService.createToken(
-                QueueToken.builder().user(user).build());
+        QueueToken newQueueToken = queueTokenService.createToken( QueueToken.create(user) );
 
         return new QueueTokenFacadeDto.CreateResult(newQueueToken.getId());
     }
@@ -41,10 +42,10 @@ public class QueueTokenFacade {
      */
     public QueueTokenFacadeDto.ActiveCheckResult isValidToken(QueueTokenFacadeDto.ActiveCheckParam param){
         // 1. 사용자 조회
-        userService.findById(param.userId());
+        userService.findUser(param.userId());
 
         // 2. 활성화된 토큰인지 확인
-        return new QueueTokenFacadeDto.ActiveCheckResult(queueTokenService.isValidAndActive(param.tokenId(), param.userId()));
+        return new QueueTokenFacadeDto.ActiveCheckResult( queueTokenService.isValidAndActive(param.tokenId(), param.userId()) );
     }
 
 
@@ -54,16 +55,7 @@ public class QueueTokenFacade {
      */
     @Transactional
     public void activate(QueueTokenFacadeDto.ActivateParam param){
-        // 1. 현재 활성화 되어 있는 토큰 수 구하기
-        long activeCnt     = queueTokenService.countActive();
-
-        // 2. 활성화 가능한 토큰 수 반환
-        long activeAbleCnt = param.maxTokenCnt()-activeCnt;
-
-        // 3. 토큰 활성화
-        if(activeAbleCnt>0){
-            queueTokenService.activate(activeAbleCnt);
-        }
+        queueTokenService.activate(param.maxTokenCnt());
     }
 
 

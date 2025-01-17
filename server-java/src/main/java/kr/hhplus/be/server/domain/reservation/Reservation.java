@@ -24,7 +24,7 @@ public class Reservation extends BaseEntity {
     private Long id;
 
     @NotNull
-    private ReservationStatus status = ReservationStatus.Pending;
+    private ReservationStatus status = ReservationStatus.PENDING;
 
     @NotNull
     private Long amount;
@@ -48,13 +48,13 @@ public class Reservation extends BaseEntity {
     private Seat seat;
 
 
-    @Builder // 생성
-    public Reservation(User user, Seat seat){
+
+    private Reservation(User user, Seat seat){
         if(user == null){
-            throw new BusinessException(ErrorCode.Entity,"[사용자] 정보는 필수로 할당이 되어야 합니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
         if(seat == null){
-            throw new BusinessException(ErrorCode.Entity,"[좌석] 정보는 필수로 할당이 되어야 합니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
         this.user      = user;
         this.seat      = seat;
@@ -62,17 +62,41 @@ public class Reservation extends BaseEntity {
         this.expiredAt = LocalDateTime.now().plusMinutes(5);
     }
 
+    public static Reservation create(User user, Seat seat){
+        if(user == null){
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
+        }
+        if(seat == null){
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
+        }
+        return new Reservation(user,seat);
+    }
 
     public void expired(){
+        this.status    = ReservationStatus.EXPIRED;
         this.expiredAt = LocalDateTime.now();
     }
 
-
-    public void updateStatus(ReservationStatus status){
-        if( status == null ){
-            throw new BusinessException(ErrorCode.Entity,"[예약-상태] 변경 시 [예약-상태]는 필수 값 입니다.");
-        }
-        this.status = status;
+    public void reserve(){
+        this.status    = ReservationStatus.RESERVED;
+        this.expiredAt = LocalDateTime.now();
     }
 
+    /**
+     * @param userId
+     */
+    public void isReserveUser(Long userId){
+        if(!this.user.getId().equals(userId)){
+            throw new BusinessException(ErrorCode.NOT_RESERVATION_OWNER);
+        }
+    }
+
+    /**
+     * 만료된 예약 인지 확인
+     */
+    public void isExpired(){
+        if(this.expiredAt.isBefore(LocalDateTime.now())){
+            throw new BusinessException(ErrorCode.EXPIRE_RESERVATION);
+        }
+    }
 }

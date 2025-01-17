@@ -12,7 +12,7 @@ public interface PointApiDto {
     record FindBalanceRequest(Long userId) {
         public FindBalanceRequest {
             if (userId == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[사용자 아이디]는 필수값 입니다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
         }
 
@@ -30,10 +30,10 @@ public interface PointApiDto {
     record ChargePointRequest(Long userId, Long chargePoint) {
         public ChargePointRequest {
             if (userId == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[사용자 아이디]는 필수값 입니다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
             if (chargePoint == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[포인트]는 필수값 입니다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
         }
 

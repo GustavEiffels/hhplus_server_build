@@ -18,26 +18,36 @@ public class SeatService {
      * @param concertScheduleId
      * @return
      */
-    public List<Seat> findByScheduleId(Long concertScheduleId){
+    public List<Seat> findReservable(Long concertScheduleId){
         return repository.findByScheduleId(concertScheduleId);
     }
 
-    public List<Seat> findAllReserveAbleWithLock(List<Long> seatIds){
-        List<Seat> seatList = repository.findAllByIdsWithLock(seatIds);
+    /**
+     *
+     * @param seatIds
+     * @return
+     */
+    public List<Seat> findReservableForUpdate(List<Long> seatIds){
+        List<Seat> seatList = repository.findByIdsWithLock(seatIds);
         if (seatList.isEmpty()) {
-            throw new BusinessException(ErrorCode.Repository,"예약 가능한 좌석이 존재하지 않습니다.");
+            throw new BusinessException(ErrorCode.NOT_FOUND_SEAT);
         }
 
         seatList.forEach(item->{
             if(!item.getStatus().equals(SeatStatus.RESERVABLE)){
-                throw new BusinessException(ErrorCode.Repository,"예약 불가능한 좌석이 포함되어 있습니다.");
+                throw new BusinessException(ErrorCode.NOT_RESERVABLE_DETECTED);
             }
         });
 
         return  seatList;
     }
 
-    public List<Seat> findAllByIdsWithLock(List<Long> seatIds){
-        return repository.findAllByIdsWithLock(seatIds);
+    public List<Long> reservableAndReturnSchedules(List<Long> seatIds){
+        return repository.findByIdsWithLock(seatIds).stream()
+                .map(item -> {
+                    item.reservable();
+                    return item.getConcertSchedule().getId();
+                })
+                .toList();
     }
 }

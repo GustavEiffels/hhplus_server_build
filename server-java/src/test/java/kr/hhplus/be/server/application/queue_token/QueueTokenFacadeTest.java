@@ -37,7 +37,7 @@ class QueueTokenFacadeTest {
     void setUp(){
         List<User> newUserList = userList = new ArrayList<>();
         for(int i = 0; i<10; i++){
-            newUserList.add(User.builder().name("바보"+i).build());
+            newUserList.add(User.create("바보"+i));
         }
         userList = userJpaRepository.saveAll(newUserList);
     }
@@ -72,7 +72,7 @@ class QueueTokenFacadeTest {
     void 활성화_상태인_토큰과_해당토큰_사용자_아이디를_넣으면_true_값을_반환한다(){
         // given
         User user   = userList.get(0);
-        QueueToken token = tokenJpaRepository.save(QueueToken.builder().user(user).build());
+        QueueToken token = tokenJpaRepository.save(QueueToken.create(user));
         token.activate();
         tokenJpaRepository.save(token);
 
@@ -93,7 +93,7 @@ class QueueTokenFacadeTest {
             // createToken - 30
             List<QueueToken> queueTokens = new ArrayList<>();
             for(int i = 1; i<=30;i++){
-                QueueToken queueToken = QueueToken.builder().user(testUser).build();
+                QueueToken queueToken = QueueToken.create(testUser);
                 if(i%10==0){
                     queueToken.activate();
                 }
@@ -105,9 +105,9 @@ class QueueTokenFacadeTest {
         int waitCnt   = 0;
         List<QueueToken> tokenBefore = tokenJpaRepository.findAll();
         for (QueueToken item : tokenBefore) {
-            if (item.getStatus() == QueueTokenStatus.Active) {
+            if (item.getStatus() == QueueTokenStatus.ACTIVE) {
                 activeCnt++;
-            } else if (item.getStatus() == QueueTokenStatus.Wait) {
+            } else if (item.getStatus() == QueueTokenStatus.WAIT) {
                 waitCnt++;
             }
         }
@@ -122,9 +122,9 @@ class QueueTokenFacadeTest {
         waitCnt   = 0;
         List<QueueToken> tokenAfter = tokenJpaRepository.findAll();
         for (QueueToken item : tokenAfter) {
-            if (item.getStatus() == QueueTokenStatus.Active) {
+            if (item.getStatus() == QueueTokenStatus.ACTIVE) {
                 activeCnt++;
-            } else if (item.getStatus() == QueueTokenStatus.Wait) {
+            } else if (item.getStatus() == QueueTokenStatus.WAIT) {
                 waitCnt++;
             }
         }

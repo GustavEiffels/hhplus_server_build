@@ -1,4 +1,22 @@
-# hhplus_server_build
+# GIT EMOGI
+```text
+🏛️ feat :  
+🔧 fix :    
+🛠️ refactor :
+🔨 test : 
+🏗️ build : 
+📜 docs : 
+🎨 style : 
+⚓ ci : 
+🚀 pref :
+🧹 chore :
+```
+
+
+
+
+
+# STEP-07
 - hhplus server 구축
 
 ## Swagger 전체이미지

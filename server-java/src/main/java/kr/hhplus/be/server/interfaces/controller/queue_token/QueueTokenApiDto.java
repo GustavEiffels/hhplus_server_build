@@ -12,7 +12,7 @@ public interface QueueTokenApiDto {
     record CreateTokenRequest(Long userId) {
         public CreateTokenRequest {
             if (userId == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[사용자 아이디]는 필수 값이다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
         }
 
@@ -39,14 +39,14 @@ public interface QueueTokenApiDto {
         }
     }
 
-    record ActivateTokenRequest(Long maxTokenCnt) {
-        public ActivateTokenRequest {
-            if (maxTokenCnt == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[최대 토큰 수]는 필수 값이다.");
+    @Getter
+    class ActivateTokenRequest {
+        private  Long maxTokenCnt;
+        public ActivateTokenRequest(Long maxTokenCnt) {
+            if (maxTokenCnt == null || maxTokenCnt < 10) {
+                maxTokenCnt = 20L;
             }
-            if (maxTokenCnt < 10) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[최대 토큰 수]는 10 이상의 자연수여야 합니다.");
-            }
+            this.maxTokenCnt = maxTokenCnt;
         }
 
         public QueueTokenFacadeDto.ActivateParam toParam() {

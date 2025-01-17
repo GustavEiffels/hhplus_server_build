@@ -18,7 +18,7 @@ public class SeatJpaRepositoryCustomImpl implements SeatJpaRepositoryCustom {
 
 
     @Override
-    public List<Seat> findAllByIdsWithLock(List<Long> seatIds) {
+    public List<Seat> findByIdsWithLock(List<Long> seatIds) {
         return dsl.selectFrom(seat)
                 .where(seat.id.in(seatIds))
                 .setLockMode(LockModeType.PESSIMISTIC_WRITE)

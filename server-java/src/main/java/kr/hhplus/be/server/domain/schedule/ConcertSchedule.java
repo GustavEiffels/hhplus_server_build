@@ -36,7 +36,7 @@ public class ConcertSchedule extends BaseEntity {
     private LocalDateTime reservation_end;
 
     @NotNull
-    private Boolean isReserveAble = true;
+    private Boolean       isReserveAble = true;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "concert_id",nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
@@ -50,13 +50,10 @@ public class ConcertSchedule extends BaseEntity {
             LocalDateTime reserveEndTime,
             Concert concert){
         if(concert == null){
-            throw new BusinessException(ErrorCode.Entity,"[콘서트] 정보는 필수적으로 입력 되어야합니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
         reschedule(showTime,reserveStartTime,reserveEndTime);
         this.concert = concert;
-    }
-    public void updateReserveStatus(Boolean isReserveAble){
-        this.isReserveAble = isReserveAble;
     }
 
     public void reschedule(
@@ -65,19 +62,19 @@ public class ConcertSchedule extends BaseEntity {
             LocalDateTime reserveEndTime){
 
         if(showTime == null){
-            throw new BusinessException(ErrorCode.Entity,"[공연 시작] 시간은 필수 값 입니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
         if(reserveStartTime == null) {
-            throw new BusinessException(ErrorCode.Entity,"[예약 시작] 시간은 필수 값 입니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
         if(reserveEndTime == null) {
-            throw new BusinessException(ErrorCode.Entity,"[예약 종료] 시간은 필수 값 입니다.");
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
         if( reserveStartTime.isAfter(reserveEndTime) ){
-            throw new BusinessException(ErrorCode.Entity,"[예약 종료] 시간은 [예약 시작] 시간보다 늦어야 합니다.");
+            throw new BusinessException(ErrorCode.RESCHEDULE_ERROR_END_BEFORE_START);
         }
         if( reserveEndTime.isAfter(showTime) ){
-            throw new BusinessException(ErrorCode.Entity,"[공연] 시간은 [예약 종료] 시간보다 늦어야 합니다.");
+            throw new BusinessException(ErrorCode.RESCHEDULE_ERROR_INVALID_SHOWTIME);
         }
 
         this.showTime          = showTime;
@@ -85,5 +82,19 @@ public class ConcertSchedule extends BaseEntity {
         this.reservation_end   = reserveEndTime;
     }
 
+    /**
+     * 명시적으로 method 추가
+     * @return
+     */
+    public boolean isReservable(){
+        return this.isReserveAble;
+    }
+
+    public void enableReservation(){
+        this.isReserveAble = true;
+    }
+    public void disableReservation(){
+        this.isReserveAble = false;
+    }
 
 }

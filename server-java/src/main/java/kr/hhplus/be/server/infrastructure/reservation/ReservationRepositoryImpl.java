@@ -18,12 +18,17 @@ public class ReservationRepositoryImpl implements ReservationRepository {
     }
 
     @Override
+    public List<Reservation> save(List<Reservation> reservationList) {
+        return jpaRepository.saveAll(reservationList);
+    }
+
+    @Override
     public List<Reservation> findExpiredWithLock() {
         return jpaRepository.findExpiredWithLock();
     }
 
     @Override
-    public List<Reservation> findByIdsWithLock(List<Long> reservationsIds) {
-        return jpaRepository.findByIdsWithLock(reservationsIds);
+    public List<Reservation> fetchFindByIdsWithLock(List<Long> reservationsIds) {
+        return jpaRepository.fetchFindByIdsWithLock(reservationsIds);
     }
 }

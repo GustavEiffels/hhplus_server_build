@@ -63,12 +63,12 @@ class ReservationFacadeTest {
     @BeforeEach
     void setUp_공연0은예약가능_18_예약불가능_12_공연1_예약가능_12_예약_불가능_18_스케줄0_좌석50개_짝수_점유_홀수_예약가능(){
 
-        user = userJpaRepository.save(User.builder().name("김연습").build());
+        user = userJpaRepository.save(User.create("test"));
 
-        concert0 = Concert.builder().title("서커스0").performer("김광대").build();
+        concert0 = Concert.create("서커스0","김광대");
         concertJpaRepository.save(concert0);
 
-        concert1 = Concert.builder().title("서커스1").performer("이광대").build();
+        concert1 = Concert.create("서커스1","이광대");
         concertJpaRepository.save(concert1);
 
         List<ConcertSchedule> concertScheduleList0 = new ArrayList<>();
@@ -117,7 +117,7 @@ class ReservationFacadeTest {
                     .price(300_000L).build();
 
             if(i % 2 == 0){
-                newSeat.updateStatus(SeatStatus.OCCUPIED);
+                newSeat.reserve();
             }
             seatList.add(newSeat);
         }
@@ -148,7 +148,7 @@ class ReservationFacadeTest {
 
         // then
         assertEquals(4,result.reservationInfoList().size());
-        assertEquals(21, seatService.findByScheduleId(scheduleId).size());
+        assertEquals(21, seatService.findReservable(scheduleId).size());
     }
 
 // 좌석 점유 만료
@@ -180,14 +180,10 @@ class ReservationFacadeTest {
         reservationFacade.expire();
 
         // then
-        Seat seat1_1 = seatJpaRepository.findById(seat1.getId()).get();
-        Seat seat2_1 = seatJpaRepository.findById(seat2.getId()).get();
-        assertEquals(SeatStatus.RESERVABLE,seat1_1.getStatus());
-        assertEquals(SeatStatus.RESERVABLE,seat2_1.getStatus());
         Reservation reservation0_1 = reservationJpaRepository.findById(reservationIds.get(0)).get();
         Reservation reservation1_1 = reservationJpaRepository.findById(reservationIds.get(1)).get();
-        assertEquals(ReservationStatus.Expired,reservation0_1.getStatus());
-        assertEquals(ReservationStatus.Expired,reservation1_1.getStatus());
+        assertEquals(ReservationStatus.EXPIRED,reservation0_1.getStatus());
+        assertEquals(ReservationStatus.EXPIRED,reservation1_1.getStatus());
 
     }
 

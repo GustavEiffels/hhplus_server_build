@@ -5,12 +5,14 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.LockModeType;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationStatus;
+import kr.hhplus.be.server.domain.user.QUser;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import static kr.hhplus.be.server.domain.reservation.QReservation.reservation;
+import static kr.hhplus.be.server.domain.user.QUser.user;
 
 @RequiredArgsConstructor
 public class ReservationRepositoryCustomImpl implements ReservationRepositoryCustom {
@@ -27,14 +29,14 @@ public class ReservationRepositoryCustomImpl implements ReservationRepositoryCus
     public List<Reservation> findExpiredWithLock() {
         return dsl.select(reservation)
                 .from(reservation)
-                .where(reservation.status.eq(ReservationStatus.Pending)
+                .where(reservation.status.eq(ReservationStatus.PENDING)
                         .and(reservation.expiredAt.before(LocalDateTime.now())))
                 .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                 .fetch();
     }
 
     @Override
-    public List<Reservation> findByIdsWithLock(List<Long> reservationIds) {
+    public List<Reservation> fetchFindByIdsWithLock(List<Long> reservationIds) {
         return dsl.select(reservation)
                 .from(reservation)
                 .join(reservation.user)
@@ -43,4 +45,6 @@ public class ReservationRepositoryCustomImpl implements ReservationRepositoryCus
                 .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                 .fetch();
     }
+
+
 }

@@ -39,25 +39,24 @@ public class Payment extends BaseEntity {
             foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private Reservation reservation;
 
-    @Builder // 초기 생성
-    public Payment(Long amount, Reservation reservation){
-
-
-        if( amount < 0){
-            throw new BusinessException(ErrorCode.Entity,"결제 금액은 0보다 커야합니다.");
-        }
-
-        if( reservation == null ){
-            throw new BusinessException(ErrorCode.Entity,"[예약] 정보는 필수 값 입니다.");
-        }
-
+    private Payment(Long amount, Reservation reservation){
         this.amount          = amount;
         this.reservation     = reservation;
-        this.paymentStatus   = PaymentStatus.Success;
+        this.paymentStatus   = PaymentStatus.SUCCESS;
+    }
+
+    public static Payment create(Long amount, Reservation reservation){
+        if( amount < 0){
+            throw new BusinessException(ErrorCode.NOT_VALID_PAYMENT_AMOUNT);
+        }
+        if( reservation == null ){
+            throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
+        }
+        return  new Payment(amount,reservation);
     }
 
     public void cancel(){
-        this.paymentStatus = PaymentStatus.Cancel;
+        this.paymentStatus = PaymentStatus.CANCEL;
     }
 
 }

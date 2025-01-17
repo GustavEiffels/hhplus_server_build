@@ -14,13 +14,13 @@ public interface PaymentApiDto {
     record PaymentRequest(List<Long> reservationIds, Long userId, Long tokenId) {
         public PaymentRequest {
             if (reservationIds.isEmpty()) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "예약 리스트를 보내주세요.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
             if (userId == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[userId]는 필수 값입니다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
             if (tokenId == null) {
-                throw new BusinessException(ErrorCode.INVALID_INPUT, "[tokenId]는 필수 값입니다.");
+                throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
             }
         }
 

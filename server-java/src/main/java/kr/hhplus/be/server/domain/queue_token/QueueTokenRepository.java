@@ -27,6 +27,7 @@ public interface QueueTokenRepository {
      */
     Optional<QueueToken> findByIdWithUser(Long queueTokenId);
 
+
     Optional<QueueToken> findById(Long tokenId);
 
 

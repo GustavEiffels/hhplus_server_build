@@ -31,9 +31,6 @@ dependencyManagement {
 
 dependencies {
 
-	// web client : 2025-01-08
-
-
 	// querydsl : 2025-01-06
 	implementation ("com.querydsl:querydsl-jpa:5.0.0:jakarta")
 	annotationProcessor ("com.querydsl:querydsl-apt:${dependencyManagement.importedProperties["querydsl.version"]}:jakarta")

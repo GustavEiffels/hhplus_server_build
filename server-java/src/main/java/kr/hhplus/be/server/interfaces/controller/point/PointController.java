@@ -28,7 +28,6 @@ public class PointController {
         PointFacadeDto.FindBalanceResult result  = pointFacade.findUserBalance(new PointApiDto.FindBalanceRequest(userId).toParam());
         PointApiDto.FindBalanceResponse response = new PointApiDto.FindBalanceResponse(result.balance());
         return new ResponseEntity<>(ApiResponse.ok(response ), HttpStatus.OK);
-
     }
 
     @PutMapping("/points/charge")
