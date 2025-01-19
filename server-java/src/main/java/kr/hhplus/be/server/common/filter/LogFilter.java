@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.ContentCachingResponseWrapper;
@@ -22,13 +23,10 @@ public class LogFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String uuid    = "REQUEST-"+UUID.randomUUID();
-        uuidHolder.set(uuid);
 
         CachingRequestWrapper requestWrapper = new CachingRequestWrapper(request);
         ContentCachingResponseWrapper responseWrapper = new ContentCachingResponseWrapper(response);
-
         long startTime = System.currentTimeMillis();
-
         try {
             logRequest(requestWrapper,uuid);
             filterChain.doFilter(requestWrapper, responseWrapper);
@@ -40,25 +38,13 @@ public class LogFilter extends OncePerRequestFilter {
     }
 
     private void logRequest(CachingRequestWrapper request, String uuid) throws IOException {
-        String queryString = request.getQueryString();
         String body = getBody(request.getInputStream());
-        log.info("UUID - [{}] | START TIME : {}",uuid, LocalDateTime.now());
-        log.info("UUID - [{}] | Request : {} uri=[{}] content-type=[{}]"
-                , uuid
-                , request.getMethod()
-                , queryString == null ? request.getRequestURI() : request.getRequestURI() + "?" + queryString
-                , request.getContentType());
         log.info("UUID - [{}] | RequestBody : {}",uuid,body);
     }
 
-    private void logResponse(ContentCachingResponseWrapper response, String uuid, long startTime)
-            throws IOException {
+    private void logResponse(ContentCachingResponseWrapper response, String uuid, long startTime) throws IOException {
         String body = getBody(response.getContentInputStream());
-
-        log.info("UUID - [{}] | Response : {} ", uuid, response.getStatus());
-        log.info("UUID - [{}] | ResponseBody : {}",uuid,body);
-        log.info("UUID - [{}] | Request processed in {} ms", uuid,(System.currentTimeMillis() - startTime));
-        log.info("UUID - [{}] | END TIME : {}",uuid, LocalDateTime.now());
+        log.info("UUID - [{}] | ResponseBody : {} | processed in {} ms",uuid,body,(System.currentTimeMillis() - startTime));
     }
 
     public String getBody(InputStream is) throws IOException {

@@ -38,4 +38,7 @@ out/
 ### VS Code ###
 .vscode/
 
+### log
+/server-java/logs
+
 data
