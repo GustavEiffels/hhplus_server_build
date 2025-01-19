@@ -1,0 +1,7 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    container_name: concert-redis
+    ports:
+      - "63799:6379"

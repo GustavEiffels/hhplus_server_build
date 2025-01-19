@@ -27,12 +27,12 @@ public class ScheduleTask {
         String uuid = "SCHEDULER-" + UUID.randomUUID();
         SchedulerContext.setUuid(uuid);
         long startTime = System.currentTimeMillis();
-        log.info("UUID - [{}] | ACTIVE_TOKEN_SCHEDULER | START TIME : {}", uuid, LocalDateTime.now());
+
         try {
             queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(maxActiveToken));
+            log.info("UUID - [{}] | active token schedule ", uuid);
         } finally {
-            log.info("UUID - [{}] | schedule processed in {} ms : {}", uuid, (System.currentTimeMillis() - startTime), LocalDateTime.now());
-            log.info("UUID - [{}] | END TIME : {}", uuid, LocalDateTime.now());
+            log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));
             SchedulerContext.clear();
         }
     }
@@ -42,13 +42,11 @@ public class ScheduleTask {
         String uuid = "SCHEDULER-" + UUID.randomUUID();
         SchedulerContext.setUuid(uuid);
         long startTime = System.currentTimeMillis();
-        log.info("UUID - [{}] | RESERVATION_EXPIRE_SCHEDULER | START TIME : {}",uuid, LocalDateTime.now());
+        log.info("UUID - [{}] | reservation expire schedule ", uuid);
         try {
             reservationFacade.expire();
         }finally {
-            log.info("UUID - [{}] | schedule processed in {} ms : {}",uuid, (System.currentTimeMillis()-startTime),LocalDateTime.now());
-            log.info("UUID - [{}] | END TIME : {}",uuid, LocalDateTime.now());
-
+            log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));
             SchedulerContext.clear();
         }
 

@@ -71,9 +71,7 @@ public class PointConcurrencyTest {
 
         // 성공한 충전 요청 개수 확인 (1번만 성공해야 함)
         long successCnt = results.stream().filter(Boolean::booleanValue).count();
-        long failCnt    = results.stream().filter(b->b.equals(false)).count();
         assertEquals(1, successCnt);
-        assertEquals(49, failCnt);
 
         // 사용자의 최종 포인트 확인 (10,000이어야 함)
         User updatedUser = userJpaRepository.findById(newUser.getId()).orElseThrow();

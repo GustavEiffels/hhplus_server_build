@@ -28,7 +28,6 @@ public class LoggingAspect {
         long startTime = System.currentTimeMillis();
 
         try {
-            log.info("UUID - [{}] | Executing: {}", uuid, methodName);
             return joinPoint.proceed();
         } finally {
             long endTime = System.currentTimeMillis();
