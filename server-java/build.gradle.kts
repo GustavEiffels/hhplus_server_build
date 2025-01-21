@@ -34,6 +34,7 @@ dependencies {
 	// querydsl : 2025-01-06
 	implementation ("com.querydsl:querydsl-jpa:5.0.0:jakarta")
 	annotationProcessor ("com.querydsl:querydsl-apt:${dependencyManagement.importedProperties["querydsl.version"]}:jakarta")
+
 	annotationProcessor ("jakarta.annotation:jakarta.annotation-api")
 	annotationProcessor ("jakarta.persistence:jakarta.persistence-api")
 
@@ -62,6 +63,10 @@ dependencies {
 	// Lombok
 	compileOnly("org.projectlombok:lombok:1.18.24") // Lombok 의존성 추가
 	annotationProcessor("org.projectlombok:lombok:1.18.24") // Lombok 애노테이션 프로세서 추가
+
+
+	testCompileOnly("org.projectlombok:lombok")
+	testAnnotationProcessor("org.projectlombok:lombok")
 
 
 }

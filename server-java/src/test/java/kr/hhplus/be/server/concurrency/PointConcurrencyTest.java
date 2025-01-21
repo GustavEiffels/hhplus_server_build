@@ -45,7 +45,7 @@ public class PointConcurrencyTest {
     void concurrencyTest() throws InterruptedException {
         int numThreads = 50;
         ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
-        CountDownLatch startSignal = new CountDownLatch(1); // 모든 스레드가 동시에 시작하도록
+        CountDownLatch startSignal = new CountDownLatch(1);
         CountDownLatch doneSignal = new CountDownLatch(numThreads); // 모든 스레드가 작업 완료 시점 확인
 
         List<Boolean> results = new ArrayList<>(numThreads);

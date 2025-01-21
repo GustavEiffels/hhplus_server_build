@@ -11,6 +11,7 @@ import java.util.List;
 import static kr.hhplus.be.server.domain.schedule.QConcertSchedule.concertSchedule;
 import static kr.hhplus.be.server.domain.seat.QSeat.seat;
 
+
 @RequiredArgsConstructor
 public class SeatJpaRepositoryCustomImpl implements SeatJpaRepositoryCustom {
 
