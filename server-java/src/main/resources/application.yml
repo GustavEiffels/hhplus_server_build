@@ -21,14 +21,14 @@ spring:
   jpa:
     open-in-view: true
     generate-ddl: true
-    show-sql: true
+#    show-sql: true
     format_sql: true
     hibernate:
       ddl-auto: create
     properties:
       hibernate.timezone.default_storage: NORMALIZE_UTC
       hibernate.jdbc.time_zone: UTC
-      hibernate.show-sql: true
+#      hibernate.show-sql: true
 #      hibernate.format_sql: true
 
 queue:

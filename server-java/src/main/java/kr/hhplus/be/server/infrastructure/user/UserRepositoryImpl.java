@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("default")
+@Profile("local")
 public class UserRepositoryImpl implements UserRepository {
 
     private final UserJpaRepository jpaRepository;

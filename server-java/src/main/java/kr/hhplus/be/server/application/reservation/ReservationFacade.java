@@ -31,12 +31,12 @@ public class ReservationFacade {
     @Transactional
     public ReservationFacadeDto.ReservationResult reservation(ReservationFacadeDto.ReservationParam param){
 
-        // 1. 사용자 조회
-        User findUser = userService.findUser(param.userId());
-
 
         // 2. 예약할 좌석들을 조회 : lock
         List<Seat> seatList = seatService.findReservableForUpdate(param.seatIdList());
+
+        // 1. 사용자 조회
+        User findUser = userService.findUser(param.userId());
 
 
         // 3. 예약할 좌석들을 기반으로 예약을 생성
@@ -50,10 +50,10 @@ public class ReservationFacade {
         // 4. 예약 생성
         reservationService.create(createdReservations);
 
-        // 5. 해당 콘서트 스케줄에 더이상 예약 가능한 좌석이 없는 경우 -> 예약 불가능 상태로 변환
-        if(seatService.findReservable(param.scheduleId()).isEmpty()){
-            concertScheduleService.changeUnReservable(param.scheduleId());
-        }
+//        // 5. 해당 콘서트 스케줄에 더이상 예약 가능한 좌석이 없는 경우 -> 예약 불가능 상태로 변환
+//        if(seatService.findReservable(param.scheduleId()).isEmpty()){
+//            concertScheduleService.changeUnReservable(param.scheduleId());
+//        }
 
         return ReservationFacadeDto.ReservationResult.from(createdReservations);
     }
