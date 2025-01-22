@@ -1,7 +1,5 @@
 package kr.hhplus.be.server.infrastructure.user;
 
-import kr.hhplus.be.server.common.exceptions.BusinessException;
-import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,14 +11,14 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("default")
-public class UserRepositoryImpl implements UserRepository {
+@Profile("pessimistic")
+public class UserRepositoryPessimisticImpl implements UserRepository {
 
     private final UserJpaRepository jpaRepository;
 
     @Override
     public Optional<User> findById(Long userId) {
-        return jpaRepository.findById(userId);
+        return jpaRepository.findByIdWithLockSetLockTime(userId);
     }
 
     @Override

@@ -7,4 +7,6 @@ import java.util.Optional;
 public interface UserJpaRepositoryCustom {
 
     Optional<User> findByIdWithLock(Long userId);
+
+    Optional<User> findByIdWithLockSetLockTime(Long userId);
 }
