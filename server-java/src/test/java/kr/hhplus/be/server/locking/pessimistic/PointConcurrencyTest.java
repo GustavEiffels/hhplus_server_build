@@ -27,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 @Testcontainers
 @Slf4j
-@ActiveProfiles("pessimistic")
+@ActiveProfiles("dev")
 @DisplayName("""
             포인트 충전 - 비관적 락을 사용한다.      
             """)

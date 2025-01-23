@@ -1,11 +1,7 @@
-package kr.hhplus.be.server.locking.pessimistic;
+package kr.hhplus.be.server.locking.optimistic;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import kr.hhplus.be.server.application.reservation.ReservationFacadeDto;
-import kr.hhplus.be.server.common.exceptions.BusinessException;
-import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.concert.Concert;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.seat.Seat;
@@ -19,7 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Profile;
+import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.junit.jupiter.Testcontainers;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -32,8 +31,9 @@ import java.util.concurrent.Executors;
 @Testcontainers
 @Slf4j
 @DisplayName("""
-            좌석 예약 - 비관적 락을 사용한다.      
+            좌석 예약 - 낙관적 락을 사용한다.      
             """)
+@ActiveProfiles("dev")
 public class ReservationConcurrencyTest {
 
     @Autowired
@@ -42,7 +42,6 @@ public class ReservationConcurrencyTest {
     ConcertJpaRepository concertRepository;
     @Autowired
     ScheduleJpaRepository concertScheduleRepository;
-
     @Autowired
     UserJpaRepository userRepository;
     @Autowired
@@ -50,29 +49,30 @@ public class ReservationConcurrencyTest {
     @Autowired
     ReservationJpaRepository reservationRepository;
 
+
     ConcertSchedule concertSchedule;
     Seat seat;
     List<User> userList;
 
-    @DisplayName("비관적 락을 사용하여 하나의 좌석을 10 개의 요청이 동시에 요청할 때, 해당 좌석에 대한 예약은 1번만 수행 된다.")
+    @DisplayName("낙관적 락을 사용하여 하나의 좌석을 10 개의 요청이 동시에 요청할 때, 해당 좌석에 대한 예약은 1번만 수행 된다.")
     @Test
     void thread_10() throws InterruptedException {
         concurrencyTest(10);
     }
 
-    @DisplayName("비관적 락을 사용하여 하나의 좌석을 50 개의 요청이 동시에 요청할 때, 해당 좌석에 대한 예약은 1번만 수행 된다.")
+    @DisplayName("낙관적 락을 사용하여 하나의 좌석을 50 개의 요청이 동시에 요청할 때, 해당 좌석에 대한 예약은 1번만 수행 된다.")
     @Test
     void thread_50() throws InterruptedException {
         concurrencyTest(50);
     }
 
-    @DisplayName("비관적 락을 사용하여 하나의 좌석을 200 개의 요청이 동시에 요청할 때, 해당 좌석에 대한 예약은 1번만 수행 된다.")
+    @DisplayName("낙관적 락을 사용하여 하나의 좌석을 200 개의 요청이 동시에 요청할 때, 해당 좌석에 대한 예약은 1번만 수행 된다.")
     @Test
     void thread_200() throws InterruptedException {
         concurrencyTest(200);
     }
 
-    @DisplayName("비관적 락을 사용하여 하나의 좌석을 1000 개의 요청이 동시에 요청할 때, 해당 좌석에 대한 예약은 1번만 수행 된다.")
+    @DisplayName("낙관적 락을 사용하여 하나의 좌석을 1000 개의 요청이 동시에 요청할 때, 해당 좌석에 대한 예약은 1번만 수행 된다.")
     @Test
     void thread_1000() throws InterruptedException {
         concurrencyTest(1000);

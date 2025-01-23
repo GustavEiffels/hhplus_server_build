@@ -35,4 +35,11 @@ public class SeatJpaRepositoryCustomImpl implements SeatJpaRepositoryCustom {
                         .and(seat.status.eq(SeatStatus.RESERVABLE)))
                 .fetch();
     }
+
+    @Override
+    public List<Seat> findByIds(List<Long> seatIds) {
+        return dsl.selectFrom(seat)
+                .where(seat.id.in(seatIds))
+                .fetch();
+    }
 }

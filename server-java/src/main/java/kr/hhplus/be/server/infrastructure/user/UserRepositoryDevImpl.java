@@ -10,8 +10,8 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("pessimistic")
-public class UserRepositoryPessimisticImpl implements UserRepository {
+@Profile("dev")
+public class UserRepositoryDevImpl implements UserRepository {
 
     private final UserJpaRepository jpaRepository;
 

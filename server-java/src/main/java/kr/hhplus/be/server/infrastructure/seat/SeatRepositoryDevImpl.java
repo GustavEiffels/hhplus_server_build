@@ -10,16 +10,15 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("local")
-public class SeatRepositoryImpl implements SeatRepository {
+@Profile("dev")
+public class SeatRepositoryDevImpl implements SeatRepository {
 
     private final SeatJpaRepository jpaRepository;
 
     @Override
     public List<Seat> findByIdsWithLock(List<Long> seatIds) {
-        return jpaRepository.findByIdsWithLock(seatIds);
+        return jpaRepository.findByIds(seatIds);
     }
-
 
     @Override
     public List<Seat> findByScheduleId(Long concertScheduleId) {
