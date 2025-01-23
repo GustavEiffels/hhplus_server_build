@@ -111,6 +111,7 @@ public class ReservationConcurrencyTest {
         }
 
         doneSignal.await();
+        executorService.shutdown();
         long endTime = System.currentTimeMillis();
 
         long successfulReservations = results.stream().filter(Boolean::booleanValue).count();
@@ -121,7 +122,7 @@ public class ReservationConcurrencyTest {
         Assertions.assertEquals(successfulReservations,newReservationCnt,"생성된 예약 수");
         errorMessage.forEach(item->log.info("예외 : {}",item));
 
-        log.info("성공한 예외 개수 : {}",successfulReservations);
+        log.info("성공한 얘약 개수 : {}",successfulReservations);
         log.info("실패한 예외 개수 : {}",failedReservations);
         log.info("생성된 예약 수   : {}",newReservationCnt);
         log.info("process time  : {} ms",(endTime-startTime));

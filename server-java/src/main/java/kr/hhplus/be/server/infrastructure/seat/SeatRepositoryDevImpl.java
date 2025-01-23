@@ -24,4 +24,7 @@ public class SeatRepositoryDevImpl implements SeatRepository {
     public List<Seat> findByScheduleId(Long concertScheduleId) {
         return jpaRepository.findByScheduleId(concertScheduleId);
     }
+
+
+
 }
