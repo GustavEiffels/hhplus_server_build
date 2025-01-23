@@ -1,11 +1,8 @@
 package kr.hhplus.be.server.locking.pessimistic;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import kr.hhplus.be.server.application.reservation.ReservationFacadeDto;
-import kr.hhplus.be.server.common.exceptions.BusinessException;
-import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.concert.Concert;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.seat.Seat;
@@ -19,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -34,6 +32,7 @@ import java.util.concurrent.Executors;
 @DisplayName("""
             좌석 예약 - 비관적 락을 사용한다.      
             """)
+@ActiveProfiles("pessimistic")
 public class ReservationConcurrencyTest {
 
     @Autowired

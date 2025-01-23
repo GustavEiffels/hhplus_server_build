@@ -40,7 +40,7 @@ public class PaymentFacade {
         // 총 예약 금액을 구함
         Long totalAmount = reservationService.totalAmount(reservations);
 
-        // 사용자 lock
+        // 사용자 조회
         User user = userService.findUser(param.userid());
 
         // user point 차감 -> 여기서 금액 모자르면 예외 발생

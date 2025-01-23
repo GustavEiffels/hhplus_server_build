@@ -44,7 +44,7 @@ public class ReservationService {
      */
     public List<Reservation> reserve(List<Long> reservationIds, Long userId){
         // 1. 예약 아이디 리스트로 조회
-        List<Reservation> reservations = repository.fetchFindByIdsWithLock(reservationIds);
+        List<Reservation> reservations = repository.findByIdsWithLock(reservationIds);
 
         // 2. 존재하지 않은 예약일 경우 예외
         if (reservations.isEmpty()) {

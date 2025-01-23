@@ -61,7 +61,7 @@ class ReservationServiceTest {
         // given
         List<Long> reservationIds = new ArrayList<>();
         Long       userId         = 1L;
-        when(repository.fetchFindByIdsWithLock(reservationIds)).thenReturn(new ArrayList<>());
+        when(repository.findByIdsWithLock(reservationIds)).thenReturn(new ArrayList<>());
 
         // when
         BusinessException exception = assertThrows(
@@ -82,7 +82,7 @@ class ReservationServiceTest {
         Reservation reservation = mock(Reservation.class);
         reservations.add(reservation);
 
-        when(repository.fetchFindByIdsWithLock(reservationIds)).thenReturn(reservations);
+        when(repository.findByIdsWithLock(reservationIds)).thenReturn(reservations);
         doThrow(new BusinessException(ErrorCode.EXPIRE_RESERVATION)).when(reservation).isExpired();
 
 
@@ -106,7 +106,7 @@ class ReservationServiceTest {
         Reservation reservation = mock(Reservation.class);
         reservations.add(reservation);
 
-        when(repository.fetchFindByIdsWithLock(reservationIds)).thenReturn(reservations);
+        when(repository.findByIdsWithLock(reservationIds)).thenReturn(reservations);
         doThrow(new BusinessException(ErrorCode.NOT_RESERVATION_OWNER)).when(reservation).isReserveUser(userId);
 
 

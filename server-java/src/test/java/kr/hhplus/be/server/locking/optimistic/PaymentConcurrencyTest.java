@@ -18,14 +18,19 @@ import kr.hhplus.be.server.infrastructure.reservation.ReservationJpaRepository;
 import kr.hhplus.be.server.infrastructure.schedule.ScheduleJpaRepository;
 import kr.hhplus.be.server.infrastructure.seat.SeatJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -36,6 +41,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @SpringBootTest
+@Testcontainers
+@Slf4j
+@DisplayName("""
+            결제 - 낙관적 락을 사용한다.      
+            """)
+@ActiveProfiles("optimistic")
 public class PaymentConcurrencyTest {
 
     @Autowired
@@ -64,55 +75,89 @@ public class PaymentConcurrencyTest {
 
     List<Long> reservations;
 
+
     @DisplayName("""
-                 * 한명의 사용자가
-                 * 하나의 예약에 대해서
-                 * 결제를 하려고 한다.
-                 * 이때 결제가 여러번 발생해도
-                 * 최종적으로 결제는 한번만 일어나야한다.
-                 *
-                 * 사용자는 보유 포인트가 100,000 포인트
-                 * 10,000 짜리 2좌석 예약을 결제하려고 한다.
-                 *
-                 * 서버의 실수로 인해서
-                 * 한번에 30번 요청이 갔다고 할때
-                 *
-                 * 사용자의 포인트는 80,000 포인트가 되어야하고
-                 * 2개의 Reservation 의 상태값은 RESERVE 로 변경되어야 한다.
-                 * Token 은 만료 되어 있어한다.            
+            낙관적락 사용하여 동시에 예약 결제를 10번 요청하면, 테스트 성공 시 
+            결제는 1번만 성공하고,
+            결제 2건, 
+            결제 내역 2건 이 생성되고, 
+            토큰은 만료가 되고 예약의 상태는 Reserved 가 된다.
             """)
     @Test
-    void concurrencyTest() throws InterruptedException {
-        int numThreads = 30; // 동시 요청의 개수
-        ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
-        CountDownLatch startSignal = new CountDownLatch(1);
+    void thread_10() throws InterruptedException {
+        concurrencyTest(10);
+    }
+
+
+    @DisplayName("""
+            낙관적락을 사용하여 동시에 예약 결제를 50번 요청하면, 테스트 성공 시
+            결제는 1번만 성공하고, 
+            결제 2건, 
+            결제 내역 2건 이 생성되며, 
+            토큰은 만료가 되고 예약의 상태는 Reserved 가 된다.
+            """)
+    @Test
+    void thread_50() throws InterruptedException {
+        concurrencyTest(50);
+    }
+
+    @DisplayName("""
+            낙관적락을 사용하여 동시에 예약 결제를 200번 요청하면, 테스트 성공 시
+            결제는 1번만 성공하고, 
+            결제 2건, 
+            결제 내역 2건 이 생성되며, 
+            토큰은 만료가 되고 예약의 상태는 Reserved 가 된다.
+            """)
+    @Test
+    void thread_200() throws InterruptedException {
+        concurrencyTest(200);
+    }
+
+    @DisplayName("""
+            낙관적락을 사용하여 동시에 예약 결제를 1000번 요청하면, 테스트 성공 시
+            결제는 1번만 성공하고, 
+            결제 2건, 
+            결제 내역 2건 이 생성되며, 
+            토큰은 만료가 되고 예약의 상태는 Reserved 가 된다.
+            """)
+    @Test
+    void thread_1000() throws InterruptedException {
+        concurrencyTest(1000);
+    }
+
+    void concurrencyTest(int numThreads) throws InterruptedException {
+
+        long startTime = System.currentTimeMillis();
+
         CountDownLatch doneSignal = new CountDownLatch(numThreads);
+        ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
+
 
         List<Boolean> results = new ArrayList<>();
+        HashSet<String> errorMessage = new HashSet<>(numThreads);
+
         for (int i = 0; i < numThreads; i++) {
             executorService.submit(() -> {
                 try {
-                    startSignal.await();
 
                     PaymentFacadeDto.PaymentParam param = new PaymentFacadeDto.PaymentParam(
                             reservations, user.getId(), queueToken.getId());
                     try {
-                        facade.pay(param); // 결제 시도
-                        results.add(true); // 결제 성공
+                        facade.pay(param);
+                        results.add(true);
                     } catch (Exception e) {
-                        results.add(false); // 결제 실패
+                        errorMessage.add(e.getClass().getName()+" : "+e.getLocalizedMessage());
+                        results.add(false);
                     }
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
                 } finally {
-                    doneSignal.countDown(); // 작업 완료 신호
+                    doneSignal.countDown();
                 }
             });
         }
 
-        startSignal.countDown();
         doneSignal.await();
         executorService.shutdown();
+        long endTime = System.currentTimeMillis();
 
         // 결제 성공은 1 번만
         long successfulPayments = results.stream().filter(Boolean::booleanValue).count();
@@ -137,6 +182,23 @@ public class PaymentConcurrencyTest {
         QueueToken findToken = tokenJpaRepository.findById(queueToken.getId()).orElseThrow();
         assertTrue(findToken.getExpireAt().isBefore(LocalDateTime.now()));
 
+        log.info("결제 성공 횟수 : {}",successfulPayments);
+        log.info("생성된 결제 수 : {}",reservationList.size());
+        log.info("생성된 결제 내역 수 : {}",pointHistories.size());
+        log.info("결제 후 사용자 금액 : {}",userAfterPayment.getPoint());
+        errorMessage.forEach(item->log.info("발생한 예외 : {}",item));
+        log.info("process time  : {} ms",(endTime-startTime));
+
+    }
+
+    @AfterEach
+    void tearDown() {
+        userRepository.deleteAll();
+        concertRepository.deleteAll();
+        concertScheduleRepository.deleteAll();
+        seatRepository.deleteAll();
+        tokenJpaRepository.deleteAll();
+        reservationRepository.deleteAll();
     }
 
 

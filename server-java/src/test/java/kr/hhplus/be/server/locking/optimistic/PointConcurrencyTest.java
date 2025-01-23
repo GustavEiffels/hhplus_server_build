@@ -12,6 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -30,6 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("""
             포인트 충전 - 낙관적 락을 사용     
             """)
+@ActiveProfiles("optimistic")
 public class PointConcurrencyTest {
 
     @Autowired

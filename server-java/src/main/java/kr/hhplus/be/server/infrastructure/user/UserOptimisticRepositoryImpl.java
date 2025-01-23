@@ -5,19 +5,20 @@ import kr.hhplus.be.server.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
+
 import java.util.Optional;
 
 
 @Repository
 @RequiredArgsConstructor
-@Profile("dev")
-public class UserRepositoryDevImpl implements UserRepository {
+@Profile("optimistic")
+public class UserOptimisticRepositoryImpl implements UserRepository {
 
     private final UserJpaRepository jpaRepository;
 
     @Override
     public Optional<User> findById(Long userId) {
-        return jpaRepository.findByIdWithLockSetLockTime(userId);
+        return jpaRepository.findById(userId);
     }
 
     @Override

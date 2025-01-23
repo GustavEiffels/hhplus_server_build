@@ -31,6 +31,9 @@ public class Reservation extends BaseEntity {
 
     private LocalDateTime expiredAt;
 
+    @Version
+    private Integer version;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(

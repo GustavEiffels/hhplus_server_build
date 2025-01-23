@@ -10,21 +10,19 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("dev")
-public class SeatRepositoryDevImpl implements SeatRepository {
+@Profile("pessimistic")
+public class SeatPessimisticRepositoryImpl implements SeatRepository {
 
     private final SeatJpaRepository jpaRepository;
 
     @Override
     public List<Seat> findByIdsWithLock(List<Long> seatIds) {
-        return jpaRepository.findByIds(seatIds);
+        return jpaRepository.findByIdsWithLock(seatIds);
     }
+
 
     @Override
     public List<Seat> findByScheduleId(Long concertScheduleId) {
         return jpaRepository.findByScheduleId(concertScheduleId);
     }
-
-
-
 }
