@@ -47,8 +47,12 @@ public enum ErrorCode {
 
     // HISTORY
     INVALID_AMOUNT("[ INVALID AMOUNT ]","유효하지 않는 금액 입니다."),
-    INVALID_INPUT("INVALID INPUT Error", "[ 유효하지 않은 입력 값이 감지되었습니다. ]");
+    INVALID_INPUT("INVALID INPUT Error", "[ 유효하지 않은 입력 값이 감지되었습니다. ]"),
 
+
+    // LOCK
+    LOCK_INTERRUPTED("[ LOCK_INTERRUPTED ]","락이 인터럽트 되었습니다"),
+    LOCK_ACQUISITION_FAILED("[ LOCK_ACQUISITION_FAILED ]","락 획득에 실패하였습니다.");
 
 
     private final String status;
