@@ -28,6 +28,9 @@ spring:
     properties:
       hibernate.timezone.default_storage: NORMALIZE_UTC
       hibernate.jdbc.time_zone: UTC
+  redis:
+    host: localhost
+    port: 6379
 #      hibernate.show-sql: true
 #      hibernate.format_sql: true
 
@@ -39,6 +42,7 @@ logging:
     root: INFO
   charset: UTF-8
 
+---
 ---
 spring.config.activate.on-profile: local, test
 
