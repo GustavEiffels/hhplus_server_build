@@ -38,7 +38,7 @@ public class PointFacade {
      * @return
      */
     @Transactional
-    @DistributedLock(lockNm = "user-lock:", waitTime = 0L, leaseTime = 1000L, timeUnit = TimeUnit.MILLISECONDS)
+    @DistributedLock(lockNm = "user-lock:", waitTime = 0L, leaseTime = 1000L)
     public PointFacadeDto.ChargeResult pointCharge(PointFacadeDto.ChargeParam param){
         // 1. 사용자 조회 후 포인트 업데이트
         User user = userService.chargePoints(param.userId(), param.chargePoint());

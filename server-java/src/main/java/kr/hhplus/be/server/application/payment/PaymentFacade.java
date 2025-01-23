@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.application.payment;
 
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
+import kr.hhplus.be.server.common.config.redis.DistributedLock;
 import kr.hhplus.be.server.domain.payment.Payment;
 import kr.hhplus.be.server.domain.payment.PaymentService;
 import kr.hhplus.be.server.domain.point_history.PointHistory;
@@ -31,7 +32,8 @@ public class PaymentFacade {
     private final PointHistoryService pointHistoryService;
 
 
-    @Transactional // 예약 조회 시 경헙 발생 :
+    @Transactional
+    @DistributedLock(lockNm = "reservation-lock:", waitTime = 0L, leaseTime = 1000L)
     public PaymentFacadeDto.PaymentResult pay(PaymentFacadeDto.PaymentParam param){
 
         // 예약 lock : 에약 상태로 변경

@@ -27,23 +27,9 @@ public class DistributedLockAspect {
     @Around("distributedLockPointcut() && @annotation(distributedLock)")
     public Object handleDistributedLock(ProceedingJoinPoint joinPoint, DistributedLock distributedLock) throws Throwable {
 
+        String methodName = joinPoint.getSignature().getName();
+        String lockName = methodName;
 
-        Object[] args = joinPoint.getArgs();
-        Long userId = null;
-
-        // 파라미터가 객체인 경우 (예: ChargeParam userId)
-        for (Object arg : args) {
-            if (arg instanceof PointFacadeDto.ChargeParam) {
-                userId = ((PointFacadeDto.ChargeParam) arg).userId();
-                break;
-            }
-        }
-
-        if (userId == null) {
-            throw new IllegalArgumentException("userId가 제공되지 않았습니다.");
-        }
-
-        String lockName = distributedLock.lockNm()+userId;
         RLock lock = redissonClient.getLock(lockName);
 
         try {
