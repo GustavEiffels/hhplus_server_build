@@ -32,6 +32,25 @@
 **1. 낙관적 락 사용 테스트**  [COMMIT]([05e93f0036bfdbf8edcd32a7765a2474a65f4f9c](https://github.com/GustavEiffels/hhplus_server_build/pull/34/commits/05e93f0036bfdbf8edcd32a7765a2474a65f4f9c))
 **2. 비관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/d1f05b17ecf222169ad8cf99a561e8a151361af8)
 **3. 분산 락 사용 테스트**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/8d865221966ec5cf8c7044447720270b4cbc40f2)
+### 결론
+```
+동시에 실행 시키더라도, 
+DB 상태에 따라 동시에 실행되는 스레드 수가 달라질 수도 있다는 것을 배웠습니다.
+낙관적 락을 사용하면 버전 차이를 이용한 동시성 제어가 가능하며, 
+실패한 경우에 대한 재시도 요청 로직을 따로 작성해야하지만
+현재 충전에서 동시성이 일어나는 경우는 **더블** 현상이며 
+서버 내 에러라고 판단하여 재사용 로직을 적지 않아도 된다고 생각하였습니다.
+
+락을 대기하는 비관적 락보다 
+낙관적 락이 더 빠르게 수행되었지만,
+충전이나 결제와 같이 데이터 무결성 및 정합성이 특히
+중요한 유스케이스의 경우 비관적 락을 선택하는 것도 좋은 방법이라 생각합니다.
+
+포인트 충전을 낙관적 락으로 구현해 보기 위해서 
+LOCK TIME OUT 을 임의로 설정하여 
+LOCK 이 걸리면 LOCK 을 대기하는 시간을 적게 주어 
+대부분의 요청이 예외가 발생하게끔 임의로 설정하였습니다.
+```
 
 
 ## 3. 좌석 예약
@@ -52,6 +71,20 @@
 **1. 낙관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/b26ba49bc9a591553e6ecfa67eab827659484e0a)
 **2. 비관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/803b0a900af8d81bff4cc679e7683b5da7d00a32)
 **3. 분산 락 사용 테스트**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/00973d159b8fcf5c58d70e592a6045c010787d95)
+### 결론
+```
+좌석의 경우 불특정 사용자가
+하나의 자원에 대한 많은 경합이 이루어 질 것으로 예상하여
+낙관적 락 혹은 비관적 락에서 고른다면 비관적 락을 사용하는게 적절해 보입니다.
+
+해당 유스케이스를 
+낙관적 락을 사용하여 점검했을때, 낙관적락 버전이 달라서 발생하는 예외와 
+비지니스 예외가 함께 발생하는 것을 알 수 있었습니다.
+
+추후 분산환경을 고려하여 
+분산락을 선택하였습니다.
+```
+
 
 
 ## 4. 결제
@@ -68,8 +101,25 @@
 ```
 결제할 예약들을 조회하는 작업은 사용자가 직접 진행하므로 경합이 발생할 가능성은 적지만, 
 스케줄에서 만료된 예약을 조회하여 좌석 상태를 변경하기 때문에 현재 비관적 락을 사용하고 있습니다.
+
+성능 상으로는 락을 대기 하지 않은 비관적 락이 더 우세하였습니다.
 ```
 **1. 낙관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/f55c71e41a1edd627b0d57d195b86e30a3ba2424)
 **2. 비관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/db62068ecfea62467bae711d14b1c07a3df35c2f)
 **3. 분산 락 사용 테스트**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/b044e1763379b4b3d9842c8315410d1d5aa49899)
+### 결론
+```
+결제의 경우 
+사용자가 본인의 예약에 대한 결제만 하기 때문에
+경합이 많이 발생하지 않을 것으로 예상했지만, 
 
+제가 작성한 프로젝트의 경우 
+만료된 예약건에 대해 만료처리를 수행하는 스케줄이 있어
+이와 충돌하는 것을 방지하고자 비관적락 사용을 하는 것이
+더 좋은 방법인것 같습니다. 
+
+낙관적 락으로도 구현했는데 
+비지니스 예외 및 버전 불일치 문제가 발생하는 것을 보았습니다.
+
+성능 상으로는 락을 대기 하지 않은 비관적 락이 더 우세하였습니다.
+```
