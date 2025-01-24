@@ -33,7 +33,7 @@ public class PaymentFacade {
 
 
     @Transactional
-    @DistributedLock(lockNm = "reservation-lock:", waitTime = 0L, leaseTime = 1000L)
+    @DistributedLock(lockNm = "payment-lock:", waitTime = 0L, leaseTime = 1000L)
     public PaymentFacadeDto.PaymentResult pay(PaymentFacadeDto.PaymentParam param){
 
         // 예약 lock : 에약 상태로 변경

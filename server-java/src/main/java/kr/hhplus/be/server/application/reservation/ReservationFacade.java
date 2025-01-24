@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.application.reservation;
 
 
+import kr.hhplus.be.server.common.config.redis.DistributedLock;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationService;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
@@ -29,6 +30,7 @@ public class ReservationFacade {
      * @param param
      */
     @Transactional
+    @DistributedLock(lockNm = "reservation-lock:", waitTime = 0L, leaseTime = 1000L)
     public ReservationFacadeDto.ReservationResult reservation(ReservationFacadeDto.ReservationParam param){
 
         // 1. 예약할 좌석들을 조회 : lock

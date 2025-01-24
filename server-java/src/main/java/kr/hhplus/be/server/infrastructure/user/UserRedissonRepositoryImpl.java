@@ -23,6 +23,6 @@ public class UserRedissonRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> findByIdWithLock(Long userId) {
-        return jpaRepository.findByIdWithLock(userId);
+        return jpaRepository.findById(userId);
     }
 }

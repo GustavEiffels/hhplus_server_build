@@ -31,7 +31,7 @@ import java.util.concurrent.Executors;
 @Testcontainers
 @Slf4j
 @DisplayName("""
-            좌석 예약 - 비관적 락을 사용한다.      
+            좌석 예약 - 분산락을 사용한다.      
             """)
 @ActiveProfiles("redisson")
 public class ReservationConcurrencyTest {

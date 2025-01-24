@@ -145,8 +145,7 @@ public class PointConcurrencyTest {
     @AfterEach
     void after(){
         userJpaRepository.deleteAll();
-        RKeys keys = redissonClient.getKeys();
-        keys.flushall();
+        redissonClient.shutdown();
     }
 
 }
