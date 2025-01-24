@@ -7,10 +7,14 @@ import kr.hhplus.be.server.domain.point_history.PointHistoryStatus;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.infrastructure.point_history.PointHistoryJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +25,10 @@ import java.util.concurrent.Executors;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
+@Testcontainers
+@ActiveProfiles("redisson")
+@Slf4j
+@DisplayName("포인트 충전 통합 테스트")
 public class PointConcurrencyTest {
 
     @Autowired
@@ -32,15 +40,15 @@ public class PointConcurrencyTest {
     @Autowired
     PointFacade facade;
 
-    /**
-     * 포인트가 0 원인 사용자가 충전을 하려고 한다
-     * 충전할 금액은 10,000 이다.
-     *
-     * 서버상의 실수로 50번 정도 충전 요청을 하더라도
-     * 사용자의 포인트는 10,000 가 되어야함
-     */
     User newUser;
 
+    @DisplayName("""
+                 * 포인트가 0 원인 사용자가 충전을 하려고 한다
+                 * 충전할 금액은 10,000 이다.
+                 *
+                 * 서버상의 실수로 50번 정도 충전 요청을 하더라도
+                 * 사용자의 포인트는 10,000 가 되어야함
+            """)
     @Test
     void concurrencyTest() throws InterruptedException {
         int numThreads = 50;

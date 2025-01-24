@@ -18,12 +18,16 @@ import kr.hhplus.be.server.infrastructure.reservation.ReservationJpaRepository;
 import kr.hhplus.be.server.infrastructure.schedule.ScheduleJpaRepository;
 import kr.hhplus.be.server.infrastructure.seat.SeatJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.testcontainers.junit.jupiter.Testcontainers;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +39,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest
+@Testcontainers
+@ActiveProfiles("redisson")
+@Slf4j
+@DisplayName("결제 통합 테스트")
 public class PaymentConcurrencyTest {
 
     @Autowired

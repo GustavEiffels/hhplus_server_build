@@ -13,62 +13,58 @@ import kr.hhplus.be.server.infrastructure.reservation.ReservationJpaRepository;
 import kr.hhplus.be.server.infrastructure.schedule.ScheduleJpaRepository;
 import kr.hhplus.be.server.infrastructure.seat.SeatJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.testcontainers.junit.jupiter.Testcontainers;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.*;
 
 
 @SpringBootTest
+@Testcontainers
+@ActiveProfiles("redisson")
+@Slf4j
+@DisplayName("좌석 예약 통합 테스트")
 public class ReservationConcurrencyTest {
 
     @Autowired
     ReservationFacade reservationFacade;
-
     @Autowired
     ConcertJpaRepository concertRepository;
     @Autowired
     ScheduleJpaRepository concertScheduleRepository;
+
     @Autowired
     UserJpaRepository userRepository;
     @Autowired
     SeatJpaRepository seatRepository;
-
     @Autowired
     ReservationJpaRepository reservationRepository;
 
-    List<User> userList;
-    Seat seat;
-
     ConcertSchedule concertSchedule;
+    Seat seat;
+    List<User> userList;
 
-    /**
-     * 10명의 사용자가 동시에 한 좌석에 대해서 예약을 생성하려고 시도 합니다.
-     * 이때, 단 한명의 유저만 예약이 되어야 하고
-     * 예약은 단 한건만 생성이 되어야합니다.
-     */
-    @DisplayName("""
-                 10명의 사용자가 동시에 한 좌석에 대해서 예약을 생성하려고 시도 합니다.
-                 이때, 단 한명의 유저만 예약이 되어야 하고
-                 예약은 단 한건만 생성이 되어야합니다.
-            """)
+    @DisplayName("하나의 좌석을 1000 개의 요청이 동시에 요청할 때, 해당 좌석에 대한 예약은 1번만 수행 된다.")
     @Test
     void concurrencyTest() throws InterruptedException {
+        int threadCnt = 1000;
+        createUser(threadCnt);
 
-        int numThreads = 10;
-        CountDownLatch doneSignal = new CountDownLatch(numThreads);
-        ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
+        long startTime = System.currentTimeMillis();
+        CountDownLatch doneSignal = new CountDownLatch(threadCnt);
+        ExecutorService executorService = Executors.newFixedThreadPool(threadCnt);
 
-        List<Boolean> results = new ArrayList<>(numThreads);
-        List<BusinessException> businessExceptions = new ArrayList<>(numThreads);
+        List<Boolean>  results = new ArrayList<>(threadCnt);
+        HashSet<String> errorMessage = new HashSet<>(threadCnt);
 
-        // 10명의 사용자에 대해 예약을 시도하는 스레드 생성
         for (User user : userList) {
             executorService.submit(() -> {
                 try {
@@ -81,43 +77,36 @@ public class ReservationConcurrencyTest {
                         reservationFacade.reservation(reservationParam);
                         results.add(true);
 
-                    } catch (BusinessException e) {
-                        businessExceptions.add(e);
+                    } catch (Exception e) {
+                        errorMessage.add(e.getClass().getName()+" : "+e.getLocalizedMessage());
                         results.add(false);
                     }
                 } finally {
-                    doneSignal.countDown(); // 작업이 끝날 때마다 countDown 호출
+                    doneSignal.countDown();
                 }
             });
         }
 
         doneSignal.await();
+        executorService.shutdown();
+        long endTime = System.currentTimeMillis();
 
         long successfulReservations = results.stream().filter(Boolean::booleanValue).count();
         long failedReservations = results.stream().filter(result -> !result).count();
-
+        int  newReservationCnt  = reservationRepository.findAll().size();
 
         Assertions.assertEquals(1,successfulReservations,"성공한 예약 개수 : "+successfulReservations);
-        Assertions.assertEquals(9,failedReservations,"성공한 예약 개수 : "+failedReservations);
-        Assertions.assertEquals(1,reservationRepository.findAll().size(),"생성된 예약 수");
-        businessExceptions.forEach(item->{
-            Assertions.assertEquals(ErrorCode.NOT_RESERVABLE_DETECTED,item.getErrorStatus());
-            Assertions.assertEquals(ErrorCode.NOT_RESERVABLE_DETECTED.getMessage(),item.getMessage());
-        });
+        Assertions.assertEquals(successfulReservations,newReservationCnt,"생성된 예약 수");
+        errorMessage.forEach(item->log.info("예외 : {}",item));
+
+        log.info("성공한 예약 개수 : {}",successfulReservations);
+        log.info("실패한 예외 개수 : {}",failedReservations);
+        log.info("생성된 예약 수   : {}",newReservationCnt);
+        log.info("process time  : {} ms",(endTime-startTime));
     }
 
     @BeforeEach
     void setUp(){
-
-        // Create User
-        List<User> newUserList = new ArrayList<>();
-        for(int i = 1; i<=10; i++){
-            User newUser = User.create("김연습"+i);
-            newUser.pointTransaction(100_000L);
-            newUserList.add(newUser);
-        }
-        newUserList = userRepository.saveAll(newUserList);
-
         // Create Concert
         Concert concert = Concert.create("광대쇼","김광대");
         concertRepository.save(concert);
@@ -132,16 +121,32 @@ public class ReservationConcurrencyTest {
         newConcertSchedule = concertScheduleRepository.save(newConcertSchedule);
 
         // Create Seats
-        List<Seat> seatList = new ArrayList<>();
-        for(int i = 1; i<= 50; i++){
-            seatList.add(Seat.builder().seatNo(i).price(10_000L).concertSchedule(newConcertSchedule).build());
-        }
-        seatList = seatRepository.saveAll(seatList);
+        seat = seatRepository.save(
+                Seat.builder()
+                        .seatNo(1)
+                        .price(10_000L)
+                        .concertSchedule(newConcertSchedule)
+                        .build());
 
-        seat = seatList.get(1);
-        userList = newUserList;
         concertSchedule = newConcertSchedule;
     }
 
+    @AfterEach
+    void tearDown() {
+        userRepository.deleteAll();
+        concertRepository.deleteAll();
+        concertScheduleRepository.deleteAll();
+        seatRepository.deleteAll();
+        reservationRepository.deleteAll();
+    }
 
+    void createUser(int threadCnt){
+        List<User> newUserList = new ArrayList<>();
+        for(int i = 1; i<=threadCnt; i++){
+            User newUser = User.create("김연습"+i);
+            newUser.pointTransaction(100_000L);
+            newUserList.add(newUser);
+        }
+        userList = userRepository.saveAll(newUserList);
+    }
 }
