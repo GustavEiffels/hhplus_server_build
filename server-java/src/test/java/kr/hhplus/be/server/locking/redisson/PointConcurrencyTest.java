@@ -145,7 +145,6 @@ public class PointConcurrencyTest {
     @AfterEach
     void after(){
         userJpaRepository.deleteAll();
-        redissonClient.shutdown();
     }
 
 }
