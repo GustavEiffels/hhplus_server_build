@@ -29,9 +29,9 @@
 ```
 
 
-**1. 낙관적 락 사용 테스트 결과**  [COMMIT]([05e93f0036bfdbf8edcd32a7765a2474a65f4f9c](https://github.com/GustavEiffels/hhplus_server_build/pull/34/commits/05e93f0036bfdbf8edcd32a7765a2474a65f4f9c))
-**2. 비관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/d1f05b17ecf222169ad8cf99a561e8a151361af8)
-**3. 분산 락 사용 테스트 결과**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/8d865221966ec5cf8c7044447720270b4cbc40f2)
+**1. 낙관적 락 사용 테스트**  [COMMIT]([05e93f0036bfdbf8edcd32a7765a2474a65f4f9c](https://github.com/GustavEiffels/hhplus_server_build/pull/34/commits/05e93f0036bfdbf8edcd32a7765a2474a65f4f9c))
+**2. 비관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/d1f05b17ecf222169ad8cf99a561e8a151361af8)
+**3. 분산 락 사용 테스트**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/8d865221966ec5cf8c7044447720270b4cbc40f2)
 
 
 ## 3. 좌석 예약
@@ -49,9 +49,9 @@
 좌석을 예약하기 위해 특정 좌석에서 
 경합이 많이 일어날 것이라고 판단 하였습니다.
 ```
-**1. 낙관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/b26ba49bc9a591553e6ecfa67eab827659484e0a)
-**2. 비관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/803b0a900af8d81bff4cc679e7683b5da7d00a32)
-**3. 분산 락 사용 테스트 결과**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/00973d159b8fcf5c58d70e592a6045c010787d95)
+**1. 낙관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/b26ba49bc9a591553e6ecfa67eab827659484e0a)
+**2. 비관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/803b0a900af8d81bff4cc679e7683b5da7d00a32)
+**3. 분산 락 사용 테스트**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/00973d159b8fcf5c58d70e592a6045c010787d95)
 
 
 ## 4. 결제
@@ -69,7 +69,7 @@
 결제할 예약들을 조회하는 작업은 사용자가 직접 진행하므로 경합이 발생할 가능성은 적지만, 
 스케줄에서 만료된 예약을 조회하여 좌석 상태를 변경하기 때문에 현재 비관적 락을 사용하고 있습니다.
 ```
-**1. 낙관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/f55c71e41a1edd627b0d57d195b86e30a3ba2424)
-**2. 비관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/db62068ecfea62467bae711d14b1c07a3df35c2f)
-**3. 분산 락 사용 테스트 결과**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/b044e1763379b4b3d9842c8315410d1d5aa49899)
+**1. 낙관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/f55c71e41a1edd627b0d57d195b86e30a3ba2424)
+**2. 비관적 락 사용 테스트**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/db62068ecfea62467bae711d14b1c07a3df35c2f)
+**3. 분산 락 사용 테스트**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/b044e1763379b4b3d9842c8315410d1d5aa49899)
 
