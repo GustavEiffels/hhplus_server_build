@@ -27,74 +27,30 @@
 이때 두 스레드가 동일한 사용자의 포인트 정보를 동시에 조회한 후, 서로 다른 값으로 포인트를 업데이트하려고 할 수 있습니다.
 이로 인해 포인트 값이 덮어쓰여지는 경쟁 조건 문제가 발생할 수 있습니다.
 ```
-**검증 테스트 코드**
-```java
-    private  void pointChargeTest(int threadCnt) throws InterruptedException {
 
-        long startTime = System.currentTimeMillis();
+[COMMIT]([05e93f0036bfdbf8edcd32a7765a2474a65f4f9c](https://github.com/GustavEiffels/hhplus_server_build/pull/34/commits/05e93f0036bfdbf8edcd32a7765a2474a65f4f9c))
+1. 낙관적 락 사용 테스트 결과
 
-        ExecutorService executorService = Executors.newFixedThreadPool(threadCnt);
-        CountDownLatch startSignal = new CountDownLatch(1);
-        CountDownLatch doneSignal = new CountDownLatch(threadCnt);
-
-        List<Boolean> results      = new ArrayList<>(threadCnt);
-        HashSet<String>  errorMessage = new HashSet<>(threadCnt);
-
-        for (int i = 0; i < threadCnt; i++) {
-            executorService.submit(() -> {
-                try {
-                    startSignal.await();
-                    PointFacadeDto.ChargeParam param = new PointFacadeDto.ChargeParam(newUser.getId(), 10_000L);
-                    facade.pointCharge(param);
-                    results.add(true);
-                } catch (Exception e) {
-                    errorMessage.add(e.getClass().getName()+" : "+e.getLocalizedMessage());
-                    results.add(false);
-                } finally {
-                    doneSignal.countDown();
-                }
-            });
-        }
-
-        startSignal.countDown();
-        doneSignal.await();
-        executorService.shutdown();
-
-        long endTime = System.currentTimeMillis();
-        long successCnt = results.stream().filter(Boolean::booleanValue).count();
-
-        User updatedUser = userJpaRepository.findById(newUser.getId()).orElseThrow();
-        assertEquals(10000*successCnt, updatedUser.getPoint());
-
-        pointHistoryJpaRepository.findAll().forEach(item->{
-            assertEquals(PointHistoryStatus.CHARGE,item.getStatus());
-            assertEquals(10_000L,item.getAmount());
-        });
-
-        for(String message : errorMessage){ log.info("Error Message : {}",message);}
-        log.info("충전 금액 : {}",updatedUser.getPoint());
-        log.info("Thread 개수 : {} | duration : {} ms",threadCnt,(endTime-startTime));
-    }
-
-    @DisplayName("사용자가 동시에 포인트를 충전하지 않을 때, 충전 후 사용자 포인트이 충전 시도한 금액과 같아야한다. ( 사용자 포인트 = 충전 시도 금액 1 + 충전시도 금액 2+ ...")
-    @Test
-    void notConcurrencyTest(){
-        // given
-        long startTime = System.currentTimeMillis();
-        int tryCnt = 10;
-
-        // when
-        for(int i = 0; i <tryCnt; i++){
-            PointFacadeDto.ChargeParam param = new PointFacadeDto.ChargeParam(newUser.getId(), 10_000L);
-            facade.pointCharge(param);
-        }
-
-        // then
-        User findUser = userJpaRepository.findById(newUser.getId()).orElseThrow();
-        assertEquals(10000*tryCnt,findUser.getPoint());
-        long endTime = System.currentTimeMillis();
-        log.info(" duration : {} ms",(endTime-startTime));
-    }
-
+**thread10**
+![alt text](image.png)
 ```
-1. 낙관적 락 사용
+15:55:35.022 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.orm.ObjectOptimisticLockingFailureException : Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [kr.hhplus.be.server.domain.user.User#1]
+15:55:35.022 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - 충전 금액 : 10000
+15:55:35.022 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Thread 개수 : 10 | duration : 137 ms
+```
+**thread50**
+![alt text](image.png)
+```
+15:54:43.003 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.orm.ObjectOptimisticLockingFailureException : Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [kr.hhplus.be.server.domain.user.User#1]
+15:54:43.003 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - 충전 금액 : 10000
+15:54:43.003 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Thread 개수 : 50 | duration : 252 ms
+```
+**thread200**
+![alt text](image.png)
+```
+5:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.orm.ObjectOptimisticLockingFailureException : Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [kr.hhplus.be.server.domain.user.User#1]
+15:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.dao.DataAccessResourceFailureException : unable to obtain isolated JDBC connection [HangHaePlusDataSource - Connection is not available, request timed out after 10008ms (total=60, active=60, idle=0, waiting=1)] [n/a]
+15:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.transaction.CannotCreateTransactionException : Could not open JPA EntityManager for transaction
+15:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - 충전 금액 : 20000
+15:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Thread 개수 : 200 | duration : 10364 ms
+```
