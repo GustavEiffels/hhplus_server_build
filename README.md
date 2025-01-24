@@ -28,29 +28,48 @@
 이로 인해 포인트 값이 덮어쓰여지는 경쟁 조건 문제가 발생할 수 있습니다.
 ```
 
-[COMMIT]([05e93f0036bfdbf8edcd32a7765a2474a65f4f9c](https://github.com/GustavEiffels/hhplus_server_build/pull/34/commits/05e93f0036bfdbf8edcd32a7765a2474a65f4f9c))
-1. 낙관적 락 사용 테스트 결과
 
-**thread10**
-![alt text](image.png)
+**1. 낙관적 락 사용 테스트 결과**  [COMMIT]([05e93f0036bfdbf8edcd32a7765a2474a65f4f9c](https://github.com/GustavEiffels/hhplus_server_build/pull/34/commits/05e93f0036bfdbf8edcd32a7765a2474a65f4f9c))
+**2. 비관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/d1f05b17ecf222169ad8cf99a561e8a151361af8)
+**3. 분산 락 사용 테스트 결과**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/8d865221966ec5cf8c7044447720270b4cbc40f2)
+
+
+## 3. 좌석 예약
+**포인트 충전 로직 개요**
 ```
-15:55:35.022 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.orm.ObjectOptimisticLockingFailureException : Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [kr.hhplus.be.server.domain.user.User#1]
-15:55:35.022 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - 충전 금액 : 10000
-15:55:35.022 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Thread 개수 : 10 | duration : 137 ms
+좌석 예약 로직
+1. 예약된 좌석인지 확인 
+2. 예약 되지 않은 좌석인 경우 - 상태 : 예약으로 변경,
+3. 해당 공연 스케줄의 좌석이 모두 매진 된 경우 - 상태 : 예약 불가능 으로 변경
+3. 예약 생성 
 ```
-**thread50**
-![alt text](image.png)
+**동시성이 일어날 것이라고 생각한 이유**
 ```
-15:54:43.003 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.orm.ObjectOptimisticLockingFailureException : Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [kr.hhplus.be.server.domain.user.User#1]
-15:54:43.003 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - 충전 금액 : 10000
-15:54:43.003 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Thread 개수 : 50 | duration : 252 ms
+다수의 사용자들이 
+좌석을 예약하기 위해 특정 좌석에서 
+경합이 많이 일어날 것이라고 판단 하였습니다.
 ```
-**thread200**
-![alt text](image.png)
+**1. 낙관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/b26ba49bc9a591553e6ecfa67eab827659484e0a)
+**2. 비관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/803b0a900af8d81bff4cc679e7683b5da7d00a32)
+**3. 분산 락 사용 테스트 결과**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/00973d159b8fcf5c58d70e592a6045c010787d95)
+
+
+## 4. 결제
+**결제 로직 개요**
 ```
-5:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.orm.ObjectOptimisticLockingFailureException : Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [kr.hhplus.be.server.domain.user.User#1]
-15:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.dao.DataAccessResourceFailureException : unable to obtain isolated JDBC connection [HangHaePlusDataSource - Connection is not available, request timed out after 10008ms (total=60, active=60, idle=0, waiting=1)] [n/a]
-15:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Error Message : org.springframework.transaction.CannotCreateTransactionException : Could not open JPA EntityManager for transaction
-15:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - 충전 금액 : 20000
-15:53:17.217 [Test worker] INFO  k.h.b.s.l.o.PointConcurrencyTest - Thread 개수 : 200 | duration : 10364 ms
+결제 로직 
+1. 결제할 예약들 조회 
+2. 결제할 사람들 조회 
+3. 사용자의 포인트와 총 결제 금액을 비교 
+4. 결제 가능 시 결제 생성  
+5. 결제 성공 시 결제 내역이 생성  
 ```
+**동시성이 일어날 것이라고 생각한 이유**
+```
+결제할 예약들을 조회하는 작업은 사용자가 직접 진행하므로 경합이 발생할 가능성은 적지만, 
+스케줄에서 만료된 예약을 조회하여 좌석 상태를 변경하기 때문에 현재 비관적 락을 사용하고 있습니다.
+```
+**1. 낙관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/f55c71e41a1edd627b0d57d195b86e30a3ba2424)
+**2. 비관적 락 사용 테스트 결과**  [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/db62068ecfea62467bae711d14b1c07a3df35c2f)
+**3. 분산 락 사용 테스트 결과**   [COMMIT](https://github.com/GustavEiffels/hhplus_server_build/commit/b044e1763379b4b3d9842c8315410d1d5aa49899)
+
