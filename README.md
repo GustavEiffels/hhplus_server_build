@@ -1,46 +1,100 @@
-# GIT EMOGI
-```text
-🏛️ feat :  
-🔧 fix :    
-🛠️ refactor :
-🔨 test : 
-🏗️ build : 
-📜 docs : 
-🎨 style : 
-⚓ ci : 
-🚀 pref :
-🧹 chore :
+# 동시성 이슈 파악 및 제어방식 도입 및 장단점 파악 
+
+## 1. 들어가면서
+```
+콘서트 예약을 주제로 하였고, 
+동시성 이슈가 
+1.포인트 충전 
+2.좌석 조회
+3.결제
+
+위 3가지 경우에 발생할 것으로 파악하여
+보고서를 작성하였습니다.
 ```
 
+## 2. 포인트 충전
+**포인트 충전 로직 개요**
+```
+포인트 충전로직 
+1. 사용자를 조회한다. ( 사용자 테이블 안에 사용자의 포인트 필드가 존재한다. ) 
+2. 사용자의 포인트를 충전 한다.
+3. 충전 내역을 생성하고 저장한다.
+```
+**동시성이 일어날 것이라고 생각한 이유**
+```
+이 로직에서 동시성 문제가 발생할 수 있는 부분은 사용자 조회 단계입니다. 
+여러 스레드가 동시에 사용자의 정보를 조회할 수 있으며, 각 스레드는 조회 후 포인트를 수정하는 작업을 진행하게 됩니다.
+이때 두 스레드가 동일한 사용자의 포인트 정보를 동시에 조회한 후, 서로 다른 값으로 포인트를 업데이트하려고 할 수 있습니다.
+이로 인해 포인트 값이 덮어쓰여지는 경쟁 조건 문제가 발생할 수 있습니다.
+```
+**검증 테스트 코드**
+```java
+    private  void pointChargeTest(int threadCnt) throws InterruptedException {
 
+        long startTime = System.currentTimeMillis();
 
+        ExecutorService executorService = Executors.newFixedThreadPool(threadCnt);
+        CountDownLatch startSignal = new CountDownLatch(1);
+        CountDownLatch doneSignal = new CountDownLatch(threadCnt);
 
+        List<Boolean> results      = new ArrayList<>(threadCnt);
+        HashSet<String>  errorMessage = new HashSet<>(threadCnt);
 
-# STEP-07
-- hhplus server 구축
+        for (int i = 0; i < threadCnt; i++) {
+            executorService.submit(() -> {
+                try {
+                    startSignal.await();
+                    PointFacadeDto.ChargeParam param = new PointFacadeDto.ChargeParam(newUser.getId(), 10_000L);
+                    facade.pointCharge(param);
+                    results.add(true);
+                } catch (Exception e) {
+                    errorMessage.add(e.getClass().getName()+" : "+e.getLocalizedMessage());
+                    results.add(false);
+                } finally {
+                    doneSignal.countDown();
+                }
+            });
+        }
 
-## Swagger 전체이미지
-<img width="811" alt="Screenshot 2025-01-10 at 08 49 21" src="https://github.com/user-attachments/assets/2d6504a0-6e1f-4d0d-9ec8-4723ade9466a" />
+        startSignal.countDown();
+        doneSignal.await();
+        executorService.shutdown();
 
-### 1. 유저 대기열 토큰 기능 
-![image](https://github.com/user-attachments/assets/d58f899b-a909-4480-a4ba-b432b2c9035f)
+        long endTime = System.currentTimeMillis();
+        long successCnt = results.stream().filter(Boolean::booleanValue).count();
 
-### 2-1.예약 가능 좌석 조회`
-![image](https://github.com/user-attachments/assets/d0e294c6-46f9-4f69-b823-f5ece3cc54a8)
+        User updatedUser = userJpaRepository.findById(newUser.getId()).orElseThrow();
+        assertEquals(10000*successCnt, updatedUser.getPoint());
 
-### 2-2. 예약 가능한 날짜 목록을 조회 
-![image](https://github.com/user-attachments/assets/6e4d20fe-a1f7-4fb1-9533-e9f5d6c9f9f6)
+        pointHistoryJpaRepository.findAll().forEach(item->{
+            assertEquals(PointHistoryStatus.CHARGE,item.getStatus());
+            assertEquals(10_000L,item.getAmount());
+        });
 
-### 3. 좌석 예약 요청 API
-![image](https://github.com/user-attachments/assets/dcd3f77f-ae55-4c33-832d-544f48469c88)
+        for(String message : errorMessage){ log.info("Error Message : {}",message);}
+        log.info("충전 금액 : {}",updatedUser.getPoint());
+        log.info("Thread 개수 : {} | duration : {} ms",threadCnt,(endTime-startTime));
+    }
 
-### 4-1. 잔액 충전
-![image](https://github.com/user-attachments/assets/dd34700c-6620-43a6-9152-ff4ab56d8a12)
+    @DisplayName("사용자가 동시에 포인트를 충전하지 않을 때, 충전 후 사용자 포인트이 충전 시도한 금액과 같아야한다. ( 사용자 포인트 = 충전 시도 금액 1 + 충전시도 금액 2+ ...")
+    @Test
+    void notConcurrencyTest(){
+        // given
+        long startTime = System.currentTimeMillis();
+        int tryCnt = 10;
 
-### 4-2. 잔액 조회
-![image](https://github.com/user-attachments/assets/09bb2f8c-025c-40db-81de-7ea919b33fd0)
+        // when
+        for(int i = 0; i <tryCnt; i++){
+            PointFacadeDto.ChargeParam param = new PointFacadeDto.ChargeParam(newUser.getId(), 10_000L);
+            facade.pointCharge(param);
+        }
 
-### 5. 결제
-![image](https://github.com/user-attachments/assets/fb018161-55c3-403c-997f-e2d242f6f713)
+        // then
+        User findUser = userJpaRepository.findById(newUser.getId()).orElseThrow();
+        assertEquals(10000*tryCnt,findUser.getPoint());
+        long endTime = System.currentTimeMillis();
+        log.info(" duration : {} ms",(endTime-startTime));
+    }
 
-[HTML문서](https://github.com/GustavEiffels/hhplus_server_build/blob/STEP-07/docs/swagger/last/index.html)
+```
+1. 낙관적 락 사용
