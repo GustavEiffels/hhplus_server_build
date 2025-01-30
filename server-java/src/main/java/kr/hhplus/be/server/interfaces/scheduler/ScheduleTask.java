@@ -49,6 +49,5 @@ public class ScheduleTask {
             log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));
             SchedulerContext.clear();
         }
-
     }
 }

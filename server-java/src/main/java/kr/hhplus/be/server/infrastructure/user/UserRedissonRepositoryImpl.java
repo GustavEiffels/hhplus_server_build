@@ -1,7 +1,5 @@
 package kr.hhplus.be.server.infrastructure.user;
 
-import kr.hhplus.be.server.common.exceptions.BusinessException;
-import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +11,8 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("local")
-public class UserRepositoryImpl implements UserRepository {
+@Profile("redisson")
+public class UserRedissonRepositoryImpl implements UserRepository {
 
     private final UserJpaRepository jpaRepository;
 
@@ -25,6 +23,6 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> findByIdWithLock(Long userId) {
-        return jpaRepository.findByIdWithLock(userId);
+        return jpaRepository.findById(userId);
     }
 }

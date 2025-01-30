@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.application.payment;
 
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
+import kr.hhplus.be.server.common.config.redis.DistributedLock;
 import kr.hhplus.be.server.domain.payment.Payment;
 import kr.hhplus.be.server.domain.payment.PaymentService;
 import kr.hhplus.be.server.domain.point_history.PointHistory;
@@ -32,18 +33,17 @@ public class PaymentFacade {
 
 
     @Transactional
+    @DistributedLock(lockNm = "payment-lock:", waitTime = 0L, leaseTime = 1000L)
     public PaymentFacadeDto.PaymentResult pay(PaymentFacadeDto.PaymentParam param){
-
-        // 사용자 lock
-        User user = userService.findUserForUpdate(param.userid());
-
 
         // 예약 lock : 에약 상태로 변경
         List<Reservation> reservations = reservationService.reserve(param.reservationIds(), param.userid());
 
-
         // 총 예약 금액을 구함
         Long totalAmount = reservationService.totalAmount(reservations);
+
+        // 사용자 조회
+        User user = userService.findUser(param.userid());
 
         // user point 차감 -> 여기서 금액 모자르면 예외 발생
         user.pointTransaction(-totalAmount);
@@ -51,7 +51,6 @@ public class PaymentFacade {
         // Payments 생성
         List<Payment> paymentList = reservations.stream()
                 .map(reservation -> Payment.create(reservation.getAmount(),reservation)).toList();
-
 
         paymentList = paymentService.create(paymentList);
 

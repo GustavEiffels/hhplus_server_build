@@ -21,14 +21,17 @@ spring:
   jpa:
     open-in-view: true
     generate-ddl: true
-    show-sql: true
+#    show-sql: true
     format_sql: true
     hibernate:
       ddl-auto: create
     properties:
       hibernate.timezone.default_storage: NORMALIZE_UTC
       hibernate.jdbc.time_zone: UTC
-      hibernate.show-sql: true
+  redis:
+    host: localhost
+    port: 6379
+#      hibernate.show-sql: true
 #      hibernate.format_sql: true
 
 queue:
@@ -39,6 +42,7 @@ logging:
     root: INFO
   charset: UTF-8
 
+---
 ---
 spring.config.activate.on-profile: local, test
 

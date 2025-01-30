@@ -24,10 +24,6 @@ public class BusinessException extends RuntimeException{
         return code;
     }
 
-    public String getErrorCodeString(){
-        return code.getStatus();
-    }
-
     @Override
     public String getMessage() {
         return code.getMessage();

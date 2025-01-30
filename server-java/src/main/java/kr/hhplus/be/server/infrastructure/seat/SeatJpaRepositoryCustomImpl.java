@@ -11,6 +11,7 @@ import java.util.List;
 import static kr.hhplus.be.server.domain.schedule.QConcertSchedule.concertSchedule;
 import static kr.hhplus.be.server.domain.seat.QSeat.seat;
 
+
 @RequiredArgsConstructor
 public class SeatJpaRepositoryCustomImpl implements SeatJpaRepositoryCustom {
 
@@ -32,6 +33,13 @@ public class SeatJpaRepositoryCustomImpl implements SeatJpaRepositoryCustom {
                 .on(seat.concertSchedule.eq(concertSchedule))
                 .where(concertSchedule.id.eq(concertScheduleId)
                         .and(seat.status.eq(SeatStatus.RESERVABLE)))
+                .fetch();
+    }
+
+    @Override
+    public List<Seat> findByIds(List<Long> seatIds) {
+        return dsl.selectFrom(seat)
+                .where(seat.id.in(seatIds))
                 .fetch();
     }
 }

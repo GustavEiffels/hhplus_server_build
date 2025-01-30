@@ -31,6 +31,9 @@ public class Seat extends BaseEntity {
     @NotNull
     private Long price;
 
+    @Version
+    private Integer version;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "schedule_id",

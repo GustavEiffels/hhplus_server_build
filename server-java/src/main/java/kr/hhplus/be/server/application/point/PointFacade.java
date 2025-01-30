@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.application.point;
 
 
+import kr.hhplus.be.server.common.config.redis.DistributedLock;
 import kr.hhplus.be.server.domain.point_history.PointHistory;
 import kr.hhplus.be.server.domain.point_history.PointHistoryService;
 import kr.hhplus.be.server.domain.user.User;
@@ -10,6 +11,8 @@ import kr.hhplus.be.server.interfaces.controller.point.PointApiDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.concurrent.TimeUnit;
 
 @Service
 @RequiredArgsConstructor
@@ -35,6 +38,7 @@ public class PointFacade {
      * @return
      */
     @Transactional
+    @DistributedLock(lockNm = "user-lock:", waitTime = 0L, leaseTime = 1000L)
     public PointFacadeDto.ChargeResult pointCharge(PointFacadeDto.ChargeParam param){
         // 1. 사용자 조회 후 포인트 업데이트
         User user = userService.chargePoints(param.userId(), param.chargePoint());

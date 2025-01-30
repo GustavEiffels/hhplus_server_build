@@ -104,10 +104,6 @@ public class ReservationConcurrencyTest {
             Assertions.assertEquals(ErrorCode.NOT_RESERVABLE_DETECTED,item.getErrorStatus());
             Assertions.assertEquals(ErrorCode.NOT_RESERVABLE_DETECTED.getMessage(),item.getMessage());
         });
-
-
-
-
     }
 
     @BeforeEach

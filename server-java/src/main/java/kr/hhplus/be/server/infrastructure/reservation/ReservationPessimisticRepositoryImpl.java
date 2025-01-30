@@ -10,8 +10,8 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("local")
-public class ReservationRepositoryImpl implements ReservationRepository {
+@Profile("pessimistic")
+public class ReservationPessimisticRepositoryImpl implements ReservationRepository {
     private final ReservationJpaRepository jpaRepository;
 
     @Override

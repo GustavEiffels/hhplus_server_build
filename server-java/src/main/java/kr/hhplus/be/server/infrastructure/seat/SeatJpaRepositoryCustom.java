@@ -9,4 +9,6 @@ public interface SeatJpaRepositoryCustom {
     List<Seat> findByIdsWithLock(List<Long> seatIds);
 
     List<Seat> findByScheduleId(Long concertScheduleId);
+
+    List<Seat> findByIds(List<Long> seatIds);
 }

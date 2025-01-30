@@ -22,4 +22,14 @@ public class UserJpaRepositoryCustomImpl implements UserJpaRepositoryCustom{
                         .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                         .fetchOne());
     }
+
+    @Override
+    public Optional<User> findByIdWithLockSetLockTime(Long userId) {
+        return Optional.ofNullable(
+                dsl.selectFrom(user)
+                        .where(user.id.eq(userId))
+                        .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+                        .setHint("javax.persistence.lock.timeout", 0)
+                        .fetchOne());
+    }
 }
