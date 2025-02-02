@@ -12,12 +12,20 @@ services:
     volumes:
       - ./data/mysql/:/var/lib/mysql
 
-  redis:
+  redis-lock:
     image: redis:7.0
+    container_name: redis-lock
     ports:
       - "6379:6379"
     volumes:
       - ./data/redis/:/data
+  redis:
+    image: redis:7.0
+    ports:
+      - "6380:6379"
+    volumes:
+      - ./data/redis/:/data
+
 
 networks:
   default:
