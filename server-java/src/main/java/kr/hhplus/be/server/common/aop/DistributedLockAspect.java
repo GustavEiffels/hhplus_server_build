@@ -10,6 +10,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -18,10 +19,13 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 @Profile("redisson")
-@RequiredArgsConstructor
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class DistributedLockAspect {
+
+    public DistributedLockAspect(@Qualifier("lockRedissonClient") RedissonClient redissonClient){
+        this.redissonClient = redissonClient;
+    }
     private final RedissonClient redissonClient;
 
     @Pointcut("@annotation(kr.hhplus.be.server.common.config.redis.DistributedLock)")

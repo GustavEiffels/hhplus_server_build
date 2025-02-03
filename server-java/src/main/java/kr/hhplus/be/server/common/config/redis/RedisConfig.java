@@ -23,12 +23,17 @@ public class RedisConfig {
 
     private static final String REDISSON_HOST_PREFIX = "redis://";
 
-    @Bean
-    public RedissonClient redissonClient() {
-        RedissonClient redissonClient = null;
+    @Bean( name = "lockRedissonClient")
+    public RedissonClient lockRedissonClient() {
         Config config = new Config();
         config.useSingleServer().setAddress(REDISSON_HOST_PREFIX + lockHost + ":" + lockPort);
-        redissonClient = Redisson.create(config);
-        return redissonClient;
+        return Redisson.create(config);
+    }
+
+    @Bean( name = "queueRedissonClient")
+    public RedissonClient queueRedissonClient() {
+        Config config = new Config();
+        config.useSingleServer().setAddress(REDISSON_HOST_PREFIX + queueHost + ":" + queuePort);
+        return Redisson.create(config);
     }
 }

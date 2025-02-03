@@ -41,8 +41,8 @@ public class TestcontainersConfiguration {
 		hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
 
 		// HikariCP 성능 최적화 옵션
-		hikariConfig.setMaximumPoolSize(10); // 최대 커넥션 개수
-		hikariConfig.setMinimumIdle(2); // 최소 유휴 커넥션 개수
+		hikariConfig.setMaximumPoolSize(30); // 최대 커넥션 개수
+		hikariConfig.setMinimumIdle(10); // 최소 유휴 커넥션 개수
 		hikariConfig.setIdleTimeout(30000); // 유휴 커넥션 최대 유지 시간 (ms)
 		hikariConfig.setConnectionTimeout(3000); // 커넥션 획득 타임아웃 (ms)
 		hikariConfig.setValidationTimeout(3000); // 검증 타임아웃 (ms)
