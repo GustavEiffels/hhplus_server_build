@@ -23,6 +23,7 @@ services:
       - ./data/redis/:/data
   redis:
     image: redis:7.0
+    container_name: redis-queue
     ports:
       - "6380:6379"
     volumes:

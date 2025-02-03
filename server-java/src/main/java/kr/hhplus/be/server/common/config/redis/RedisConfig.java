@@ -8,12 +8,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class RedisLockConfig {
+public class RedisConfig {
     @Value("${spring.redis-lock.host}")
-    private String host;
+    private String lockHost;
 
     @Value("${spring.redis-lock.port}")
-    private int port;
+    private int lockPort;
+
+    @Value("${spring.redis-queue.host}")
+    private String queueHost;
+
+    @Value("${spring.redis-queue.port}")
+    private int queuePort;
 
     private static final String REDISSON_HOST_PREFIX = "redis://";
 
@@ -21,7 +27,7 @@ public class RedisLockConfig {
     public RedissonClient redissonClient() {
         RedissonClient redissonClient = null;
         Config config = new Config();
-        config.useSingleServer().setAddress(REDISSON_HOST_PREFIX + host + ":" + port);
+        config.useSingleServer().setAddress(REDISSON_HOST_PREFIX + lockHost + ":" + lockPort);
         redissonClient = Redisson.create(config);
         return redissonClient;
     }
