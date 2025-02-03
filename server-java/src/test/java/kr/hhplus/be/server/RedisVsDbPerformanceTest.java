@@ -37,13 +37,13 @@ public class RedisVsDbPerformanceTest {
 
 
     @DisplayName("""
-            STRING 사용 - 단순 쓰기 성능 비교 테스트 : 쓰기 200 회가 완료되는 시간을 측정하여 비교합니다. 
+            STRING 사용 - 단순 쓰기 성능 비교 테스트 : 쓰기 10 회가 완료되는 시간을 측정하여 비교합니다. 
             """)
     @Test
     void redis_strings_test_00() throws InterruptedException {
-
-        concurrencyTester(i -> userJpaRepository.save(User.create("test" + i)), 10,"데이터 베이스");
-        concurrencyTester(i -> queueRedisService.addString(i+"","test"+i),10,"Redis");
+        int threadNum = 10;
+        concurrencyTester(i -> userJpaRepository.save(User.create("test" + i)), threadNum,"데이터 베이스");
+        concurrencyTester(i -> queueRedisService.addString(i+"","test"+i),threadNum,"Redis String");
     }
 
     private void concurrencyTester(Consumer<Integer> task, int threadNum, String type) throws InterruptedException {
@@ -63,6 +63,7 @@ public class RedisVsDbPerformanceTest {
                     task.accept(finalI);
                     count.incrementAndGet();
                 } catch (Exception e) {
+                    log.error("Error during task execution", e);
                 } finally {
                     doneSignal.countDown();
                 }
