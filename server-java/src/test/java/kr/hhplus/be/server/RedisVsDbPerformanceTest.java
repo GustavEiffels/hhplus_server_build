@@ -7,11 +7,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.redisson.api.RBucket;
+import org.redisson.api.RMap;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 import org.testcontainers.junit.jupiter.Testcontainers;
+
+import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -33,16 +36,30 @@ public class RedisVsDbPerformanceTest {
     RedissonClient redissonClient;
 
 
-
+// DATA BASE
     @Transactional
-    void saveUser(String name){
-        userJpaRepository.save(User.create(name));
+    User saveUser(String name){
+        return userJpaRepository.save(User.create(name));
     }
 
-    public void addString(String key, String value){
+    User findById(Long userId){
+        Optional<User> optionalUser = userJpaRepository.findById(userId);
+        return optionalUser.orElse(null);
+    }
+
+
+// REDIS STRING
+    void addString(String key, String value){
         RBucket<String> bucket = redissonClient.getBucket(key);
         bucket.set(value);
     }
+
+    String readByRedisString(String key){
+        RBucket<String> bucket = redissonClient.getBucket(key);
+        return bucket.get();
+    }
+
+
 
 
     @DisplayName("""
@@ -53,6 +70,24 @@ public class RedisVsDbPerformanceTest {
         int threadNum = 100;
         concurrencyTester(i -> saveUser("test"+i), threadNum,"데이터 베이스");
         concurrencyTester(i -> addString(i+"","test"+i),threadNum,"Redis String");
+    }
+
+    @DisplayName("""
+            STRING 사용 - 읽기 성능 비교 테스트 : REDIS 와 DB 를 각각 1000회 조회 시 시간 측정을 하여,
+            성능을 비교해 봅니다. 
+            """)
+    @Test
+    void edis_strings_test_01() throws InterruptedException {
+        // given
+        String redisId = "1";
+        long   dbId    = saveUser("test").getId();
+
+        addString(redisId,"test");
+        int threadNum = 1500;
+
+        // when&then
+        concurrencyTester(i -> findById(dbId), threadNum,"데이터 베이스");
+        concurrencyTester(i -> readByRedisString(redisId),threadNum,"Redis String");
     }
 
 
