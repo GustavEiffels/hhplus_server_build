@@ -1,25 +1,22 @@
 package kr.hhplus.be.server;
 
 
-import kr.hhplus.be.server.application.point.PointFacadeDto;
-import kr.hhplus.be.server.common.config.redis.QueueRedisService;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.redisson.api.RBucket;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 import org.testcontainers.junit.jupiter.Testcontainers;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 @SpringBootTest
 @Testcontainers
@@ -33,18 +30,31 @@ public class RedisVsDbPerformanceTest {
     UserJpaRepository userJpaRepository;
 
     @Autowired
-    QueueRedisService queueRedisService;
+    RedissonClient redissonClient;
+
+
+
+    @Transactional
+    void saveUser(String name){
+        userJpaRepository.save(User.create(name));
+    }
+
+    public void addString(String key, String value){
+        RBucket<String> bucket = redissonClient.getBucket(key);
+        bucket.set(value);
+    }
 
 
     @DisplayName("""
-            STRING 사용 - 단순 쓰기 성능 비교 테스트 : 쓰기 10 회가 완료되는 시간을 측정하여 비교합니다. 
+            STRING 사용 - 단순 쓰기 성능 비교 테스트 : 쓰기 100 회가 완료되는 시간을 측정하여 비교합니다. 
             """)
     @Test
     void redis_strings_test_00() throws InterruptedException {
-        int threadNum = 10;
-        concurrencyTester(i -> userJpaRepository.save(User.create("test" + i)), threadNum,"데이터 베이스");
-        concurrencyTester(i -> queueRedisService.addString(i+"","test"+i),threadNum,"Redis String");
+        int threadNum = 100;
+        concurrencyTester(i -> saveUser("test"+i), threadNum,"데이터 베이스");
+        concurrencyTester(i -> addString(i+"","test"+i),threadNum,"Redis String");
     }
+
 
     private void concurrencyTester(Consumer<Integer> task, int threadNum, String type) throws InterruptedException {
         long startTime = System.currentTimeMillis();
@@ -80,4 +90,6 @@ public class RedisVsDbPerformanceTest {
         log.info("during : {} ms ",(endTime - startTime));
         log.info("---------------------------------------");
     }
+
+
 }

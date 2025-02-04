@@ -2,17 +2,13 @@ package kr.hhplus.be.server;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
 import javax.sql.DataSource;
-import java.io.IOException;
 
 @Configuration
 public class TestcontainersConfiguration {
@@ -41,12 +37,12 @@ public class TestcontainersConfiguration {
 		hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
 
 		// HikariCP 성능 최적화 옵션
-		hikariConfig.setMaximumPoolSize(30); // 최대 커넥션 개수
-		hikariConfig.setMinimumIdle(10); // 최소 유휴 커넥션 개수
-		hikariConfig.setIdleTimeout(30000); // 유휴 커넥션 최대 유지 시간 (ms)
-		hikariConfig.setConnectionTimeout(3000); // 커넥션 획득 타임아웃 (ms)
-		hikariConfig.setValidationTimeout(3000); // 검증 타임아웃 (ms)
-		hikariConfig.setLeakDetectionThreshold(5000); // 커넥션 누수 감지 시간 (ms)
+		hikariConfig.setMaximumPoolSize(150); // 최대 커넥션 개수
+		hikariConfig.setMinimumIdle(50); // 최소 유휴 커넥션 개수
+		hikariConfig.setIdleTimeout(10000); // 유휴 커넥션 최대 유지 시간 (ms)	\
+		hikariConfig.setConnectionTimeout(10000); // 커넥션 획득 타임아웃 (ms)
+		hikariConfig.setValidationTimeout(10000); // 검증 타임아웃 (ms)
+		hikariConfig.setLeakDetectionThreshold(10000); // 커넥션 누수 감지 시간 (ms)
 
 		return new HikariDataSource(hikariConfig);
 	}

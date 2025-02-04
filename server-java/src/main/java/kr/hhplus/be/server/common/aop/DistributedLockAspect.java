@@ -21,11 +21,9 @@ import org.springframework.stereotype.Component;
 @Profile("redisson")
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE)
+@RequiredArgsConstructor
 public class DistributedLockAspect {
 
-    public DistributedLockAspect(@Qualifier("lockRedissonClient") RedissonClient redissonClient){
-        this.redissonClient = redissonClient;
-    }
     private final RedissonClient redissonClient;
 
     @Pointcut("@annotation(kr.hhplus.be.server.common.config.redis.DistributedLock)")

@@ -13,6 +13,8 @@ import java.util.Optional;
 public class TokenRepositoryImpl implements QueueTokenRepository {
     private final TokenJpaRepository tokenJpaRepository;
 
+
+
     @Override
     public List<QueueToken> findTokensToActivate(long activateCnt) {
         return tokenJpaRepository.findTokensToActivate(activateCnt);
