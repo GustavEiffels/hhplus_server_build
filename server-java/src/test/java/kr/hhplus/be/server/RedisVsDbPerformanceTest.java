@@ -60,6 +60,17 @@ public class RedisVsDbPerformanceTest {
     }
 
 
+// REDIS HASH
+    void saveByRedisHash(String tableName, long userId, String username ){
+        RMap<Long, Object> map = redissonClient.getMap(tableName);
+        map.put(userId,username);
+    }
+
+    Object readByRedisHashKey(String tableName,long userId){
+        RMap<Long, Object> map = redissonClient.getMap(tableName);
+        return map.get(userId);
+    }
+
 
 
     @DisplayName("""
@@ -88,6 +99,35 @@ public class RedisVsDbPerformanceTest {
         // when&then
         concurrencyTester(i -> findById(dbId), threadNum,"데이터 베이스");
         concurrencyTester(i -> readByRedisString(redisId),threadNum,"Redis String");
+    }
+
+    @DisplayName("""
+            HASH 사용 - 쓰기 성능 비교 테스트 : Redis 와 Database 에서 각각 100 회 쓰기 작업 시 시간을 측정하여, 
+            성능을 비교해 봅니다. 
+            """)
+    @Test
+    void redis_hash_test_00() throws InterruptedException {
+        int threadNum = 100;
+        concurrencyTester(i -> saveUser("test"+i), threadNum,"데이터 베이스");
+        concurrencyTester(i -> saveByRedisHash("user",Long.valueOf(i),"test"+i),threadNum,"Redis HASH");
+    }
+
+    @DisplayName("""
+            HASH 사용 - 읽기 성능 비교 테스트 : REDIS 와 DB 를 각각 1000회 조회 시 시간 측정을 하여,
+            성능을 비교해 봅니다. 
+            """)
+    @Test
+    void edis_hash_test_01() throws InterruptedException {
+        // given
+        long   redisId = 1L;
+        long   dbId    = saveUser("test").getId();
+
+        saveByRedisHash("user",redisId,"test");
+        int threadNum = 1500;
+
+        // when&then
+        concurrencyTester(i -> findById(dbId), threadNum,"데이터 베이스");
+        concurrencyTester(i -> readByRedisHashKey("user",redisId),threadNum,"Redis Hash");
     }
 
 
