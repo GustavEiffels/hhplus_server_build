@@ -1,5 +1,6 @@
 package kr.hhplus.be.server.interfaces.scheduler;
 
+import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeImpl;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
@@ -15,7 +16,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @Slf4j
 public class ScheduleTask {
-    private final QueueTokenFacadeImpl queueTokenFacadeImpl;
+    private final QueueTokenFacade queueTokenFacadeImpl;
     private final ReservationFacade reservationFacade;
 
     @Value("${queue.max-active-token:20}")

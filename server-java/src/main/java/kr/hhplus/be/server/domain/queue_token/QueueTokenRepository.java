@@ -38,5 +38,7 @@ public interface QueueTokenRepository {
 
     Long findUserIdByTokenId(String tokenId);
 
+    Long findWaitingTokenByTokenId(String tokenId);
+
     Boolean isActiveToken(String tokenId);
 }

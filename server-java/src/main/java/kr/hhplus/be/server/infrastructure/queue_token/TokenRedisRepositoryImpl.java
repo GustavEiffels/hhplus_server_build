@@ -5,8 +5,10 @@ import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ZSetOperations;
+import org.springframework.stereotype.Repository;
 
 @RequiredArgsConstructor
+@Repository
 public class TokenRedisRepositoryImpl implements TokenRedisRepository{
 
     private final RedisTemplate<String,Object> redisTemplate;
@@ -33,7 +35,14 @@ public class TokenRedisRepositoryImpl implements TokenRedisRepository{
 
     @Override
     public Long findUserIdByTokenId(String tokenId) {
-        return getHASH().get(HASH_KEY,tokenId);
+        Object value = getHASH().get(HASH_KEY, tokenId);
+
+        if( value instanceof  Integer ){
+            return ((Integer) value).longValue();
+        }
+        else{
+            return (Long) value;
+        }
     }
 
 // WAITING_AREA
@@ -42,9 +51,13 @@ public class TokenRedisRepositoryImpl implements TokenRedisRepository{
         getZSET().add(ZSET_KEY,tokenId,System.currentTimeMillis());
     }
 
+    @Override
+    public Long findWaitingTokenByTokenId(String tokenId) {
+        return getZSET().rank(ZSET_KEY,tokenId);
+    }
 
 
-// ACTIVE_AREA
+    // ACTIVE_AREA
     @Override
     public boolean isActiveToken(String tokenId) {
         return getSET().isMember(SET_KEY,tokenId);

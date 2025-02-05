@@ -122,6 +122,17 @@ public class QueueTokenServiceRedisImpl implements QueueTokenService{
             throw new BusinessException(ErrorCode.NOT_MATCHED_WITH_USER);
         }
 
-        return repository.isActiveToken(tokenId);
+        Long waitingRank = repository.findWaitingTokenByTokenId(tokenId);
+        Boolean isActive = repository.isActiveToken(tokenId);
+
+        if(waitingRank!=null){
+            return  false;
+        }
+        if(isActive){
+            return true;
+        }
+        else{
+            throw new BusinessException(ErrorCode.NOT_FOUND_QUEUE_TOKEN);
+        }
     }
 }

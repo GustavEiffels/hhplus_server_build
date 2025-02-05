@@ -40,7 +40,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Testcontainers
-@ActiveProfiles("redisson")
 @Slf4j
 @DisplayName("결제 통합 테스트")
 public class PaymentConcurrencyTest {

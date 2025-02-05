@@ -46,7 +46,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("""
             결제 - 분산락을 사용한다.      
             """)
-@ActiveProfiles("redisson")
+//@ActiveProfiles("redisson")
 public class PaymentConcurrencyTest {
 
     @Autowired

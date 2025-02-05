@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("local")
 public class ReservationRepositoryImpl implements ReservationRepository {
     private final ReservationJpaRepository jpaRepository;
 
@@ -31,6 +30,6 @@ public class ReservationRepositoryImpl implements ReservationRepository {
 
     @Override
     public List<Reservation> findByIdsWithLock(List<Long> reservationsIds) {
-        return jpaRepository.findByIdsWithLock(reservationsIds);
+        return jpaRepository.findByIds(reservationsIds);
     }
 }

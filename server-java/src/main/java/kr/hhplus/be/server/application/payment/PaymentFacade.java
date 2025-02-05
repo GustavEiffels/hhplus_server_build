@@ -6,7 +6,6 @@ import kr.hhplus.be.server.domain.payment.PaymentService;
 import kr.hhplus.be.server.domain.point_history.PointHistory;
 import kr.hhplus.be.server.domain.point_history.PointHistoryService;
 import kr.hhplus.be.server.domain.queue_token.QueueTokenService;
-import kr.hhplus.be.server.domain.queue_token.QueueTokenServiceImpl;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationService;
 import kr.hhplus.be.server.domain.user.User;

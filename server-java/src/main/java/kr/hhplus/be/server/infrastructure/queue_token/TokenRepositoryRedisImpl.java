@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("Redis")
+@Profile("redis")
 public class TokenRepositoryRedisImpl implements QueueTokenRepository {
     private final TokenJpaRepository tokenJpaRepository;
 
@@ -66,6 +66,11 @@ public class TokenRepositoryRedisImpl implements QueueTokenRepository {
     @Override
     public Long findUserIdByTokenId(String tokenId) {
         return tokenRedisRepository.findUserIdByTokenId(tokenId);
+    }
+
+    @Override
+    public Long findWaitingTokenByTokenId(String tokenId) {
+        return tokenRedisRepository.findWaitingTokenByTokenId(tokenId);
     }
 
     @Override

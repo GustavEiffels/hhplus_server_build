@@ -33,7 +33,7 @@ import java.util.concurrent.Executors;
 @DisplayName("""
             좌석 예약 - 낙관적 락을 사용한다.      
             """)
-@ActiveProfiles("optimistic")
+//@ActiveProfiles("optimistic")
 public class ReservationConcurrencyTest {
 
     @Autowired

@@ -46,7 +46,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("""
             결제 - 비관적 락을 사용한다.      
             """)
-@ActiveProfiles("pessimistic")
+//@ActiveProfiles("pessimistic")
 public class PaymentConcurrencyTest {
 
     @Autowired

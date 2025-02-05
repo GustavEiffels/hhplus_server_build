@@ -26,7 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @Testcontainers
-@ActiveProfiles("redisson")
 @Slf4j
 @DisplayName("포인트 충전 통합 테스트")
 public class PointConcurrencyTest {

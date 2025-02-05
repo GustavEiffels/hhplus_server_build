@@ -10,6 +10,8 @@ public interface TokenRedisRepository {
 // WAITING_AREA
     void insertWaitingArea(String tokenId);
 
+    Long findWaitingTokenByTokenId(String tokenId);
+
 
     // isActiveToken
     boolean isActiveToken(String tokenId);
