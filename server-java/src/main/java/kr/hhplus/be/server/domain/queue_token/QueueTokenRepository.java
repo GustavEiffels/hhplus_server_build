@@ -35,4 +35,8 @@ public interface QueueTokenRepository {
     void createMappingTable(String tokenId, Long userId);
 
     void insertTokenToWaitingArea(String tokenId);
+
+    Long findUserIdByTokenId(String tokenId);
+
+    Boolean isActiveToken(String tokenId);
 }

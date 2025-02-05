@@ -62,4 +62,14 @@ public class TokenRepositoryRedisImpl implements QueueTokenRepository {
     public void insertTokenToWaitingArea(String tokenId) {
         tokenRedisRepository.insertWaitingArea(tokenId);
     }
+
+    @Override
+    public Long findUserIdByTokenId(String tokenId) {
+        return tokenRedisRepository.findUserIdByTokenId(tokenId);
+    }
+
+    @Override
+    public Boolean isActiveToken(String tokenId) {
+        return tokenRedisRepository.isActiveToken(tokenId);
+    }
 }

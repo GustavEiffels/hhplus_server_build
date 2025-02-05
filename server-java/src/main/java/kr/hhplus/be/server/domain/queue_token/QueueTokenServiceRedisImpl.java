@@ -82,6 +82,17 @@ public class QueueTokenServiceRedisImpl implements QueueTokenService{
         return true;
     }
 
+
+
+// REDIS
+
+    /**
+     * REDIS 를 사용하여
+     * 대기열 토큰 생성 및
+     * 대기열에 토큰 추가
+      * @param userId
+     * @return
+     */
     @Override
     public String createToken(Long userId) {
         // 1.Create UUID
@@ -94,5 +105,23 @@ public class QueueTokenServiceRedisImpl implements QueueTokenService{
         repository.insertTokenToWaitingArea(tokenId);
 
         return tokenId;
+    }
+
+    @Override
+    public Boolean isValidAndActive(Long userId,String tokenId) {
+        // 1. Find UserId By TokenId  ( Redis )
+        Long findUserId = repository.findUserIdByTokenId(tokenId);
+
+        // 2. NOT FOUND USER BY TOKEN ID
+        if( findUserId == null ){
+            throw new BusinessException(ErrorCode.NOT_FOUND_QUEUE_TOKEN);
+        }
+
+        // 3. NOT EQUAL TOKEN OWNER WITH USER
+        if(!findUserId.equals(userId)){
+            throw new BusinessException(ErrorCode.NOT_MATCHED_WITH_USER);
+        }
+
+        return repository.isActiveToken(tokenId);
     }
 }

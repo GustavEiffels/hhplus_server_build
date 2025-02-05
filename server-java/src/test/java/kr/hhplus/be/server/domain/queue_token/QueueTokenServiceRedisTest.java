@@ -12,7 +12,6 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
-@ActiveProfiles("redis")
 class QueueTokenServiceRedisTest {
 
     @Mock
@@ -32,6 +31,22 @@ class QueueTokenServiceRedisTest {
 
         Mockito.verify(repository, Mockito.times(1)).createMappingTable(Mockito.eq(tokenId),Mockito.eq(userId));
         Mockito.verify(repository, Mockito.times(1)).insertTokenToWaitingArea(Mockito.eq(tokenId));
+    }
+
+    @DisplayName("isValidAndActive 를 사용하면 repository 의 findUserIdByTokenId, isActiveToken 가 한번씩 실행된다.")
+    @Test
+    void isValidAndActive_CacheTest(){
+        // given
+        Long userId = 1L;
+        String tokenId = "test";
+        Mockito.when(repository.findUserIdByTokenId(tokenId)).thenReturn(userId);
+
+        // when
+        queueTokenService.isValidAndActive(userId,tokenId);
+
+        Mockito.verify(repository, Mockito.times(1)).findUserIdByTokenId(Mockito.eq(tokenId));
+        Mockito.verify(repository, Mockito.times(1)).isActiveToken(Mockito.eq(tokenId));
+
     }
 
 }

@@ -11,5 +11,10 @@ public interface QueueTokenService {
 
     Boolean isValidAndActive(Long queueTokenId, Long userId);
 
+// REDIS
     String createToken(Long userId);
+
+    Boolean isValidAndActive(Long userId, String tokenId);
+
+
 }

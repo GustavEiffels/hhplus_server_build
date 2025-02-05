@@ -44,6 +44,7 @@ public class TokenRedisRepositoryImpl implements TokenRedisRepository{
 
 
 
+// ACTIVE_AREA
     @Override
     public boolean isActiveToken(String tokenId) {
         return getSET().isMember(SET_KEY,tokenId);

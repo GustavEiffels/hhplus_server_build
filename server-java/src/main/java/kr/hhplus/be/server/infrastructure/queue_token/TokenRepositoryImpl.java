@@ -15,7 +15,6 @@ import java.util.Optional;
 public class TokenRepositoryImpl implements QueueTokenRepository {
     private final TokenJpaRepository tokenJpaRepository;
 
-    private final TokenRedisRepository tokenRedisRepository;
 
 
     @Override
@@ -61,5 +60,15 @@ public class TokenRepositoryImpl implements QueueTokenRepository {
     @Override
     public void insertTokenToWaitingArea(String tokenId) {
 
+    }
+
+    @Override
+    public Long findUserIdByTokenId(String tokenId) {
+        return null;
+    }
+
+    @Override
+    public Boolean isActiveToken(String tokenId) {
+        return null;
     }
 }

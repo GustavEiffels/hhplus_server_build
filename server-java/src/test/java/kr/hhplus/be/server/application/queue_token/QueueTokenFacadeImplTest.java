@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@ActiveProfiles("local")
 class QueueTokenFacadeImplTest {
 
 
@@ -27,7 +29,7 @@ class QueueTokenFacadeImplTest {
     TokenJpaRepository tokenJpaRepository;
 
     @Autowired
-    QueueTokenFacadeImpl queueTokenFacadeImpl;
+    QueueTokenFacade queueTokenFacade;
 
     List<User> userList;
 
@@ -57,7 +59,7 @@ class QueueTokenFacadeImplTest {
 
         // when
         paramList.forEach(item->{
-            queueTokenFacadeImpl.create(item);
+            queueTokenFacade.create(item);
         });
 
         //then
@@ -77,7 +79,7 @@ class QueueTokenFacadeImplTest {
         QueueTokenFacadeDto.ActiveCheckParam param = new QueueTokenFacadeDto.ActiveCheckParam(String.valueOf(token.getId()),String.valueOf(user.getId()));
 
         // when
-        QueueTokenFacadeDto.ActiveCheckResult result = queueTokenFacadeImpl.isValidToken(param);
+        QueueTokenFacadeDto.ActiveCheckResult result = queueTokenFacade.isValidToken(param);
 
         // then
         assertTrue(result.isActive());
@@ -113,7 +115,7 @@ class QueueTokenFacadeImplTest {
         assertEquals(27,waitCnt);
 
         // When
-        queueTokenFacadeImpl.activate(new QueueTokenFacadeDto.ActivateParam(10L));
+        queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(10L));
 
         // Then
         activeCnt = 0;

@@ -85,4 +85,11 @@ public class QueueTokenServiceImpl implements QueueTokenService{
     public String createToken(Long userId) {
         return null;
     }
+
+    @Override
+    public Boolean isValidAndActive(Long userId, String tokenId) {
+        return null;
+    }
+
+
 }
