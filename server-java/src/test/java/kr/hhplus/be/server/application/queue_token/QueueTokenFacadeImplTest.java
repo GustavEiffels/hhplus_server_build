@@ -1,10 +1,8 @@
 package kr.hhplus.be.server.application.queue_token;
 
 import kr.hhplus.be.server.domain.queue_token.QueueToken;
-import kr.hhplus.be.server.domain.queue_token.QueueTokenRepository;
 import kr.hhplus.be.server.domain.queue_token.QueueTokenStatus;
 import kr.hhplus.be.server.domain.user.User;
-import kr.hhplus.be.server.domain.user.UserRepository;
 import kr.hhplus.be.server.infrastructure.queue_token.TokenJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import org.junit.jupiter.api.AfterEach;
@@ -19,7 +17,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class QueueTokenFacadeTest {
+class QueueTokenFacadeImplTest {
 
 
     @Autowired
@@ -29,7 +27,7 @@ class QueueTokenFacadeTest {
     TokenJpaRepository tokenJpaRepository;
 
     @Autowired
-    QueueTokenFacade queueTokenFacade;
+    QueueTokenFacadeImpl queueTokenFacadeImpl;
 
     List<User> userList;
 
@@ -59,7 +57,7 @@ class QueueTokenFacadeTest {
 
         // when
         paramList.forEach(item->{
-            queueTokenFacade.create(item);
+            queueTokenFacadeImpl.create(item);
         });
 
         //then
@@ -79,7 +77,7 @@ class QueueTokenFacadeTest {
         QueueTokenFacadeDto.ActiveCheckParam param = new QueueTokenFacadeDto.ActiveCheckParam(String.valueOf(token.getId()),String.valueOf(user.getId()));
 
         // when
-        QueueTokenFacadeDto.ActiveCheckResult result = queueTokenFacade.isValidToken(param);
+        QueueTokenFacadeDto.ActiveCheckResult result = queueTokenFacadeImpl.isValidToken(param);
 
         // then
         assertTrue(result.isActive());
@@ -115,7 +113,7 @@ class QueueTokenFacadeTest {
         assertEquals(27,waitCnt);
 
         // When
-        queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(10L));
+        queueTokenFacadeImpl.activate(new QueueTokenFacadeDto.ActivateParam(10L));
 
         // Then
         activeCnt = 0;

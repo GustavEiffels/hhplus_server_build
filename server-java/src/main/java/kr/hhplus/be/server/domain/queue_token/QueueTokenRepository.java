@@ -31,4 +31,8 @@ public interface QueueTokenRepository {
     Optional<QueueToken> findById(Long tokenId);
 
 
+// REDIS
+    void createMappingTable(String tokenId, Long userId);
+
+    void insertTokenToWaitingArea(String tokenId);
 }

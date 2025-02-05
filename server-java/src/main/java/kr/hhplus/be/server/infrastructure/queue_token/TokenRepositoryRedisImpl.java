@@ -11,8 +11,8 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("local")
-public class TokenRepositoryImpl implements QueueTokenRepository {
+@Profile("Redis")
+public class TokenRepositoryRedisImpl implements QueueTokenRepository {
     private final TokenJpaRepository tokenJpaRepository;
 
     private final TokenRedisRepository tokenRedisRepository;
@@ -55,11 +55,11 @@ public class TokenRepositoryImpl implements QueueTokenRepository {
 
     @Override
     public void createMappingTable(String tokenId, Long userId) {
-
+        tokenRedisRepository.insertMappingTable(tokenId, userId);
     }
 
     @Override
     public void insertTokenToWaitingArea(String tokenId) {
-
+        tokenRedisRepository.insertWaitingArea(tokenId);
     }
 }

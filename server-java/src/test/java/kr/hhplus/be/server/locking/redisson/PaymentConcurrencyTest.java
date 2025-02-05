@@ -141,7 +141,7 @@ public class PaymentConcurrencyTest {
                 try {
 
                     PaymentFacadeDto.PaymentParam param = new PaymentFacadeDto.PaymentParam(
-                            reservations, user.getId(), queueToken.getId());
+                            reservations, user.getId(), queueToken.getId().toString());
                     try {
                         facade.pay(param);
                         results.add(true);

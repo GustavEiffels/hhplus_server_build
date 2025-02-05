@@ -14,7 +14,7 @@ public interface QueueTokenFacadeDto {
         }
     }
 
-    record CreateResult(Long tokenId){}
+    record CreateResult(String tokenId){}
 
 
     record ActiveCheckParam(Long tokenId, Long userId) {

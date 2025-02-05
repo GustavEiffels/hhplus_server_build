@@ -1,6 +1,6 @@
 package kr.hhplus.be.server.interfaces.scheduler;
 
-import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
+import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeImpl;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import lombok.RequiredArgsConstructor;
@@ -9,14 +9,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
 @Slf4j
 public class ScheduleTask {
-    private final QueueTokenFacade queueTokenFacade;
+    private final QueueTokenFacadeImpl queueTokenFacadeImpl;
     private final ReservationFacade reservationFacade;
 
     @Value("${queue.max-active-token:20}")
@@ -29,7 +28,7 @@ public class ScheduleTask {
         long startTime = System.currentTimeMillis();
 
         try {
-            queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(maxActiveToken));
+            queueTokenFacadeImpl.activate(new QueueTokenFacadeDto.ActivateParam(maxActiveToken));
             log.info("UUID - [{}] | active token schedule ", uuid);
         } finally {
             log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));

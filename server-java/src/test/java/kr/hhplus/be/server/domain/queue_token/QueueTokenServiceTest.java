@@ -26,7 +26,7 @@ class QueueTokenServiceTest {
     private QueueTokenRepository repository;
 
     @InjectMocks
-    private QueueTokenService queueTokenService;
+    private QueueTokenServiceImpl queueTokenService;
 
 
 // isValidAndActive

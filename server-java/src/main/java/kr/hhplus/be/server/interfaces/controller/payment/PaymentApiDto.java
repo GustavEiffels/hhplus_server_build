@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public interface PaymentApiDto {
-    record PaymentRequest(List<Long> reservationIds, Long userId, Long tokenId) {
+    record PaymentRequest(List<Long> reservationIds, Long userId, String tokenId) {
         public PaymentRequest {
             if (reservationIds.isEmpty()) {
                 throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);

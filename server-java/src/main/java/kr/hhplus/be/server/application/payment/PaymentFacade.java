@@ -1,18 +1,13 @@
 package kr.hhplus.be.server.application.payment;
 
-import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
 import kr.hhplus.be.server.common.config.redis.DistributedLock;
 import kr.hhplus.be.server.domain.payment.Payment;
 import kr.hhplus.be.server.domain.payment.PaymentService;
 import kr.hhplus.be.server.domain.point_history.PointHistory;
 import kr.hhplus.be.server.domain.point_history.PointHistoryService;
-import kr.hhplus.be.server.domain.queue_token.QueueTokenService;
+import kr.hhplus.be.server.domain.queue_token.QueueTokenServiceImpl;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationService;
-import kr.hhplus.be.server.domain.reservation.ReservationStatus;
-import kr.hhplus.be.server.domain.seat.Seat;
-import kr.hhplus.be.server.domain.seat.SeatService;
-import kr.hhplus.be.server.domain.seat.SeatStatus;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -28,7 +22,7 @@ public class PaymentFacade {
     private final PaymentService paymentService;
     private final UserService userService;
     private final ReservationService reservationService;
-    private final QueueTokenService queueTokenService;
+    private final QueueTokenServiceImpl queueTokenService;
     private final PointHistoryService pointHistoryService;
 
 
@@ -59,7 +53,7 @@ public class PaymentFacade {
                 .map(payment -> PointHistory.createUse(payment.getAmount(),user,payment)).toList();
 
         pointHistoryService.create(historyList);
-        queueTokenService.expired(param.tokenId());
+        queueTokenService.expired(Long.valueOf(param.tokenId()));
 
         return  PaymentFacadeDto.PaymentResult.from(paymentList);
     }

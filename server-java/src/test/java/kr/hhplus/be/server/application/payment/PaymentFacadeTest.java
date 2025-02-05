@@ -1,14 +1,12 @@
 package kr.hhplus.be.server.application.payment;
 
-import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
+import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeImpl;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import kr.hhplus.be.server.application.reservation.ReservationFacadeDto;
 import kr.hhplus.be.server.domain.concert.Concert;
-import kr.hhplus.be.server.domain.payment.PaymentStatus;
 import kr.hhplus.be.server.domain.point_history.PointHistory;
 import kr.hhplus.be.server.domain.point_history.PointHistoryStatus;
-import kr.hhplus.be.server.domain.queue_token.QueueTokenStatus;
 import kr.hhplus.be.server.domain.reservation.ReservationStatus;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.seat.Seat;
@@ -58,7 +56,7 @@ class PaymentFacadeTest {
     ReservationFacade reservationFacade;
 
     @Autowired
-    QueueTokenFacade queueTokenFacade;
+    QueueTokenFacadeImpl queueTokenFacadeImpl;
 
     @Autowired
     PaymentFacade paymentFacade;
@@ -84,10 +82,10 @@ class PaymentFacadeTest {
         userJpaRepository.save(user);
 
         // 토큰 생성
-        QueueTokenFacadeDto.CreateResult createTokenResult = queueTokenFacade.create(new QueueTokenFacadeDto.CreateParam(user.getId()));
+        QueueTokenFacadeDto.CreateResult createTokenResult = queueTokenFacadeImpl.create(new QueueTokenFacadeDto.CreateParam(user.getId()));
 
         // 토큰 활성화
-        queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(20L));
+        queueTokenFacadeImpl.activate(new QueueTokenFacadeDto.ActivateParam(20L));
 
 
         // 콘서트 생성
@@ -148,7 +146,7 @@ class PaymentFacadeTest {
             }
         });
 
-        assertTrue(tokenJpaRepository.findById(createTokenResult.tokenId()).get().getExpireAt().isBefore(LocalDateTime.now()),"토큰 만료됨 ");
+        assertTrue(tokenJpaRepository.findById(Long.valueOf(createTokenResult.tokenId())).get().getExpireAt().isBefore(LocalDateTime.now()),"토큰 만료됨 ");
 
     }
 
