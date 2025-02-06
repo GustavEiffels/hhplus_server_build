@@ -2,7 +2,7 @@ spring:
   task:
     scheduling:
       pool:
-        size: 2
+        size: 3
       shutdown:
         await-termination: true # 모든 스케줄 작업이 종료 되어야 어플리케이션 종료되게 마듬
         await-termination-period: 10s # 스케줄러가 종료 작업을 기다리는 시간
@@ -38,7 +38,7 @@ spring:
 #      hibernate.format_sql: true
 
 queue:
-  max-active-token: 20
+  max-active-token: 30
 
 logging:
   level:

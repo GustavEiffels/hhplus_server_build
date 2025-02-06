@@ -3,7 +3,7 @@ package kr.hhplus.be.server.domain.queue_token;
 
 public interface QueueTokenService {
 
-    void activate(Long maxTokenCnt);
+    void activate();
 
     void expired(Long tokenId);
 
@@ -18,5 +18,6 @@ public interface QueueTokenService {
 
     void expired(String tokenId);
 
+    void expireToken();
 
 }

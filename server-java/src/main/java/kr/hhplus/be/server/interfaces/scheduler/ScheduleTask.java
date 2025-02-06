@@ -16,11 +16,24 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @Slf4j
 public class ScheduleTask {
-    private final QueueTokenFacade queueTokenFacadeImpl;
+    private final QueueTokenFacade queueTokenFacade;
     private final ReservationFacade reservationFacade;
 
-    @Value("${queue.max-active-token:20}")
-    private long maxActiveToken;
+
+    @Scheduled(fixedRate =  10_000)
+    public void executeExpireTokenRemover(){
+        String uuid = "SCHEDULER-" + UUID.randomUUID();
+        SchedulerContext.setUuid(uuid);
+        long startTime = System.currentTimeMillis();
+
+        try {
+            queueTokenFacade.activate();
+            log.info("UUID - [{}] | active token schedule ", uuid);
+        } finally {
+            log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));
+            SchedulerContext.clear();
+        }
+    }
 
     @Scheduled(fixedRate =  10_000)
     public void executeTokenActiveMaker(){
@@ -29,7 +42,7 @@ public class ScheduleTask {
         long startTime = System.currentTimeMillis();
 
         try {
-            queueTokenFacadeImpl.activate(new QueueTokenFacadeDto.ActivateParam(maxActiveToken));
+            queueTokenFacade.activate();
             log.info("UUID - [{}] | active token schedule ", uuid);
         } finally {
             log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));

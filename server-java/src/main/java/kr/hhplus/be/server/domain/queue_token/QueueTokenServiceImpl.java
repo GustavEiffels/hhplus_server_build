@@ -4,6 +4,7 @@ package kr.hhplus.be.server.domain.queue_token;
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -16,16 +17,18 @@ import java.util.Objects;
 public class QueueTokenServiceImpl implements QueueTokenService{
     private final QueueTokenRepository repository;
 
+    @Value("${queue.max-active-token}")
+    private long maxActiveToken;
+
     /**
      * 토큰 활성화 시키기
-     * @param maxTokenCnt
      */
-    public void activate(Long maxTokenCnt){
+    public void activate(){
         // 1. 현재 활성화 되어 있는 토큰 수 구하기
         long currentActiveCnt     = repository.countActiveTokens();
 
         // 2. 활성화 가능한 토큰 수 반환
-        long activeAbleCnt        = maxTokenCnt-currentActiveCnt;
+        long activeAbleCnt        = maxActiveToken-currentActiveCnt;
 
         // 3. 토큰 활성화
         if(activeAbleCnt>0){
@@ -96,6 +99,10 @@ public class QueueTokenServiceImpl implements QueueTokenService{
 
     }
 
+    @Override
+    public void expireToken() {
+
+    }
 
 
 }

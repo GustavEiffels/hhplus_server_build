@@ -6,7 +6,9 @@ public interface QueueTokenFacade {
 
     QueueTokenFacadeDto.ActiveCheckResult isValidToken(QueueTokenFacadeDto.ActiveCheckParam param);
 
-    void activate(QueueTokenFacadeDto.ActivateParam param);
+    void activate();
+
+
 
     void expire();
 }

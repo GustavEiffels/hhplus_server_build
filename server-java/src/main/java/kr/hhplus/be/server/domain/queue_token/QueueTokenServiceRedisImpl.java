@@ -5,6 +5,7 @@ import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
@@ -22,18 +23,19 @@ import java.util.stream.Collectors;
 @Slf4j
 public class QueueTokenServiceRedisImpl implements QueueTokenService{
     private final QueueTokenRepository repository;
+    @Value("${queue.max-active-token}")
+    private long maxActiveToken;
 
     /**
      * 토큰 활성화 시키기
      * redis
-     * @param maxTokenCnt
      */
-    public void activate(Long maxTokenCnt){
+    public void activate(){
         // 1. 현재 활성화 되어 있는 토큰 수 구하기
         long currentActiveCnt     = repository.countActive();
 
         // 2. 활성화 가능한 토큰 수 반환
-        long activeAbleCnt        = maxTokenCnt-currentActiveCnt;
+        long activeAbleCnt        = maxActiveToken-currentActiveCnt;
 
 
         // 3. 대기열에서 제외
@@ -154,6 +156,24 @@ public class QueueTokenServiceRedisImpl implements QueueTokenService{
     @Override
     public void expired(String tokenId) {
         repository.deleteFromActive(tokenId);
+    }
+
+    @Override
+    public void expireToken() {
+        // 1. 현재 시간 측정
+        Long currentTime = System.currentTimeMillis();
+
+        // 2. 삭제해야할 목록 가져오기
+        Set<String> deleteTokenSet = repository.findExpiredFromActive(currentTime).stream()
+                                    .map(Object::toString)
+                                    .collect(Collectors.toSet());
+
+        // 3. active 토큰 삭제
+        repository.deleteByScoreFromActive(currentTime);
+
+
+        // 4. Mapping Table 에서 토큰을 제거 :: 토큰과 유저간의 관계 제거
+        deleteTokenSet.forEach(repository::deleteFromMappingTable);
     }
 
 
