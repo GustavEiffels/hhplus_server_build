@@ -85,7 +85,7 @@ class PaymentFacadeTest {
         QueueTokenFacadeDto.CreateResult createTokenResult = queueTokenFacadeImpl.create(new QueueTokenFacadeDto.CreateParam(user.getId()));
 
         // 토큰 활성화
-        queueTokenFacadeImpl.activate(new QueueTokenFacadeDto.ActivateParam(20L));
+        queueTokenFacadeImpl.activate();
 
 
         // 콘서트 생성

@@ -74,7 +74,7 @@ public class TokenRedisRepositoryImpl implements TokenRedisRepository{
 // ACTIVE_AREA
     @Override
     public void putActive(String tokenId) {
-        getZSET().add(ACTIVE_SET,tokenId,System.currentTimeMillis()+(5*6*1000));
+        getZSET().add(ACTIVE_SET,tokenId,System.currentTimeMillis()+(3000));
     }
 
     @Override

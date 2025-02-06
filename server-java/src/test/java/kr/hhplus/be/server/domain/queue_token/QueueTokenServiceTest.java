@@ -148,7 +148,7 @@ class QueueTokenServiceTest {
         when(repository.findTokensToActivate(2L)).thenReturn(queueTokenList);
 
         // when
-        queueTokenService.activate(maxTokenCnt);
+        queueTokenService.activate();
 
         // then
         Assertions.assertEquals(QueueTokenStatus.ACTIVE,queueToken1.getStatus());

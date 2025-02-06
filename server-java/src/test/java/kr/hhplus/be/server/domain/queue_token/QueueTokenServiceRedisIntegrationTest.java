@@ -43,22 +43,48 @@ class QueueTokenServiceRedisIntegrationTest {
     }
 
     @DisplayName("""
-            REDIS 사용 - 대기열에 토큰이 30개 활성화 된 토큰이 0 일때, 최대 활성화 가능 토큰 개수가 20개면
-            활성화 영역에 20개의 토큰이 추가가 되고, 대기영역에 10개의 토큰만 존재한다.
+            REDIS 사용 - 대기열에 토큰이 40개 활성화 된 토큰이 0 일때, 최대 활성화 가능 토큰 개수가 30개면
+            활성화 영역에 30개의 토큰이 추가가 되고, 대기영역에 10개의 토큰만 존재한다.
             """)
     @Test
     void activate_00(){
         //given
-        for(int i = 0; i<30; i++){
+        for(int i = 0; i<40; i++){
             queueTokenService.createToken(owner.getId());
         }
 
         // when
-        queueTokenService.activate(20L);
+        queueTokenService.activate();
 
         // then
-        assertEquals(20,repository.countActiveTokens());
+        assertEquals(30,repository.countActiveTokens());
         assertEquals(10,repository.countWaiting());
+    }
+
+    @DisplayName("""
+            REDIS 사용 - 활성화 시간이 3초로 설정되어 있고, 100개의 대기열 토큰 중,
+            30개가 활성화 되고 3초가 지난 후, 만료된 토큰의 개수는 30개이며,
+            토큰을 삭제시키는 로직을 수행하면 활성화된 토큰의 개수는 0이다.
+            """)
+    @Test
+    void expire_00() throws InterruptedException {
+        // given
+        for(int i =0; i<100; i++){
+            queueTokenService.createToken(owner.getId());
+        }
+        queueTokenService.activate();
+        Thread.sleep(3000);
+
+        // when & then
+        assertEquals(30,repository.findExpiredFromActive(System.currentTimeMillis()).size(), "30개가 활성화 되고 3초가 지난 후, 만료된 토큰의 개수는 30개 이다.");
+
+        // when
+        queueTokenService.expireToken();
+
+        //then
+        assertEquals(0L,repository.countActive(),"토큰을 삭제시키는 로직을 수행하면 활성화된 토큰의 개수는 0이다.");
+
+
     }
 
 }

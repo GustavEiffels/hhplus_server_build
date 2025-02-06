@@ -20,7 +20,7 @@ class QueueTokenServiceRedisTest {
     @InjectMocks
     private QueueTokenServiceRedisImpl queueTokenService;
 
-    @DisplayName("createToken 를 사용하면 repository 의 createMappingTable, insertTokenToWaitingArea 메소드를 각각 한번씩 호출한다.")
+    @DisplayName("createToken 를 사용하면 repository 의 putMappingTable, putWaiting 메소드를 각각 한번씩 호출한다.")
     @Test
     void createToken_CacheTest(){
         // given
@@ -33,7 +33,7 @@ class QueueTokenServiceRedisTest {
         Mockito.verify(repository, Mockito.times(1)).putWaiting(Mockito.eq(tokenId));
     }
 
-    @DisplayName("isValidAndActive 를 사용하면 repository 의 findUserIdByTokenId, findWaitingTokenByTokenId 가 한번씩 실행된다.")
+    @DisplayName("isValidAndActive 를 사용하면 repository 의 findUserIdFromMappingTable, getRankFromWaiting 가 한번씩 실행된다.")
     @Test
     void isValidAndActive_CacheTest(){
         // given
