@@ -1,5 +1,6 @@
 package kr.hhplus.be.server.domain.queue_token;
 
+import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -54,7 +55,7 @@ class QueueTokenServiceRedisIntegrationTest {
         }
 
         // when
-        queueTokenService.activate();
+        queueTokenService.activate(30L);
 
         // then
         assertEquals(30,repository.countActiveTokens());
@@ -72,7 +73,7 @@ class QueueTokenServiceRedisIntegrationTest {
         for(int i =0; i<100; i++){
             queueTokenService.createToken(owner.getId());
         }
-        queueTokenService.activate();
+        queueTokenService.activate(30L);
         Thread.sleep(3000);
 
         // when & then

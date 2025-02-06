@@ -115,7 +115,7 @@ class QueueTokenFacadeImplTest {
         assertEquals(27,waitCnt);
 
         // When
-        queueTokenFacade.activate();
+        queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(30L));
 
         // Then
         activeCnt = 0;

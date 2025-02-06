@@ -56,8 +56,8 @@ public class QueueTokenFacadeImpl implements QueueTokenFacade{
      * @param param
      */
     @Transactional
-    public void activate(){
-        queueTokenService.activate();
+    public void activate(QueueTokenFacadeDto.ActivateParam activateParam){
+        queueTokenService.activate(activateParam.maxTokenCnt());
     }
 
 

@@ -4,7 +4,7 @@ package kr.hhplus.be.server.compare.queue;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.domain.user.User;
-import kr.hhplus.be.server.infrastructure.queue_token.TokenRedisRepository;
+import kr.hhplus.be.server.infrastructure.queue_token.TokenJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
@@ -13,7 +13,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
@@ -26,33 +25,27 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Testcontainers
 @Slf4j
 @DisplayName("""
-            대기열 : REDIS 사용        
+            대기열 - 기존 : DB 테이블 사용       
             """)
-@ActiveProfiles("redis")
-public class QueueRedisConcurrencyTest {
-
-    @Autowired
-    TokenRedisRepository redisRepository;
-
+@ActiveProfiles("local")
+public class QueueDBTest {
     @Autowired
     UserJpaRepository userJpaRepository;
 
     @Autowired
-    QueueTokenFacade queueTokenFacade;
+    TokenJpaRepository tokenJpaRepository;
 
     @Autowired
-    RedisTemplate<String,Object> redisTemplate;
-
+    QueueTokenFacade queueTokenFacade;
 
     User owner;
     @BeforeEach
     void setUp(){
-        redisTemplate.getConnectionFactory().getConnection().flushAll();
-        owner = userJpaRepository.save(User.create("test"));
+      owner = userJpaRepository.save(User.create("test"));
     }
 
     @DisplayName("""
-            Redis 를 사용하여 대기열 토큰을 생성하는 테스트 :
+            DB 를 사용하여 대기열 토큰을 생성하는 테스트 - 동시성:
             토큰 생성 시, 토큰 생성이 성공한 수만큼 대기열 영역에 토큰 수가 존재한다.
             """)
     @Test
@@ -86,9 +79,53 @@ public class QueueRedisConcurrencyTest {
         long endTime = System.currentTimeMillis();
 
 
-        Assertions.assertEquals(count.get(),redisRepository.countWaiting(),"토큰 생성 시, 토큰 생성이 성공한 수만큼 대기열 영역에 토큰 수가 존재한다.");
-        log.info("REDIS : CREATE TOKEN CNT : "+redisRepository.countWaiting());
+        Assertions.assertEquals(count.get(),tokenJpaRepository.count(),"토큰 생성 시, 토큰 생성이 성공한 수만큼 대기열 영역에 토큰 수가 존재한다.");
+        log.info("DB : CREATE TOKEN CNT : "+tokenJpaRepository.count());
         log.info("success cnt : {}",count.get());
         log.info("during : {} ms ",(endTime - startTime));
     }
+
+
+
+    @DisplayName("""
+            DB 를 사용하여 토큰 활성화 - Active = 100
+            """)
+    @Test
+    void activateToken_100(){
+        // given
+        for(int i = 0; i<1000; i++){
+            QueueTokenFacadeDto.CreateParam param = new QueueTokenFacadeDto.CreateParam(owner.getId());
+            queueTokenFacade.create(param);
+        }
+        long startTime = System.currentTimeMillis();
+
+        //when
+        queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(100L));
+
+        long endTime = System.currentTimeMillis();
+        log.info("DB - 활성화된 토큰 수 : "+tokenJpaRepository.countActiveTokens());
+        log.info("during : {} ms ",(endTime - startTime));
+    }
+
+    @DisplayName("""
+            DB 를 사용하여 토큰 활성화 - Active = 1000
+            """)
+    @Test
+    void activateToken_1000(){
+        // given
+        for(int i = 0; i<3000; i++){
+            QueueTokenFacadeDto.CreateParam param = new QueueTokenFacadeDto.CreateParam(owner.getId());
+            queueTokenFacade.create(param);
+        }
+        long startTime = System.currentTimeMillis();
+
+        //when
+        queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(1000L));
+
+        long endTime = System.currentTimeMillis();
+        log.info("DB - 활성화된 토큰 수 : "+tokenJpaRepository.countActiveTokens());
+        log.info("during : {} ms ",(endTime - startTime));
+    }
+
+
 }

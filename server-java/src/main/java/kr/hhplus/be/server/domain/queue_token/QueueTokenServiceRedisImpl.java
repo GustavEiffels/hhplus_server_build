@@ -30,7 +30,12 @@ public class QueueTokenServiceRedisImpl implements QueueTokenService{
      * 토큰 활성화 시키기
      * redis
      */
-    public void activate(){
+    public void activate(Long tokenCnt){
+
+        if(tokenCnt != null && tokenCnt > 30){
+            maxActiveToken = tokenCnt;
+        }
+
         // 1. 현재 활성화 되어 있는 토큰 수 구하기
         long currentActiveCnt     = repository.countActive();
 

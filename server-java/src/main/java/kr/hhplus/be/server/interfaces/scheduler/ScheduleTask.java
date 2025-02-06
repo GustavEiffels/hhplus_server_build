@@ -19,6 +19,10 @@ public class ScheduleTask {
     private final QueueTokenFacade queueTokenFacade;
     private final ReservationFacade reservationFacade;
 
+    @Value("${queue.max-active-token}")
+    private Long maxActiveToken;
+
+
 
     @Scheduled(fixedRate =  10_000)
     public void executeExpireTokenRemover(){
@@ -42,7 +46,10 @@ public class ScheduleTask {
         long startTime = System.currentTimeMillis();
 
         try {
-            queueTokenFacade.activate();
+            if(maxActiveToken==null){
+                maxActiveToken = 30L;
+            }
+            queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(maxActiveToken));
             log.info("UUID - [{}] | active token schedule ", uuid);
         } finally {
             log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));
