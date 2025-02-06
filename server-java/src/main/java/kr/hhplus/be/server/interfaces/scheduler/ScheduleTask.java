@@ -27,8 +27,8 @@ public class ScheduleTask {
         long startTime = System.currentTimeMillis();
 
         try {
-            queueTokenFacade.activate();
-            log.info("UUID - [{}] | active token schedule ", uuid);
+            queueTokenFacade.expire();
+            log.info("UUID - [{}] | expire token schedule ", uuid);
         } finally {
             log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));
             SchedulerContext.clear();

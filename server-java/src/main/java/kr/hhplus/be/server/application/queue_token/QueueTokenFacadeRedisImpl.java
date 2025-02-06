@@ -56,7 +56,6 @@ public class QueueTokenFacadeRedisImpl implements QueueTokenFacade{
 
     /**
      * 최대 활성화 가능 토큰 수까지 토큰 활성화
-     * @param param
      */
     public void activate(){
         queueTokenService.activate();

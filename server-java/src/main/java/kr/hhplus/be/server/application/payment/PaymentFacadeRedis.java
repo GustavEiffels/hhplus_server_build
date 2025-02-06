@@ -18,7 +18,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class PaymentFacade {
+public class PaymentFacadeRedis {
     private final PaymentService paymentService;
     private final UserService userService;
     private final ReservationService reservationService;
@@ -53,7 +53,7 @@ public class PaymentFacade {
                 .map(payment -> PointHistory.createUse(payment.getAmount(),user,payment)).toList();
 
         pointHistoryService.create(historyList);
-        queueTokenService.expired(param.tokenId());
+        queueTokenService.expired(Long.valueOf(param.tokenId()));
 
         return  PaymentFacadeDto.PaymentResult.from(paymentList);
     }
