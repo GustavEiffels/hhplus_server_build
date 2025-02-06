@@ -47,7 +47,7 @@ public class QueueTokenFacadeImpl implements QueueTokenFacade{
         userService.findUser(param.userId());
 
         // 2. 활성화된 토큰인지 확인
-        return new QueueTokenFacadeDto.ActiveCheckResult( queueTokenService.isValidAndActive(param.tokenId(), param.userId()) );
+        return new QueueTokenFacadeDto.ActiveCheckResult( queueTokenService.isValidAndActive(Long.parseLong(param.tokenId()), param.userId()) );
     }
 
 
@@ -58,6 +58,11 @@ public class QueueTokenFacadeImpl implements QueueTokenFacade{
     @Transactional
     public void activate(QueueTokenFacadeDto.ActivateParam param){
         queueTokenService.activate(param.maxTokenCnt());
+    }
+
+    @Override
+    public void expire() {
+
     }
 
 

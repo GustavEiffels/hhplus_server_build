@@ -17,7 +17,7 @@ public interface QueueTokenFacadeDto {
     record CreateResult(String tokenId){}
 
 
-    record ActiveCheckParam(Long tokenId, Long userId) {
+    record ActiveCheckParam(String tokenId, Long userId) {
         public ActiveCheckParam {
         }
 
@@ -25,12 +25,12 @@ public interface QueueTokenFacadeDto {
             this(parseQueueToken(queueTokenHeader), parseUserId(userIdHeader));
         }
 
-        private static Long parseQueueToken(String queueTokenHeader) {
+        private static String parseQueueToken(String queueTokenHeader) {
             if (queueTokenHeader == null || queueTokenHeader.isEmpty()) {
                 throw new BusinessException(ErrorCode.INVALID_INPUT, "Queue_Token header 는 필수 입니다.");
             }
             try {
-                return Long.parseLong(queueTokenHeader);
+                return queueTokenHeader;
             } catch (NumberFormatException e) {
                 throw new BusinessException(ErrorCode.INVALID_INPUT, "Queue_Token 형식이 맞지 않습니다.");
             }

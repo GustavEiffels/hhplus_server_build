@@ -61,9 +61,10 @@ class QueueTokenFacadeRedisTest {
         // then
         String queueToken = result.tokenId();
 
-        assertNotNull(queueTokenRepository.findWaitingTokenByTokenId(queueToken),"대기열 토큰에 존재한다.");
-        assertEquals(owner.getId(),queueTokenRepository.findUserIdByTokenId(queueToken),"대기열 토큰의 소유자는 OWNER 이다.");
+        assertNotNull(queueTokenRepository.getRankFromWaiting(queueToken),"대기열 토큰에 존재한다.");
+        assertEquals(owner.getId(),queueTokenRepository.findUserIdFromMappingTable(queueToken),"대기열 토큰의 소유자는 OWNER 이다.");
         assertFalse(queueTokenService.isValidAndActive(owner.getId(),queueToken),"대기열에 존재하는 토큰임으로 false");
     }
+    
 
 }

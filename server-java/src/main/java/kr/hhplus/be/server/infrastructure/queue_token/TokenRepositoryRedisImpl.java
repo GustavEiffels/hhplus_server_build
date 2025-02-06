@@ -4,10 +4,12 @@ import kr.hhplus.be.server.domain.queue_token.QueueToken;
 import kr.hhplus.be.server.domain.queue_token.QueueTokenRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Repository
 @RequiredArgsConstructor
@@ -26,7 +28,7 @@ public class TokenRepositoryRedisImpl implements QueueTokenRepository {
     // ACTIVE 토큰 개수 구하기
     @Override
     public long countActiveTokens() {
-        return tokenJpaRepository.countActiveTokens();
+        return tokenRedisRepository.countActive();
     }
 
 
@@ -53,28 +55,74 @@ public class TokenRepositoryRedisImpl implements QueueTokenRepository {
         return tokenJpaRepository.findById(tokenId);
     }
 
+
+// MAPPING TABLE
     @Override
-    public void createMappingTable(String tokenId, Long userId) {
-        tokenRedisRepository.insertMappingTable(tokenId, userId);
+    public void putMappingTable(String tokenId, Long userId) {
+        tokenRedisRepository.putMappingTable(tokenId,userId);
     }
 
     @Override
-    public void insertTokenToWaitingArea(String tokenId) {
-        tokenRedisRepository.insertWaitingArea(tokenId);
+    public Long findUserIdFromMappingTable(String tokenId) {
+        return tokenRedisRepository.findUserIdFromMappingTable(tokenId);
     }
 
     @Override
-    public Long findUserIdByTokenId(String tokenId) {
-        return tokenRedisRepository.findUserIdByTokenId(tokenId);
+    public void deleteFromMappingTable(String tokenId) {
+        tokenRedisRepository.deleteFromMappingTable(tokenId);
+    }
+
+// WAITING AREA
+    @Override
+    public void putWaiting(String tokenId) {
+        tokenRedisRepository.putWaiting(tokenId);
     }
 
     @Override
-    public Long findWaitingTokenByTokenId(String tokenId) {
-        return tokenRedisRepository.findWaitingTokenByTokenId(tokenId);
+    public Long getRankFromWaiting(String tokenId) {
+        return tokenRedisRepository.getRankFromWaiting(tokenId);
     }
 
     @Override
-    public Boolean isActiveToken(String tokenId) {
-        return tokenRedisRepository.isActiveToken(tokenId);
+    public Set<ZSetOperations.TypedTuple<Object>> popFromWaiting(long activateCnt) {
+        return tokenRedisRepository.popFromWaiting(activateCnt);
     }
+
+    @Override
+    public long countWaiting() {
+        return tokenRedisRepository.countWaiting();
+    }
+
+// ACTIVE AREA
+    @Override
+    public void putActive(String tokenId) {
+        tokenRedisRepository.putActive(tokenId);
+    }
+    @Override
+    public Double getScoreFromActive(String tokenId) {
+        return tokenRedisRepository.getScoreFromActive(tokenId);
+    }
+
+    @Override
+    public Set<Object> findExpiredFromActive(Long expireTime) {
+        return tokenRedisRepository.findExpiredFromActive(expireTime);
+    }
+
+    @Override
+    public void deleteByScoreFromActive(Long expireTime) {
+        tokenRedisRepository.deleteByScoreFromActive(expireTime);
+    }
+
+    @Override
+    public long countActive() {
+        return tokenRedisRepository.countActive();
+    }
+
+    @Override
+    public void deleteFromActive(String tokenId) {
+        tokenRedisRepository.deleteFromActive(tokenId);
+    }
+
+
+
 }

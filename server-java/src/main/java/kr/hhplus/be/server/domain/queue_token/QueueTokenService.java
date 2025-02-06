@@ -16,5 +16,7 @@ public interface QueueTokenService {
 
     Boolean isValidAndActive(Long userId, String tokenId);
 
+    void expired(String tokenId);
+
 
 }

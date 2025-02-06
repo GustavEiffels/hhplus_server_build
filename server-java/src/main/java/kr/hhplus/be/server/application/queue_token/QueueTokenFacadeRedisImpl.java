@@ -24,10 +24,11 @@ public class QueueTokenFacadeRedisImpl implements QueueTokenFacade{
 
     /**
      * USECASE : 1. 유저 대기열 토큰 발급 받는 API
+     * REDIS 변환 완료
      * @param param
      * @return
      */
-    @Transactional
+
     public QueueTokenFacadeDto.CreateResult create(QueueTokenFacadeDto.CreateParam param){
         // 1. find user
         User user = userService.findUser(param.userId());
@@ -49,7 +50,7 @@ public class QueueTokenFacadeRedisImpl implements QueueTokenFacade{
         userService.findUser(param.userId());
 
         // 2. 활성화된 토큰인지 확인
-        return new QueueTokenFacadeDto.ActiveCheckResult( queueTokenService.isValidAndActive(param.tokenId(), param.userId()) );
+        return new QueueTokenFacadeDto.ActiveCheckResult( queueTokenService.isValidAndActive(param.userId(),param.tokenId()) );
     }
 
 
@@ -57,9 +58,13 @@ public class QueueTokenFacadeRedisImpl implements QueueTokenFacade{
      * 최대 활성화 가능 토큰 수까지 토큰 활성화
      * @param param
      */
-    @Transactional
     public void activate(QueueTokenFacadeDto.ActivateParam param){
         queueTokenService.activate(param.maxTokenCnt());
+    }
+
+    @Override
+    public void expire() {
+
     }
 
 

@@ -29,24 +29,23 @@ class QueueTokenServiceRedisTest {
         // when
         String tokenId = queueTokenService.createToken(userId);
 
-        Mockito.verify(repository, Mockito.times(1)).createMappingTable(Mockito.eq(tokenId),Mockito.eq(userId));
-        Mockito.verify(repository, Mockito.times(1)).insertTokenToWaitingArea(Mockito.eq(tokenId));
+        Mockito.verify(repository, Mockito.times(1)).putMappingTable(Mockito.eq(tokenId),Mockito.eq(userId));
+        Mockito.verify(repository, Mockito.times(1)).putWaiting(Mockito.eq(tokenId));
     }
 
-    @DisplayName("isValidAndActive 를 사용하면 repository 의 findUserIdByTokenId, isActiveToken 가 한번씩 실행된다.")
+    @DisplayName("isValidAndActive 를 사용하면 repository 의 findUserIdByTokenId, findWaitingTokenByTokenId 가 한번씩 실행된다.")
     @Test
     void isValidAndActive_CacheTest(){
         // given
         Long userId = 1L;
         String tokenId = "test";
-        Mockito.when(repository.findUserIdByTokenId(tokenId)).thenReturn(userId);
+        Mockito.when(repository.findUserIdFromMappingTable(tokenId)).thenReturn(userId);
 
         // when
         queueTokenService.isValidAndActive(userId,tokenId);
 
-        Mockito.verify(repository, Mockito.times(1)).findUserIdByTokenId(Mockito.eq(tokenId));
-        Mockito.verify(repository, Mockito.times(1)).isActiveToken(Mockito.eq(tokenId));
-
+        Mockito.verify(repository, Mockito.times(1)).findUserIdFromMappingTable(Mockito.eq(tokenId));
+        Mockito.verify(repository, Mockito.times(1)).getRankFromWaiting(Mockito.eq(tokenId));
     }
 
 }

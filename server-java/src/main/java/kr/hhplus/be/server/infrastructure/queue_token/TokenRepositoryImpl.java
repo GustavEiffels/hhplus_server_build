@@ -4,10 +4,12 @@ import kr.hhplus.be.server.domain.queue_token.QueueToken;
 import kr.hhplus.be.server.domain.queue_token.QueueTokenRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Repository
 @RequiredArgsConstructor
@@ -55,27 +57,71 @@ public class TokenRepositoryImpl implements QueueTokenRepository {
     }
 
     @Override
-    public void createMappingTable(String tokenId, Long userId) {
+    public void putMappingTable(String tokenId, Long userId) {
 
     }
 
     @Override
-    public void insertTokenToWaitingArea(String tokenId) {
-
-    }
-
-    @Override
-    public Long findUserIdByTokenId(String tokenId) {
+    public Long findUserIdFromMappingTable(String tokenId) {
         return null;
     }
 
     @Override
-    public Long findWaitingTokenByTokenId(String tokenId) {
+    public void deleteFromMappingTable(String tokenId) {
+
+    }
+
+    @Override
+    public void putWaiting(String tokenId) {
+
+    }
+
+    @Override
+    public Long getRankFromWaiting(String tokenId) {
         return null;
     }
 
     @Override
-    public Boolean isActiveToken(String tokenId) {
+    public Set<ZSetOperations.TypedTuple<Object>> popFromWaiting(long activateCnt) {
         return null;
     }
+
+
+
+    @Override
+    public long countWaiting() {
+        return 0;
+    }
+
+    @Override
+    public void putActive(String tokenId) {
+
+    }
+
+    @Override
+    public Double getScoreFromActive(String tokenId) {
+        return null;
+    }
+
+    @Override
+    public Set<Object> findExpiredFromActive(Long expireTime) {
+        return null;
+    }
+
+    @Override
+    public void deleteByScoreFromActive(Long expireTime) {
+
+    }
+
+    @Override
+    public long countActive() {
+        return 0;
+    }
+
+    @Override
+    public void deleteFromActive(String tokenId) {
+
+    }
+
+
 }

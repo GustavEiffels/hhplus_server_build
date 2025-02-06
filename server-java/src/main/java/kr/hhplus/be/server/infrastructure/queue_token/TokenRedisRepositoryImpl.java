@@ -1,20 +1,24 @@
 package kr.hhplus.be.server.infrastructure.queue_token;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.redis.core.DefaultTypedTuple;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Repository;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 @RequiredArgsConstructor
 @Repository
 public class TokenRedisRepositoryImpl implements TokenRedisRepository{
 
     private final RedisTemplate<String,Object> redisTemplate;
-    private final String ZSET_KEY = "WAITING_AREA";
-    private final String HASH_KEY = "MAPPING_TABLE";
-    private final String SET_KEY  = "ACTIVE_AREA";
+    private final String MAPPING_HASH = "MAPPING_TABLE";
+    private final String WAITING_SET  = "WAITING_AREA";
+    private final String ACTIVE_SET   = "ACTIVE_AREA";
 
     private ZSetOperations<String,Object> getZSET(){
         return redisTemplate.opsForZSet();
@@ -22,21 +26,17 @@ public class TokenRedisRepositoryImpl implements TokenRedisRepository{
     private HashOperations<String,String,Long> getHASH(){
         return redisTemplate.opsForHash();
     }
-    private SetOperations<String,Object> getSET(){
-        return redisTemplate.opsForSet();
-    }
 
 
-// HASH
+// HASH-MAPPING TABLE
     @Override
-    public void insertMappingTable(String tokenId, Long userId) {
-        getHASH().put(HASH_KEY,tokenId,userId);
+    public void putMappingTable(String tokenId, Long userId) {
+        getHASH().put(MAPPING_HASH,tokenId,userId);
     }
 
     @Override
-    public Long findUserIdByTokenId(String tokenId) {
-        Object value = getHASH().get(HASH_KEY, tokenId);
-
+    public Long findUserIdFromMappingTable(String tokenId) {
+        Object value = getHASH().get(MAPPING_HASH, tokenId);
         if( value instanceof  Integer ){
             return ((Integer) value).longValue();
         }
@@ -45,39 +45,62 @@ public class TokenRedisRepositoryImpl implements TokenRedisRepository{
         }
     }
 
-// WAITING_AREA
     @Override
-    public void insertWaitingArea(String tokenId) {
-        getZSET().add(ZSET_KEY,tokenId,System.currentTimeMillis());
+    public void deleteFromMappingTable(String tokenId) {
+        getHASH().delete(MAPPING_HASH,tokenId);
+    }
+
+// ZSET-WAITING AREA
+    @Override
+    public void putWaiting(String tokenId) {
+        getZSET().add(WAITING_SET,tokenId,System.currentTimeMillis());
     }
 
     @Override
-    public Long findWaitingTokenByTokenId(String tokenId) {
-        return getZSET().rank(ZSET_KEY,tokenId);
+    public Long getRankFromWaiting(String tokenId) {
+        return getZSET().rank(WAITING_SET,tokenId);
     }
 
-
-    // ACTIVE_AREA
     @Override
-    public boolean isActiveToken(String tokenId) {
-        return getSET().isMember(SET_KEY,tokenId);
+    public Set<ZSetOperations.TypedTuple<Object>> popFromWaiting(long activateCnt) {
+        return getZSET().popMin(WAITING_SET, activateCnt);
     }
 
+    @Override
+    public long countWaiting() {
+        return getZSET().zCard(WAITING_SET);
+    }
 
-
+// ACTIVE_AREA
+    @Override
+    public void putActive(String tokenId) {
+        getZSET().add(ACTIVE_SET,tokenId,System.currentTimeMillis()+(5*6*1000));
+    }
 
     @Override
-    public void insertActive(String tokenId) {
-        getSET().add(SET_KEY,tokenId);
+    public Double getScoreFromActive(String tokenId) {
+        return getZSET().score(ACTIVE_SET,tokenId);
+    }
+
+    @Override
+    public Set<Object> findExpiredFromActive(Long expireTime) {
+        return getZSET().rangeByScore(ACTIVE_SET,0,expireTime);
+    }
+
+    @Override
+    public void deleteByScoreFromActive(Long expireTime) {
+        getZSET().removeRangeByScore(ACTIVE_SET,0,expireTime);
     }
 
     @Override
     public long countActive() {
-        return getSET().size(SET_KEY);
+        return getZSET().zCard(ACTIVE_SET);
     }
 
     @Override
-    public void deleteActive(String tokenId) {
-        getSET().remove(SET_KEY,tokenId);
+    public void deleteFromActive(String tokenId) {
+        getZSET().remove(ACTIVE_SET,tokenId);
     }
+
+
 }

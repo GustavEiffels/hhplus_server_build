@@ -91,5 +91,11 @@ public class QueueTokenServiceImpl implements QueueTokenService{
         return null;
     }
 
+    @Override
+    public void expired(String tokenId) {
+
+    }
+
+
 
 }

@@ -1,7 +1,10 @@
 package kr.hhplus.be.server.domain.queue_token;
 
+import org.springframework.data.redis.core.ZSetOperations;
+
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface QueueTokenRepository {
 
@@ -9,6 +12,7 @@ public interface QueueTokenRepository {
 
     /**
      * ACTIVE 인 토큰 개수 반환
+     * - redis
      * @return
      */
     long countActiveTokens();
@@ -31,14 +35,34 @@ public interface QueueTokenRepository {
     Optional<QueueToken> findById(Long tokenId);
 
 
-// REDIS
-    void createMappingTable(String tokenId, Long userId);
+// MAPPING
+    void putMappingTable(String tokenId, Long userId);
 
-    void insertTokenToWaitingArea(String tokenId);
+    Long findUserIdFromMappingTable(String tokenId);
 
-    Long findUserIdByTokenId(String tokenId);
+    void deleteFromMappingTable(String tokenId);
 
-    Long findWaitingTokenByTokenId(String tokenId);
+// WAITING
+    void putWaiting(String tokenId);
 
-    Boolean isActiveToken(String tokenId);
+    Long getRankFromWaiting(String tokenId);
+
+    Set<ZSetOperations.TypedTuple<Object>> popFromWaiting(long activateCnt);
+
+    long countWaiting();
+
+// ACTIVE
+    void putActive(String tokenId);
+    Double getScoreFromActive(String tokenId);
+    Set<Object> findExpiredFromActive(Long expireTime);
+
+    void deleteByScoreFromActive(Long expireTime);
+
+    long countActive();
+
+    void deleteFromActive(String tokenId);
+
+
+
+
 }

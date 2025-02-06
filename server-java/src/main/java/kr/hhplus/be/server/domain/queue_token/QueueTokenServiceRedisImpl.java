@@ -4,35 +4,45 @@ package kr.hhplus.be.server.domain.queue_token;
 import kr.hhplus.be.server.common.exceptions.BusinessException;
 import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 @Profile("redis")
+@Slf4j
 public class QueueTokenServiceRedisImpl implements QueueTokenService{
     private final QueueTokenRepository repository;
 
     /**
      * 토큰 활성화 시키기
+     * redis
      * @param maxTokenCnt
      */
     public void activate(Long maxTokenCnt){
         // 1. 현재 활성화 되어 있는 토큰 수 구하기
-        long currentActiveCnt     = repository.countActiveTokens();
+        long currentActiveCnt     = repository.countActive();
 
         // 2. 활성화 가능한 토큰 수 반환
         long activeAbleCnt        = maxTokenCnt-currentActiveCnt;
 
-        // 3. 토큰 활성화
-        if(activeAbleCnt>0){
-            repository.findTokensToActivate(activeAbleCnt)
-                    .forEach(QueueToken::activate);
-        }
+
+        // 3. 대기열에서 제외
+        Set<String> tokenSet = repository.popFromWaiting(activeAbleCnt).stream()
+                .map(tuple -> String.valueOf(tuple.getValue()))
+                .collect(Collectors.toSet());
+
+        // 4. 제외한 토큰 활성화
+        tokenSet.forEach(repository::putActive);
     }
 
     /**
@@ -99,10 +109,10 @@ public class QueueTokenServiceRedisImpl implements QueueTokenService{
         String tokenId = UUID.randomUUID().toString();
 
         // 2. Insert into Redis Hash : Mapping Table
-        repository.createMappingTable(tokenId,userId);
+        repository.putMappingTable(tokenId,userId);
 
         // 3. Insert into ZSET : WAITING AREA ( WAITING QUEUE )
-        repository.insertTokenToWaitingArea(tokenId);
+        repository.putWaiting(tokenId);
 
         return tokenId;
     }
@@ -110,7 +120,7 @@ public class QueueTokenServiceRedisImpl implements QueueTokenService{
     @Override
     public Boolean isValidAndActive(Long userId,String tokenId) {
         // 1. Find UserId By TokenId  ( Redis )
-        Long findUserId = repository.findUserIdByTokenId(tokenId);
+        Long findUserId = repository.findUserIdFromMappingTable(tokenId);
 
         // 2. NOT FOUND USER BY TOKEN ID
         if( findUserId == null ){
@@ -122,17 +132,29 @@ public class QueueTokenServiceRedisImpl implements QueueTokenService{
             throw new BusinessException(ErrorCode.NOT_MATCHED_WITH_USER);
         }
 
-        Long waitingRank = repository.findWaitingTokenByTokenId(tokenId);
-        Boolean isActive = repository.isActiveToken(tokenId);
+        Long   waitingRank           = repository.getRankFromWaiting(tokenId);
+        Double activeTokenExpireTime = repository.getScoreFromActive(tokenId);
+
 
         if(waitingRank!=null){
             return  false;
         }
-        if(isActive){
+        if(activeTokenExpireTime<System.currentTimeMillis()){
             return true;
+        }
+        else if(activeTokenExpireTime >= System.currentTimeMillis()){
+            throw new BusinessException(ErrorCode.EXPIRE_QUEUE_TOKEN);
         }
         else{
             throw new BusinessException(ErrorCode.NOT_FOUND_QUEUE_TOKEN);
         }
     }
+
+
+    @Override
+    public void expired(String tokenId) {
+        repository.deleteFromActive(tokenId);
+    }
+
+
 }
