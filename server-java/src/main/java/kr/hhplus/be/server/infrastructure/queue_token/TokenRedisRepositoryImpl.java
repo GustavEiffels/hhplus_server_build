@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.infrastructure.queue_token;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.DefaultTypedTuple;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -14,6 +15,9 @@ import java.util.Set;
 @RequiredArgsConstructor
 @Repository
 public class TokenRedisRepositoryImpl implements TokenRedisRepository{
+
+    @Value("${queue.active-token-expire}")
+    private long expireSecond;
 
     private final RedisTemplate<String,Object> redisTemplate;
     private final String MAPPING_HASH = "MAPPING_TABLE";
@@ -74,7 +78,7 @@ public class TokenRedisRepositoryImpl implements TokenRedisRepository{
 // ACTIVE_AREA
     @Override
     public void putActive(String tokenId) {
-        getZSET().add(ACTIVE_SET,tokenId,System.currentTimeMillis()+(3000));
+        getZSET().add(ACTIVE_SET,tokenId,System.currentTimeMillis()+(expireSecond*1000));
     }
 
     @Override

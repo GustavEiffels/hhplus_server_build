@@ -39,6 +39,7 @@ spring:
 
 queue:
   max-active-token: 30
+  active-token-expire: 3
 
 logging:
   level:

@@ -112,7 +112,7 @@ public class QueueRedisTest {
         log.info("during : {} ms ",(endTime - startTime));
     }
     @DisplayName("""
-            REDIS 를 사용하여 토큰 활성화 - Active = 100
+            REDIS 를 사용하여 토큰 활성화 - Active = 1000
             """)
     @Test
     void activateToken_1000(){
