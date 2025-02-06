@@ -42,6 +42,23 @@ class QueueTokenServiceRedisIntegrationTest {
         owner = userJpaRepository.save(User.create("test"));
     }
 
+    @DisplayName("""
+            REDIS 사용 - 대기열에 토큰이 30개 활성화 된 토큰이 0 일때, 최대 활성화 가능 토큰 개수가 20개면
+            활성화 영역에 20개의 토큰이 추가가 되고, 대기영역에 10개의 토큰만 존재한다.
+            """)
+    @Test
+    void activate_00(){
+        //given
+        for(int i = 0; i<30; i++){
+            queueTokenService.createToken(owner.getId());
+        }
 
+        // when
+        queueTokenService.activate(20L);
+
+        // then
+        assertEquals(20,repository.countActiveTokens());
+        assertEquals(10,repository.countWaiting());
+    }
 
 }
