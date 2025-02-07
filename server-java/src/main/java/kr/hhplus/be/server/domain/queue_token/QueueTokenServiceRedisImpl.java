@@ -146,10 +146,10 @@ public class QueueTokenServiceRedisImpl implements QueueTokenService{
         if(waitingRank!=null){
             return  false;
         }
-        if(activeTokenExpireTime<System.currentTimeMillis()){
+        if(activeTokenExpireTime > System.currentTimeMillis()){
             return true;
         }
-        else if(activeTokenExpireTime >= System.currentTimeMillis()){
+        else if(activeTokenExpireTime <= System.currentTimeMillis()){
             throw new BusinessException(ErrorCode.EXPIRE_QUEUE_TOKEN);
         }
         else{
