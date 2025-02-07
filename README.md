@@ -107,7 +107,7 @@
         if(activeTokenExpireTime>System.currentTimeMillis()){
             return true;
         }
-        else if(activeTokenExpireTime >= System.currentTimeMillis()){
+        else if(activeTokenExpireTime <= System.currentTimeMillis()){
             throw new BusinessException(ErrorCode.EXPIRE_QUEUE_TOKEN);
         }
         else{
@@ -122,4 +122,4 @@
 > 5. activeTokenExpireTime - 활성화 영역에서 SCORE 를 추출 : ( ZSET - SCORE )
 > 6. waitingRank 이 존재하는 경우 - 현재 대기열에 속해 있음 : false 반환
 > 7. activeTokenExpireTime 가 현재 시간 보다 큼 - 활성화 영역에 있으며 만료되지 않았음으로 : true 반환
-> 8. activeTokenExpireTime 가 현재 시간 보다 작음 - 만료된 토큰
+> 8. activeTokenExpireTime 가 현재 시간 보다 작거나 같음 - 만료된 토큰
