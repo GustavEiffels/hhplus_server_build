@@ -93,6 +93,9 @@ public class QueueTokenServiceImpl implements QueueTokenService{
         if(waitingRank!=null){
             return  false;
         }
+        if(activeTokenExpireTime == null){
+            throw new BusinessException(ErrorCode.NOT_FOUND_QUEUE_TOKEN);
+        }
         if(activeTokenExpireTime > System.currentTimeMillis()){
             return true;
         }
