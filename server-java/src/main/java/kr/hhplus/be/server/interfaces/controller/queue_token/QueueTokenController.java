@@ -3,7 +3,6 @@ package kr.hhplus.be.server.interfaces.controller.queue_token;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
-import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeImpl;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.interfaces.controller.ApiResponse;
 import lombok.RequiredArgsConstructor;

@@ -5,12 +5,6 @@ public interface QueueTokenService {
 
     void activate(Long tokenCnt);
 
-    void expired(Long tokenId);
-
-    QueueToken createToken(QueueToken queueToken);
-
-    Boolean isValidAndActive(Long queueTokenId, Long userId);
-
 // REDIS
     String createToken(Long userId);
 

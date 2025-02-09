@@ -7,9 +7,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.test.context.ActiveProfiles;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class QueueTokenServiceRedisTest {
@@ -18,7 +15,7 @@ class QueueTokenServiceRedisTest {
     private QueueTokenRepository repository;
 
     @InjectMocks
-    private QueueTokenServiceRedisImpl queueTokenService;
+    private QueueTokenServiceImpl queueTokenService;
 
     @DisplayName("createToken 를 사용하면 repository 의 putMappingTable, putWaiting 메소드를 각각 한번씩 호출한다.")
     @Test

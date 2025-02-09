@@ -1,7 +1,6 @@
 package kr.hhplus.be.server.interfaces.scheduler;
 
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
-import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeImpl;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import lombok.RequiredArgsConstructor;

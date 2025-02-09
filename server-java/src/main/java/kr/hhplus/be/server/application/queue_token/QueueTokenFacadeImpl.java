@@ -1,39 +1,36 @@
 package kr.hhplus.be.server.application.queue_token;
 
-import kr.hhplus.be.server.domain.queue_token.QueueToken;
-import kr.hhplus.be.server.domain.queue_token.QueueTokenServiceImpl;
+import kr.hhplus.be.server.domain.queue_token.QueueTokenService;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
-@Profile("local")
 public class QueueTokenFacadeImpl implements QueueTokenFacade{
 
     private final UserService userService;
-    private final QueueTokenServiceImpl queueTokenService;
+    private final QueueTokenService queueTokenService;
 
 
     /**
      * USECASE : 1. 유저 대기열 토큰 발급 받는 API
+     * REDIS 변환 완료
      * @param param
      * @return
      */
-    @Transactional
+
     public QueueTokenFacadeDto.CreateResult create(QueueTokenFacadeDto.CreateParam param){
         // 1. find user
         User user = userService.findUser(param.userId());
 
-        // 2. Create Entity & Create
-        QueueToken newQueueToken = queueTokenService.createToken( QueueToken.create(user) );
+        // 2. Create Token and Insert into Waiting Area
+        String tokenId = queueTokenService.createToken(user.getId());
 
-        return new QueueTokenFacadeDto.CreateResult(newQueueToken.getId().toString());
+        return new QueueTokenFacadeDto.CreateResult(tokenId);
     }
 
 
@@ -47,23 +44,20 @@ public class QueueTokenFacadeImpl implements QueueTokenFacade{
         userService.findUser(param.userId());
 
         // 2. 활성화된 토큰인지 확인
-        return new QueueTokenFacadeDto.ActiveCheckResult( queueTokenService.isValidAndActive(Long.parseLong(param.tokenId()), param.userId()) );
+        return new QueueTokenFacadeDto.ActiveCheckResult( queueTokenService.isValidAndActive(param.userId(),param.tokenId()) );
     }
 
 
     /**
      * 최대 활성화 가능 토큰 수까지 토큰 활성화
-     * @param param
      */
-    @Transactional
     public void activate(QueueTokenFacadeDto.ActivateParam activateParam){
         queueTokenService.activate(activateParam.maxTokenCnt());
     }
 
-
     @Override
     public void expire() {
-
+        queueTokenService.expireToken();
     }
 
 

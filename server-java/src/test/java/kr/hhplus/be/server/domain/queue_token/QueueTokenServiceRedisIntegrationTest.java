@@ -22,7 +22,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("""
             대기열 - redis 사용       
             """)
-@ActiveProfiles("redis")
 class QueueTokenServiceRedisIntegrationTest {
     @Autowired
     UserJpaRepository userJpaRepository;
