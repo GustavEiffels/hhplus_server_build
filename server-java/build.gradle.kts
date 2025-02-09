@@ -31,6 +31,9 @@ dependencyManagement {
 
 dependencies {
 
+	// redis
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+
 	// redisson
 	implementation("org.redisson:redisson:3.22.0")
 

@@ -10,8 +10,12 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
+
 public class TokenRepositoryImpl implements QueueTokenRepository {
     private final TokenJpaRepository tokenJpaRepository;
+
+    private final TokenRedisRepository tokenRedisRepository;
+
 
     @Override
     public List<QueueToken> findTokensToActivate(long activateCnt) {
