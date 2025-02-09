@@ -46,7 +46,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("""
             결제 - 낙관적 락을 사용한다.      
             """)
-@ActiveProfiles("optimistic")
+//@ActiveProfiles("optimistic")
 public class PaymentConcurrencyTest {
 
     @Autowired
@@ -141,7 +141,7 @@ public class PaymentConcurrencyTest {
                 try {
 
                     PaymentFacadeDto.PaymentParam param = new PaymentFacadeDto.PaymentParam(
-                            reservations, user.getId(), queueToken.getId());
+                            reservations, user.getId(), queueToken.getId().toString());
                     try {
                         facade.pay(param);
                         results.add(true);

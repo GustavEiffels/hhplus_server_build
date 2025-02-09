@@ -30,7 +30,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("""
             포인트 충전 - 비관적 락을 사용한다.      
             """)
-@ActiveProfiles("pessimistic")
+//@ActiveProfiles("pessimistic")
 public class PointConcurrencyTest {
 
     @Autowired

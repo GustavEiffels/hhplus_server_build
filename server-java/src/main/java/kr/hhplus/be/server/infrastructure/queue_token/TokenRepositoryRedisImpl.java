@@ -13,12 +13,11 @@ import java.util.Set;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("local")
-public class TokenRepositoryImpl implements QueueTokenRepository {
+@Profile("redis")
+public class TokenRepositoryRedisImpl implements QueueTokenRepository {
     private final TokenJpaRepository tokenJpaRepository;
 
-    private final TokenRedisRepository redisRepository;
-
+    private final TokenRedisRepository tokenRedisRepository;
 
 
     @Override
@@ -29,7 +28,7 @@ public class TokenRepositoryImpl implements QueueTokenRepository {
     // ACTIVE 토큰 개수 구하기
     @Override
     public long countActiveTokens() {
-        return tokenJpaRepository.countActiveTokens();
+        return tokenRedisRepository.countActive();
     }
 
 
@@ -56,72 +55,74 @@ public class TokenRepositoryImpl implements QueueTokenRepository {
         return tokenJpaRepository.findById(tokenId);
     }
 
+
+// MAPPING TABLE
     @Override
     public void putMappingTable(String tokenId, Long userId) {
-
+        tokenRedisRepository.putMappingTable(tokenId,userId);
     }
 
     @Override
     public Long findUserIdFromMappingTable(String tokenId) {
-        return null;
+        return tokenRedisRepository.findUserIdFromMappingTable(tokenId);
     }
 
     @Override
     public void deleteFromMappingTable(String tokenId) {
-
+        tokenRedisRepository.deleteFromMappingTable(tokenId);
     }
 
+// WAITING AREA
     @Override
     public void putWaiting(String tokenId) {
-
+        tokenRedisRepository.putWaiting(tokenId);
     }
 
     @Override
     public Long getRankFromWaiting(String tokenId) {
-        return null;
+        return tokenRedisRepository.getRankFromWaiting(tokenId);
     }
 
     @Override
     public Set<ZSetOperations.TypedTuple<Object>> popFromWaiting(long activateCnt) {
-        return null;
+        return tokenRedisRepository.popFromWaiting(activateCnt);
     }
-
-
 
     @Override
     public long countWaiting() {
-        return 0;
+        return tokenRedisRepository.countWaiting();
     }
 
+// ACTIVE AREA
     @Override
     public void putActive(String tokenId) {
-
+        tokenRedisRepository.putActive(tokenId);
     }
-
     @Override
     public Double getScoreFromActive(String tokenId) {
-        return null;
+        return tokenRedisRepository.getScoreFromActive(tokenId);
     }
 
     @Override
     public Set<Object> findExpiredFromActive(Long expireTime) {
-        return null;
+        return tokenRedisRepository.findExpiredFromActive(expireTime);
     }
 
     @Override
     public void deleteByScoreFromActive(Long expireTime) {
-
+        tokenRedisRepository.deleteByScoreFromActive(expireTime);
     }
 
     @Override
     public long countActive() {
-        return 0;
+        return tokenRedisRepository.countActive();
     }
 
     @Override
     public void deleteFromActive(String tokenId) {
-
+        tokenRedisRepository.deleteFromActive(tokenId);
     }
+
 
 
 }

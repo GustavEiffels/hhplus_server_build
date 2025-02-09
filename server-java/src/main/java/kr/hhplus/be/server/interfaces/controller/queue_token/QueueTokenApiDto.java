@@ -21,7 +21,7 @@ public interface QueueTokenApiDto {
         }
     }
 
-    record CreateTokenResponse(Long tokenId) {
+    record CreateTokenResponse(String tokenId) {
         public static CreateTokenResponse from(QueueTokenFacadeDto.CreateResult result) {
             return new CreateTokenResponse(result.tokenId());
         }

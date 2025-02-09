@@ -40,7 +40,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Testcontainers
-@ActiveProfiles("redisson")
 @Slf4j
 @DisplayName("결제 통합 테스트")
 public class PaymentConcurrencyTest {
@@ -102,7 +101,7 @@ public class PaymentConcurrencyTest {
                     startSignal.await();
 
                     PaymentFacadeDto.PaymentParam param = new PaymentFacadeDto.PaymentParam(
-                            reservations, user.getId(), queueToken.getId());
+                            reservations, user.getId(), queueToken.getId().toString());
                     try {
                         facade.pay(param); // 결제 시도
                         results.add(true); // 결제 성공

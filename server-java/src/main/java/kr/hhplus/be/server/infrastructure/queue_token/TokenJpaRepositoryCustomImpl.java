@@ -6,6 +6,7 @@ import kr.hhplus.be.server.domain.queue_token.QQueueToken;
 import kr.hhplus.be.server.domain.queue_token.QueueToken;
 import kr.hhplus.be.server.domain.queue_token.QueueTokenStatus;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -15,6 +16,8 @@ import static kr.hhplus.be.server.domain.queue_token.QQueueToken.queueToken;
 
 @RequiredArgsConstructor
 public class TokenJpaRepositoryCustomImpl implements TokenJpaRepositoryCustom{
+
+
     private final JPAQueryFactory dsl;
 
     @Override

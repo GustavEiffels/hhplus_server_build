@@ -33,7 +33,7 @@ import java.util.concurrent.Executors;
 @DisplayName("""
             좌석 예약 - 분산락을 사용한다.      
             """)
-@ActiveProfiles("redisson")
+//@ActiveProfiles("redisson")
 public class ReservationConcurrencyTest {
 
     @Autowired

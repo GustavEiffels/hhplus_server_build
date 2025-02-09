@@ -29,7 +29,6 @@ import java.util.concurrent.*;
 
 @SpringBootTest
 @Testcontainers
-@ActiveProfiles("redisson")
 @Slf4j
 @DisplayName("좌석 예약 통합 테스트")
 public class ReservationConcurrencyTest {

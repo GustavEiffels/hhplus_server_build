@@ -26,7 +26,7 @@ class QueueTokenServiceTest {
     private QueueTokenRepository repository;
 
     @InjectMocks
-    private QueueTokenService queueTokenService;
+    private QueueTokenServiceImpl queueTokenService;
 
 
 // isValidAndActive
@@ -148,7 +148,7 @@ class QueueTokenServiceTest {
         when(repository.findTokensToActivate(2L)).thenReturn(queueTokenList);
 
         // when
-        queueTokenService.activate(maxTokenCnt);
+        queueTokenService.activate(20L);
 
         // then
         Assertions.assertEquals(QueueTokenStatus.ACTIVE,queueToken1.getStatus());

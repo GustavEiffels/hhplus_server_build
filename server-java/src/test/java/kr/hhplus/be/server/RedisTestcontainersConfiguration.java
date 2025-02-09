@@ -30,12 +30,10 @@ public class RedisTestcontainersConfiguration {
     @PreDestroy
     public void preDestroy() {
         if (REDIS_LOCK_CONTAINER.isRunning()) {
-            if (REDIS_LOCK_CONTAINER.isRunning()) {
-                REDIS_LOCK_CONTAINER.stop();
-            }
-            if (REDIS_QUEUE_CONTAINER.isRunning()) {
-                REDIS_QUEUE_CONTAINER.stop();
-            }
+            REDIS_LOCK_CONTAINER.stop();
+        }
+        if (REDIS_QUEUE_CONTAINER.isRunning()) {
+            REDIS_QUEUE_CONTAINER.stop();
         }
     }
 }

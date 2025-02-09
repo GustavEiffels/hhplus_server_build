@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public interface PaymentFacadeDto {
-    record PaymentParam(List<Long> reservationIds, Long userid, Long tokenId){
+    record PaymentParam(List<Long> reservationIds, Long userid, String tokenId){
         public PaymentParam{
             if( reservationIds.isEmpty() ){
                 throw new BusinessException(ErrorCode.INVALID_INPUT,"예약 리스트를 보내주세요");

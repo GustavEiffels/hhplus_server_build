@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.interfaces.scheduler;
 
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
+import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeImpl;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Component
@@ -19,8 +19,25 @@ public class ScheduleTask {
     private final QueueTokenFacade queueTokenFacade;
     private final ReservationFacade reservationFacade;
 
-    @Value("${queue.max-active-token:20}")
-    private long maxActiveToken;
+    @Value("${queue.max-active-token}")
+    private Long maxActiveToken;
+
+
+
+    @Scheduled(fixedRate =  10_000)
+    public void executeExpireTokenRemover(){
+        String uuid = "SCHEDULER-" + UUID.randomUUID();
+        SchedulerContext.setUuid(uuid);
+        long startTime = System.currentTimeMillis();
+
+        try {
+            queueTokenFacade.expire();
+            log.info("UUID - [{}] | expire token schedule ", uuid);
+        } finally {
+            log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));
+            SchedulerContext.clear();
+        }
+    }
 
     @Scheduled(fixedRate =  10_000)
     public void executeTokenActiveMaker(){
@@ -29,6 +46,9 @@ public class ScheduleTask {
         long startTime = System.currentTimeMillis();
 
         try {
+            if(maxActiveToken==null){
+                maxActiveToken = 30L;
+            }
             queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(maxActiveToken));
             log.info("UUID - [{}] | active token schedule ", uuid);
         } finally {

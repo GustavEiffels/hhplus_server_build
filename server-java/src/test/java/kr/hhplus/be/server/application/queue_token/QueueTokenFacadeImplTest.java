@@ -1,10 +1,8 @@
 package kr.hhplus.be.server.application.queue_token;
 
 import kr.hhplus.be.server.domain.queue_token.QueueToken;
-import kr.hhplus.be.server.domain.queue_token.QueueTokenRepository;
 import kr.hhplus.be.server.domain.queue_token.QueueTokenStatus;
 import kr.hhplus.be.server.domain.user.User;
-import kr.hhplus.be.server.domain.user.UserRepository;
 import kr.hhplus.be.server.infrastructure.queue_token.TokenJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import org.junit.jupiter.api.AfterEach;
@@ -12,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class QueueTokenFacadeTest {
+@ActiveProfiles("local")
+class QueueTokenFacadeImplTest {
 
 
     @Autowired
@@ -115,7 +115,7 @@ class QueueTokenFacadeTest {
         assertEquals(27,waitCnt);
 
         // When
-        queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(10L));
+        queueTokenFacade.activate(new QueueTokenFacadeDto.ActivateParam(30L));
 
         // Then
         activeCnt = 0;
