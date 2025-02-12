@@ -13,7 +13,6 @@ import java.util.Set;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("redis")
 public class TokenRepositoryImpl implements QueueTokenRepository {
     private final TokenJpaRepository tokenJpaRepository;
 

@@ -27,8 +27,8 @@ public class ScheduleJpaRepositoryCustomImpl implements ScheduleJpaRepositoryCus
                 .where(
                         concert.id.eq(concertId)
                                 .and(concertSchedule.isReserveAble.isTrue())
-                                .and(concertSchedule.reservation_start.loe(now))  // 예약 시작 시간은 현재 시간보다 작거나 같아야 함
-                                .and(concertSchedule.reservation_end.goe(now))  // 예약 종료 시간은 현재 시간보다 크거나 같아야 함
+                                .and(concertSchedule.reservation_start.loe(now))  // 예약 시작 시간은 현재 시간보다 작거나 같아야 함 <
+                                .and(concertSchedule.reservation_end.goe(now))  // 예약 종료 시간은 현재 시간보다 크거나 같아야 함 >
                 )
                 .offset(page * pagingSize)
                 .limit(pagingSize)

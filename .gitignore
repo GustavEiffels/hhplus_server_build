@@ -49,3 +49,7 @@ out/
 /department_data.csv
 /employee_data.csv
 /dumy/data
+
+/seat_data.csv
+/concert_data.csv
+/concert_schedule_data.csv

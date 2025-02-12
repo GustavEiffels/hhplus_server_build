@@ -67,7 +67,11 @@ public class TokenRedisRepositoryImpl implements TokenRedisRepository{
 
     @Override
     public Set<ZSetOperations.TypedTuple<Object>> popFromWaiting(long activateCnt) {
-        return getZSET().popMin(WAITING_SET, activateCnt);
+        // popMin 메서드를 호출하여 데이터를 꺼냄
+        Set<ZSetOperations.TypedTuple<Object>> poppedValues = getZSET().popMin(WAITING_SET, activateCnt);
+
+        // 데이터를 처리할 로직을 추가하거나, 그냥 반환
+        return poppedValues != null ? poppedValues : Collections.emptySet();
     }
 
     @Override
