@@ -9,6 +9,7 @@ import kr.hhplus.be.server.domain.seat.SeatService;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.domain.user.UserService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -76,8 +77,10 @@ public class ReservationFacadeEventTest {
         when(seatService.findReservable(1L)).thenReturn(leftSeat);
     }
 
+
+    @DisplayName("예약 생성 성공 시, 예약 플랫폼으로 이벤트가 발생하는 로직이 1회 발생한다.")
     @Test
-    void testReservationSuccessfullyCreatesReservationsAndTriggersEvent() {
+    void ReservationFacadeEventTest_00() {
         // given
         Long scheduleId = 1L; // Mock schedule ID
         ReservationFacadeDto.ReservationParam param = new ReservationFacadeDto.ReservationParam(scheduleId, seatIds, user.getId());
