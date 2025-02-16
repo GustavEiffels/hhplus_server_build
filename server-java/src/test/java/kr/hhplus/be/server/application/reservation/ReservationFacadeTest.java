@@ -1,6 +1,8 @@
 package kr.hhplus.be.server.application.reservation;
 
 import kr.hhplus.be.server.domain.concert.Concert;
+import kr.hhplus.be.server.domain.event.ReservationEventPublisher;
+import kr.hhplus.be.server.domain.event.ReservationSuccessEvent;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationStatus;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
@@ -17,6 +19,8 @@ import kr.hhplus.be.server.infrastructure.seat.SeatJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDateTime;
@@ -24,6 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 @SpringBootTest
 class ReservationFacadeTest {
@@ -43,8 +50,13 @@ class ReservationFacadeTest {
     @Autowired
     ReservationJpaRepository reservationJpaRepository;
 
+    @Mock
+    ReservationEventPublisher publisher;
+
     @Autowired
-    ReservationFacade reservationFacade;
+    private ReservationFacade reservationFacade; // event 작동하는지 확인
+
+
 
 
     @Autowired
@@ -149,6 +161,8 @@ class ReservationFacadeTest {
         // then
         assertEquals(4,result.reservationInfoList().size());
         assertEquals(21, seatService.findReservable(scheduleId).size());
+
+        verify(publisher, times(1)).success(any(ReservationSuccessEvent.class));
     }
 
 // 좌석 점유 만료

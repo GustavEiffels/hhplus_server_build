@@ -2,6 +2,8 @@ package kr.hhplus.be.server.application.reservation;
 
 
 import kr.hhplus.be.server.common.config.redis.DistributedLock;
+import kr.hhplus.be.server.domain.event.ReservationEventPublisher;
+import kr.hhplus.be.server.domain.event.ReservationSuccessEvent;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationService;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
@@ -23,6 +25,7 @@ public class ReservationFacade {
     private final SeatService seatService;
     private final ConcertScheduleService concertScheduleService;
     private final ReservationService reservationService;
+    private final ReservationEventPublisher reservationEventPublisher;
 
 
     /**
@@ -54,6 +57,10 @@ public class ReservationFacade {
         if(seatService.findReservable(param.scheduleId()).isEmpty()){
             concertScheduleService.changeUnReservable(param.scheduleId());
         }
+
+
+        reservationEventPublisher.success(new ReservationSuccessEvent(createdReservations,findUser.getId()));
+
 
         return ReservationFacadeDto.ReservationResult.from(createdReservations);
     }
