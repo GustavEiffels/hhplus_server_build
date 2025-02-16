@@ -1,5 +1,6 @@
 package kr.hhplus.be.server.application.payment;
 
+import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import kr.hhplus.be.server.application.reservation.ReservationFacadeDto;
@@ -55,7 +56,7 @@ class PaymentFacadeTest {
     ReservationFacade reservationFacade;
 
     @Autowired
-    QueueTokenFacadeImpl queueTokenFacadeImpl;
+    QueueTokenFacade queueTokenFacadeImpl;
 
     @Autowired
     PaymentFacade paymentFacade;

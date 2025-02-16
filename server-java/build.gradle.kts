@@ -46,7 +46,7 @@ dependencies {
 	annotationProcessor ("jakarta.persistence:jakarta.persistence-api")
 
 	// swagger : 2025-01-05
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0")
 
 	// validation-api : 2025-01-04
 	implementation("jakarta.validation:jakarta.validation-api:3.0.2")
