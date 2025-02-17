@@ -25,7 +25,7 @@ public class ConnectionTest {
     @Autowired
     KafkaPlatformConsumer kafkaConsumer;
 
-    @DisplayName("Kafka Producer 로 보낸 User 를 JSON 직렬화 한 값과, Consumer 로 반환 받은 값이 같다.")
+    @DisplayName("Kafka Producer 로 User 를 전송하면, Consumer 로 반환 받은 값과 User 를 JSON 직렬화 한 값과 같다.")
     @Test
     void sendToKafka_00() throws InterruptedException, JsonProcessingException {
         // given
@@ -39,6 +39,6 @@ public class ConnectionTest {
         assertEquals(
                 new ObjectMapper().writeValueAsString(user),
                 kafkaConsumer.getReceivedMessage(),
-                "Kafka Producer 로 보낸 User 를 JSON 직렬화 한 값과, Consumer 로 반환 받은 값이 같다.");
+                "Kafka Producer 로 User 를 전송하면, Consumer 로 반환 받은 값과 User 를 JSON 직렬화 한 값과 같다.");
     }
 }
