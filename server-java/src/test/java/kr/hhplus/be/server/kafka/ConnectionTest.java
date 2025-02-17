@@ -25,7 +25,7 @@ public class ConnectionTest {
     @Autowired
     KafkaPlatformConsumer kafkaConsumer;
 
-    @DisplayName("Kafka 에서 메세지 보내면, 해당 메세지가 전송이 된다.")
+    @DisplayName("Kafka Producer 로 보낸 User 를 JSON 직렬화 한 값과, Consumer 로 반환 받은 값이 같다.")
     @Test
     void sendToKafka_00() throws InterruptedException, JsonProcessingException {
         // given
@@ -35,8 +35,10 @@ public class ConnectionTest {
         reservationProducer.sendReservation("my-first-topic", user);
 
         kafkaConsumer.awaitLatch();
-        String receivedMessage = kafkaConsumer.getReceivedMessage();
 
-        assertEquals(new ObjectMapper().writeValueAsString(user),receivedMessage);
+        assertEquals(
+                new ObjectMapper().writeValueAsString(user),
+                kafkaConsumer.getReceivedMessage(),
+                "Kafka Producer 로 보낸 User 를 JSON 직렬화 한 값과, Consumer 로 반환 받은 값이 같다.");
     }
 }
