@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.common.config.kafka;
+package kr.hhplus.be.server.interfaces.controller.reservation;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -23,8 +23,8 @@ public class KafkaPlatformConsumer {
     }
 
     @KafkaListener(topics = "my-first-topic",groupId = "my-consumer-group")
-    public void listen(ConsumerRecord<String,Object> record){
+    public void listen(ConsumerRecord<String,String> record){
         log.info("Received Message  : "+record.value());
-        this.receivedMessage = record.value().toString();
+        this.receivedMessage = record.value();
     }
 }
