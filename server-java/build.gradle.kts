@@ -67,6 +67,10 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 
     // Test
+		// KAFKA
+	testImplementation("org.testcontainers:kafka")
+	testImplementation("org.springframework.kafka:spring-kafka-test")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")
 	testImplementation("org.testcontainers:junit-jupiter")

@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 @Component
 @Slf4j
-public class KafkaPlatformConsumer {
+public class  KafkaPlatformConsumer {
 
     @Getter
     private String receivedMessage = null;
@@ -26,5 +26,6 @@ public class KafkaPlatformConsumer {
     public void listen(ConsumerRecord<String,String> record){
         log.info("Received Message  : "+record.value());
         this.receivedMessage = record.value();
+        latch.countDown();
     }
 }

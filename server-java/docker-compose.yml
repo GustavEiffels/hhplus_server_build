@@ -29,7 +29,6 @@ services:
     volumes:
       - ./data/redis/:/data
 
-
 networks:
   default:
     driver: bridge

@@ -16,9 +16,11 @@ public class ReservationProducer {
 
     public void sendReservation(String topic, Object message){
         try {
+            log.info("message from producer : {}",message);
             String jsonMessage = new ObjectMapper().writeValueAsString(message);
             kafkaTemplate.send(topic, jsonMessage);
         } catch (Exception e) {
+            log.info("EXCEPTION : {}",e.getLocalizedMessage());
             throw new BusinessException(ErrorCode.JSON_PARSING_EXCEPTION);
         }
 
