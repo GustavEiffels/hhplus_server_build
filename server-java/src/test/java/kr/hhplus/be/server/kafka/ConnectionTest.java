@@ -1,6 +1,6 @@
 package kr.hhplus.be.server.kafka;
 
-import kr.hhplus.be.server.interfaces.controller.reservation.KafkaPlatformConsumer;
+import kr.hhplus.be.server.interfaces.consumer.KafkaPlatformConsumer;
 import kr.hhplus.be.server.infrastructure.reservation.ReservationProducer;
 import kr.hhplus.be.server.domain.user.User;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @Slf4j
-@Testcontainers
+//@Testcontainers
 public class ConnectionTest {
 
     @Autowired

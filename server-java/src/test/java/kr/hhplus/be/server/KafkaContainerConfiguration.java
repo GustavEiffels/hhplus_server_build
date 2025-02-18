@@ -11,7 +11,7 @@ import org.testcontainers.utility.DockerImageName;
 import java.util.Collections;
 import java.util.Properties;
 
-@Configuration
+//@Configuration
 public class KafkaContainerConfiguration {
 
     // KafkaContainer 객체들 선언 (각각의 Kafka 브로커를 다루기 위해 3개 필요)
