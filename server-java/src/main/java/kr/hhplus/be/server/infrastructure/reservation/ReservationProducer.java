@@ -23,6 +23,5 @@ public class ReservationProducer {
             log.info("EXCEPTION : {}",e.getLocalizedMessage());
             throw new BusinessException(ErrorCode.JSON_PARSING_EXCEPTION);
         }
-
     }
 }
