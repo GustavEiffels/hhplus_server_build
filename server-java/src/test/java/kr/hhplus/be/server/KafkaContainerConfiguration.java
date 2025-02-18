@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.utility.DockerImageName;
-
 import java.util.Collections;
 import java.util.Properties;
 
@@ -41,8 +40,6 @@ public class KafkaContainerConfiguration {
             adminClient.close();
         }
     }
-
-
 
     @PreDestroy
     public void preDestroy() {

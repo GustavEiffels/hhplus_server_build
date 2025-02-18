@@ -34,7 +34,6 @@ public class Reservation extends BaseEntity {
     @Version
     private Integer version;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "user_id",
@@ -49,7 +48,6 @@ public class Reservation extends BaseEntity {
             nullable = false,
             foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private Seat seat;
-
 
 
     private Reservation(User user, Seat seat){
