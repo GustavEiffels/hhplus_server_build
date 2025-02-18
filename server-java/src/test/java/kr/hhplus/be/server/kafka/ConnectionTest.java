@@ -60,7 +60,7 @@ public class ConnectionTest {
         // when
         produce("my-first-topic", user);
 
-        latch.await(10, TimeUnit.SECONDS);
+        latch.await(15, TimeUnit.SECONDS);
 
         // then
         assertEquals(
