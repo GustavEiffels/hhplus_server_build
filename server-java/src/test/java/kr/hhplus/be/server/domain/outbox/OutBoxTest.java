@@ -47,22 +47,17 @@ class OutBoxTest {
     }
 
     @DisplayName("""
-            OutBox 생성 시, 변환할 객체를 JSON 으로 변환하다 실패할 경우 BusinessException 이 발생한다. 
+            OutBox 생성 시, 정상 작동하는 경우 OutBox 객체의 Status 는 Pending 이다. 
             """)
     @Test
-    void create_test_02() throws JsonProcessingException {
+    void create_test_02() {
         // given
         String       topicName      = "test";
         String       testObjectData = "null";
-        ObjectMapper mock           = mock(ObjectMapper.class);
+        OutBox       outBox         = new OutBox(topicName,testObjectData);
 
-        when(mock.writeValueAsString(any())).thenThrow(JsonProcessingException.class);
 
-        // when
-        BusinessException exception = assertThrows(
-                BusinessException.class,()-> OutBox.create(topicName,testObjectData));
-
-        // then
-        assertEquals(exception.getErrorStatus(), ErrorCode.JSON_CONVERT_EXCEPTION);
+        // when & then
+        assertEquals(OutBoxStatus.PENDING, outBox.getStatus());
     }
 }
