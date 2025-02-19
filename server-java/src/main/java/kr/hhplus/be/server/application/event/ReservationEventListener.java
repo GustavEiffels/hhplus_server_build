@@ -22,11 +22,7 @@ public class ReservationEventListener {
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     public void reservationSuccessHandler(ReservationSuccessEvent event){
         try {
-            String message = "reservation success! reservation ids = [" +
-                    event.getReservations().stream()
-                            .map(reservation -> String.valueOf(reservation.getId())) // ID를 문자열로 변환
-                            .collect(Collectors.joining(", ")) + "]";
-            reservationClient.send(message, event.getUserId());
+
             log.info("Send to ReservationClient Success!");
         }
         catch (Exception e){

@@ -56,16 +56,19 @@ public class ReservationFacade {
         // 4. 예약 생성
         createdReservations = reservationService.create(createdReservations);
 
-        OutBox outBox = OutBox.create("create_reservation",createdReservations);
-        outBoxService.create(outBox);
 
         // 5. 해당 콘서트 스케줄에 더이상 예약 가능한 좌석이 없는 경우 -> 예약 불가능 상태로 변환
         if(seatService.findReservable(param.scheduleId()).isEmpty()){
             concertScheduleService.changeUnReservable(param.scheduleId());
         }
 
-        // event  
-        reservationEventPublisher.success(new ReservationSuccessEvent(createdReservations,findUser.getId()));
+        // 6. RESERVATION Event 생성
+        OutBox outBox = OutBox.create("create_reservation",createdReservations);
+        outBoxService.create(outBox);
+
+
+        // 7. EVENT 로 발행
+        reservationEventPublisher.success(new ReservationSuccessEvent(outBox));
 
         return ReservationFacadeDto.ReservationResult.from(createdReservations);
     }
