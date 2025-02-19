@@ -4,4 +4,6 @@ import java.util.List;
 
 public interface OutBoxRepository {
     List<OutBox> create(List<OutBox> outBoxList);
+
+    OutBox create(OutBox outBox);
 }

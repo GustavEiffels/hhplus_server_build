@@ -1,9 +1,6 @@
 package kr.hhplus.be.server.domain.outbox;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import kr.hhplus.be.server.common.BaseEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -22,5 +19,7 @@ public class OutBox extends BaseEntity {
 
     private String payload;
 
-    private OUTBOX_STATUS status;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private OutBoxStatus status = OutBoxStatus.PENDING; // 상태
 }
