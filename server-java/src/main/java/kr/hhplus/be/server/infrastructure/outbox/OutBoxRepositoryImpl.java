@@ -13,10 +13,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OutBoxRepositoryImpl implements OutBoxRepository {
     private final OutBoxJpaRepository jpaRepository;
-    @Override
-    public List<OutBox> create(List<OutBox> outBoxList) {
-        return jpaRepository.saveAll(outBoxList);
-    }
 
     @Override
     public OutBox create(OutBox outBox) {

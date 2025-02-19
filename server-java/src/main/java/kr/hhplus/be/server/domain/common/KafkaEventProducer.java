@@ -17,8 +17,8 @@ public class KafkaEventProducer {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    private void produce(String topic, String message) {
-        kafkaTemplate.send(topic, message).get();  // 동기 전송 (에러 캐치 가능)
+    public void produce(String topic, String message) {
+        kafkaTemplate.send(topic, message);
         log.info("Message sent to Kafka topic {}: {}", topic, message);
     }
 

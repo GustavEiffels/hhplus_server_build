@@ -63,8 +63,7 @@ public class ReservationFacade {
         }
 
         // 6. RESERVATION Event 생성
-        OutBox outBox = OutBox.create("create_reservation",createdReservations);
-        outBoxService.create(outBox);
+        OutBox outBox = outBoxService.create("create_reservation",createdReservations);
 
 
         // 7. EVENT 로 발행

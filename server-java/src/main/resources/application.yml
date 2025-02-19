@@ -35,8 +35,8 @@ spring:
     host: localhost
     port: 6380
   kafka:
-#    listener:
-#      missing-topics-fatal: false  # 자동으로 토픽 생성
+    listener:
+      missing-topics-fatal: false  # 자동으로 토픽 생성
 queue:
   max-active-token: 30
   active-token-expire: 3

@@ -36,16 +36,20 @@ public class OutBox extends BaseEntity {
     private OutBoxStatus status;
 
     // have to test
-    public static OutBox create(String topicName, Object objectData){
-        if(!hasText(topicName) || objectData == null){
+    public static OutBox create(String topicName, String payload){
+        if(!hasText(topicName) || !hasText(payload)){
             throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
-        try {
-            String payload = new ObjectMapper().writeValueAsString(objectData);
-            return new OutBox(topicName,payload);
-        }
-        catch (JsonProcessingException e){
-            throw new BusinessException(ErrorCode.JSON_CONVERT_EXCEPTION);
-        }
+        return new OutBox(topicName,payload);
     }
 }
+
+/**
+ *         try {
+ *             String payload = new ObjectMapper().writeValueAsString(objectData);
+ *
+ *         }
+ *         catch (JsonProcessingException e){
+ *             throw new BusinessException(ErrorCode.JSON_CONVERT_EXCEPTION);
+ *         }
+ */

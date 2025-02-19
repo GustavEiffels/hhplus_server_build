@@ -1,5 +1,9 @@
 package kr.hhplus.be.server.domain.outbox;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import kr.hhplus.be.server.common.exceptions.BusinessException;
+import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,12 +13,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OutBoxService {
     private final OutBoxRepository outBoxRepository;
+    private final ObjectMapper objectMapper;
 
-    public void create(OutBox outBox){
-        outBoxRepository.create(outBox);
+    public OutBox create(String topicNm, Object objectData){
+        try {
+            String payload = objectMapper.writeValueAsString(objectData);
+            return outBoxRepository.create(OutBox.create(topicNm,payload));
+        }
+        catch (JsonProcessingException e){
+            throw new BusinessException(ErrorCode.JSON_CONVERT_EXCEPTION);
+        }
     }
 
-    public void create(List<OutBox> outBox){
-        outBoxRepository.create(outBox);
-    }
 }
