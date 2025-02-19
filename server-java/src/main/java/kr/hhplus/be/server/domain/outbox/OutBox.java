@@ -1,5 +1,7 @@
 package kr.hhplus.be.server.domain.outbox;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.*;
 import kr.hhplus.be.server.common.BaseEntity;
 import kr.hhplus.be.server.common.exceptions.BusinessException;
@@ -34,10 +36,16 @@ public class OutBox extends BaseEntity {
     private OutBoxStatus status;
 
     // have to test
-    public static OutBox create(String topicName, String payload){
-        if(!hasText(topicName) || !hasText(payload)){
+    public static OutBox create(String topicName, Object objectData){
+        if(!hasText(topicName) || objectData == null){
             throw new BusinessException(ErrorCode.REQUIRE_FIELD_MISSING);
         }
-        return new OutBox(topicName,payload);
+        try {
+            String payload = new ObjectMapper().writeValueAsString(objectData);
+            return new OutBox(topicName,payload);
+        }
+        catch (JsonProcessingException e){
+            throw new BusinessException(ErrorCode.JSON_CONVERT_EXCEPTION);
+        }
     }
 }

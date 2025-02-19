@@ -4,6 +4,8 @@ public enum ErrorCode {
     // COMMON
     REQUIRE_FIELD_MISSING(" [ REQUIRE FIELD MISSING ]","필수 필드가 누락 되었습니다."),
 
+    JSON_CONVERT_EXCEPTION( " [ JSON CONVERT EXCEPTION ]", "JSON 변환 중 예외가 발생하였습니다."),
+
     // JSON
     JSON_PARSING_EXCEPTION(" [ JSON PARSING EXCEPTION ] ", "JSON 변환 시 예외가 발생하였습니다."),
 

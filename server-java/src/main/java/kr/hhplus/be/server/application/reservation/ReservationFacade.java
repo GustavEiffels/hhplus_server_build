@@ -4,6 +4,7 @@ package kr.hhplus.be.server.application.reservation;
 import kr.hhplus.be.server.common.config.redis.DistributedLock;
 import kr.hhplus.be.server.domain.event.ReservationEventPublisher;
 import kr.hhplus.be.server.domain.event.ReservationSuccessEvent;
+import kr.hhplus.be.server.domain.outbox.OutBox;
 import kr.hhplus.be.server.domain.outbox.OutBoxService;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationService;
@@ -53,9 +54,10 @@ public class ReservationFacade {
                 .toList();
 
         // 4. 예약 생성
-        reservationService.create(createdReservations);
+        createdReservations = reservationService.create(createdReservations);
 
-
+        OutBox outBox = OutBox.create("create_reservation",createdReservations);
+        outBoxService.create(outBox);
 
         // 5. 해당 콘서트 스케줄에 더이상 예약 가능한 좌석이 없는 경우 -> 예약 불가능 상태로 변환
         if(seatService.findReservable(param.scheduleId()).isEmpty()){
