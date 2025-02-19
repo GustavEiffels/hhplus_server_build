@@ -10,11 +10,11 @@ import java.util.List;
 public class OutBoxService {
     private final OutBoxRepository outBoxRepository;
 
-    private void create(OutBox outBox){
+    public void create(OutBox outBox){
         outBoxRepository.create(outBox);
     }
 
-    private void create(List<OutBox> outBox){
+    public void create(List<OutBox> outBox){
         outBoxRepository.create(outBox);
     }
 }

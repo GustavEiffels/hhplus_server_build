@@ -52,6 +52,8 @@ public enum ErrorCode {
     INVALID_AMOUNT("[ INVALID AMOUNT ]","유효하지 않는 금액 입니다."),
     INVALID_INPUT("INVALID INPUT Error", "[ 유효하지 않은 입력 값이 감지되었습니다. ]"),
 
+    // OUT BOX
+
 
     // LOCK
     LOCK_INTERRUPTED("[ LOCK_INTERRUPTED ]","락이 인터럽트 되었습니다"),
