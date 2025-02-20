@@ -2,8 +2,8 @@ package kr.hhplus.be.server.application.reservation;
 
 
 import kr.hhplus.be.server.common.config.redis.DistributedLock;
-import kr.hhplus.be.server.domain.event.reservation.ReservationEventPublisher;
-import kr.hhplus.be.server.domain.event.reservation.ReservationSuccessEvent;
+import kr.hhplus.be.server.domain.event.ReservationEventPublisher;
+import kr.hhplus.be.server.domain.event.ReservationSuccessEvent;
 import kr.hhplus.be.server.domain.outbox.OutBox;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationService;

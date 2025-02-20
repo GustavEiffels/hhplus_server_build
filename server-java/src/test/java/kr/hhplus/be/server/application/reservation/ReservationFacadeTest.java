@@ -1,7 +1,7 @@
 package kr.hhplus.be.server.application.reservation;
 
 import kr.hhplus.be.server.domain.concert.Concert;
-import kr.hhplus.be.server.domain.event.reservation.ReservationEventPublisher;
+import kr.hhplus.be.server.domain.event.ReservationEventPublisher;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationStatus;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;

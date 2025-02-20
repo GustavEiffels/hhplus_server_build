@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.domain.event.reservation;
+package kr.hhplus.be.server.domain.event;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
