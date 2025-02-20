@@ -1,6 +1,5 @@
 package kr.hhplus.be.server.application.event;
 
-import kr.hhplus.be.server.domain.platform.ReservationClient;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -18,8 +17,6 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class ReservationEventListenerTest {
 
-    @Mock
-    private ReservationClient reservationClient;
     @InjectMocks
     private ReservationEventListener reservationEventListener;
 

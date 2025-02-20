@@ -52,7 +52,9 @@ public class ReserveIntegrationTest {
     OutBoxJpaRepository outBoxJpaRepository;
 
     @Autowired
-    private ReservationCreateConsumer reservationCreateConsumer;
+    ReservationCreateConsumer reservationCreateConsumer;
+
+
 
     ConcertSchedule concertSchedule;
     Seat seat;
@@ -77,8 +79,8 @@ public class ReserveIntegrationTest {
         // when
         ReservationFacadeDto.ReservationResult result = reservationFacade.reservation(param);
 
-        //
         reservationCreateConsumer.awaitLatch();
+
     }
 
 

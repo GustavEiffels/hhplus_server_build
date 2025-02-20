@@ -22,4 +22,9 @@ public class KafkaEventProducer {
         log.info("Message sent to Kafka topic {}: {}", topic, message);
     }
 
+    public void produce(String topic, Long outBoxId, String message) {
+        kafkaTemplate.send(topic, String.valueOf(outBoxId), message);
+        log.info("Message sent to Kafka topic {}: {}", topic, message);
+    }
+
 }

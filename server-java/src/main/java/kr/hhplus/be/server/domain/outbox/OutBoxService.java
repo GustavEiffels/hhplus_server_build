@@ -27,9 +27,16 @@ public class OutBoxService {
 
 
 
-    public OutBox updateFromConsumer(String consumerPayload){
-        Long outBoxId = OutBox.convertToOutBox(consumerPayload).getId();
-        OutBox outBox = findOutbox(outBoxId);
+    public OutBox updatePROCESSED(Long outboxId){
+        OutBox outBox = findOutbox(outboxId);
+        outBox.processed();
+        return outBoxRepository.create(outBox);
+    }
+
+
+    public OutBox updateFAILED(Long outboxId){
+        OutBox outBox = findOutbox(outboxId);
+        outBox.failed();
         return outBoxRepository.create(outBox);
     }
 

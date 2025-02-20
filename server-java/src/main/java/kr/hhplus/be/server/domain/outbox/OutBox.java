@@ -1,5 +1,6 @@
 package kr.hhplus.be.server.domain.outbox;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import jakarta.persistence.*;
@@ -18,6 +19,7 @@ import static org.springframework.util.StringUtils.*;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class OutBox extends BaseEntity {
 
     private OutBox(String eventType, String payload){
@@ -56,6 +58,7 @@ public class OutBox extends BaseEntity {
         try {
             return JsonUtils.objectMapper().readValue(payload, OutBox.class);
         } catch (JsonProcessingException e) {
+            System.out.println(e.getLocalizedMessage());
             throw new BusinessException(ErrorCode.JSON_CONVERT_EXCEPTION);
         }
     }

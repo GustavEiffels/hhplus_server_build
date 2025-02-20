@@ -1,7 +1,7 @@
 package kr.hhplus.be.server.interfaces.consumer;
 
 
-import kr.hhplus.be.server.domain.platform.PlatformService;
+import kr.hhplus.be.server.application.data_platform.DataPlatformFacade;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class ReservationCreateConsumer {
 
-    private final PlatformService platformService;
+    private final DataPlatformFacade dataPlatformFacade;
 
     private CountDownLatch latch = new CountDownLatch(1);
 
@@ -28,6 +28,6 @@ public class ReservationCreateConsumer {
     public void listenCreateReservation(ConsumerRecord<String,String> record){
         latch.countDown();
         log.info("Received Message - create_reservation  : {}",record.value());
-        platformService.getEventFromReservationCreate(record.value());
+        dataPlatformFacade.getEventFromReservationCreate(record.key(),record.value());
     }
 }

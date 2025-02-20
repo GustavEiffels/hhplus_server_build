@@ -1,5 +1,6 @@
 package kr.hhplus.be.server.application.event;
 
+import kr.hhplus.be.server.common.config.Json.JsonUtils;
 import kr.hhplus.be.server.domain.common.KafkaEventProducer;
 import kr.hhplus.be.server.domain.event.reservation.ReservationSuccessEvent;
 import kr.hhplus.be.server.domain.outbox.OutBox;
@@ -28,7 +29,7 @@ public class ReservationEventListener {
     public void reservationSuccessHandler(ReservationSuccessEvent event){
         try {
             OutBox outBox = event.getOutBox();
-            kafkaEventProducer.produce(outBox.getEventType(),outBox.getPayload());
+            kafkaEventProducer.produce(outBox.getEventType(), outBox.getId() ,outBox.getPayload());
             log.info("Send to ReservationClient Success!");
         }
         catch (Exception e){
