@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -25,6 +27,20 @@ public class OutBoxService {
                 .orElseThrow(()-> new BusinessException(ErrorCode.NOT_FOUND_OUTBOX));
     }
 
+    // DELETE
+    public void deleteExpired(){
+        List<OutBox> deleteOutboxList = outBoxRepository.findDeleteList();
+        if(!deleteOutboxList.isEmpty()){
+            outBoxRepository.deleteAll(deleteOutboxList);
+        }
+    }
+
+
+    public List<OutBox> findPending(){
+        return outBoxRepository.findPendingByStatus();
+    }
+
+    public List<OutBox> findDeleteList(){ return ; }
 
 
     public OutBox updatePROCESSED(Long outboxId){
@@ -34,11 +50,11 @@ public class OutBoxService {
         return outBoxRepository.update(outBox);
     }
 
-
     public OutBox updateFAILED(Long outboxId){
         OutBox outBox = findOutbox(outboxId);
         outBox.failed();
-        return outBoxRepository.create(outBox);
+        log.info("id : {} - status : {}",outboxId,outBox.getStatus());
+        return outBoxRepository.update(outBox);
     }
 
 }

@@ -3,6 +3,7 @@ package kr.hhplus.be.server.interfaces.scheduler;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacade;
 import kr.hhplus.be.server.application.queue_token.QueueTokenFacadeDto;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
+import kr.hhplus.be.server.domain.outbox.OutBoxService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,11 +18,10 @@ import java.util.UUID;
 public class ScheduleTask {
     private final QueueTokenFacade queueTokenFacade;
     private final ReservationFacade reservationFacade;
+    private final OutBoxService     outBoxService;
 
     @Value("${queue.max-active-token}")
     private Long maxActiveToken;
-
-
 
     @Scheduled(fixedRate =  10_000)
     public void executeExpireTokenRemover(){
@@ -64,6 +64,20 @@ public class ScheduleTask {
         log.info("UUID - [{}] | reservation expire schedule ", uuid);
         try {
             reservationFacade.expire();
+        }finally {
+            log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));
+            SchedulerContext.clear();
+        }
+    }
+
+    @Scheduled(fixedRate =  60_000)
+    public void executeOutBoxRemover(){
+        String uuid = "SCHEDULER-" + UUID.randomUUID();
+        SchedulerContext.setUuid(uuid);
+        long startTime = System.currentTimeMillis();
+        log.info("UUID - [{}] | reservation expire schedule ", uuid);
+        try {
+            outBoxService.deleteExpired();
         }finally {
             log.info("UUID - [{}] | schedule processed in {} ms", uuid, (System.currentTimeMillis() - startTime));
             SchedulerContext.clear();

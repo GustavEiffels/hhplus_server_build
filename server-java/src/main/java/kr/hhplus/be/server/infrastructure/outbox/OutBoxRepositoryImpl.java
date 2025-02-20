@@ -29,4 +29,19 @@ public class OutBoxRepositoryImpl implements OutBoxRepository {
     public Optional<OutBox> findById(Long outboxId) {
         return jpaRepository.findById(outboxId);
     }
+
+    @Override
+    public List<OutBox> findPendingByStatus() {
+        return jpaRepository.findByStatusPending();
+    }
+
+    @Override
+    public List<OutBox> findDeleteList() {
+        return jpaRepository.findDeleteList();
+    }
+
+    @Override
+    public void deleteAll(List<OutBox> deleteList) {
+        jpaRepository.deleteAll(deleteList);
+    }
 }

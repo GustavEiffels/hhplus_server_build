@@ -5,5 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface OutBoxJpaRepository extends JpaRepository<OutBox,Long>, OutBoxJpaRepositoryCustom {
+public interface OutBoxJpaRepositoryCustom {
+    List<OutBox> findByStatusPending();
+
+    List<OutBox> findDeleteList();
 }

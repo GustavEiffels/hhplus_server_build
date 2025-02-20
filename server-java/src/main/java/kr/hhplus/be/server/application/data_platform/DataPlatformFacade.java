@@ -17,22 +17,31 @@ public class DataPlatformFacade {
     private final DataPlatformService dataPlatformService;
 
     @Transactional
-    public boolean getEventFromReservationCreate(String key, String payload){
+    public boolean getEventFromReservationCreate(String key, String payload) {
 
-        log.info("DataPlatformFacade - key : {}",key);
-        log.info("DataPlatformFacade - payload : {}",payload);
+        log.info("DataPlatformFacade - key : {}", key);
+        log.info("DataPlatformFacade - payload : {}", payload);
 
-        Long   outBoxId = Long.valueOf(key);
-        OutBox outBox   = outBoxService.findOutbox(outBoxId);
+        Long outBoxId = Long.valueOf(key);
+        OutBox outBox = outBoxService.findOutbox(outBoxId);
 
-        if(outBox.isPending() && outBox.isValid() ){
-            log.info("정상 적으로 로직 작동 ");
+        // OutBox 상태 확인
+        if (!outBox.isPending()) {
+            return false;
+        }
+
+        // OutBox 유효성 검사
+        boolean isValid = outBox.isValid();
+        log.info("OutBox is {}", isValid ? "valid" : "invalid");
+
+        if (isValid) {
+            log.info("정상적으로 로직 작동");
             dataPlatformService.dataPlatformLogic();
             outBoxService.updatePROCESSED(outBoxId);
-            return true;
+        } else {
+            outBoxService.updateFAILED(outBoxId);
         }
-        return false;
+
+        return isValid;
     }
-
-
 }
