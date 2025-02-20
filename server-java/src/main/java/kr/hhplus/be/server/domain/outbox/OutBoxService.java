@@ -40,7 +40,6 @@ public class OutBoxService {
         return outBoxRepository.findPendingByStatus();
     }
 
-    public List<OutBox> findDeleteList(){ return ; }
 
 
     public OutBox updatePROCESSED(Long outboxId){

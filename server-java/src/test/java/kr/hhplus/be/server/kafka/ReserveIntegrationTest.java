@@ -4,6 +4,8 @@ package kr.hhplus.be.server.kafka;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import kr.hhplus.be.server.application.reservation.ReservationFacadeDto;
 import kr.hhplus.be.server.domain.concert.Concert;
+import kr.hhplus.be.server.domain.outbox.OutBox;
+import kr.hhplus.be.server.domain.outbox.OutBoxService;
 import kr.hhplus.be.server.domain.outbox.OutBoxStatus;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.seat.Seat;
@@ -53,6 +55,9 @@ public class ReserveIntegrationTest {
     OutBoxJpaRepository outBoxJpaRepository;
 
     @Autowired
+    OutBoxService outBoxService;
+
+    @Autowired
     ReservationCreateConsumer reservationCreateConsumer;
 
 
@@ -69,13 +74,44 @@ public class ReserveIntegrationTest {
             """)
     @Test
     void reservationKafkaEventTest(){
+        reservationCallOutKafka();
+    }
 
+    @DisplayName("""
+            데이터 플랫폼에서 사용이 완료된 이벤트와 유효한 이벤트 1개, 
+            만료되거나 실패한 이벤트가 2개가 추가 된 후
+            만료된 이벤트 스케줄의 핵심 로직이 작동하면, 
+            총 4개의 이벤트들 중 3개가 삭제되고 1개의 이벤트 만이 존재한다. 
+            """)
+    @Test
+    void reservationEventDeleteTest(){
         // given
-            // create user
+        reservationCallOutKafka();
+        OutBox outBox1 = OutBox.create("test1","test1");
+        outBox1.failed();
+        OutBox outBox2 = OutBox.create("test2","test2");
+        outBox2.processed();
+        OutBox outBox3 = OutBox.create("test3","test3");
+        outBoxService.create(outBox1);
+        outBoxService.create(outBox2);
+        outBoxService.create(outBox3);
+
+        // when
+        outBoxService.deleteExpired();
+
+        // then
+        List<OutBox> outBoxList = outBoxJpaRepository.findAll();
+        Assertions.assertEquals(1,outBoxList.size());
+        Assertions.assertEquals(outBox3.getPayload(),outBoxList.get(0).getPayload());
+    }
+
+    void reservationCallOutKafka(){
+        // given
+        // create user
         createUser(1);
         User user = userList.get(0);
 
-            // create seat
+        // create seat
         List<Long> seatIds = new ArrayList<>();
         seatIds.add(seat.getId());
 
@@ -85,12 +121,12 @@ public class ReserveIntegrationTest {
 
         await().pollDelay(2, TimeUnit.SECONDS)
                 .atMost(10, TimeUnit.SECONDS)
-                        .untilAsserted(()->{
-                            // when & then
-                            reservationCreateConsumer.awaitLatch();
-                            outBoxJpaRepository.findAll().forEach(
-                                    item ->Assertions.assertEquals(OutBoxStatus.PROCESSED,item.getStatus(),"OutBox 의 상태는 PROCESSED"));
-                        });
+                .untilAsserted(()->{
+                    // when & then
+                    reservationCreateConsumer.awaitLatch();
+                    outBoxJpaRepository.findAll().forEach(
+                            item ->Assertions.assertEquals(OutBoxStatus.PROCESSED,item.getStatus(),"OutBox 의 상태는 PROCESSED"));
+                });
     }
 
 
