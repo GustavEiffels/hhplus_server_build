@@ -30,6 +30,7 @@ public class OutBox extends BaseEntity {
 
     private String eventType; // TOPIC NAME
 
+    @Lob
     private String payload;
 
     @Enumerated(EnumType.STRING)

@@ -1,5 +1,6 @@
 package kr.hhplus.be.server.domain.reservation;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import kr.hhplus.be.server.common.BaseEntity;
@@ -39,6 +40,7 @@ public class Reservation extends BaseEntity {
             name = "user_id",
             nullable = false,
             foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    @JsonIgnore
     private User user;
 
 
@@ -47,6 +49,7 @@ public class Reservation extends BaseEntity {
             name = "seat_id",
             nullable = false,
             foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    @JsonIgnore
     private Seat seat;
 
 

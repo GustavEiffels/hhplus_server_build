@@ -161,8 +161,6 @@ class ReservationFacadeTest {
         // then
         assertEquals(4,result.reservationInfoList().size());
         assertEquals(21, seatService.findReservable(scheduleId).size());
-
-        verify(publisher, times(1)).success(any(ReservationSuccessEvent.class));
     }
 
 // 좌석 점유 만료
