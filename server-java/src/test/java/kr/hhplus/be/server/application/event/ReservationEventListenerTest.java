@@ -1,6 +1,5 @@
 package kr.hhplus.be.server.application.event;
 
-import kr.hhplus.be.server.domain.event.ReservationSuccessEvent;
 import kr.hhplus.be.server.domain.platform.ReservationClient;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import org.junit.jupiter.api.BeforeEach;

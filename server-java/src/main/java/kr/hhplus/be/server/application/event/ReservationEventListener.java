@@ -1,18 +1,15 @@
 package kr.hhplus.be.server.application.event;
 
 import kr.hhplus.be.server.domain.common.KafkaEventProducer;
-import kr.hhplus.be.server.domain.event.ReservationSuccessEvent;
+import kr.hhplus.be.server.domain.event.reservation.ReservationSuccessEvent;
 import kr.hhplus.be.server.domain.outbox.OutBox;
 import kr.hhplus.be.server.domain.outbox.OutBoxService;
-import kr.hhplus.be.server.domain.platform.ReservationClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
-
-import java.util.stream.Collectors;
 
 @Slf4j
 @Component

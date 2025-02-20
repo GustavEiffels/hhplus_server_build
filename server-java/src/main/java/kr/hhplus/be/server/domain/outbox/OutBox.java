@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.domain.outbox;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import jakarta.persistence.*;
 import kr.hhplus.be.server.common.BaseEntity;
 import kr.hhplus.be.server.common.config.Json.JsonUtils;
@@ -9,6 +10,8 @@ import kr.hhplus.be.server.common.exceptions.ErrorCode;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 import static org.springframework.util.StringUtils.*;
 
@@ -47,5 +50,29 @@ public class OutBox extends BaseEntity {
         catch (JsonProcessingException e){
             throw new BusinessException(ErrorCode.JSON_CONVERT_EXCEPTION);
         }
+    }
+
+    public static OutBox convertToOutBox(String payload){
+        try {
+            return JsonUtils.objectMapper().readValue(payload, OutBox.class);
+        } catch (JsonProcessingException e) {
+            throw new BusinessException(ErrorCode.JSON_CONVERT_EXCEPTION);
+        }
+    }
+
+    public boolean isPending(){
+        return this.status.equals(OutBoxStatus.PENDING);
+    }
+
+    public boolean isValid(){
+        return super.getCreateAt() == null || !super.getCreateAt().isBefore(LocalDateTime.now().minusMinutes(1));
+    }
+
+    public void processed(){
+        this.status = OutBoxStatus.PROCESSED;
+    }
+
+    public void failed(){
+        this.status = OutBoxStatus.FAILED;
     }
 }

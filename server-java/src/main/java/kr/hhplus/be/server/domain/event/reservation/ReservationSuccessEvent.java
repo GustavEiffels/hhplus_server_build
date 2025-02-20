@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.domain.event;
+package kr.hhplus.be.server.domain.event.reservation;
 
 import kr.hhplus.be.server.domain.outbox.OutBox;
 import kr.hhplus.be.server.domain.reservation.Reservation;

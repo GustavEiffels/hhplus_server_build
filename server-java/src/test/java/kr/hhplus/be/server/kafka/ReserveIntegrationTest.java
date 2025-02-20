@@ -1,4 +1,132 @@
 package kr.hhplus.be.server.kafka;
 
-public class ReserveIntgTest {
+
+import kr.hhplus.be.server.application.reservation.ReservationFacade;
+import kr.hhplus.be.server.application.reservation.ReservationFacadeDto;
+import kr.hhplus.be.server.domain.concert.Concert;
+import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
+import kr.hhplus.be.server.domain.seat.Seat;
+import kr.hhplus.be.server.domain.user.User;
+import kr.hhplus.be.server.infrastructure.concert.ConcertJpaRepository;
+import kr.hhplus.be.server.infrastructure.outbox.OutBoxJpaRepository;
+import kr.hhplus.be.server.infrastructure.reservation.ReservationJpaRepository;
+import kr.hhplus.be.server.infrastructure.schedule.ScheduleJpaRepository;
+import kr.hhplus.be.server.infrastructure.seat.SeatJpaRepository;
+import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
+import kr.hhplus.be.server.interfaces.consumer.ReservationCreateConsumer;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.testcontainers.junit.jupiter.Testcontainers;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+@SpringBootTest
+@Testcontainers
+@Slf4j
+@DisplayName("""
+        Kafka - Reservation 통합 테스트 
+        """)
+public class ReserveIntegrationTest {
+
+    @Autowired
+    ReservationFacade reservationFacade;
+    @Autowired
+    ConcertJpaRepository concertRepository;
+    @Autowired
+    ScheduleJpaRepository concertScheduleRepository;
+    @Autowired
+    UserJpaRepository userRepository;
+    @Autowired
+    SeatJpaRepository seatRepository;
+    @Autowired
+    ReservationJpaRepository reservationRepository;
+
+    @Autowired
+    OutBoxJpaRepository outBoxJpaRepository;
+
+    @Autowired
+    private ReservationCreateConsumer reservationCreateConsumer;
+
+    ConcertSchedule concertSchedule;
+    Seat seat;
+    List<User> userList;
+
+
+    @Test
+    void temp() throws InterruptedException {
+
+        // given
+        // create user
+        createUser(1);
+        User user = userList.get(0);
+
+        // create seat
+        List<Long> seatIds = new ArrayList<>();
+        seatIds.add(seat.getId());
+
+        ReservationFacadeDto.ReservationParam param =
+                new ReservationFacadeDto.ReservationParam(concertSchedule.getId(), seatIds, user.getId());
+
+        // when
+        ReservationFacadeDto.ReservationResult result = reservationFacade.reservation(param);
+
+        //
+        reservationCreateConsumer.awaitLatch();
+    }
+
+
+    @BeforeEach
+    void setUp(){
+        // Create Concert
+        Concert concert = Concert.create("광대쇼","김광대");
+        concertRepository.save(concert);
+
+        // Create Concert Schedule
+        ConcertSchedule newConcertSchedule = ConcertSchedule.builder()
+                .concert(concert)
+                .reserveStartTime(LocalDateTime.now().plusHours(1))
+                .reserveEndTime(LocalDateTime.now().plusHours(2))
+                .showTime(LocalDateTime.now().plusHours(3))
+                .build();
+        newConcertSchedule = concertScheduleRepository.save(newConcertSchedule);
+
+        // Create Seats
+        seat = seatRepository.save(
+                Seat.builder()
+                        .seatNo(1)
+                        .price(10_000L)
+                        .concertSchedule(newConcertSchedule)
+                        .build());
+
+        concertSchedule = newConcertSchedule;
+    }
+
+    @AfterEach
+    void tearDown() {
+        outBoxJpaRepository.deleteAll();
+        userRepository.deleteAll();
+        concertRepository.deleteAll();
+        concertScheduleRepository.deleteAll();
+        seatRepository.deleteAll();
+        reservationRepository.deleteAll();
+    }
+
+    void createUser(int threadCnt){
+        List<User> newUserList = new ArrayList<>();
+        for(int i = 1; i<=threadCnt; i++){
+            User newUser = User.create("김연습"+i);
+            newUser.pointTransaction(100_000L);
+            newUserList.add(newUser);
+        }
+        userList = userRepository.saveAll(newUserList);
+    }
+
+
 }

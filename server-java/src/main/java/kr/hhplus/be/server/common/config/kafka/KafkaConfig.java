@@ -37,7 +37,7 @@ public class KafkaConfig {
         configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        configProps.put("auto.offset.reset", "latest");
+        configProps.put("auto.offset.reset", "earliest");
         return new DefaultKafkaConsumerFactory<>(configProps);
     }
 
