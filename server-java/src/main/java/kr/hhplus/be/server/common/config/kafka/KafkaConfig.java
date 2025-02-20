@@ -24,10 +24,6 @@ public class KafkaConfig {
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 
-        configProps.put(ProducerConfig.BATCH_SIZE_CONFIG, 16384);        // 16KB 배치 사이즈
-        configProps.put(ProducerConfig.LINGER_MS_CONFIG, 10);            // 최대 10ms 대기
-        configProps.put(ProducerConfig.BUFFER_MEMORY_CONFIG, 33554432);  // 32MB 버퍼 메모리
-        configProps.put(ProducerConfig.ACKS_CONFIG, "all");
 
         return new DefaultKafkaProducerFactory<>(configProps);
     }

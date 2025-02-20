@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.kafka;
 
 
+import kr.hhplus.be.server.application.outbox.OutBoxFacade;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import kr.hhplus.be.server.application.reservation.ReservationFacadeDto;
 import kr.hhplus.be.server.domain.concert.Concert;
@@ -58,6 +59,9 @@ public class ReserveIntegrationTest {
     OutBoxService outBoxService;
 
     @Autowired
+    OutBoxFacade outBoxFacade;
+
+    @Autowired
     ReservationCreateConsumer reservationCreateConsumer;
 
 
@@ -103,6 +107,39 @@ public class ReserveIntegrationTest {
         List<OutBox> outBoxList = outBoxJpaRepository.findAll();
         Assertions.assertEquals(1,outBoxList.size());
         Assertions.assertEquals(outBox3.getPayload(),outBoxList.get(0).getPayload());
+    }
+
+
+    @DisplayName("""
+            이벤트가 아직 Pending 상태 즉, 처리가 되지 
+            않은 이벤트를 생성하고 재발행 로직을 발생 시키면, 
+            생성한 이벤트 들의 상태는 모두 PROCESSED 가 된다.
+            """)
+    @Test
+    void reservationEventReissueTest(){
+
+        // given
+        for(int i = 0; i<10; i++){
+            outBoxJpaRepository.save(OutBox.create("create_reservation","TEST"));
+        }
+
+        outBoxFacade.reissuePendingEvent();
+
+        // when
+        await()
+                .pollInterval(2, TimeUnit.SECONDS)
+                .atMost(40, TimeUnit.SECONDS)
+                .untilAsserted(() -> {
+                    reservationCreateConsumer.awaitLatch();
+
+                    List<OutBox> allOutBoxes = outBoxJpaRepository.findAll();
+                    log.info("SIZE : {}",allOutBoxes.size());
+
+                    allOutBoxes.forEach(item -> {
+                        Assertions.assertEquals(OutBoxStatus.PROCESSED, item.getStatus());
+                    });
+                });
+
     }
 
     void reservationCallOutKafka(){
