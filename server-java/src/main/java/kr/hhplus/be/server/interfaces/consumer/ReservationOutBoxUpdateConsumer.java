@@ -1,7 +1,7 @@
 package kr.hhplus.be.server.interfaces.consumer;
 
 
-import kr.hhplus.be.server.domain.platform.PlatformService;
+import kr.hhplus.be.server.domain.outbox.OutBoxService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-@Component
 @Slf4j
+@Component
 @RequiredArgsConstructor
-public class ReservationCreateConsumer {
+public class ReservationOutBoxUpdateConsumer {
 
-    private final PlatformService platformService;
+    private final OutBoxService outBoxService;
 
     private CountDownLatch latch = new CountDownLatch(1);
 
@@ -24,10 +24,10 @@ public class ReservationCreateConsumer {
         return latch.await(5, TimeUnit.SECONDS);
     }
 
-    @KafkaListener(topics = "create_reservation",groupId = "DataPlatform")
-    public void listenCreateReservation(ConsumerRecord<String,String> record){
+    @KafkaListener(topics = "reservation_outbox_update",groupId = "reservation")
+    public void listenReservationOutboxUpdate(ConsumerRecord<String,String> record){
         latch.countDown();
-        log.info("Received Message - create_reservation  : {}",record.value());
-        platformService.getEventFromReservationCreate(record.value());
+        log.info("Received Message - reservation_outbox_update  : {}",record.value());
+        outBoxService.updateFromConsumer(record.value());
     }
 }

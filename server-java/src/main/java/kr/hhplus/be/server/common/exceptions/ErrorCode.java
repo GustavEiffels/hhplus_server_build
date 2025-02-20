@@ -55,6 +55,7 @@ public enum ErrorCode {
     INVALID_INPUT("INVALID INPUT Error", "[ 유효하지 않은 입력 값이 감지되었습니다. ]"),
 
     // OUT BOX
+    NOT_FOUND_OUTBOX("[ NOT FOUND OUT BOX ]","이벤트 로그를 찾지 못하였습니다."),
 
 
     // LOCK

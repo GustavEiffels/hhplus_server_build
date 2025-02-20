@@ -2,7 +2,6 @@ package kr.hhplus.be.server.domain.platform;
 
 
 import kr.hhplus.be.server.domain.outbox.OutBox;
-import kr.hhplus.be.server.domain.outbox.OutBoxService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

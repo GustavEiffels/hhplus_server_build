@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @Slf4j
@@ -17,5 +18,15 @@ public class OutBoxRepositoryImpl implements OutBoxRepository {
     @Override
     public OutBox create(OutBox outBox) {
         return jpaRepository.save(outBox);
+    }
+
+    @Override
+    public OutBox update(OutBox outBox) {
+        return jpaRepository.save(outBox);
+    }
+
+    @Override
+    public Optional<OutBox> findById(Long outboxId) {
+        return jpaRepository.findById(outboxId);
     }
 }
