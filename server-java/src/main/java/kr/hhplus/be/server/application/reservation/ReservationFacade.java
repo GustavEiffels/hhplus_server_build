@@ -28,7 +28,7 @@ public class ReservationFacade {
     private final ConcertScheduleService concertScheduleService;
     private final ReservationService reservationService;
     private final ReservationEventPublisher reservationEventPublisher;
-    private final OutBoxService outBoxService;
+
 
 
     /**
@@ -62,9 +62,8 @@ public class ReservationFacade {
             concertScheduleService.changeUnReservable(param.scheduleId());
         }
 
-        // 6. RESERVATION Event 생성
-        OutBox outBox = outBoxService.create("create_reservation",createdReservations);
-
+        // 6. OutBox 생성
+        OutBox outBox = OutBox.create("create_reservation",createdReservations);
 
         // 7. EVENT 로 발행
         reservationEventPublisher.success(new ReservationSuccessEvent(outBox));

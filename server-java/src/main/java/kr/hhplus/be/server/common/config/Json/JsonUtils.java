@@ -1,16 +1,15 @@
 package kr.hhplus.be.server.common.config.Json;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
-public class ObjectMapperConfig {
-    @Bean
-    public ObjectMapper objectMapper(){
+@Component
+public class JsonUtils {
+    public static ObjectMapper objectMapper(){
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
-        return objectMapper;
+        return  objectMapper;
     }
 }

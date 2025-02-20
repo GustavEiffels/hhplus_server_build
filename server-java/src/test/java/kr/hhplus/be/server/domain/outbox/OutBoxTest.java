@@ -54,7 +54,7 @@ class OutBoxTest {
         // given
         String       topicName      = "test";
         String       testObjectData = "null";
-        OutBox       outBox         = new OutBox(topicName,testObjectData);
+        OutBox       outBox         = OutBox.create(topicName,testObjectData);
 
 
         // when & then

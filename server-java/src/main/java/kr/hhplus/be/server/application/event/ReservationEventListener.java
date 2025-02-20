@@ -3,6 +3,7 @@ package kr.hhplus.be.server.application.event;
 import kr.hhplus.be.server.domain.common.KafkaEventProducer;
 import kr.hhplus.be.server.domain.event.ReservationSuccessEvent;
 import kr.hhplus.be.server.domain.outbox.OutBox;
+import kr.hhplus.be.server.domain.outbox.OutBoxService;
 import kr.hhplus.be.server.domain.platform.ReservationClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,13 +20,18 @@ import java.util.stream.Collectors;
 public class ReservationEventListener {
 
     private final KafkaEventProducer kafkaEventProducer;
+    private final OutBoxService outBoxService;
+    @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
+    public void saveReservationCreateEvent (ReservationSuccessEvent event){
+        outBoxService.create(event.getOutBox());
+    }
 
     @Async
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     public void reservationSuccessHandler(ReservationSuccessEvent event){
         try {
-            OutBox eventOutBox = event.getOutBox();
-            kafkaEventProducer.produce(eventOutBox.getEventType(),eventOutBox.getPayload());
+            OutBox outBox = event.getOutBox();
+            kafkaEventProducer.produce(outBox.getEventType(),outBox.getPayload());
             log.info("Send to ReservationClient Success!");
         }
         catch (Exception e){

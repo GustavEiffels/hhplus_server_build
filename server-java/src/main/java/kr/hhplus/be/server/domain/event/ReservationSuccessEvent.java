@@ -10,5 +10,5 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class ReservationSuccessEvent {
-    OutBox outBox;
+    private OutBox outBox;
 }
