@@ -4,6 +4,7 @@ package kr.hhplus.be.server.kafka;
 import kr.hhplus.be.server.application.reservation.ReservationFacade;
 import kr.hhplus.be.server.application.reservation.ReservationFacadeDto;
 import kr.hhplus.be.server.domain.concert.Concert;
+import kr.hhplus.be.server.domain.outbox.OutBoxStatus;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
 import kr.hhplus.be.server.domain.seat.Seat;
 import kr.hhplus.be.server.domain.user.User;
@@ -15,10 +16,7 @@ import kr.hhplus.be.server.infrastructure.seat.SeatJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import kr.hhplus.be.server.interfaces.consumer.ReservationCreateConsumer;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -26,6 +24,9 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import static org.awaitility.Awaitility.await;
 
 @SpringBootTest
 @Testcontainers
@@ -61,26 +62,35 @@ public class ReserveIntegrationTest {
     List<User> userList;
 
 
+    @DisplayName("""
+            예약이 완료되어 Kafka 로 이벤트를 발생 시키면
+            DataPlatform 에서 예약 정보를 사용하는 로직에서,
+            OutBox 의 상태를 PROCESSED 로 변경한다.  
+            """)
     @Test
-    void temp() throws InterruptedException {
+    void reservationKafkaEventTest(){
 
         // given
-        // create user
+            // create user
         createUser(1);
         User user = userList.get(0);
 
-        // create seat
+            // create seat
         List<Long> seatIds = new ArrayList<>();
         seatIds.add(seat.getId());
 
         ReservationFacadeDto.ReservationParam param =
                 new ReservationFacadeDto.ReservationParam(concertSchedule.getId(), seatIds, user.getId());
+        reservationFacade.reservation(param);
 
-        // when
-        ReservationFacadeDto.ReservationResult result = reservationFacade.reservation(param);
-
-        reservationCreateConsumer.awaitLatch();
-
+        await().pollDelay(2, TimeUnit.SECONDS)
+                .atMost(10, TimeUnit.SECONDS)
+                        .untilAsserted(()->{
+                            // when & then
+                            reservationCreateConsumer.awaitLatch();
+                            outBoxJpaRepository.findAll().forEach(
+                                    item ->Assertions.assertEquals(OutBoxStatus.PROCESSED,item.getStatus(),"OutBox 의 상태는 PROCESSED"));
+                        });
     }
 
 

@@ -30,7 +30,8 @@ public class OutBoxService {
     public OutBox updatePROCESSED(Long outboxId){
         OutBox outBox = findOutbox(outboxId);
         outBox.processed();
-        return outBoxRepository.create(outBox);
+        log.info("id : {} - status : {}",outboxId,outBox.getStatus());
+        return outBoxRepository.update(outBox);
     }
 
 

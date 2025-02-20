@@ -1,5 +1,6 @@
 package kr.hhplus.be.server.application.data_platform;
 
+import jakarta.transaction.Transactional;
 import kr.hhplus.be.server.domain.data_platform.DataPlatformService;
 import kr.hhplus.be.server.domain.outbox.OutBox;
 import kr.hhplus.be.server.domain.outbox.OutBoxService;
@@ -15,6 +16,7 @@ public class DataPlatformFacade {
     private final OutBoxService outBoxService;
     private final DataPlatformService dataPlatformService;
 
+    @Transactional
     public boolean getEventFromReservationCreate(String key, String payload){
 
         log.info("DataPlatformFacade - key : {}",key);
