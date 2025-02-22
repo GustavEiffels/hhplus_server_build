@@ -4,6 +4,9 @@ public enum ErrorCode {
     // COMMON
     REQUIRE_FIELD_MISSING(" [ REQUIRE FIELD MISSING ]","필수 필드가 누락 되었습니다."),
 
+    // JSON
+    JSON_PARSING_EXCEPTION(" [ JSON PARSING EXCEPTION ] ", "JSON 변환 시 예외가 발생하였습니다."),
+
     // USER
     NOT_FOUND_USER("[ NOT FOUND USER ]", "사용자를 찾을 수 없습니다."),
     INSUFFICIENT_BALANCE("[ INSUFFICIENT BALANCE ]", "잔액이 부족합니다. POINT 범위 : 0 ~ 100,000,000 point"),

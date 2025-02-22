@@ -58,9 +58,8 @@ public class ReservationFacade {
             concertScheduleService.changeUnReservable(param.scheduleId());
         }
 
-
+        // event  
         reservationEventPublisher.success(new ReservationSuccessEvent(createdReservations,findUser.getId()));
-
 
         return ReservationFacadeDto.ReservationResult.from(createdReservations);
     }

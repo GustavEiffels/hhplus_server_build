@@ -31,6 +31,12 @@ dependencyManagement {
 
 dependencies {
 
+	// KAFKA
+	implementation("org.springframework.kafka:spring-kafka")
+	// KAFKA 를 JSON 으로 전송하기위해서 사용
+	implementation("com.fasterxml.jackson.core:jackson-databind")
+
+
 	// redis
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 
@@ -61,6 +67,10 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 
     // Test
+		// KAFKA
+	testImplementation("org.testcontainers:kafka")
+	testImplementation("org.springframework.kafka:spring-kafka-test")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")
 	testImplementation("org.testcontainers:junit-jupiter")

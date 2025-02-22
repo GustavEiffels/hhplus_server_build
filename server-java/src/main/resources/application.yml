@@ -34,9 +34,9 @@ spring:
   redis-cache:
     host: localhost
     port: 6380
-#      hibernate.show-sql: true
-#      hibernate.format_sql: true
-
+  kafka:
+#    listener:
+#      missing-topics-fatal: false  # 자동으로 토픽 생성
 queue:
   max-active-token: 30
   active-token-expire: 3
