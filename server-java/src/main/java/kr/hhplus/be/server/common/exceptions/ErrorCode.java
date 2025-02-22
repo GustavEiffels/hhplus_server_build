@@ -4,6 +4,8 @@ public enum ErrorCode {
     // COMMON
     REQUIRE_FIELD_MISSING(" [ REQUIRE FIELD MISSING ]","필수 필드가 누락 되었습니다."),
 
+    JSON_CONVERT_EXCEPTION( " [ JSON CONVERT EXCEPTION ]", "JSON 변환 중 예외가 발생하였습니다."),
+
     // JSON
     JSON_PARSING_EXCEPTION(" [ JSON PARSING EXCEPTION ] ", "JSON 변환 시 예외가 발생하였습니다."),
 
@@ -51,6 +53,9 @@ public enum ErrorCode {
     // HISTORY
     INVALID_AMOUNT("[ INVALID AMOUNT ]","유효하지 않는 금액 입니다."),
     INVALID_INPUT("INVALID INPUT Error", "[ 유효하지 않은 입력 값이 감지되었습니다. ]"),
+
+    // OUT BOX
+    NOT_FOUND_OUTBOX("[ NOT FOUND OUT BOX ]","이벤트 로그를 찾지 못하였습니다."),
 
 
     // LOCK

@@ -35,6 +35,7 @@ dependencies {
 	implementation("org.springframework.kafka:spring-kafka")
 	// KAFKA 를 JSON 으로 전송하기위해서 사용
 	implementation("com.fasterxml.jackson.core:jackson-databind")
+	implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 
 
 	// redis

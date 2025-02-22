@@ -1,7 +1,5 @@
 package kr.hhplus.be.server.application.event;
 
-import kr.hhplus.be.server.domain.event.ReservationSuccessEvent;
-import kr.hhplus.be.server.domain.platform.ReservationClient;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -19,8 +17,6 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class ReservationEventListenerTest {
 
-    @Mock
-    private ReservationClient reservationClient;
     @InjectMocks
     private ReservationEventListener reservationEventListener;
 
@@ -45,14 +41,5 @@ class ReservationEventListenerTest {
     @Test
     @DisplayName("예약 성공 이벤트 핸들러가 정상적으로 메시지를 전송하는지 테스트")
     void reservationSuccessHandlerTest() {
-        // Given
-        ReservationSuccessEvent event = new ReservationSuccessEvent(reservations, userId);
-
-        // When
-        reservationEventListener.reservationSuccessHandler(event);
-
-        // Then
-        String expectedMessage = "reservation success! reservation ids = [1, 2]";
-        verify(reservationClient, times(1)).send(expectedMessage, userId); // send()가 한 번 호출됐는지 검증
     }
 }

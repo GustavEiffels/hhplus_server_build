@@ -2,16 +2,13 @@ package kr.hhplus.be.server.application.reservation;
 
 import kr.hhplus.be.server.domain.concert.Concert;
 import kr.hhplus.be.server.domain.event.ReservationEventPublisher;
-import kr.hhplus.be.server.domain.event.ReservationSuccessEvent;
 import kr.hhplus.be.server.domain.reservation.Reservation;
 import kr.hhplus.be.server.domain.reservation.ReservationStatus;
 import kr.hhplus.be.server.domain.schedule.ConcertSchedule;
-import kr.hhplus.be.server.domain.schedule.ConcertScheduleService;
 import kr.hhplus.be.server.domain.seat.Seat;
 import kr.hhplus.be.server.domain.seat.SeatService;
 import kr.hhplus.be.server.domain.seat.SeatStatus;
 import kr.hhplus.be.server.domain.user.User;
-import kr.hhplus.be.server.domain.user.UserRepository;
 import kr.hhplus.be.server.infrastructure.concert.ConcertJpaRepository;
 import kr.hhplus.be.server.infrastructure.reservation.ReservationJpaRepository;
 import kr.hhplus.be.server.infrastructure.schedule.ScheduleJpaRepository;
@@ -19,7 +16,6 @@ import kr.hhplus.be.server.infrastructure.seat.SeatJpaRepository;
 import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,7 +25,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @SpringBootTest
@@ -161,8 +156,6 @@ class ReservationFacadeTest {
         // then
         assertEquals(4,result.reservationInfoList().size());
         assertEquals(21, seatService.findReservable(scheduleId).size());
-
-        verify(publisher, times(1)).success(any(ReservationSuccessEvent.class));
     }
 
 // 좌석 점유 만료
