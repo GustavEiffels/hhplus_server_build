@@ -6,12 +6,14 @@ import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.utility.DockerImageName;
 import java.util.Collections;
 import java.util.Properties;
 
 @Configuration
+@Profile("test")
 public class KafkaContainerConfiguration {
 
     // KafkaContainer 객체들 선언 (각각의 Kafka 브로커를 다루기 위해 3개 필요)
