@@ -26,7 +26,7 @@ public class QueueTokenInterceptor implements HandlerInterceptor {
 
 
         if(!queueTokenFacadeImpl.isValidToken(param).isActive()){
-            ApiResponse<String> tokenIsWait = new ApiResponse<>(HttpStatus.FORBIDDEN,"현재 대기열 대기 중 입니다.",null);
+            ApiResponse<String> tokenIsWait = new ApiResponse<>(HttpStatus.FORBIDDEN,"CURRENT WAITING",null);
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
             response.setContentType("application/json");
             response.getWriter().write(new ObjectMapper().writeValueAsString(tokenIsWait));

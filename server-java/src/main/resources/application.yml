@@ -49,6 +49,9 @@ logging:
 ---
 ---
 spring.config.activate.on-profile: local
+logging.charset.console: UTF-8
+logging.charset.file: UTF-8
+
 
 spring:
   datasource:

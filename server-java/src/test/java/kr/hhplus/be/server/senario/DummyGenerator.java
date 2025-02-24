@@ -6,6 +6,7 @@ import kr.hhplus.be.server.infrastructure.user.UserJpaRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.Random;
@@ -20,6 +21,8 @@ public class DummyGenerator {
     @Autowired
     UserService userService;
 
+    @Autowired
+    RedisTemplate<String,Object> redisTemplate;
     @Test
     void createUser(){
         // delete all user
@@ -30,13 +33,16 @@ public class DummyGenerator {
             User user = userJpaRepository.save(User.create("test"+i));
             userJpaRepository.save(userService.chargePoints(user.getId(),10000L));
         }
-
-
-
     }
 
     void deleteAllUser(){
         userJpaRepository.deleteAll();
+    }
+
+
+    @Test
+    void redisFlush(){
+        redisTemplate.getConnectionFactory().getConnection().flushAll();
     }
 
 }
