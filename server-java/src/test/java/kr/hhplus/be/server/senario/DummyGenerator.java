@@ -46,35 +46,16 @@ public class DummyGenerator {
             성능 테스트를 하기 위해서 1000 명의 사용자들을 생성한다.   
             """)
     @Test
-    void createUser(){
-        // delete all user
-        deleteAllUser();
+    void createDemo() {
 
         // create 1000 user
-        for(int i = 0; i<1000;i++){
-            User user = userJpaRepository.save(User.create("test"+i));
-            userJpaRepository.save(userService.chargePoints(user.getId(),10000L));
+        for (int i = 0; i < 1000; i++) {
+            User user = userJpaRepository.save(User.create("test" + i));
+            userJpaRepository.save(userService.chargePoints(user.getId(), 10000L));
         }
-    }
-
-    @DisplayName("""
-            성능 테스트를 하기 위해서 1개의 콘서트와 
-            1000개의 콘서트 스케줄을 생성하고,
-            하나의 콘서트 스케줄에 50개의 좌석을 생성한다.
-            """)
-    @Test
-    void createConcertAndConcertSchedule(){
-        // delete concertSchedule
-        deleteAllConcertSchedule();
-
-        // delete concert
-        deleteAllConcert();
-
-        // delete concert
-        deleteAllSeat();
 
         // Add 1 Concert
-        Concert newConcert = concertJpaRepository.save(Concert.create("ConcertTitle","ConcertPlayer"));
+        Concert newConcert = concertJpaRepository.save(Concert.create("ConcertTitle", "ConcertPlayer"));
 
         // Add 1 Concert Schedule
         ConcertSchedule newConcertSchedule = concertScheduleRepository.save(ConcertSchedule.builder()
@@ -85,17 +66,17 @@ public class DummyGenerator {
                 .build());
 
         // Add 9999 Concert Schedule
-        for(int i = 1; i<10000; i++){
+        for (int i = 1; i < 10000; i++) {
             concertScheduleRepository.save(ConcertSchedule.builder()
-                            .concert(newConcert)
-                            .reserveStartTime(LocalDateTime.now().minusDays(1))
-                            .reserveEndTime(LocalDateTime.now().plusMonths(1))
-                            .showTime(LocalDateTime.now().plusMonths(2))
-                            .build());
+                    .concert(newConcert)
+                    .reserveStartTime(LocalDateTime.now().minusDays(1))
+                    .reserveEndTime(LocalDateTime.now().plusMonths(1))
+                    .showTime(LocalDateTime.now().plusMonths(2))
+                    .build());
         }
 
         // Add 50 Seat
-        for(int i = 1; i<=50; i++){
+        for (int i = 1; i <= 50; i++) {
             seatJpaRepository.save(Seat.builder()
                     .price(10000L)
                     .seatNo(i)
@@ -104,29 +85,8 @@ public class DummyGenerator {
         }
     }
 
-
-
-
-
-    void deleteAllUser(){
-        userJpaRepository.deleteAll();
-    }
-    void deleteAllConcert(){
-        concertJpaRepository.deleteAll();
-    }
-
-    void deleteAllSeat(){
-        seatJpaRepository.deleteAll();
-    }
-
-    void deleteAllConcertSchedule(){
-        concertScheduleRepository.deleteAll();
-    }
-
-
     @Test
-    void redisFlush(){
+    void redisFlush () {
         redisTemplate.getConnectionFactory().getConnection().flushAll();
     }
-
 }
