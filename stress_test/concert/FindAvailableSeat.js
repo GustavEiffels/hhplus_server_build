@@ -54,7 +54,9 @@ export default function (data) {
   }
 
 
-  const schedule_id = 1;
+  const concertId = 1;
+  const randomNumber = Math.floor(Math.random() * 1000) + 1;
+
 
   const headers = {
     "Queue_Token": token,               
@@ -63,7 +65,7 @@ export default function (data) {
   };
 
 
-  const url = `http://localhost:8080/concerts/${schedule_id}/available-seat`;
+  const url = `http://localhost:8080/concerts/${concertId}/${randomNumber}`;
   const res = http.get(url, {headers});
   
 
