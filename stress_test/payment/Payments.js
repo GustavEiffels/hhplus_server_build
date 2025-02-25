@@ -54,13 +54,13 @@ export default function (data) {
   }
 
 
-  const concertScheduleId = 1;
-  const seatId    = 1;
+  const reservationIds = 1;
+  
   
   const payload = JSON.stringify({
-    scheduleId: concertScheduleId,
-    seatIdList:[seatId],
-    userId : userId
+    reservationIds: [reservationIds],
+    userId: userId,
+    tokenId : token
   })
 
 
@@ -71,15 +71,12 @@ export default function (data) {
   };
 
 
-  const url = `http://localhost:8080/reservations`;
-  const res = http.post(url, payload,{headers});
+  const url = `http://localhost:8080/payments`;
+  const res = http.post(url, payload, {headers});
   
 
-  check(res, { "is status 200": (r) => r.status === 200 });
+  check(res, { "is status 201": (r) => r.status === 201 });
 
-  if (res.status !== 200) {
-    console.error(`❌ 요청 실패! STATUS: ${res.status}, BODY: ${res.body}`);
-  }
 
   sleep(1);
 }
