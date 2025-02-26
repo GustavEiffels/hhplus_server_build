@@ -24,7 +24,7 @@ spring:
 #    show-sql: true
     format_sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     properties:
       hibernate.timezone.default_storage: NORMALIZE_UTC
       hibernate.jdbc.time_zone: UTC
@@ -38,7 +38,7 @@ spring:
     listener:
       missing-topics-fatal: false  # 자동으로 토픽 생성
 queue:
-  max-active-token: 30
+  max-active-token: 1000
   active-token-expire: 300
 
 logging:

@@ -57,30 +57,21 @@ public class DummyGenerator {
         // Add 1 Concert
         Concert newConcert = concertJpaRepository.save(Concert.create("ConcertTitle", "ConcertPlayer"));
 
-        // Add 1 Concert Schedule
-        ConcertSchedule newConcertSchedule = concertScheduleRepository.save(ConcertSchedule.builder()
-                .concert(newConcert)
-                .reserveStartTime(LocalDateTime.now().minusDays(1))
-                .reserveEndTime(LocalDateTime.now().plusMonths(1))
-                .showTime(LocalDateTime.now().plusMonths(2))
-                .build());
+
 
         // Add 9999 Concert Schedule
-        for (int i = 1; i < 10000; i++) {
-            concertScheduleRepository.save(ConcertSchedule.builder()
+        for (int i = 0; i < 10000; i++) {
+            ConcertSchedule concertSchedule = concertScheduleRepository.save(ConcertSchedule.builder()
                     .concert(newConcert)
                     .reserveStartTime(LocalDateTime.now().minusDays(1))
                     .reserveEndTime(LocalDateTime.now().plusMonths(1))
                     .showTime(LocalDateTime.now().plusMonths(2))
                     .build());
-        }
 
-        // Add 50 Seat
-        for (int i = 1; i <= 50; i++) {
             seatJpaRepository.save(Seat.builder()
                     .price(10000L)
-                    .seatNo(i)
-                    .concertSchedule(newConcertSchedule)
+                    .seatNo(i%50+1)
+                    .concertSchedule(concertSchedule)
                     .build());
         }
     }

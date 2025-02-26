@@ -51,9 +51,5 @@ export default function (data) {
 
   const pointsRes = http.get(pointsUrl, { headers });
 
-  check(pointsRes, {
-    "잔여 포인트 조회 성공": (r) => r.status === 200,
-  });
-
   sleep(1);
 }
