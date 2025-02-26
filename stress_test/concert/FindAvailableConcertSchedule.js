@@ -1,71 +1,59 @@
-import http, { head } from "k6/http";
+import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
   stages: [
-    { duration: "5s", target: 200 },   // 5초 동안 200명 증가
-    { duration: "5s", target: 500 },   // 5초 동안 500명 증가
-    { duration: "10s", target: 1000 }, // 10초 동안 1000명 유지
-    { duration: "5s", target: 500 },   // 5초 동안 500명 감소
-    { duration: "5s", target: 0 },     // 5초 동안 0으로 감소
-  ]
+    { duration: "5s", target: 1000 },  // 5초 동안 1000명 도달
+    { duration: "5s", target: 1000 },  // 5초 동안 1000명 유지
+    { duration: "5s", target: 750 },   // 5초 동안 750명으로 감소
+    { duration: "45s", target: 750 },  // 45초 동안 750명 유지
+  ],
 };
 
 export function setup() {
   const queueTokenUrl = "http://localhost:8080/queue_tokens";
+  const users = [];
 
-  const userId = 1; 
-  
-  const payload = JSON.stringify({ userId: userId });
-  const params = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+  for (let i = 1; i <= 1000; i++) {
+    const payload = JSON.stringify({ userId: i });
+    const params = { headers: { "Content-Type": "application/json" } };
+    const res = http.post(queueTokenUrl, payload, params);
 
-  const res = http.post(queueTokenUrl, payload, params);
+    check(res, { "Queue Token 생성 성공": (r) => r.status === 201 });
 
-  check(res, {
-    "Queue Token 생성 성공": (r) => r.status === 201,
-  });
-
-  const responseBody = res.json(); 
-  const token = responseBody?.data?.tokenId;  
-
-  console.log(`✅ 생성된 토큰: ${token}`);
-
-  if (!token) {
-    console.error("❌ 토큰 생성 실패! 응답 확인 필요:", responseBody);
+    const responseBody = res.json();
+    const token = responseBody?.data?.tokenId;
+    if (token) {
+      users.push({ userId: i, token });
+    }
   }
 
-  sleep(15); // ✅ 15초 대기 후 테스트 실행
+  console.log("✅ 모든 사용자 토큰 발급 완료. 15초 대기...");
+  sleep(15); // 토큰 발급 후 15초 대기
 
-  return { token, userId }; 
+  return { users };
 }
 
-
-
 export default function (data) {
-  const { token, userId } = data;
+  const users = data.users;
+  const user = users[__VU % users.length]; // 가상 사용자(VU)별로 user 매칭
 
-  if (!token) {
-    console.error("❌ 토큰 없음! setup()에서 생성되지 않았을 가능성 있음.");
+  if (!user || !user.token) {
+    console.error("❌ 유효한 사용자 또는 토큰이 없음!");
     return;
   }
 
-
-  const schedule_id = 1;
+  const concertId = 1;
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
 
   const headers = {
-    "Queue_Token": token,               
-    "UserId": userId.toString(),        
+    "Queue_Token": user.token,
+    "UserId": user.userId.toString(),
     "Content-Type": "application/json",
   };
 
-
-  const url = `http://localhost:8080/concerts/${schedule_id}/available-seat`;
-  const res = http.get(url, {headers});
-  
+  const url = `http://localhost:8080/concerts/${concertId}/${randomNumber}`;
+  const res = http.get(url, { headers });
 
   check(res, { "is status 200": (r) => r.status === 200 });
 
