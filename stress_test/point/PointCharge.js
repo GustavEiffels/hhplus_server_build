@@ -3,77 +3,54 @@ import { check, sleep } from "k6";
 
 export const options = {
   stages: [
-    { duration: "5s", target: 200 },   // 5초 동안 200명 증가
-    { duration: "5s", target: 500 },   // 5초 동안 500명 증가
-    { duration: "10s", target: 1000 }, // 10초 동안 1000명 유지
-    { duration: "5s", target: 500 },   // 5초 동안 500명 감소
-    { duration: "5s", target: 0 },     // 5초 동안 0으로 감소
-  ]
+    { duration: "10s", target: 500 }, 
+    { duration: "50s", target: 500 }, 
+  ],
 };
 
-// ✅ 테스트 시작 전에 한 번만 실행
+// ✅ 테스트 시작 전에 한 번만 실행 (모든 사용자 토큰 발급)
 export function setup() {
   const queueTokenUrl = "http://localhost:8080/queue_tokens";
+  const users = [];
 
-  const userId = 1; 
-  
-  const payload = JSON.stringify({ userId: userId });
-  const params = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+  for (let i = 1; i <= 500; i++) {
+    const payload = JSON.stringify({ userId: i });
+    const params = { headers: { "Content-Type": "application/json" } };
+    const res = http.post(queueTokenUrl, payload, params);
 
-  const res = http.post(queueTokenUrl, payload, params);
+    check(res, { "Queue Token 생성 성공": (r) => r.status === 201 });
 
-  check(res, {
-    "Queue Token 생성 성공": (r) => r.status === 201,
-  });
-
-  const responseBody = res.json(); 
-  const token = responseBody?.data?.tokenId;  
-
-  console.log(`✅ 생성된 토큰: ${token}`);
-
-  if (!token) {
-    console.error("❌ 토큰 생성 실패! 응답 확인 필요:", responseBody);
+    const responseBody = res.json();
+    const token = responseBody.data.tokenId;
+    users.push({ userId: i, token });
   }
 
-  sleep(15); // ✅ 15초 대기 후 테스트 실행
+  console.log("✅ 모든 사용자의 토큰이 발급됨. 15초 대기 시작...");
+  sleep(15); // 모든 토큰 발급 후 15초 대기
 
-  return { token, userId }; 
+  return { users };
 }
 
+// ✅ 활성화된 토큰을 가진 500명의 사용자가 포인트 조회 & 충전 요청
 export default function (data) {
-  const { token, userId } = data;
-
-  if (!token) {
-    console.error("❌ 토큰 없음! setup()에서 생성되지 않았을 가능성 있음.");
-    return;
-  }
-
-  const payload = JSON.stringify({
-    userId: userId,  
-    chargePoint: 1
-  });
+  const users = data.users;
+  const user = users[__VU % users.length]; 
 
   const headers = {
-    "Queue_Token": token,  // ✅ Queue_Token이 정상적으로 들어갔는지 체크
-    "UserId": userId.toString(), // 숫자를 문자열로 변환 (API에서 요구하는 형식이 다를 수 있음)
+    "Queue_Token": `${user.token}`,
+    "UserId": `${user.userId}`,
     "Content-Type": "application/json",
   };
 
+  const chargeUrl = `http://localhost:8080/points/charge`;
+  const chargePayload = JSON.stringify({
+    userId: user.userId,
+    chargePoint: 1000, 
+  });
 
-  const params = { headers };
+  const chargeRes = http.put(chargeUrl, chargePayload, { headers });
 
-  const url = "http://localhost:8080/points/charge";
-  const res = http.put(url, payload, params);
-
-  check(res, { "is status 200": (r) => r.status === 200 });
-
-  if (res.status !== 200) {
-    console.error(`❌ 요청 실패! STATUS: ${res.status}, BODY: ${res.body}`);
-  }
+  check(chargeRes, { "포인트 충전 성공": (r) => r.status === 200 });
 
   sleep(1);
 }
