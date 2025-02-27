@@ -27,7 +27,7 @@ public class DummyDataInitializer implements CommandLineRunner {
     private final RedisTemplate<String, Object> redisTemplate;
     @Override
     public void run(String... args) throws Exception {
-        int USER_CNT  = 10_000;
+        int USER_CNT  = 30_000;
 
         // redis 초기화
         redisTemplate.getConnectionFactory().getConnection().flushAll();
@@ -56,7 +56,7 @@ public class DummyDataInitializer implements CommandLineRunner {
 
     private void createConcertScheduleAndSeat(int userCnt, Concert concert){
 
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < userCnt; i++) {
             ConcertSchedule concertSchedule = concertScheduleRepository.save(ConcertSchedule.builder()
                     .concert(concert)
                     .reserveStartTime(LocalDateTime.now().minusDays(1))
