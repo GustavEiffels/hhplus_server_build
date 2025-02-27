@@ -2,99 +2,100 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
+  setupTimeout: "120s",
   stages: [
-    { duration: "5s", target: 200 },   // 5초 동안 200명 증가
-    { duration: "5s", target: 500 },   // 5초 동안 500명 증가
-    { duration: "10s", target: 1000 }, // 10초 동안 1000명 유지 (부하 테스트)
-    { duration: "5s", target: 500 },   // 5초 동안 500명 감소
-    { duration: "5s", target: 0 },     // 5초 동안 0으로 감소
+    { duration: "10s", target: 500 }, 
+    { duration: "10s", target: 400 }, 
+    { duration: "10s", target: 100 }, 
   ],
 };
 
+
+// ✅ 테스트 시작 전에 한 번 실행 (대기열 토큰 발급 후 15초 대기 -> 예약 수행)
 export function setup() {
   const queueTokenUrl = "http://localhost:8080/queue_tokens";
   const reservationUrl = "http://localhost:8080/reservations";
+  const users = [];
 
-  let users = [];
-
+  // 1️⃣ 사용자에게 대기열 토큰 발급
   for (let i = 1; i <= 1000; i++) {
-    // 1️⃣ 유저 토큰 생성
-    const tokenPayload = JSON.stringify({ userId: i });
+    const payload = JSON.stringify({ userId: i });
     const params = { headers: { "Content-Type": "application/json" } };
-    
-    const tokenRes = http.post(queueTokenUrl, tokenPayload, params);
-    
-    check(tokenRes, { "Queue Token 생성 성공": (r) => r.status === 201 });
+    const res = http.post(queueTokenUrl, payload, params);
 
-    const tokenResponseBody = tokenRes.json();
-    const token = tokenResponseBody?.data?.tokenId;
+    check(res, { "Queue Token 생성 성공": (r) => r.status === 201 });
 
-    if (!token) {
-      console.error(`❌ User ${i} 토큰 생성 실패! 응답 확인 필요:`, tokenResponseBody);
+    if (res.status !== 201) {
+      console.error(`❌ 토큰 발급 실패! User: ${i}, STATUS: ${res.status}`);
       continue;
     }
 
-    // 2️⃣ 좌석 예약 요청
+    const responseBody = res.json();
+    const token = responseBody.data.tokenId;
+    users.push({ userId: i, token });
+  }
+
+  console.log("✅ 모든 사용자의 토큰이 발급됨. 15초 대기 시작...");
+  sleep(15); // 토큰 발급 후 15초 대기
+
+  // 2️⃣ 모든 사용자 예약 진행
+  for (let user of users) {
+    const { userId, token } = user;
+    const scheduleId = userId;
+    const seatId = userId;
     const reservationPayload = JSON.stringify({
-      scheduleId: 1,      // 예매할 공연 스케줄 ID
-      seatIdList: [i],    // 유저별로 좌석 ID를 다르게 설정
-      userId: i
+      scheduleId,
+      seatIdList: [seatId],
+      userId,
     });
 
     const reservationHeaders = {
       "Queue_Token": token,
-      "UserId": i.toString(),
+      "UserId": userId.toString(),
       "Content-Type": "application/json",
     };
 
     const reservationRes = http.post(reservationUrl, reservationPayload, { headers: reservationHeaders });
 
-    check(reservationRes, { "예약 성공 (200)": (r) => r.status === 200 });
+    check(reservationRes, { "예약 성공": (r) => r.status === 200 });
 
     if (reservationRes.status !== 200) {
-      console.error(`❌ 예약 실패! User: ${i}, STATUS: ${reservationRes.status}, BODY: ${reservationRes.body}`);
+      console.error(`❌ 예약 실패! User: ${userId}, STATUS: ${reservationRes.status}`);
       continue;
     }
-
-    // 예약이 성공한 경우, 해당 유저 정보 저장
-    users.push({ userId: i, token, reservationId: i });
+    user.reservationId = reservationRes.json().data.reservationInfoList[0].reservationId;
   }
 
-  sleep(15); // 15초 대기 후 결제 진행
+  console.log("✅ 모든 사용자가 예약을 완료함. 결제 테스트 시작...");
   return { users };
 }
 
+// ✅ 예약된 정보를 기반으로 결제 요청 실행
 export default function (data) {
   const users = data.users;
-  const userIndex = Math.floor(Math.random() * users.length);
-  const { userId, token, reservationId } = users[userIndex];
+  const user = users[Math.floor(Math.random() * users.length)];
 
-  if (!token) {
-    console.error(`❌ User ${userId} 토큰 없음! setup()에서 생성되지 않았을 가능성 있음.`);
+  if (!user || !user.token || !user.reservationId) {
+    console.error("❌ 유효한 사용자/토큰/예약 정보 없음!", user);
     return;
   }
 
-  // 3️⃣ 결제 요청
   const paymentPayload = JSON.stringify({
-    reservationIds: [reservationId],
-    userId: userId,
-    tokenId: token,
+    reservationIds: [user.reservationId],
+    userId: user.userId,
+    tokenId: user.token,
   });
 
   const paymentHeaders = {
-    "Queue_Token": token,
-    "UserId": userId.toString(),
+    "Queue_Token": user.token,
+    "UserId": user.userId.toString(),
     "Content-Type": "application/json",
   };
 
   const paymentUrl = `http://localhost:8080/payments`;
   const paymentRes = http.post(paymentUrl, paymentPayload, { headers: paymentHeaders });
 
-  check(paymentRes, { "결제 성공 (201)": (r) => r.status === 201 });
-
-  if (paymentRes.status !== 201) {
-    console.error(`❌ 결제 실패! User: ${userId}, STATUS: ${paymentRes.status}, BODY: ${paymentRes.body}`);
-  }
-
+  check(paymentRes, { "결제 성공": (r) => r.status === 200 });
+  
   sleep(1);
 }

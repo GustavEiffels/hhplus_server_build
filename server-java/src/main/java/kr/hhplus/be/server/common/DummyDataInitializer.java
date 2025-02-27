@@ -27,12 +27,12 @@ public class DummyDataInitializer implements CommandLineRunner {
     private final RedisTemplate<String, Object> redisTemplate;
     @Override
     public void run(String... args) throws Exception {
-        int USER_CNT  = 30_000;
+        int USER_CNT  = 1_000;
 
         // redis 초기화
         redisTemplate.getConnectionFactory().getConnection().flushAll();
 
-        // USER 10_000 명 추가
+        // USER 추가
         createUser(USER_CNT);
 
         // Concert 생성
@@ -43,7 +43,6 @@ public class DummyDataInitializer implements CommandLineRunner {
     }
 
     private void createUser(int userCnt){
-        // 1000명 사용자 생성
         for (int i = 0; i < userCnt; i++) {
             User user = userJpaRepository.save(User.create("test" + i));
             userJpaRepository.save(userService.chargePoints(user.getId(), 10000L));

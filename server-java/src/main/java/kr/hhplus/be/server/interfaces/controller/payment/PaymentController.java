@@ -29,14 +29,14 @@ public class PaymentController {
     @Operation(summary = "결제 API",description = "결제 처리하고 결제 내역을 생성하는 API")
     @ApiResponses(value = {
             @io.swagger.v3.oas.annotations.responses.ApiResponse(
-            responseCode = "201",description = "success")})
+            responseCode = "200",description = "success")})
     public ResponseEntity<ApiResponse<PaymentApiDto.PaymentResponse>> purchase(
             @RequestBody PaymentApiDto.PaymentRequest request){
 
         PaymentFacadeDto.PaymentResult result = paymentFacade.pay(request.toParam());
         PaymentApiDto.PaymentResponse response = PaymentApiDto.PaymentResponse.from(result);
 
-        return new ResponseEntity<>(ApiResponse.ok(response), HttpStatus.CREATED);
+        return new ResponseEntity<>(ApiResponse.ok(response), HttpStatus.OK);
     }
 
 }
