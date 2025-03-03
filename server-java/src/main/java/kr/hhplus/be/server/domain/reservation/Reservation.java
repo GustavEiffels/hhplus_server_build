@@ -63,7 +63,7 @@ public class Reservation extends BaseEntity {
         this.user      = user;
         this.seat      = seat;
         this.amount    = seat.getPrice();
-        this.expiredAt = LocalDateTime.now().plusMinutes(5);
+        this.expiredAt = LocalDateTime.now().plusMinutes(10);
     }
 
     public static Reservation create(User user, Seat seat){

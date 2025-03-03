@@ -5,12 +5,13 @@ import com.zaxxer.hikari.HikariDataSource;
 import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.utility.DockerImageName;
-
 import javax.sql.DataSource;
 
 @Configuration
+@Profile("test")
 public class TestcontainersConfiguration {
 
 	private static final MySQLContainer<?> MYSQL_CONTAINER;

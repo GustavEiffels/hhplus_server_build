@@ -2,10 +2,12 @@ package kr.hhplus.be.server;
 
 import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.utility.DockerImageName;
 
 @Configuration
+@Profile("test")
 public class RedisTestcontainersConfiguration {
     private static final GenericContainer<?> REDIS_LOCK_CONTAINER;
     private static final GenericContainer<?> REDIS_QUEUE_CONTAINER;
