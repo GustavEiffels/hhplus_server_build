@@ -34,7 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("""
             포인트 충전 - 낙관적 락을 사용     
             """)
-//@ActiveProfiles("redisson")
+@ActiveProfiles("redisson")
 public class PointConcurrencyTest {
 
     @Autowired
@@ -61,12 +61,15 @@ public class PointConcurrencyTest {
     @Test
     void concurrency_thread_10() throws InterruptedException {
         pointChargeTest(10);
+
     }
 
     @DisplayName("50개의 Thread 가 동시에 충전 요청 시, 충전 성공 횟수 * 충전 금액 은 사용자의 포인트와 같다. ( 충전 성공 횟수 * 충전 금액 = 사용자의 포인트 )")
     @Test
     void concurrency_thread_50() throws InterruptedException{
         pointChargeTest(50);
+
+
     }
 
     @DisplayName("200개의 Thread 가 동시에 충전 요청 시, 충전 성공 횟수 * 충전 금액 은 사용자의 포인트와 같다. ( 충전 성공 횟수 * 충전 금액 = 사용자의 포인트 )")
